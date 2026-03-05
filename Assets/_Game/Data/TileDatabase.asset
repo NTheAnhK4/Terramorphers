@@ -9,43 +9,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1892c494ae0f4d748da65b5123a8dd40, type: 3}
+  m_Script: {fileID: 11500000, guid: 5678124a38b446bc89461161233ff852, type: 3}
   m_Name: TileDatabase
   m_EditorClassIdentifier: 
   serializedElements:
   - key: 0
     value:
-      name: Base Tile
-      tilePrefab: {fileID: 3008349796528636102, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
-      descriptions: []
       type: 0
-  - key: 2
-    value:
-      name: Ambush Tile
-      tilePrefab: {fileID: 8077555347867305697, guid: f55f8fa2d3bb0c7499f3c7630971054e, type: 3}
-      descriptions: []
-      type: 2
-  - key: 3
-    value:
-      name: Freezing Tile
-      tilePrefab: {fileID: 1219818232731913323, guid: 670973bb5a6bba844946b427c0aea65a, type: 3}
-      descriptions: []
-      type: 3
-  - key: 4
-    value:
-      name: Prismatic Tile
-      tilePrefab: {fileID: 4637961244184026402, guid: 875d5d43cfddb8243940e5b384f86358, type: 3}
-      descriptions: []
-      type: 4
-  - key: 5
-    value:
-      name: Snow Tile
-      tilePrefab: {fileID: 3329648517147616824, guid: dec700a2730c1bc43825da63f88ae924, type: 3}
-      descriptions: []
-      type: 5
+      tileName: Base Tile
+      description: 
+      addresable: BaseTile
   - key: 1
     value:
-      name: Void Tile
-      tilePrefab: {fileID: 3807669452498604183, guid: 56e124ae727c44a42b7562b2e47513cb, type: 3}
-      descriptions: []
       type: 1
+      tileName: Void Tile
+      description: 
+      addresable: VoidTile
+  - key: 3
+    value:
+      type: 3
+      tileName: Freezing Tile
+      description: 
+      addresable: FreezingTile
+  - key: 2
+    value:
+      type: 2
+      tileName: Ambush Tile
+      description: 
+      addresable: AmbushTile
+  - key: 4
+    value:
+      type: 4
+      tileName: Prismatic Tile
+      description: 
+      addresable: PrismaticTile
+  - key: 5
+    value:
+      type: 5
+      tileName: Snow Tile
+      description: 
+      addresable: SnowTile

@@ -23,7 +23,7 @@ namespace Terramorphers
     }
     public class BoardManager : Singleton<BoardManager>
     {
-        
+        [Inject] private ITileFactory _tileFactory;
         private List<List<ITile>> board = new();
 
         public List<List<ITile>> Board => board;
@@ -73,6 +73,11 @@ namespace Terramorphers
 
         private void Start()
         {
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.S)) _tileFactory.CreateTile(ETileType.Base);
         }
 
         public void SetMovable(int posX, int posY, int distance)

@@ -1,10 +1,16 @@
 
 
-using Terramorphers;
+using Cysharp.Threading.Tasks;
+
+
 using UnityEngine;
 
-public interface ITileFactory
+namespace Terramorphers
 {
-     ITile Create(ETileType type);
-     void SetParent(Transform parent);
+    public interface ITileFactory
+    {
+        UniTask<ITile> CreateTile(ETileType type);
+        void SetParent(Transform parent);
+    }
+
 }

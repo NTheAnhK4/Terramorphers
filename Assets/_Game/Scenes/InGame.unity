@@ -122,55 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &238994444
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 238994446}
-  - component: {fileID: 238994447}
-  m_Layer: 0
-  m_Name: AppLifetimeScope
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &238994446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238994444}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &238994447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238994444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c567e1d51e004e47b4b3484506b4fcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentReference:
-    TypeName: 
-  autoRun: 1
-  autoInjectGameObjects:
-  - {fileID: 1487254346}
 --- !u!1 &301413228
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +478,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 2269535502186346261, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+    - target: {fileID: 2666995347423780894, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2667614689680652389, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -567,10 +522,22 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4332039930876197242, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+    - target: {fileID: 4621975222601591416, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652278276387188850, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4681127702130204677, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 4681127702130204677, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+    - target: {fileID: 5182340543727399644, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5319940137215310954, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -578,6 +545,10 @@ PrefabInstance:
     - target: {fileID: 5479647566295375550, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: m_Name
       value: Row0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479647566295375550, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5723149827947295777, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: serializationData.Prefab
@@ -659,6 +630,10 @@ PrefabInstance:
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 8576094852126557316, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+    - target: {fileID: 8587056565388263718, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8818053267436459238, guid: 8739b18bca965d146a6994a903feabe6, type: 3}
       propertyPath: serializationData.Prefab
       value: 
@@ -909,7 +884,8 @@ MonoBehaviour:
   parentReference:
     TypeName: GameCore.DI.AppLifetimeScope
   autoRun: 1
-  autoInjectGameObjects: []
+  autoInjectGameObjects:
+  - {fileID: 1487254346}
 --- !u!114 &2022241687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,6 +903,7 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   launcher: {fileID: 2022241689}
+  _tileModuleInstaller: {fileID: 11400000, guid: 7ac347944635deb498dd12e787bbc7f3, type: 2}
 --- !u!225 &2022241688
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1049,5 +1026,4 @@ SceneRoots:
   - {fileID: 1753524375}
   - {fileID: 1487254345}
   - {fileID: 667444745}
-  - {fileID: 238994446}
   - {fileID: 2022241693}
