@@ -1,0 +1,28 @@
+{
+    "name": "GameCore.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:2359c074672083046b6ff6b309700f8e",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:77221876cc6b8244180b96e320b1bcd4",
+        "GUID:99367e036694489682348c5c6475294d",
+        "GUID:361569ddd81d44a48b65b558bd40de52",
+        "GUID:0d9380203da337244919c5f49d4703be",
+        "GUID:b14049cbbe280894fb53af1b5c0f5633",
+        "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
+        "GUID:77aea589fe3f34fa883d9f7e26eee12e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

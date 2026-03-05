@@ -1,0 +1,17 @@
+{
+    "name": "WEngine.MVP",
+    "rootNamespace": "",
+    "references": [
+        "ZBase.UnityScreenNavigator",
+        "UniTask"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
