@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Serialization;
+
 using ZBase.UnityScreenNavigator.Core.Activities;
 using ZBase.UnityScreenNavigator.Core.Modals;
 using ZBase.UnityScreenNavigator.Core.Screens;
@@ -11,6 +12,7 @@ namespace ZBase.UnityScreenNavigator.Core
     [RequireComponent(typeof(RectTransform), typeof(Canvas))]
     public class UnityScreenNavigatorLauncher : WindowContainerManager
     {
+       
         [SerializeField]
         private UnityScreenNavigatorSettings unityScreenNavigatorSettings;
 

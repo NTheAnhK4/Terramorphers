@@ -310,6 +310,15 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.zbase.unityscreennavigator": {
+      "version": "https://github.com/Zitga-Tech/ZBase.UnityScreenNavigator.git?path=/Packages/ZBase.UnityScreenNavigator",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.cysharp.unitask": "2.5.10"
+      },
+      "hash": "99b4c0bfd9ca1c0fcd4b009d303f1ec3c1208034"
+    },
     "jp.hadashikick.vcontainer": {
       "version": "1.17.0",
       "depth": 0,

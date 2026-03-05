@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/__game/Scripts/VibrationUti.cs.meta
+guid: 537c3bb209becd848b54110e64d20adb
+========
+guid: 67ec2f620c6b0405ba16ea2c032dc9a2
+labels:
+- al_max
+- al_max_export_path-MaxSdk/Scripts/MaxEvents.cs
+>>>>>>>> 26b91587843987085db75481abb68e12bdb893a5:Assets/MaxSdk/Scripts/MaxEvents.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
