@@ -15,8 +15,15 @@ namespace Terramorphers
         {
             base.Configure(builder);
             builder.RegisterComponentInHierarchy<GameManager>();
-            builder.Register<AdvantureGameState>(Lifetime.Singleton);
-            builder.Register<WinState>(Lifetime.Singleton);
+            builder.RegisterComponentInHierarchy<BoardManager>();
+            
+            builder.Register<InputManager>(Lifetime.Scoped);
+            builder.Register<EntityManager>(Lifetime.Scoped);
+           
+
+            builder.Register<LoadingState>(Lifetime.Scoped);
+            builder.Register<AdvantureState>(Lifetime.Scoped);
+            builder.Register<WinState>(Lifetime.Scoped);
             builder.RegisterVitalRouter(routing =>
             {
                 routing.MapEntryPoint<GameFSM>();

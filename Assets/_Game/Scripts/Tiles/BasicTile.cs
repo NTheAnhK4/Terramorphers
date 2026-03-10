@@ -36,5 +36,9 @@ namespace Terramorphers
                     break;
             }
         }
+
+        public bool IsPassable() => true;
+
+        public bool IsBlockVisibility() => false;
     }
 }

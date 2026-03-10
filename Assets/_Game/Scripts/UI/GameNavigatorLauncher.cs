@@ -25,14 +25,7 @@ namespace Terramorphers
 
         public TransitionService TransitionService => _transitionService;
 
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("[Test] show modal");
-                _transitionService.ShowTestModal();
-            }
-        }
+        
     }
 
 }

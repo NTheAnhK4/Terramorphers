@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Terramorphers
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Player : TerramorphersEntity
     {
-        
+        protected override void OnEnter()
+        {
+            
+        }
+
+        protected override void OnUpdate()
+        {
+           
+        }
+
+        protected override void OnExit()
+        {
+            
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

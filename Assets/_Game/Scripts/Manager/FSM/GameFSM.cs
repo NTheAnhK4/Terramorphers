@@ -13,11 +13,12 @@ namespace Terramorphers
 
 		public GameState CurrentState => _currentState;
 
-		public GameFSM(GameManager gameManager, AdvantureGameState advantureGameState, WinState winState )
+		public GameFSM(GameManager gameManager,LoadingState loadingState ,AdvantureState advantureState, WinState winState )
 		{
 			_states = new()
 			{
-				[EGameStateType.AdvantureMode] = advantureGameState,
+				[EGameStateType.LoadingState] = loadingState,
+				[EGameStateType.AdvantureMode] = advantureState,
 				[EGameStateType.WinState] = winState
 			};
 			gameManager.GameFSM = this;

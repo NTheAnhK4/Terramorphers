@@ -8,8 +8,10 @@ namespace Terramorphers
     {
         ETileState CurrentState { get; protected set; }
         void ChangeState(ETileState newState);
-       
-    
+        bool IsPassable();
+        bool IsBlockVisibility();
+
+
     }
 
     public enum ETileState

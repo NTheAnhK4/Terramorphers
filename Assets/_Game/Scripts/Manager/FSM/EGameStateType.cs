@@ -4,6 +4,7 @@ namespace Terramorphers
     {
         Unknown = 0,
         Lobby,
+        LoadingState,
         AdvantureMode,
         WinState,
         

@@ -1,12 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using CoreGame;
+
 using UnityEngine;
 
 namespace Terramorphers
 {
-    public class InputManager : Singleton<InputManager>
+    public class InputManager
     {
         enum InputState
         {
@@ -17,12 +14,12 @@ namespace Terramorphers
 
         private InputState currentState;
 
-        private void Start()
+        public void OnEnter()
         {
             currentState = InputState.Move;
         }
 
-        private void Update()
+        public void OnUpdate()
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -39,6 +36,7 @@ namespace Terramorphers
                 }
             }
         }
+        
 
         ITile GetTile()
         {
@@ -61,6 +59,8 @@ namespace Terramorphers
         {
             
         }
+
+       
     }
 }
 
