@@ -11,6 +11,7 @@ namespace Terramorphers
     {
         private IObjectResolver _resolver;
         private TileDatabase _tileDatabase;
+        private Transform _parent;
         public TileFactory(TileDatabase tileDatabase, IObjectResolver resolver)
         {
             _tileDatabase = tileDatabase;
@@ -28,14 +29,14 @@ namespace Terramorphers
                 return null;
             }
 
-            var tile = PoolingManager.Spawn(tilePrefab).GetComponent<ITile>();
+            var tile = PoolingManager.Spawn(tilePrefab,_parent).GetComponent<ITile>();
             _resolver.Inject(tile);
             return tile;
         }
 
         public void SetParent(Transform parent)
         {
-            
+            _parent = parent;
         }
     }
 }

@@ -1,24 +1,114 @@
-using System.Collections;
+
 using System.Collections.Generic;
-using UnityEngine;
+using Terramorphers.Command;
+using Terramorphers.States.PlayerState;
+using VContainer;
+using VitalRouter;
 
 namespace Terramorphers
 {
     public class Player : TerramorphersEntity
     {
-        protected override void OnEnter()
+        #region Dependencies
+
+        private InputManager _inputManager;
+        private BoardManager _boardManager;
+        private ICommandPublisher _publisher;
+        private ICommandSubscribable _subscribable;
+
+        #endregion
+
+        #region Runtime Data
+
+        private ITile selectedTile;
+        private int moveDistance = 3;
+        private ITile currentTile;
+        private float moveSpeed = .5f;
+        private int remainMoveDistance;
+
+        #endregion
+
+        #region State
+
+        private SelectMoveTileState _selectMoveTileState;
+        private PlayerMoveState _moveState;
+
+        #endregion
+        #region Properties
+
+        public ITile CurrentTile => currentTile;
+
+        public int RemainMoveDistance
         {
-            
+            get => remainMoveDistance;
+            set => remainMoveDistance = value;
         }
 
-        protected override void OnUpdate()
+        public ICommandPublisher Publisher => _publisher;
+
+        public ICommandSubscribable Subscribable => _subscribable;
+
+        public InputManager InputManager => _inputManager;
+
+        public SelectMoveTileState SelectMoveTileState => _selectMoveTileState;
+
+        public PlayerMoveState MoveState => _moveState;
+
+        public BoardManager BoardManager => _boardManager;
+
+        public float MoveSpeed => moveSpeed;
+        public ITile SelectedTile
         {
-           
+            get => selectedTile;
+            set => selectedTile = value;
         }
 
-        protected override void OnExit()
+        #endregion
+        [Inject]
+        public void Construct(InputManager inputManager, BoardManager boardManager, ICommandPublisher publisher, ICommandSubscribable subscribable)
         {
-            
+            _inputManager = inputManager;
+            _boardManager = boardManager;
+            _publisher = publisher;
+            _subscribable = subscribable;
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _selectMoveTileState = new SelectMoveTileState(this, string.Empty);
+            _moveState = new PlayerMoveState(this, string.Empty);
+            AddState(_selectMoveTileState);
+            AddState(_moveState);
+        }
+
+        public override void OnEnter()
+        {
+            remainMoveDistance = moveDistance;
+            _inputManager.OnEnter();
+            ChangeState(_selectMoveTileState);
+        }
+
+        public override void OnUpdate()
+        {
+           _stateMachine.Update();
+        }
+
+        public override void OnExit()
+        {
+        }
+
+        public override void SetTile(ITile tile)
+        {
+            transform.position = tile.Transform.position;
+            currentTile = tile;
+        }
+
+        
+
+        public override bool IsDead()
+        {
+            return false;
         }
     }
 

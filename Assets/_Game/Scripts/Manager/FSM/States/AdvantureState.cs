@@ -15,7 +15,7 @@ namespace Terramorphers
         {
             base.OnEnter();
             _entityManager.OnEnter();
-            Debug.Log($"[Test] advanture ");
+           
         }
 
         public override void OnUpdate()

@@ -4,11 +4,13 @@ using System.Linq;
 using CoreGame;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using Terramorphers.Command;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using VContainer;
-
+using VitalRouter;
+using R3;
 
 namespace Terramorphers
 {
@@ -23,18 +25,21 @@ namespace Terramorphers
     {
         public List<Vector3> positions = new();
     }
-
+   
     public class BoardManager : ComponentBehaviour
     {
         [Inject] private ITileFactory _tileFactory;
+        [Inject] private ICommandSubscribable _subscribable;
         private List<List<ITile>> board = new();
         AsyncOperationHandle<TextAsset> handle;
 
         public List<List<ITile>> Board => board;
         public string path = "Assets/_Game/Scripts/Configs/GameConfig.json";
+        private List<ITile> currentSpecialTiles = new();
+        private List<IDisposable> bags = new();
+        #region JSonHandler
 
-
-        public void SaveToJson()
+           public void SaveToJson()
         {
             TilePositionData data = new();
 
@@ -101,7 +106,7 @@ namespace Terramorphers
                     ETileType type = boardData.Rows[i].Tiles[j];
                     var tile = await _tileFactory.CreateTile(type);
                     if (tile == null) return false;
-                    if (tile is BasicTile basicTile) basicTile.transform.position = positionData.rows[i].positions[j];
+                    tile.Transform.position = positionData.rows[i].positions[j];
                    
                     row.Add(tile);
                 }
@@ -117,18 +122,60 @@ namespace Terramorphers
             if (handle.IsValid()) Addressables.Release(handle);
         }
 
-        private List<ITile> GetPassableTile()
+        #endregion
+
+        private void Start()
+        {
+            bags.Add(_subscribable.Subscribe<SetMovableTilesCommand>(SetMovableTiles)); 
+            bags.Add( _subscribable.Subscribe<ClearSpecialTilesCommand>(ClearSpecialTiles));
+        }
+
+        private void OnDestroy()
+        {
+            foreach(var bag in bags) bag?.Dispose();
+        }
+
+      
+
+        public List<ITile> GetPassableTile()
         {
             if (board == null) return new List<ITile>();
             var allTiles = board.SelectMany(row => row).ToList();
             
             return allTiles.Where(t => t.IsPassable()).ToList();
         }
-        
 
+        public List<ITile> GetPath(ITile from, ITile to) => board.GetPath(from, to, tile => tile.IsPassable());
 
-        public void SetMovable(int posX, int posY, int distance)
+      
+        private void SetMovableTiles(SetMovableTilesCommand tilesCommand, PublishContext context)
         {
+            ClearSpecialTiles();
+           
+            List<ITile> movableTiles = board.GetTileMovable(tilesCommand.CenterTile, tilesCommand.Distance, tile => tile.GetMoveCost());
+            currentSpecialTiles = movableTiles;
+            foreach (var tile in movableTiles)
+            {
+                tile.ChangeState(ETileState.Movable);
+            }
         }
+
+       
+        private void ClearSpecialTiles(ClearSpecialTilesCommand command, PublishContext context)
+        {
+            ClearSpecialTiles();
+        }
+
+        public void ClearSpecialTiles()
+        {
+            if (currentSpecialTiles == null) return;
+            foreach (var tile in currentSpecialTiles)
+            {
+                tile.ChangeState(ETileState.Normal);
+            }
+            currentSpecialTiles.Clear();
+        }
+
+        
     }
 }

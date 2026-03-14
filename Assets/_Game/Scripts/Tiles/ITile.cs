@@ -10,7 +10,8 @@ namespace Terramorphers
         void ChangeState(ETileState newState);
         bool IsPassable();
         bool IsBlockVisibility();
-
+        Transform Transform { get; }
+        int GetMoveCost();
 
     }
 

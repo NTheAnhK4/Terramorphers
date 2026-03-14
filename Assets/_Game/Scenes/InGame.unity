@@ -884,8 +884,7 @@ MonoBehaviour:
   parentReference:
     TypeName: GameCore.DI.AppLifetimeScope
   autoRun: 1
-  autoInjectGameObjects:
-  - {fileID: 1487254346}
+  autoInjectGameObjects: []
 --- !u!114 &2022241687
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -905,6 +904,7 @@ MonoBehaviour:
   launcher: {fileID: 2022241689}
   _tileModuleInstaller: {fileID: 11400000, guid: 7ac347944635deb498dd12e787bbc7f3, type: 2}
   _levelModuleInstaller: {fileID: 11400000, guid: 27e6b9a03a5f2244e8f7caee71098bc0, type: 2}
+  _entityModuleInstaller: {fileID: 11400000, guid: aa5670448e5c3464f8fbe383a969903c, type: 2}
 --- !u!225 &2022241688
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -969,7 +969,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

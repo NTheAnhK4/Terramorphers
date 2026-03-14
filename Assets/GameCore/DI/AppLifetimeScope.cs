@@ -13,12 +13,14 @@ namespace GameCore.DI
         [SerializeField] private UnityScreenNavigatorLauncher launcher;
         [SerializeField] private TileModuleInstaller _tileModuleInstaller;
         [SerializeField] private LevelModuleInstaller _levelModuleInstaller;
+        [SerializeField] private EntityModuleInstaller _entityModuleInstaller;
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterModuleInstaller<RouterModuleInstaller>();
             builder.Register<TransitionService>(Lifetime.Singleton);
             _tileModuleInstaller.Register(builder);
             _levelModuleInstaller.Register(builder);
+            _entityModuleInstaller.Register(builder);
             builder.RegisterComponent(launcher);
         }
     }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Unity.Profiling.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace CoreGame
@@ -54,14 +53,16 @@ namespace CoreGame
 
         public void ChangeState(IState state, Func<StateData> stateData = null)
         {
-            if (state == current.State) return;
+            if (current != null && current.State != null && state == current.State) return;
 
-            var previousState = current.State;
+            IState previousState = null;
+            if(current != null) previousState = current.State;
             var nextState = nodes[state.GetType()].State;
             
             previousState?.OnExit();
             
             nextState?.OnEnter(stateData?.Invoke());
+
             current = nodes[state.GetType()];
         }
 
@@ -75,14 +76,13 @@ namespace CoreGame
                 }
             }
 
-            if (current.Transitions != null)
+            if (current != null && current.Transitions != null)
             {
                 foreach (var transition in current.Transitions)
                 {
                     if (transition.Condition.Evaluate()) return transition;
                 }
             }
-            
 
           
            
@@ -93,6 +93,12 @@ namespace CoreGame
         public void AddTransition(IState from, IState to, IPredicate condition, Func<StateData> getData = null)
         {
             GetOrAddNode(from).AddTransition(GetOrAddNode(to).State, condition, getData);
+        }
+
+        public void AddState(IState newState)
+        {
+           
+            GetOrAddNode(newState);
         }
 
         public void AddAnyTransition(IState to, IPredicate condition, Func<StateData> getData = null)

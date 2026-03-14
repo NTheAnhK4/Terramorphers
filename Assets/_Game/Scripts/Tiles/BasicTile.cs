@@ -40,5 +40,7 @@ namespace Terramorphers
         public bool IsPassable() => true;
 
         public bool IsBlockVisibility() => false;
+        public Transform Transform => transform;
+        public int GetMoveCost() => 1;
     }
 }

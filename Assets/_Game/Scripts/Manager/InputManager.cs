@@ -1,64 +1,49 @@
 
+using Terramorphers.Command;
 using UnityEngine;
+using VContainer;
+using VitalRouter;
 
 namespace Terramorphers
 {
     public class InputManager
     {
-        enum InputState
+        private ICommandPublisher _publisher;
+        private Camera mainCamera;
+        [Inject]
+        public void Constructor(ICommandPublisher publisher)
         {
-            None,
-            Move,
-            Skill
+            _publisher = publisher;
         }
 
-        private InputState currentState;
+      
 
         public void OnEnter()
         {
-            currentState = InputState.Move;
+            mainCamera = Camera.main;
         }
 
         public void OnUpdate()
         {
             if (Input.GetMouseButtonDown(0))
             {
-                switch (currentState)
-                {
-                    case InputState.None:
-                        return;
-                    case InputState.Move:
-                        HandleMove();
-                        break;
-                    case InputState.Skill:
-                        HandleSkill();
-                        break;
-                }
+                ITile tile = GetTile();
+                if (tile == null) return;
+                _publisher.PublishAsync(new SelectTileCommand() { SelectedTile = tile });
             }
         }
         
 
         ITile GetTile()
         {
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
             if (hit.collider == null) return null;
             return hit.collider.gameObject.GetComponentInParent<ITile>();
             
         }
-        private void HandleMove()
-        {
-            var tile = GetTile();
-            if(tile == null) return;
-            tile.ChangeState(ETileState.Movable);
-            Debug.Log($"[Test] handle move");
-        }
-
-        private void HandleSkill()
-        {
-            
-        }
+       
 
        
     }

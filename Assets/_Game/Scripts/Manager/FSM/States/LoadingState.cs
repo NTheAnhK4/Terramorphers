@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VitalRouter;
@@ -7,15 +8,17 @@ namespace Terramorphers
     public class LoadingState : GameState
     {
         private LevelDatabase _levelDatabase;
+        private EntityManager _entityManager;
         private GameManager _gameManager;
         private BoardManager _boardManager;
         private ICommandPublisher _publisher;
-        public LoadingState(LevelDatabase levelDatabase,GameManager gameManager, BoardManager boardManager, ICommandPublisher publisher)
+        public LoadingState(LevelDatabase levelDatabase, EntityManager entityManager,GameManager gameManager, BoardManager boardManager, ICommandPublisher publisher)
         {
             _levelDatabase = levelDatabase;
             _gameManager = gameManager;
             _boardManager = boardManager;
             _publisher = publisher;
+            _entityManager = entityManager;
         }
 
         public override void OnEnter()
@@ -35,8 +38,17 @@ namespace Terramorphers
             if (levelMetadata == null) return;
             bool isLoadingBoardFinished = await _boardManager.LoadingBoard(levelMetadata);
             if (!isLoadingBoardFinished) return;
+
+            List<ITile> passibleTile = _boardManager.GetPassableTile();
+            if (passibleTile == null)
+            {
+                Debug.Log($"[LoadingState] no passible tile in board");
+                return;
+            }
             
-            
+            //Load Player
+            ITile playerTile = GetRandomTile(passibleTile);
+            await _entityManager.AddEntity(0, playerTile);
             
             //TODO: show anim
             switch (_gameManager.GameMode)
@@ -46,6 +58,15 @@ namespace Terramorphers
                     break;
             }
             
+        }
+
+        private ITile GetRandomTile(List<ITile> tiles)
+        {
+            if (tiles == null || tiles.Count == 0) return null;
+            int id = Random.Range(0, tiles.Count);
+            ITile tile = tiles[id];
+            tiles.RemoveAt(id);
+            return tile;
         }
     }
 }
