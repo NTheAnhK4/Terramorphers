@@ -5,56 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Entities.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Entities.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Entities_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Entities_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Entities_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Entities_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/EntityModuleInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/EntityModuleInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/ModuleInstaller/EntityInstaller.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/ModuleInstaller/EntityInstaller.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityDatabase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/IEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GameCore.Presentation.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GameCore.Presentation.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/Screenshot 2026-02-19 170419.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/Screenshot 2026-02-19 170419.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/statIcons.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/statIcons.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/GameMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/GameMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/GameMode.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/GameMode.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/LevelDatabase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/LevelDatabase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/LevelDatabase.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/LevelDatabase.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/LevelMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/LevelMetadata.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/LevelMetadata.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Level/LevelMetadata.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/SelectMoveTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/SelectMoveTileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameLifetimeScope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameLifetimeScope.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Terramorphers.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Terramorphers.asmdef" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BasicTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BasicTile.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +155,11 @@
       <workItem from="1773329453301" duration="1777000" />
       <workItem from="1773409148135" duration="10119000" />
       <workItem from="1773481001557" duration="3933000" />
-      <workItem from="1773491689202" duration="106000" />
+      <workItem from="1773491689202" duration="826000" />
+      <workItem from="1773500994894" duration="2664000" />
+      <workItem from="1773546326094" duration="362000" />
+      <workItem from="1773566077331" duration="4058000" />
+      <workItem from="1773582366173" duration="1604000" />
     </task>
     <servers />
   </component>

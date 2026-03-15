@@ -107,7 +107,7 @@ namespace Terramorphers
                     var tile = await _tileFactory.CreateTile(type);
                     if (tile == null) return false;
                     tile.Transform.position = positionData.rows[i].positions[j];
-                   
+                    tile.Transform.name = $"Tile_{i}_{j}";
                     row.Add(tile);
                 }
 
@@ -151,12 +151,12 @@ namespace Terramorphers
         private void SetMovableTiles(SetMovableTilesCommand tilesCommand, PublishContext context)
         {
             ClearSpecialTiles();
-           
-            List<ITile> movableTiles = board.GetTileMovable(tilesCommand.CenterTile, tilesCommand.Distance, tile => tile.GetMoveCost());
-            currentSpecialTiles = movableTiles;
+            List<(ITile,int)> movableTiles = board.GetTileMovable(tilesCommand.CenterTile, tilesCommand.Distance, tile => tile.GetMoveCost());
+            currentSpecialTiles = movableTiles.Select(t => t.Item1).ToList();
+            Debug.Log($"[Test] {tilesCommand.CenterTile.Transform.name} {tilesCommand.Distance} {movableTiles.Count}");
             foreach (var tile in movableTiles)
             {
-                tile.ChangeState(ETileState.Movable);
+                tile.Item1.ChangeState(ETileState.Movable, tile.Item2);
             }
         }
 

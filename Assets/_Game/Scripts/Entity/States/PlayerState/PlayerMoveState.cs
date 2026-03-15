@@ -4,6 +4,7 @@ using System.Linq;
 using CoreGame;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using GameCore.Commands;
 using Terramorphers.Command;
 using UnityEngine;
 using VitalRouter;
@@ -24,6 +25,7 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
+            entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = false });
             entity.Publisher.PublishAsync(new ClearSpecialTilesCommand());
 
             MoveToTargetTile().Forget();

@@ -1,7 +1,10 @@
 
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Terramorphers.Command;
+using Terramorphers.States;
 using Terramorphers.States.PlayerState;
+using UnityEngine;
 using VContainer;
 using VitalRouter;
 
@@ -32,6 +35,7 @@ namespace Terramorphers
 
         private SelectMoveTileState _selectMoveTileState;
         private PlayerMoveState _moveState;
+        private EntityWaitingState _waitingState;
 
         #endregion
         #region Properties
@@ -78,12 +82,16 @@ namespace Terramorphers
             base.Awake();
             _selectMoveTileState = new SelectMoveTileState(this, string.Empty);
             _moveState = new PlayerMoveState(this, string.Empty);
+            _waitingState = new EntityWaitingState(this, string.Empty);
+            AddState(_waitingState);
             AddState(_selectMoveTileState);
+            
             AddState(_moveState);
         }
 
         public override void OnEnter()
         {
+           
             remainMoveDistance = moveDistance;
             _inputManager.OnEnter();
             ChangeState(_selectMoveTileState);
@@ -96,6 +104,7 @@ namespace Terramorphers
 
         public override void OnExit()
         {
+            ChangeState(_waitingState);
         }
 
         public override void SetTile(ITile tile)

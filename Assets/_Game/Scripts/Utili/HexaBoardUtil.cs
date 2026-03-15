@@ -75,7 +75,7 @@ namespace Terramorphers
 
         #endregion
 
-        public static List<T> GetTileMovable<T>(this List<List<T>> board, T center, int radius, Func<T, int> getMoveCost) where T : class
+        public static List<(T,int)> GetTileMovable<T>(this List<List<T>> board, T center, int radius, Func<T, int> getMoveCost) where T : class
         {
             var centerID = board.GetIndex(center);
             if (!board.IsValidPos(centerID)) return new();
@@ -90,7 +90,7 @@ namespace Terramorphers
             queue.Enqueue(centerID);
             visited.Add(centerID);
 
-            List<T> result = new();
+            List<(T,int)> result = new();
             while (queue.Count > 0)
             {
                 var node = queue.Dequeue();
@@ -104,7 +104,7 @@ namespace Terramorphers
 
                     int newDistance = distance.Get(node) + moveCost;
                     distance.Set(neighborIndex, newDistance);
-                    if(newDistance <= radius) result.Add(board.Get(neighborIndex));
+                    if(newDistance <= radius) result.Add((board.Get(neighborIndex), newDistance));
                     if(newDistance < radius) queue.Enqueue(neighborIndex);
                     
 

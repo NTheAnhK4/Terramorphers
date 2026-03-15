@@ -1,6 +1,6 @@
 using System;
 using CoreGame;
-
+using GameCore.Commands;
 using Terramorphers.Command;
 using UnityEngine;
 using VitalRouter;
@@ -22,7 +22,7 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
-          
+            entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = true });
             entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainMoveDistance });
             _disposable = entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile);
         }

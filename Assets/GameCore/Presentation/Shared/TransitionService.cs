@@ -13,6 +13,7 @@ using ZBase.UnityScreenNavigator.Core.Screens;
 using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
 using GameCore.Presentation;
+using GameCore.Presentation.GamePlay;
 
 namespace GameCore.Presentaion.Shared
 {
@@ -131,6 +132,14 @@ namespace GameCore.Presentaion.Shared
                 "TestModal",
                 modal => new TestPresenter(modal));
             return presentor;
+        }
+
+        public async UniTask<GamePlayPresenter> ShowGamePlayScreen()
+        {
+            var presenter = await ShowScreenPresenterAsync<GamePlayPresenter, GamePlayScreen, GamePlayViewState>(
+                "GamePlayScreen",
+                screen => new GamePlayPresenter(screen), false);
+            return presenter;
         }
 
     }

@@ -20,7 +20,7 @@ namespace Terramorphers
 
         public void OnEnter()
         {
-            mainCamera = Camera.main;
+            if(mainCamera == null) mainCamera = Camera.main;
         }
 
         public void OnUpdate()
