@@ -17,6 +17,7 @@ namespace Terramorphers
         private ICommandSubscribable _subscribable;
         private ICommandPublisher _publisher;
         private int currentRound;
+        public Player Player;
 
         public EntityManager(EntityFactory entityFactory, ICommandSubscribable subscribable, ICommandPublisher publisher)
         {
@@ -28,6 +29,7 @@ namespace Terramorphers
         public async UniTask AddEntity(int entityID, ITile tile)
         {
             TerramorphersEntity entity = await _entityFactory.Create(entityID);
+            if (entity is Player player) Player = player;
             if (entity == null)
             {
                 Debug.Log($"[EntityManager] can not add entity {entityID}");
@@ -38,6 +40,7 @@ namespace Terramorphers
             if (_currentEntity == null)
             {
                 _entities.AddFirst(entity);
+                _currentEntity = _entities.First;
             }
             else _entities.AddAfter(_currentEntity, entity);
         }
@@ -47,6 +50,7 @@ namespace Terramorphers
             currentRound = 1;
             _currentEntity = _entities.First;
             if(_currentEntity != null) _currentEntity.Value.OnEnter();
+            
             bags.Add(_subscribable.Subscribe<EndEntityTurnCommand>(EndCurrentEntityTurn));
         }
 
@@ -64,6 +68,7 @@ namespace Terramorphers
         private void EndCurrentEntityTurn(EndEntityTurnCommand command, PublishContext context)
         {
             _currentEntity.Value.OnExit();
+            
             if (_currentEntity.Next == null)
             {
                 _currentEntity = _entities.First;
@@ -75,5 +80,23 @@ namespace Terramorphers
             _currentEntity.Value.OnEnter();
         }
 
+        public List<TerramorphersEntity> GetEnemies(TerramorphersEntity owner)
+        {
+            if (owner is Enemy)
+            {
+                return new List<TerramorphersEntity>() { Player };
+            }
+            else
+            {
+                List<TerramorphersEntity> result = new();
+                var firstNode = _entities.First;
+                while (firstNode.Next != null)
+                {
+                    if(firstNode.Value is Enemy) result.Add(firstNode.Value);
+                }
+
+                return result;
+            }
+        }
     }
 }

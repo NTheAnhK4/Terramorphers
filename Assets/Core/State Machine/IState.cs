@@ -24,11 +24,26 @@ namespace CoreGame
         protected T entity;
         private string animBoolName;
         private Func<string> animNameFunc;
+        private int animHash;
 
         public State(T entity, string animBoolName)
         {
             this.entity = entity;
             this.animBoolName = animBoolName;
+        }
+
+        public State(T entity, int animationHash)
+        {
+            this.entity = entity;
+            animHash = animationHash;
+        }
+        
+
+        public State(T entity)
+        {
+            this.entity = entity;
+            animHash = -1;
+            animBoolName = "";
         }
 
         public State(T entity, Func<string> animNameFunc)
@@ -43,7 +58,7 @@ namespace CoreGame
         {
             if (animNameFunc != null)   animBoolName = animNameFunc.Invoke();
             if(!string.IsNullOrEmpty(animBoolName)) entity.Anim.SetBool(animBoolName, true);
-         
+            if(animHash > 0) entity.Anim.Play(animHash);
             entity.IsAnimationTriggerFinished = false;
             entity.curentState = this.GetType().Name;
             // Debug.Log(entity.name + " " + this.GetType().Name);

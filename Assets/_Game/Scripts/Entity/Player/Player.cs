@@ -1,13 +1,11 @@
 
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using GameCore.Commands;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
 using UnityEngine;
 using VContainer;
 using VitalRouter;
-
 namespace Terramorphers
 {
     public class Player : TerramorphersEntity
@@ -24,10 +22,10 @@ namespace Terramorphers
         #region Runtime Data
 
         private ITile selectedTile;
-        private int moveDistance = 3;
-        private ITile currentTile;
+        private int stamina = 3;
+       
         private float moveSpeed = .5f;
-        private int remainMoveDistance;
+        private int remainStamina;
 
         #endregion
 
@@ -36,16 +34,25 @@ namespace Terramorphers
         private SelectMoveTileState _selectMoveTileState;
         private PlayerMoveState _moveState;
         private EntityWaitingState _waitingState;
+        private PlayerSelectSkillTileState _selectSkillTileState;
 
         #endregion
         #region Properties
 
-        public ITile CurrentTile => currentTile;
+      
 
-        public int RemainMoveDistance
+        public int RemainStamina
         {
-            get => remainMoveDistance;
-            set => remainMoveDistance = value;
+            get => remainStamina;
+            set
+            {
+                if (value != remainStamina)
+                {
+                    if (_publisher != null) _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = value });
+                    remainStamina = value;
+                }
+                
+            }
         }
 
         public ICommandPublisher Publisher => _publisher;
@@ -57,6 +64,8 @@ namespace Terramorphers
         public SelectMoveTileState SelectMoveTileState => _selectMoveTileState;
 
         public PlayerMoveState MoveState => _moveState;
+
+        public PlayerSelectSkillTileState SelectSkillTileState => _selectSkillTileState;
 
         public BoardManager BoardManager => _boardManager;
 
@@ -83,17 +92,19 @@ namespace Terramorphers
             _selectMoveTileState = new SelectMoveTileState(this, string.Empty);
             _moveState = new PlayerMoveState(this, string.Empty);
             _waitingState = new EntityWaitingState(this, string.Empty);
+            _selectSkillTileState = new PlayerSelectSkillTileState(this, string.Empty);
             AddState(_waitingState);
             AddState(_selectMoveTileState);
-            
+            AddState(_selectSkillTileState);
             AddState(_moveState);
         }
 
         public override void OnEnter()
         {
-           
-            remainMoveDistance = moveDistance;
+            _publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = true });
+            remainStamina = stamina;
             _inputManager.OnEnter();
+            _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = remainStamina });
             ChangeState(_selectMoveTileState);
         }
 
@@ -105,12 +116,16 @@ namespace Terramorphers
         public override void OnExit()
         {
             ChangeState(_waitingState);
+            _publisher.PublishAsync(new ClearSpecialTilesCommand());
+            _publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = false });
         }
 
         public override void SetTile(ITile tile)
         {
+            if (currentTile != null) currentTile.CurrentOccupant = null;
             transform.position = tile.Transform.position;
             currentTile = tile;
+            if (currentTile != null) currentTile.CurrentOccupant = this;
         }
 
         

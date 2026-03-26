@@ -28,13 +28,13 @@ namespace Terramorphers.States.PlayerState
             entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = false });
             entity.Publisher.PublishAsync(new ClearSpecialTilesCommand());
 
-            MoveToTargetTile().Forget();
-            
+            MoveToTargetTile();
+
         }
 
        
 
-        private async UniTask MoveToTargetTile()
+        private void MoveToTargetTile()
         {
             var moveTiles = entity.BoardManager.GetPath(entity.CurrentTile, entity.SelectedTile);
             if (moveTiles == null || moveTiles.Count <= 1) return;
@@ -45,8 +45,8 @@ namespace Terramorphers.States.PlayerState
             }).OnComplete(() =>
             {
               
-                entity.RemainMoveDistance -= moveTiles.Skip(1).Select(t => t.GetMoveCost()).Sum();
-               
+                entity.RemainStamina -= moveTiles.Skip(1).Select(t => t.GetMoveCost()).Sum();
+             
                 entity.ChangeState(entity.SelectMoveTileState);
             });
         }

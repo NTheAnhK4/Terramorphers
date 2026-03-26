@@ -54,6 +54,9 @@ namespace Terramorphers
             ITile playerTile = GetRandomTile(passibleTile);
             await _entityManager.AddEntity(0, playerTile);
 
+            ITile enemyTile = GetRandomTile(passibleTile);
+            await _entityManager.AddEntity(1, enemyTile);
+
             //TODO: show anim
             switch (_gameManager.GameMode)
             {

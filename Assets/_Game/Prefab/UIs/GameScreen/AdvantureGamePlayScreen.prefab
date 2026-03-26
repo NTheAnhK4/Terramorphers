@@ -282,9 +282,10 @@ MonoBehaviour:
     _pushExitAnimations: []
     _popEnterAnimations: []
     _popExitAnimations: []
-  manaText: {fileID: 0}
-  staminaText: {fileID: 0}
-  turnText: {fileID: 0}
+  manaText: {fileID: 4448880474999018837}
+  staminaText: {fileID: 4061906638053360163}
+  turnText: {fileID: 5494756925379900624}
+  roundAmountText: {fileID: 9119153870917310739}
   continueBtn: {fileID: 0}
   settingBtn: {fileID: 0}
   endTurnBtn: {fileID: 6801943878025649176}

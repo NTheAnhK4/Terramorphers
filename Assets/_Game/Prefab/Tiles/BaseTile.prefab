@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -98
   m_Sprite: {fileID: 21300000, guid: f181e36bba07aa5409a6b052ef458d82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -133,6 +133,9 @@ MonoBehaviour:
   interactableSR: {fileID: 6047573181115148412}
   movableColor: {r: 0.6156863, g: 1, b: 0.59607846, a: 1}
   skillApplicableColor: {r: 1, g: 1, b: 1, a: 1}
+  enemyTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
+  allyTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
+  tileTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3671603804082959802
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +364,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -98
   m_TargetDisplay: 0
 --- !u!114 &5858975245971321321
 MonoBehaviour:

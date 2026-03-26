@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b271830eedc91ee49a03b895d5d7fadf
   m_SerializeEntries:
+  - m_GUID: c79c2001cdc8a4a4c83b469501b47c66
+    m_Address: SatyrRaider
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf6f9e7822a70cb4fbebb7972b53c835
     m_Address: Player
     m_ReadOnly: 0

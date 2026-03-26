@@ -16,3 +16,6 @@ MonoBehaviour:
   - key: 0
     value:
       addressable: Player
+  - key: 1
+    value:
+      addressable: SatyrRaider

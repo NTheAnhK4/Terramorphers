@@ -60,10 +60,11 @@ namespace CoreGame
             var nextState = nodes[state.GetType()].State;
             
             previousState?.OnExit();
-            
+           
             nextState?.OnEnter(stateData?.Invoke());
-
+            
             current = nodes[state.GetType()];
+         
         }
 
         ITransition GetTransition()

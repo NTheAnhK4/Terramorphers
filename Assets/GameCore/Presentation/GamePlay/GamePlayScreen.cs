@@ -35,7 +35,7 @@ namespace GameCore.Presentation.GamePlay
             coverEndTurnBtn.gameObject.SetActive(!isOn);
         }
 
-        private void SetRound(int round) => roundAmountText.text = round.ToString();
+        private void SetRound(int round) => roundAmountText.text = $"Round : {round}";
     }
 
 }

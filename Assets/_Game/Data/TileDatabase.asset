@@ -49,3 +49,33 @@ MonoBehaviour:
       tileName: Snow Tile
       description: 
       addresable: SnowTile
+  - key: 10
+    value:
+      type: 10
+      tileName: Corrupted Tile
+      description: 
+      addresable: CorruptedTile
+  - key: 7
+    value:
+      type: 7
+      tileName: Sand Tile
+      description: 
+      addresable: SandTile
+  - key: 8
+    value:
+      type: 8
+      tileName: Healing Tile
+      description: 
+      addresable: HealingTile
+  - key: 6
+    value:
+      type: 6
+      tileName: Sacrificial Tile
+      description: 
+      addresable: SacrificialTile
+  - key: 9
+    value:
+      type: 9
+      tileName: Refreshing Tile
+      description: 
+      addresable: RefreshingTile

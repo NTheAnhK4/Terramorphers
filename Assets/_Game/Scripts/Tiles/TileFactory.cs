@@ -22,6 +22,8 @@ namespace Terramorphers
         {
             
             var tileMetadata = _tileDatabase.GetByType(type);
+           
+          
             var tilePrefab = await Addressables.LoadAssetAsync<GameObject>(tileMetadata.Addresable);
             if (tilePrefab == null)
             {

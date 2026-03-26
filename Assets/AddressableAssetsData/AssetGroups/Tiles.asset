@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61c1960b74821b94f9a4a49e86fce1e7
+    m_Address: SandTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 670973bb5a6bba844946b427c0aea65a
     m_Address: FreezingTile
     m_ReadOnly: 0
@@ -29,6 +34,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 875d5d43cfddb8243940e5b384f86358
     m_Address: PrismaticTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a37e70586b3c2b343a9591cfcec3b6dc
+    m_Address: RefreshingTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af88204cab2963e41a77b4e112ced4a2
+    m_Address: HealingTile
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

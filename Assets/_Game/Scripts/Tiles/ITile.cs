@@ -1,4 +1,5 @@
 
+using GameCore.Utility.Shape;
 using UnityEngine;
 
 namespace Terramorphers
@@ -11,6 +12,8 @@ namespace Terramorphers
         bool IsBlockVisibility();
         Transform Transform { get; }
         int GetMoveCost();
+        Cube Index { get; set; }
+        TerramorphersEntity CurrentOccupant { get; set; }
 
     }
 
@@ -19,6 +22,9 @@ namespace Terramorphers
         Normal,
         Movable,
         SkillApplicable,
+        AllyTargetSkill,
+        EnemyTargetSkill,
+        TileTargetSkill,
     }
 }
 

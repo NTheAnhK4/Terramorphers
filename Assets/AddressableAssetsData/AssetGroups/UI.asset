@@ -27,6 +27,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 534a2efce0633bd4eb3012e5af3fa18d
+    m_Address: CorruptedTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c44de904acede7f4f95acc081e44c16c
+    m_Address: SacrificialTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f23d8492ff6035c4b91d38a6b941ec6b
     m_Address: TestModal
     m_ReadOnly: 0

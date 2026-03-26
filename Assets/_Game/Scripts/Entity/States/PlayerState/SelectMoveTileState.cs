@@ -23,13 +23,19 @@ namespace Terramorphers.States.PlayerState
         {
             base.OnEnter(stateData);
             entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = true });
-            entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainMoveDistance });
+            entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainStamina });
             _disposable = entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile);
         }
 
         public override void Update()
         {
             base.Update();
+            //test
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                entity.ChangeState(entity.SelectSkillTileState);
+                return;
+            }
             entity.InputManager.OnUpdate();
         }
 
