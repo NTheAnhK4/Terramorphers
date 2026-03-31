@@ -5,358 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/000Research.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/SetRemainStaminaCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/SetRemainStaminaCommand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/DataStructure.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/DataStructure/PriorityQueue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/DataStructure/PriorityQueue.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/Cube.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/Cube.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/Hex.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/Hex.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.Dijkstra.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.Dijkstra.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.PathFinding.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.PathFinding.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Animations.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Corrupted Tile Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Corrupted Tile Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Healing Tile Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Healing Tile Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Refreshing Tile Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Refreshing Tile Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Sacrificial Tile Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/Sacrificial Tile Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/SandTile Variant.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/SandTile Variant.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Commands/SetSkillApplicableTilesCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Commands/SetSkillApplicableTilesCommand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/EnemyMoveState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/EnemyMoveState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkill.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkill.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForAlly.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForAlly.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForEnemy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForEnemy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForSelf.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkillApplyForSelf.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/StatsMediator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/StatsMediator.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/SandTile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/SandTile.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Entities.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Entities.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Tiles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Tiles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/IEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/IEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Service.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Service.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Commands/ToggleEndTurnCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/EnableEndTurnCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Commands/ToggleEndTurnCommand.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/EnableEndTurnCommand.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GameCore.Presentation.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GameCore.Presentation.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_ArrowLeft.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_ArrowLeft.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_ArrowLeft.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_ArrowLeft.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Book.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Book.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Book.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Book.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_InvChest.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_InvChest.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_InvChest.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_InvChest.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_InvRing.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_InvRing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_InvRing.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_InvRing.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_List.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_List.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_List.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_List.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Refresh.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Refresh.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Refresh.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Refresh.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Save1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Save1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Save1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Save1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Stats.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Stats.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/UI_Icon_Stats.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/UI_Icon_Stats.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/energyIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/energyIcon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/energyIcon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/energyIcon.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/mainMenuIcons.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/mainMenuIcons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/mainMenuIcons.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/mainMenuIcons.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/statIcons.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/statIcons.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/statIcons.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/statIcons.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/store_icons_and_gems.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/store_icons_and_gems.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Icons/store_icons_and_gems.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Icons/store_icons_and_gems.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/baseTile.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/baseTile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/baseTile.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/baseTile.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/hex_objects.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/hex_objects.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/hex_objects.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/hex_objects.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/specialTiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/specialTiles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Objects/specialTiles.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Objects/specialTiles.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/absolute_zero.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/absolute_zero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/absolute_zero.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/absolute_zero.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/adrenaline.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/adrenaline.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/adrenaline.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/adrenaline.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/agonizing_screech.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/agonizing_screech.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/agonizing_screech.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/agonizing_screech.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/apocalypse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/apocalypse.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/apocalypse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/apocalypse.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/berserk.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/berserk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/berserk.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/berserk.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blind_teleportation.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blind_teleportation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blind_teleportation.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blind_teleportation.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blinding_hit.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blinding_hit.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blinding_hit.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blinding_hit.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blinding_sand.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blinding_sand.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blinding_sand.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blinding_sand.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blink.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/blink.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/blink.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/bloodshed.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/bloodshed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/bloodshed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/bloodshed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/bomb_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/bomb_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/bomb_0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/bomb_0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/chain_lightning.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/chain_lightning.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/chain_lightning.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/chain_lightning.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/cleave.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/cleave.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/cleave.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/cleave.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/conversion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/conversion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/conversion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/conversion.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/corrupting_rain.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/corrupting_rain.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/corrupting_rain.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/corrupting_rain.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/corrupting_tiles.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/corrupting_tiles.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/corrupting_tiles.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/corrupting_tiles.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/crippling_stab.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/crippling_stab.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/crippling_stab.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/crippling_stab.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/crippling_strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/crippling_strike.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/crippling_strike.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/crippling_strike.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/curse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/curse.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/curse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/curse.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/daring_strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/daring_strike.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/daring_strike.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/daring_strike.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/desertification.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/desertification.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/desertification.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/desertification.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/dispell.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/dispell.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/dispell.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/dispell.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_knowledge.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_knowledge.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_knowledge.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_knowledge.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_prayer.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_prayer.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_prayer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_prayer.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_punch.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_punch.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_punch.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_punch.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_shield.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_shield.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/divine_shield.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/divine_shield.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/double-edged_blade.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/double-edged_blade.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/double-edged_blade.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/double-edged_blade.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/drain_life.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/drain_life.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/drain_life.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/drain_life.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/earthquake.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/earthquake.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/earthquake.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/earthquake.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/empower.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/empower.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/empower.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/empower.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/enrage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/enrage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/enrage.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/enrage.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/exhausting_fling.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/exhausting_fling.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/exhausting_fling.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/exhausting_fling.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/farsight.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/farsight.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/farsight.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/farsight.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/first_aid.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/first_aid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/first_aid.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/first_aid.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/flashHeal.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/flashHeal.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/flashHeal.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/flashHeal.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/focus.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/focus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/focus.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/focus.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/golden_luck.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/golden_luck.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/golden_luck.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/golden_luck.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/group_blind_teleportation.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/group_blind_teleportation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/group_blind_teleportation.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/group_blind_teleportation.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/group_first_aid.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/group_first_aid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/group_first_aid.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/group_first_aid.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/healing_potion.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/healing_potion.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/healing_potion.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/healing_potion.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/heavy_strike.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/heavy_strike.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/heavy_strike.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/heavy_strike.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/ice_age.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/ice_age.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/ice_age.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/ice_age.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/infinite_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/infinite_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/infinite_arrow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/infinite_arrow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/inner_strentgh.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/inner_strentgh.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/inner_strentgh.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/inner_strentgh.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/inspiring_song.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/inspiring_song.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/inspiring_song.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/inspiring_song.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/irritate.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/irritate.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/irritate.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/irritate.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/jemutts_punishment.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/jemutts_punishment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/jemutts_punishment.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/jemutts_punishment.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/judgement.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/judgement.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/judgement.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/judgement.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/maaks_punishment.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/maaks_punishment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/maaks_punishment.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/maaks_punishment.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/mass_sorrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/mass_sorrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/mass_sorrow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/mass_sorrow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/meditation.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/meditation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/meditation.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/meditation.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/meteorites.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/meteorites.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/meteorites.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/meteorites.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/natures_choice.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/natures_choice.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/natures_choice.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/natures_choice.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/poison_arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/poison_arrow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/poison_arrow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/poison_arrow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/practiced_shot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/practiced_shot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/practiced_shot.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/practiced_shot.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/practiced_slash.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/practiced_slash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/practiced_slash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/practiced_slash.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/punch.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/punch.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/punch.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/punch.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/quick_step.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/quick_step.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/quick_step.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/quick_step.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/raging_blow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/raging_blow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/raging_blow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/raging_blow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/rejuvenation.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/rejuvenation.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/rejuvenation.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/rejuvenation.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/reposition.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/reposition.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/reposition.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/reposition.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/reshape.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/reshape.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/reshape.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/reshape.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sand_slash.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sand_slash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sand_slash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sand_slash.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sand_tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sand_tile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sand_tile.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sand_tile.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sandstorm.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sandstorm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sandstorm.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sandstorm.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sandtastic.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sandtastic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sandtastic.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sandtastic.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/shield_bash.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/shield_bash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/shield_bash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/shield_bash.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/shockwave.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/shockwave.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/shockwave.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/shockwave.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/slash.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/slash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/slash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/slash.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/snow_tile.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/snow_tile.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/snow_tile.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/snow_tile.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sprint.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sprint.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/sprint.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/sprint.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/syphon_life.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/syphon_life.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/syphon_life.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/syphon_life.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/tactical_shot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/tactical_shot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/tactical_shot.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/tactical_shot.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/teleport.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/teleport.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/teleport.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/teleport.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/throwing_knife.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/throwing_knife.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/throwing_knife.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/throwing_knife.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/thunderstorm.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/thunderstorm.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/thunderstorm.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/thunderstorm.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/torment.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/torment.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/torment.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/torment.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/war_cry.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/war_cry.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/war_cry.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/war_cry.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/weaken.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/weaken.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/weaken.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/weaken.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/wounding_slash.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/wounding_slash.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/wounding_slash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/wounding_slash.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/wrath_of_gods.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/wrath_of_gods.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/wrath_of_gods.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/wrath_of_gods.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/zap.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/zap.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/Skills/zap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Skills/zap.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/UIMask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/UIMask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/UIMask.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/UIMask.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/UISprite.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/UISprite.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/UISprite.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/UISprite.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/apFill.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/apFill.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/apFill.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/apFill.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/endTurnButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/endTurnButton.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/endTurnButton.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/endTurnButton.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Clan-66bcc16a.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Clan-66bcc16a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Clan-66bcc16a.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Clan-66bcc16a.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Common-2cf8ddf4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Common-2cf8ddf4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Common-2cf8ddf4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Common-2cf8ddf4.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Levleup-c55162ed.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Levleup-c55162ed.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Levleup-c55162ed.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Levleup-c55162ed.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Lobby-5baa0498.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Lobby-5baa0498.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Lobby-5baa0498.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Lobby-5baa0498.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Pass-b957fe23.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Pass-b957fe23.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Pass-b957fe23.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Pass-b957fe23.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Reward-cf8ea129.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Reward-cf8ea129.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Reward-cf8ea129.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Reward-cf8ea129.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Shop-2f5de56b.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Shop-2f5de56b.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Shop-2f5de56b.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Shop-2f5de56b.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Stage-1bd7ea06.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Stage-1bd7ea06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x1024-ETC2-Stage-1bd7ea06.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x1024-ETC2-Stage-1bd7ea06.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x2048-ETC2-OfflineReward-5d669353.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x2048-ETC2-OfflineReward-5d669353.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x2048-ETC2-OfflineReward-5d669353.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x2048-ETC2-OfflineReward-5d669353.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Character_List_Select-5e6fbc5c.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Character_List_Select-5e6fbc5c.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Character_List_Select-5e6fbc5c.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Character_List_Select-5e6fbc5c.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Character_Passive-ba5d4180.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Character_Passive-ba5d4180.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Character_Passive-ba5d4180.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Character_Passive-ba5d4180.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Lobby_UserInfo-73d5eccd.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Lobby_UserInfo-73d5eccd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Lobby_UserInfo-73d5eccd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Lobby_UserInfo-73d5eccd.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-PlayBattle_VS-366e9b47.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-PlayBattle_VS-366e9b47.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-PlayBattle_VS-366e9b47.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-PlayBattle_VS-366e9b47.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-PopupSubscribe-7811d6ce.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-PopupSubscribe-7811d6ce.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-PopupSubscribe-7811d6ce.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-PopupSubscribe-7811d6ce.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Roulette-4d3ea530.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Roulette-4d3ea530.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-1024x512-ETC2-Roulette-4d3ea530.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-1024x512-ETC2-Roulette-4d3ea530.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x1024-ETC2-Equipment_Inventory-39ff2577.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x1024-ETC2-Equipment_Inventory-39ff2577.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x1024-ETC2-Equipment_Inventory-39ff2577.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x1024-ETC2-Equipment_Inventory-39ff2577.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x1024-ETC2-RuneFuse-0459cdd8.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x1024-ETC2-RuneFuse-0459cdd8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x1024-ETC2-RuneFuse-0459cdd8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x1024-ETC2-RuneFuse-0459cdd8.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x512-ETC2-Play-f22b513b.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x512-ETC2-Play-f22b513b.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-2048x512-ETC2-Play-f22b513b.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-2048x512-ETC2-Play-f22b513b.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x256-ETC2-Tutorial-b2dd569e.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x256-ETC2-Tutorial-b2dd569e.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x256-ETC2-Tutorial-b2dd569e.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x256-ETC2-Tutorial-b2dd569e.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-AdRemove-cd0775f0.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-AdRemove-cd0775f0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-AdRemove-cd0775f0.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-AdRemove-cd0775f0.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Chat-29d1b4cd.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Chat-29d1b4cd.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Chat-29d1b4cd.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Chat-29d1b4cd.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Inbox-f90db5bf.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Inbox-f90db5bf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Inbox-f90db5bf.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Inbox-f90db5bf.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Popup-c6b525ac.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Popup-c6b525ac.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Popup-c6b525ac.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Popup-c6b525ac.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Ranking-2ef41548.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Ranking-2ef41548.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Ranking-2ef41548.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Ranking-2ef41548.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Rate-66be6b77.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Rate-66be6b77.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/sactx-0-512x512-ETC2-Rate-66be6b77.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/sactx-0-512x512-ETC2-Rate-66be6b77.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/staminaFill.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/staminaFill.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/UI/staminaFill.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/staminaFill.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/z7620578061442_34ac1cee41d35eb5330aec74f0777aef.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Pictures/z7620578061442_34ac1cee41d35eb5330aec74f0777aef.jpg.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayViewState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayViewState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/LevelData/TestLevel.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/LevelData/TestLevel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/TileDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/TileDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Configs/GameConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Configs/GameConstant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Commands/SetSkillApplicableTilesCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Commands/SetSkillApplicableTilesCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/SatyrRider/SatyrRiderThinkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/SatyrRider/SatyrRiderThinkingState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/SelectMoveTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/SelectMoveTileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BasicTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BasicTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ETileType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ETileType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameLifetimeScope.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameLifetimeScope.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Utili/HexaBoardUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/packages.config" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,20 +49,24 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/APIGateway/BaseAPIGateway.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/APIGateway/Skill/SkillAPIGateway.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/DI/GameLifetimeScope.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/LevelModuleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/RouterModuleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Domain/Shared/IMasterGateway.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Domain/Skills/SkillMetadata.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/ICloseTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Test/TestPresenter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Respository/Shared/BaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Timer/Timer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Animation/AnimationReceiver.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityDatabase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Eraser.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/WeakMadman.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/EnemyIdleState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/SatyrRider/SatyrRiderThinkingState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/GameFSM.cs" root0="FORCE_HIGHLIGHTING" />
@@ -389,6 +74,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/WinState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Skills/Interface/ISkill.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Stats/StatModifier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITileFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/SandTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileDatabase.cs" root0="FORCE_HIGHLIGHTING" />
@@ -510,7 +196,10 @@
       <workItem from="1774127035026" duration="3706000" />
       <workItem from="1774270402848" duration="13487000" />
       <workItem from="1774369158864" duration="4354000" />
-      <workItem from="1774535486905" duration="5439000" />
+      <workItem from="1774535486905" duration="10331000" />
+      <workItem from="1774777933401" duration="1732000" />
+      <workItem from="1774793713579" duration="9409000" />
+      <workItem from="1774970716885" duration="4301000" />
     </task>
     <servers />
   </component>

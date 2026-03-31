@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using CoreGame;
 using GameCore.Commands;
 using Terramorphers.Command;
@@ -10,7 +11,7 @@ namespace Terramorphers.States.PlayerState
     public class SelectMoveTileState : State<Player>
     {
 
-        private IDisposable _disposable;
+        private List<IDisposable> _disposables = new();
         public SelectMoveTileState(Player entity, string animBoolName) : base(entity, animBoolName)
         {
         }
@@ -22,21 +23,23 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
-            entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = true });
+            entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
+            entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
             entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainStamina });
-            _disposable = entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile);
+            _disposables.Add(entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile)); 
+            _disposables.Add(entity.Subscribable.Subscribe<UseSkillCommand>(UseSkill));
         }
 
         public override void Update()
         {
             base.Update();
-            //test
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                entity.ChangeState(entity.SelectSkillTileState);
-                return;
-            }
             entity.InputManager.OnUpdate();
+        }
+
+        private void UseSkill(UseSkillCommand command, PublishContext context)
+        {
+            SelectSkillTileData selectSkillTileData = new SelectSkillTileData() { SkillID = command.SkillID };
+            entity.ChangeState(entity.SelectSkillTileState, () => selectSkillTileData);
         }
 
         private void OnSelectTile(SelectTileCommand command, PublishContext context)
@@ -50,7 +53,8 @@ namespace Terramorphers.States.PlayerState
         public override void OnExit()
         {
             base.OnExit();
-            _disposable?.Dispose();
+            foreach(var disposable in _disposables) disposable.Dispose();
+            _disposables.Clear();
         }
     }
 }

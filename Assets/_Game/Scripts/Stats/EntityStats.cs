@@ -1,5 +1,6 @@
 namespace Terramorphers.Stats
 {
+    [System.Serializable]
     public class EntityStats
     {
         public int MaxHP;

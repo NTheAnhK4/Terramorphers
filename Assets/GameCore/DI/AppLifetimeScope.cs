@@ -1,6 +1,6 @@
 using GameCore.DI.ModuleInstaller;
 using GameCore.Presentaion.Shared;
-using Terramorphers;
+
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -18,6 +18,7 @@ namespace GameCore.DI
         {
             builder.RegisterModuleInstaller<RouterModuleInstaller>();
             builder.Register<TransitionService>(Lifetime.Singleton);
+            builder.RegisterModuleInstaller<SkillModuleInstaller>();
             _tileModuleInstaller.Register(builder);
             _levelModuleInstaller.Register(builder);
             _entityModuleInstaller.Register(builder);

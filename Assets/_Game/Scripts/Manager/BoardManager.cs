@@ -4,7 +4,9 @@ using System.Linq;
 using CoreGame;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using GameCore.Domain.Skill;
 using GameCore.Utility.Shape;
+using Sirenix.OdinInspector;
 using Terramorphers.Command;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -197,11 +199,46 @@ namespace Terramorphers
         private void SetSkillApplicableTiles(SetSkillApplicableTilesCommand command, PublishContext context)
         {
             ClearSpecialTiles();
-            List<ITile> skillApplicableTiles = hexaBoard.GetFieldOfViewValue(command.CenterTile.Index, command.Distance, tile => tile.IsBlockVisibility()).ToList();
+            List<ITile> skillApplicableTiles = hexaBoard.GetFieldOfViewValue(command.Entity.CurrentTile.Index, command.Distance, tile => tile.IsBlockVisibility()).ToList();
             currentSpecialTiles = skillApplicableTiles;
+            bool hasTileTarget = command.SkillTargetTypes.Contains(ESkillTargetType.Tile);
+            bool canSelf  = command.SkillTargetTypes.Contains(ESkillTargetType.Self);
+            bool canAlly  = command.SkillTargetTypes.Contains(ESkillTargetType.Ally);
+            bool canEnemy = command.SkillTargetTypes.Contains(ESkillTargetType.Enemy);
+
             foreach (var tile in skillApplicableTiles)
             {
-                tile.ChangeState(ETileState.SkillApplicable);
+              
+                if (hasTileTarget)
+                {
+                    tile.ChangeState(ETileState.TileTargetSkill);
+                    continue;
+                }
+
+                var occupant = tile.CurrentOccupant;
+
+                if (occupant == null)
+                {
+                    tile.ChangeState(ETileState.SkillApplicable);
+                    continue;
+                }
+
+                ETileState state = ETileState.SkillApplicable;
+
+                if (occupant == command.Entity)
+                {
+                    if (canSelf) state = ETileState.SelfTargetSkill;
+                }
+                else if (occupant.TeamID == command.Entity.TeamID)
+                {
+                    if (canAlly) state = ETileState.AllyTargetSkill;
+                }
+                else
+                {
+                    if (canEnemy) state = ETileState.EnemyTargetSkill;
+                }
+
+                tile.ChangeState(state);
             }
         }   
 

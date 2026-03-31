@@ -47,15 +47,13 @@ namespace Terramorphers
             {
                 
                 entity.MovePath = entity.BoardManager.GetPathWithLimitDistance(entity.CurrentTile, nearestEnemy.CurrentTile, entity.RemainStamina);
-                if(entity.MovePath[^1] != nearestEnemy.CurrentTile) entity.MovePath.Add(nearestEnemy.CurrentTile);
-             
                 if (entity.MovePath == null || entity.MovePath.Count < 2)
                 {
-                    
                     entity.Publisher.PublishAsync(new EndEntityTurnCommand());
                 }
                 else
                 {
+                    if(entity.MovePath[^1] != nearestEnemy.CurrentTile) entity.MovePath.Add(nearestEnemy.CurrentTile);
                     entity.SetStateWithMinCost(entity.MoveState);
                     entity.CaculateMinCost();
                    

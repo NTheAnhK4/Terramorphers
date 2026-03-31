@@ -22,6 +22,7 @@ namespace Terramorphers
         Normal,
         Movable,
         SkillApplicable,
+        SelfTargetSkill,
         AllyTargetSkill,
         EnemyTargetSkill,
         TileTargetSkill,

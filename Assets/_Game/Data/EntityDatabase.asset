@@ -16,6 +16,30 @@ MonoBehaviour:
   - key: 0
     value:
       addressable: Player
+      _entityStats:
+        MaxHP: 100
+        Mana: 100
+        Stamina: 3
+        Range: 2
+        PhysicalDamage: 0
+        MagicalDamage: 0
+        PhysicalResistance: 0
+        MagicalResistance: 0
+        NeutralResistance: 0
+        CriticalChance: 0
+        Healing: 0
   - key: 1
     value:
       addressable: SatyrRaider
+      _entityStats:
+        MaxHP: 20
+        Mana: 100
+        Stamina: 3
+        Range: 1
+        PhysicalDamage: 0
+        MagicalDamage: 0
+        PhysicalResistance: 0
+        MagicalResistance: 0
+        NeutralResistance: 0
+        CriticalChance: 0
+        Healing: 0

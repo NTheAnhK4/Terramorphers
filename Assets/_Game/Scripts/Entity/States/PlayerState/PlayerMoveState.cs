@@ -25,7 +25,8 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
-            entity.Publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = false });
+            entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
+            entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = false });
             entity.Publisher.PublishAsync(new ClearSpecialTilesCommand());
 
             MoveToTargetTile();

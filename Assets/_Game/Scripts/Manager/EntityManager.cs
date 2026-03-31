@@ -26,9 +26,9 @@ namespace Terramorphers
             _publisher = publisher;
         }
 
-        public async UniTask AddEntity(int entityID, ITile tile)
+        public async UniTask AddEntity(int entityID, ITile tile, int teamID)
         {
-            TerramorphersEntity entity = await _entityFactory.Create(entityID);
+            TerramorphersEntity entity = await _entityFactory.Create(entityID, teamID);
             if (entity is Player player) Player = player;
             if (entity == null)
             {

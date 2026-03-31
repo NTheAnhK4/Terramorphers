@@ -16,7 +16,7 @@
                 _entityDatabase = entityDatabase;
                 _resolver = resolver;
             }
-            public async UniTask<TerramorphersEntity> Create(int entityID) 
+            public async UniTask<TerramorphersEntity> Create(int entityID, int entityTeamID) 
             {
                 string address = _entityDatabase.GetByType(entityID).Addressable;
                 var handle = Addressables.LoadAssetAsync<GameObject>(address);
@@ -25,6 +25,7 @@
                 TerramorphersEntity result = entityGO.GetComponent<TerramorphersEntity>();
                 if (result == null) return null;
                 _resolver.Inject(result);
+                result.Init(_entityDatabase.GetByType(entityID), entityTeamID);
                 return result;
             }
         }

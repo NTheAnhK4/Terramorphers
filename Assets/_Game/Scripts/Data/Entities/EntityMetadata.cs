@@ -1,6 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+
+using Terramorphers.Stats;
 using UnityEngine;
 
 namespace Terramorphers
@@ -9,8 +9,11 @@ namespace Terramorphers
     public class EntityMetadata
     {
         [SerializeField] private string addressable;
+        [SerializeField] private EntityStats _entityStats;
 
         public string Addressable => addressable;
+
+        public EntityStats EntityStats => _entityStats;
     }
 
 }

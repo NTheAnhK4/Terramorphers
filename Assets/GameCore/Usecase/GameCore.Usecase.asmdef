@@ -1,0 +1,18 @@
+{
+    "name": "GameCore.Usecase",
+    "rootNamespace": "",
+    "references": [
+        "GUID:98a50d1f4d9483749ab27b21ae01263b",
+        "GUID:0d9380203da337244919c5f49d4703be",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

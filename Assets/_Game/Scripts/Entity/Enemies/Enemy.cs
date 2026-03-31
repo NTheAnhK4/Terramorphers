@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using CoreGame;
+using Sirenix.OdinInspector;
+using Terramorphers.Stats;
 using UnityEngine;
 using VContainer;
 using VitalRouter;
@@ -11,10 +13,9 @@ namespace Terramorphers
 {
     public class Enemy : TerramorphersEntity
     {
-        //tempvalue
-        public int Stamina = 3;
-        public int MoveSpeed = 1;
-        public int RemainStamina;
+        
+        
+        
         protected EntityManager _entityManager;
         protected BoardManager _boardManager;
         protected ICommandPublisher _publisher;
@@ -28,8 +29,9 @@ namespace Terramorphers
         public BoardManager BoardManager => _boardManager;
 
         public ICommandPublisher Publisher => _publisher;
-       
 
+        public int RemainStamina;
+        public Stats.Stats Stats => statsSystem.Stats;
        
 
         #region Runtime Data
@@ -45,6 +47,8 @@ namespace Terramorphers
             _boardManager = boardManager;
             _publisher = publisher;
         }
+
+        
 
         
 
@@ -94,7 +98,7 @@ namespace Terramorphers
 
         public override void OnEnter()
         {
-            RemainStamina = Stamina;
+           
             
         }
         public virtual void TurnToThinkingState(){}
@@ -109,6 +113,8 @@ namespace Terramorphers
 
         public override void OnExit()
         {
+            statsSystem.Update();
+            RemainStamina = statsSystem.Stats.Stamina;
             
         }
 

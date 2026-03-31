@@ -1,11 +1,12 @@
-
 using GameCore.Commands;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
+using Terramorphers.Stats;
 using UnityEngine;
 using VContainer;
 using VitalRouter;
+
 namespace Terramorphers
 {
     public class Player : TerramorphersEntity
@@ -16,6 +17,7 @@ namespace Terramorphers
         private BoardManager _boardManager;
         private ICommandPublisher _publisher;
         private ICommandSubscribable _subscribable;
+        private SkillManager _skillManager;
 
         #endregion
 
@@ -23,7 +25,7 @@ namespace Terramorphers
 
         private ITile selectedTile;
         private int stamina = 3;
-       
+
         private float moveSpeed = .5f;
         private int remainStamina;
 
@@ -37,9 +39,8 @@ namespace Terramorphers
         private PlayerSelectSkillTileState _selectSkillTileState;
 
         #endregion
-        #region Properties
 
-      
+        #region Properties
 
         public int RemainStamina
         {
@@ -51,7 +52,6 @@ namespace Terramorphers
                     if (_publisher != null) _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = value });
                     remainStamina = value;
                 }
-                
             }
         }
 
@@ -70,6 +70,9 @@ namespace Terramorphers
         public BoardManager BoardManager => _boardManager;
 
         public float MoveSpeed => moveSpeed;
+
+        public SkillManager SkillManager => _skillManager;
+
         public ITile SelectedTile
         {
             get => selectedTile;
@@ -77,13 +80,17 @@ namespace Terramorphers
         }
 
         #endregion
+
         [Inject]
-        public void Construct(InputManager inputManager, BoardManager boardManager, ICommandPublisher publisher, ICommandSubscribable subscribable)
+        public void Construct(InputManager inputManager, BoardManager boardManager, 
+            ICommandPublisher publisher, ICommandSubscribable subscribable,
+            SkillManager skillManager)
         {
             _inputManager = inputManager;
             _boardManager = boardManager;
             _publisher = publisher;
             _subscribable = subscribable;
+            _skillManager = skillManager;
         }
 
         protected override void Awake()
@@ -99,9 +106,11 @@ namespace Terramorphers
             AddState(_moveState);
         }
 
+
         public override void OnEnter()
         {
-            _publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = true });
+            _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
+            _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
             remainStamina = stamina;
             _inputManager.OnEnter();
             _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = remainStamina });
@@ -110,14 +119,15 @@ namespace Terramorphers
 
         public override void OnUpdate()
         {
-           _stateMachine.Update();
+            _stateMachine.Update();
         }
 
         public override void OnExit()
         {
             ChangeState(_waitingState);
             _publisher.PublishAsync(new ClearSpecialTilesCommand());
-            _publisher.PublishAsync(new ToggleEndTurnCommand() { IsOn = false });
+            _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
+            _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = false });
         }
 
         public override void SetTile(ITile tile)
@@ -128,12 +138,10 @@ namespace Terramorphers
             if (currentTile != null) currentTile.CurrentOccupant = this;
         }
 
-        
 
         public override bool IsDead()
         {
             return false;
         }
     }
-
 }

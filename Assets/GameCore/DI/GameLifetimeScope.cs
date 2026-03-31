@@ -1,12 +1,13 @@
 
 
-using CoreGame;
-using UnityEngine;
+
+using GameCore.DI.ModuleInstaller;
+
 using VContainer;
 using VContainer.Unity;
 using VitalRouter.VContainer;
-
-namespace Terramorphers
+using Terramorphers;
+namespace GameCore.DI
 {
     public class GameLifetimeScope : LifetimeScope
     {
@@ -24,7 +25,7 @@ namespace Terramorphers
             builder.Register<LoadingState>(Lifetime.Scoped);
             builder.Register<AdvantureState>(Lifetime.Scoped);
             builder.Register<WinState>(Lifetime.Scoped);
-            
+           
            
             builder.RegisterVitalRouter(routing =>
             {
