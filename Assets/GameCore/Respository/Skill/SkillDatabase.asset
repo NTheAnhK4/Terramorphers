@@ -20,6 +20,8 @@ MonoBehaviour:
       _eSkillRarity: 0
       skillName: Punch
       costs: 50
+      range: 1
+      skillTargetTypes: 01000000
       skillHandlers: []
   - key: 1
     value:
@@ -28,6 +30,8 @@ MonoBehaviour:
       _eSkillRarity: 0
       skillName: Healing Potion
       costs: 50
+      range: 1
+      skillTargetTypes: 0000000002000000
       skillHandlers: []
   - key: 2
     value:
@@ -36,6 +40,8 @@ MonoBehaviour:
       _eSkillRarity: 0
       skillName: Poison Arrow
       costs: 50
+      range: 3
+      skillTargetTypes: 01000000
       skillHandlers: []
   - key: 3
     value:
@@ -44,6 +50,8 @@ MonoBehaviour:
       _eSkillRarity: 0
       skillName: Shockwave
       costs: 100
+      range: 3
+      skillTargetTypes: 00000000
       skillHandlers: []
   references:
     version: 2

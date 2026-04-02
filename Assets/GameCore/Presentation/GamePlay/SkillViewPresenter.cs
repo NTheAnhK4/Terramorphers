@@ -1,6 +1,7 @@
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
 using GameCore.Domain.Skill;
+using GameCore.Utility;
 using UnityEngine;
 using WEngine.MVP;
 using R3;
@@ -15,6 +16,15 @@ namespace GameCore.Presentation.GamePlay
         [Inject] private ICommandSubscribable _subscribable;
         [Inject] private ICommandPublisher _publisher;
         private SkillViewState _state;
+
+        public enum SkillState
+        {
+            Enable,
+            Waiting,
+            Disable
+        }
+
+        
        
         public SkillViewPresenter(SkillView view, SkillMetadata skillMetadata) : base(view)
         {
@@ -25,16 +35,38 @@ namespace GameCore.Presentation.GamePlay
         {
             _state = state;
             _subscribable.Subscribe<EnableSkillCommand>(EnableUseSkill);
+            _subscribable.Subscribe<UseSkillCommand>(OnUseSkill).AddTo(view);
             state.SkillMetadata = _skillMetadata;
-            state.UseSkillCommand.Subscribe(OnUseSkill).AddTo(view);
+            state.EndWaitingCommand.Subscribe(OnEndWaiting).AddTo(view);
+            state.UseSkillCommand.Subscribe(_ => _publisher.PublishAsync(new UseSkillCommand()
+                {
+                    SkillID = _skillMetadata.SkillID
+                })).AddTo(view);
             return UniTask.CompletedTask;
         }
 
-        private void OnUseSkill(Unit _)
+        private void OnEndWaiting(Unit _)
         {
-            _publisher.PublishAsync(new UseSkillCommand() { SkillID = _skillMetadata.SkillID });
+            ChangeState(SkillState.Enable);
+            _publisher.PublishAsync(new UseSkillCommand() { SkillID = -1 });
         }
 
-        private void EnableUseSkill(EnableSkillCommand command, PublishContext context) => _state.EnableUseSkill.Value = command.IsEnable;
+        private void OnUseSkill(UseSkillCommand command, PublishContext context)
+        {
+            if(command.SkillID == _skillMetadata.SkillID) ChangeState(SkillState.Waiting);
+            else ChangeState(SkillState.Enable);
+        }
+
+        private void EnableUseSkill(EnableSkillCommand command, PublishContext context)
+        {
+            ChangeState(command.IsEnable ? SkillState.Enable : SkillState.Disable);
+        } 
+
+        public void ChangeState(SkillState newState)
+        {
+           
+            if (_state.SkillState.Value == SkillState.Disable && newState == SkillState.Waiting) return;
+            _state.SkillState.Value = newState;
+        }
     }
 }

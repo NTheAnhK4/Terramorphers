@@ -17,21 +17,38 @@ namespace GameCore.Presentation.GamePlay
         [SerializeField] private Button skillButton;
         [SerializeField] private TextMeshProUGUI skillCosts;
         [SerializeField] private Image coverImage;
+        [SerializeField] private Button endWaitingButton;
         protected override UniTask Initialize(SkillViewState state)
         {
             skillImage.sprite = state.SkillMetadata.SkillSprite;
             skillButton.SubscribeToCommand(state.UseSkillCommand).AddTo(this);
             skillCosts.text = state.SkillMetadata.SkillCosts.ToString();
-            state.EnableUseSkill.Subscribe(EnableUseSkill).AddTo(this);
+            state.SkillState.Subscribe(ChangeState).AddTo(this);
+            endWaitingButton.SubscribeToCommand(state.EndWaitingCommand).AddTo(this);
             return UniTask.CompletedTask;
         }
 
-        private void EnableUseSkill(bool isOn)
+        private void ChangeState(SkillViewPresenter.SkillState state)
         {
-            skillButton.interactable = isOn;
+            skillButton.interactable = state == SkillViewPresenter.SkillState.Enable;
             DOTween.Kill(coverImage.transform);
-            coverImage.transform.DOScaleX(isOn ? 0 : 1, .2f);
+            switch (state)
+            {
+                case SkillViewPresenter.SkillState.Enable:
+                    coverImage.transform.DOScaleX(0, .2f);
+                    endWaitingButton.gameObject.SetActive(false);
+                    break;
+                case SkillViewPresenter.SkillState.Disable:
+                    coverImage.transform.DOScaleX(1, .2f);
+                    endWaitingButton.gameObject.SetActive(false);
+                    break;
+                case SkillViewPresenter.SkillState.Waiting:
+                    endWaitingButton.gameObject.SetActive(true);
+                    break;
+            }
         }
+
+        
     }
 }
 

@@ -3,6 +3,8 @@ using GameCore.Utility.Shape;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.UI;
 
 namespace Terramorphers
 {
@@ -14,7 +16,15 @@ namespace Terramorphers
         [SerializeField, TabGroup("Components")]
         protected SpriteRenderer interactableSR;
 
-        [SerializeField, TabGroup("Config")] protected Color movableColor, skillApplicableColor, enemyTargetSkillColor, allyTargetSkillColor, tileTargetSkillColor;
+        [SerializeField, TabGroup("Components")]
+        private DOTweenAnimation tileSkillEffect;
+
+        [SerializeField, TabGroup("Components")]
+        private SpriteRenderer tileSkillSpriteRenderer;
+
+        [SerializeField, TabGroup("Config")] protected Color movableColor, 
+            skillApplicableColor, enemyTargetSkillColor, allyTargetSkillColor, 
+            tileTargetSkillColor, selftTargetSkillColor;
         private ETileState _currentState;
 
 
@@ -53,14 +63,22 @@ namespace Terramorphers
                 case ETileState.EnemyTargetSkill:
                     interactableSR.color = enemyTargetSkillColor;
                     interactableSR.gameObject.SetActive(true);
+                    SetSkillTileEffect(enemyTargetSkillColor);
                     break;
                 case ETileState.TileTargetSkill:
                     interactableSR.color = tileTargetSkillColor;
                     interactableSR.gameObject.SetActive(true);
+                    SetSkillTileEffect(tileTargetSkillColor);
                     break;
                 case ETileState.AllyTargetSkill:
                     interactableSR.color = allyTargetSkillColor;
                     interactableSR.gameObject.SetActive(true);
+                    SetSkillTileEffect(allyTargetSkillColor);
+                    break;
+                case ETileState.SelfTargetSkill:
+                    interactableSR.color = selftTargetSkillColor;
+                    interactableSR.gameObject.SetActive(true);
+                    SetSkillTileEffect(selftTargetSkillColor);
                     break;
             }
         }
@@ -74,5 +92,13 @@ namespace Terramorphers
         public abstract int GetMoveCost();
         public Cube Index { get; set; }
         public TerramorphersEntity CurrentOccupant { get; set; } = null;
+
+        private void SetSkillTileEffect(Color color)
+        {
+            tileSkillEffect.gameObject.SetActive(true);
+            color.a = 1;
+            tileSkillSpriteRenderer.color = color;
+            tileSkillEffect.DOPlay();
+        }
     }
 }

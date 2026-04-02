@@ -8,6 +8,8 @@ namespace GameCore.Presentation.GamePlay
     {
         public SkillMetadata SkillMetadata;
         public ReactiveCommand UseSkillCommand { get; } = new ReactiveCommand();
-        public ReactiveProperty<bool> EnableUseSkill { get; } = new ReactiveProperty<bool>();
+
+        public ReactiveProperty<SkillViewPresenter.SkillState> SkillState { get; } = new ReactiveProperty<SkillViewPresenter.SkillState>();
+        public ReactiveCommand EndWaitingCommand { get; } = new();
     }
 }
