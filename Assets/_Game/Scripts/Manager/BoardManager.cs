@@ -205,7 +205,6 @@ namespace Terramorphers
             bool canSelf  = command.SkillTargetTypes.Contains(ESkillTargetType.Self);
             bool canAlly  = command.SkillTargetTypes.Contains(ESkillTargetType.Ally);
             bool canEnemy = command.SkillTargetTypes.Contains(ESkillTargetType.Enemy);
-
             foreach (var tile in skillApplicableTiles)
             {
               

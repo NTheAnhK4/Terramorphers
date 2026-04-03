@@ -1,17 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using CoreGame;
 using GameCore.Commands;
 using GameCore.Domain.Skill;
 using Terramorphers.Command;
+
 using UnityEngine;
-using UnityEngine.Assertions.Must;
 using VitalRouter;
 
 namespace Terramorphers.States.PlayerState
 {
-    public class SelectSkillTileData : StateData
+    public class PlayerSelectSkillTileData : StateData
     {
         public int SkillID { get; set; }
     }
@@ -19,6 +18,8 @@ namespace Terramorphers.States.PlayerState
     {
         private List<IDisposable> _disposables = new();
         private List<ETileState> _tileStates = new();
+        private PlayerSelectSkillTileData data;
+        
         public PlayerSelectSkillTileState(Player entity, string animBoolName) : base(entity, animBoolName)
         {
         }
@@ -30,12 +31,15 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
-            if (stateData == null || stateData is not SelectSkillTileData selectSkillTileData)
+          
+            if (stateData == null || stateData is not PlayerSelectSkillTileData selectSkillTileData)
             {
                 Debug.Log($"[Test] type of data for select skill Applicable is not correct");
+                entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
 
+            data = selectSkillTileData;
            
             _disposables.Add(entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile));
             _disposables.Add(entity.Subscribable.Subscribe<UseSkillCommand>(OnUseSkill));
@@ -52,7 +56,7 @@ namespace Terramorphers.States.PlayerState
         {
             if (skillID < 0)
             {
-                entity.ChangeState(entity.SelectMoveTileState);
+                entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
             var skillMetadata = entity.SkillManager.GetSkillMetadata(skillID);
@@ -104,8 +108,12 @@ namespace Terramorphers.States.PlayerState
         {
             ITile selectedTile = command.SelectedTile;
             if (!_tileStates.Contains(selectedTile.CurrentState)) return;
-         
-            entity.SelectedTile = selectedTile;
+            entity.ChangeState(entity.UseSkillState, 
+                () => new PlayerUseSkillData()
+                {
+                    SelectedTile = selectedTile,
+                    SkillID = data.SkillID
+                });
             
         }
         public override void OnExit()

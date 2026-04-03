@@ -1,4 +1,5 @@
 using CoreGame;
+using GameCore.Domain.Skill;
 using Sirenix.OdinInspector;
 using Terramorphers.Stats;
 using UnityEngine;
@@ -27,6 +28,11 @@ namespace Terramorphers
         {
             statsSystem = new StatsSystem(metadata.EntityStats);
             _teamID = teamID;
+        }
+
+        public void TakeDamage(int damage, EAttackType attackType)
+        {
+            Debug.Log($"[Test] taken :{damage}  with {attackType}");
         }
     }
 }

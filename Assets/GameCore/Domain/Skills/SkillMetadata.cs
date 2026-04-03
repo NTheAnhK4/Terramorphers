@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using Sirenix.OdinInspector;
 using UnityEngine;
 namespace GameCore.Domain.Skill{
@@ -32,9 +34,21 @@ namespace GameCore.Domain.Skill{
 
         public int Range => range;
 
-        public void Apply(MonoBehaviour context)
+        public async UniTask Apply<T>(T context, CancellationToken token) where T : class
         {
-            foreach (var skillHandler in skillHandlers) skillHandler.Apply(context);
+            try
+            {
+                List<UniTask> uniTasks = new();
+                foreach (var skillHandler in skillHandlers)
+                {
+                    uniTasks.Add(skillHandler.Apply(context, token));
+                
+                }
+
+                await UniTask.WhenAll(uniTasks);
+            }
+            catch(OperationCanceledException){}
+            
         }
     }
 

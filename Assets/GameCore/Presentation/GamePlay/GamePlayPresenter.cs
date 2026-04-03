@@ -41,6 +41,8 @@ namespace GameCore.Presentation.GamePlay
             _state = state;
             _subscribabale.Subscribe<EnableEndTurnCommand>(ToggleEndTurnButton).AddTo(view);
             _subscribabale.Subscribe<IncreaseRoundCommand>(SetRound).AddTo(view);
+            _subscribabale.Subscribe<ChangePlayerStaminaCommand>(OnStaminaChange).AddTo(view);
+            _subscribabale.Subscribe<ChangePlayerManaCommand>(OnManaChange).AddTo(view);
             state.EndTurnCommand.Subscribe(OnEndTurnBtnClick).AddTo(view);
 
             //Skill
@@ -53,6 +55,16 @@ namespace GameCore.Presentation.GamePlay
             view.InitSkillView(_resolver, state.SkillMetadatas);
 
             return base.Initialize(args, state, view);
+        }
+
+        private void OnStaminaChange(ChangePlayerStaminaCommand command, PublishContext context)
+        {
+            _state.Stamina.Value = (command.Stamina, command.MaxStamina);
+        }
+
+        private void OnManaChange(ChangePlayerManaCommand command, PublishContext context)
+        {
+            _state.Mana.Value = (command.Mana, command.MaxMana);
         }
 
         private void SetRound(IncreaseRoundCommand command, PublishContext context) => _state.CurrentRound.Value = command.NewRound;

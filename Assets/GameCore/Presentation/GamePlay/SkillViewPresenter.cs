@@ -16,6 +16,7 @@ namespace GameCore.Presentation.GamePlay
         [Inject] private ICommandSubscribable _subscribable;
         [Inject] private ICommandPublisher _publisher;
         private SkillViewState _state;
+        private int currentMana;
 
         public enum SkillState
         {
@@ -36,6 +37,7 @@ namespace GameCore.Presentation.GamePlay
             _state = state;
             _subscribable.Subscribe<EnableSkillCommand>(EnableUseSkill);
             _subscribable.Subscribe<UseSkillCommand>(OnUseSkill).AddTo(view);
+            _subscribable.Subscribe<ChangePlayerManaCommand>(OnManaChange).AddTo(view);
             state.SkillMetadata = _skillMetadata;
             state.EndWaitingCommand.Subscribe(OnEndWaiting).AddTo(view);
             state.UseSkillCommand.Subscribe(_ => _publisher.PublishAsync(new UseSkillCommand()
@@ -43,6 +45,11 @@ namespace GameCore.Presentation.GamePlay
                     SkillID = _skillMetadata.SkillID
                 })).AddTo(view);
             return UniTask.CompletedTask;
+        }
+
+        private void OnManaChange(ChangePlayerManaCommand command, PublishContext context)
+        {
+            currentMana = command.Mana;
         }
 
         private void OnEndWaiting(Unit _)
@@ -59,7 +66,12 @@ namespace GameCore.Presentation.GamePlay
 
         private void EnableUseSkill(EnableSkillCommand command, PublishContext context)
         {
-            ChangeState(command.IsEnable ? SkillState.Enable : SkillState.Disable);
+            if (command.IsEnable)
+            {
+                if(_skillMetadata.SkillCosts <= currentMana) ChangeState(SkillState.Enable);
+                else ChangeState(SkillState.Disable);
+            }
+            else ChangeState(SkillState.Disable);
         } 
 
         public void ChangeState(SkillState newState)

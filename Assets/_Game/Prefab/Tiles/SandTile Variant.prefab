@@ -81,6 +81,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2993489218091727219}
   m_SourcePrefab: {fileID: 100100000, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+--- !u!114 &1746277200423436789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8809685247166442843, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 7097197830149811374}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &2289159096005216089 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9059823819643841527, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 7097197830149811374}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2932565101475710438 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5389928864630335816, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
@@ -116,5 +132,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountText: {fileID: 2932565101475710438}
   interactableSR: {fileID: 3572203424710427858}
+  tileSkillEffect: {fileID: 1746277200423436789}
+  tileSkillSpriteRenderer: {fileID: 2289159096005216089}
   movableColor: {r: 0.6156863, g: 1, b: 0.59607846, a: 1}
   skillApplicableColor: {r: 1, g: 1, b: 1, a: 1}
+  enemyTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
+  allyTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
+  tileTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}
+  selftTargetSkillColor: {r: 0, g: 0, b: 0, a: 0}

@@ -8,15 +8,15 @@ using VitalRouter;
 
 namespace Terramorphers.States.PlayerState
 {
-    public class SelectMoveTileState : State<Player>
+    public class PlayerSelectMoveTileState : State<Player>
     {
 
         private List<IDisposable> _disposables = new();
-        public SelectMoveTileState(Player entity, string animBoolName) : base(entity, animBoolName)
+        public PlayerSelectMoveTileState(Player entity, string animBoolName) : base(entity, animBoolName)
         {
         }
 
-        public SelectMoveTileState(Player entity, Func<string> animNameFunc) : base(entity, animNameFunc)
+        public PlayerSelectMoveTileState(Player entity, Func<string> animNameFunc) : base(entity, animNameFunc)
         {
         }
 
@@ -38,16 +38,16 @@ namespace Terramorphers.States.PlayerState
 
         private void UseSkill(UseSkillCommand command, PublishContext context)
         {
-            SelectSkillTileData selectSkillTileData = new SelectSkillTileData() { SkillID = command.SkillID };
-            entity.ChangeState(entity.SelectSkillTileState, () => selectSkillTileData);
+            PlayerSelectSkillTileData playerSelectSkillTileData = new PlayerSelectSkillTileData() { SkillID = command.SkillID };
+            entity.ChangeState(entity.SelectSkillTileState, () => playerSelectSkillTileData);
         }
 
         private void OnSelectTile(SelectTileCommand command, PublishContext context)
         {
             ITile selectedTile = command.SelectedTile;
             if (selectedTile.CurrentState != ETileState.Movable) return;
-            entity.SelectedTile = selectedTile;
-            entity.ChangeState(entity.MoveState);
+          
+            entity.ChangeState(entity.MoveState, () => new PlayerMoveStateData(){TargetTile = selectedTile});
         }
 
         public override void OnExit()

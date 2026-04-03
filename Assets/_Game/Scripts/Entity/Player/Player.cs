@@ -2,8 +2,7 @@ using GameCore.Commands;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
-using Terramorphers.Stats;
-using UnityEngine;
+
 using VContainer;
 using VitalRouter;
 
@@ -23,21 +22,18 @@ namespace Terramorphers
 
         #region Runtime Data
 
-        private ITile selectedTile;
-        private int stamina = 3;
-
-        private float moveSpeed = .5f;
+     
         private int remainStamina;
-
+        private int remainMana;
         #endregion
 
         #region State
 
-        private SelectMoveTileState _selectMoveTileState;
+        private PlayerSelectMoveTileState _playerSelectMoveTileState;
         private PlayerMoveState _moveState;
         private EntityWaitingState _waitingState;
         private PlayerSelectSkillTileState _selectSkillTileState;
-
+        private PlayerUseSkillState _useSkillState;
         #endregion
 
         #region Properties
@@ -49,8 +45,32 @@ namespace Terramorphers
             {
                 if (value != remainStamina)
                 {
-                    if (_publisher != null) _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = value });
+                    if (_publisher != null)
+                        _publisher.PublishAsync(
+                            new ChangePlayerStaminaCommand()
+                            {
+                                Stamina = value,
+                                MaxStamina = statsSystem.Stats.Stamina
+                            });
                     remainStamina = value;
+                }
+            }
+        }
+
+        public int RemainMana
+        {
+            get => remainMana;
+            set
+            {
+                if (value != remainMana)
+                {
+                    remainMana = value;
+                    if (_publisher != null) _publisher.PublishAsync(
+                        new ChangePlayerManaCommand()
+                        {
+                            Mana = remainMana,
+                            MaxMana = statsSystem.Stats.Mana
+                        });
                 }
             }
         }
@@ -61,23 +81,21 @@ namespace Terramorphers
 
         public InputManager InputManager => _inputManager;
 
-        public SelectMoveTileState SelectMoveTileState => _selectMoveTileState;
+        public PlayerSelectMoveTileState PlayerSelectMoveTileState => _playerSelectMoveTileState;
 
         public PlayerMoveState MoveState => _moveState;
 
         public PlayerSelectSkillTileState SelectSkillTileState => _selectSkillTileState;
 
+        public PlayerUseSkillState UseSkillState => _useSkillState;
+
         public BoardManager BoardManager => _boardManager;
 
-        public float MoveSpeed => moveSpeed;
+      
 
         public SkillManager SkillManager => _skillManager;
 
-        public ITile SelectedTile
-        {
-            get => selectedTile;
-            set => selectedTile = value;
-        }
+        
 
         #endregion
 
@@ -96,14 +114,16 @@ namespace Terramorphers
         protected override void Awake()
         {
             base.Awake();
-            _selectMoveTileState = new SelectMoveTileState(this, string.Empty);
+            _playerSelectMoveTileState = new PlayerSelectMoveTileState(this, string.Empty);
             _moveState = new PlayerMoveState(this, string.Empty);
             _waitingState = new EntityWaitingState(this, string.Empty);
             _selectSkillTileState = new PlayerSelectSkillTileState(this, string.Empty);
+            _useSkillState = new PlayerUseSkillState(this, string.Empty);
             AddState(_waitingState);
-            AddState(_selectMoveTileState);
+            AddState(_playerSelectMoveTileState);
             AddState(_selectSkillTileState);
             AddState(_moveState);
+            AddState(_useSkillState);
         }
 
 
@@ -111,10 +131,11 @@ namespace Terramorphers
         {
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
-            remainStamina = stamina;
+            RemainStamina = statsSystem.Stats.Stamina;
+            RemainMana = statsSystem.Stats.Mana;
             _inputManager.OnEnter();
-            _publisher.PublishAsync(new SetRemainStaminaCommand() { RemainStamina = remainStamina });
-            ChangeState(_selectMoveTileState);
+           
+            ChangeState(_playerSelectMoveTileState);
         }
 
         public override void OnUpdate()

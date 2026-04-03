@@ -1,13 +1,14 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using WEngine.MVP;
 using UnityEngine.UI;
@@ -19,20 +20,24 @@ namespace GameCore.Presentation.GamePlay
     {
         [SerializeField, TabGroup("Components")]
         private List<SkillView> _skillViews = new();
-        [SerializeField, TabGroup("Text")] private TextMeshProUGUI manaText;
-        [SerializeField, TabGroup("Text")] private TextMeshProUGUI staminaText;
-        [SerializeField, TabGroup("Text")] private TextMeshProUGUI turnText;
-        [SerializeField, TabGroup("Text")] private TextMeshProUGUI roundAmountText;
-        [SerializeField, TabGroup("Button")] private Button continueBtn, settingBtn, endTurnBtn;
-        [SerializeField, TabGroup("Image")] private Image coverEndTurnBtn;
-        [SerializeField, TabGroup("Image")] private List<Image> skillImages = new();
+        [SerializeField, TabGroup("Components")] private TextMeshProUGUI manaText;
+        [SerializeField, TabGroup("Components")] private TextMeshProUGUI staminaText;
+        [SerializeField, TabGroup("Components")] private TextMeshProUGUI turnText;
+        [SerializeField, TabGroup("Components")] private TextMeshProUGUI roundAmountText;
+        [SerializeField, TabGroup("Components")] private Button continueBtn, settingBtn, endTurnBtn;
+        [SerializeField, TabGroup("Components")] private Image coverEndTurnBtn;
+
+        [SerializeField, TabGroup("Components")]
+        private Image staminaFill, manaFill;
+        [SerializeField, TabGroup("Components")] private List<Image> skillImages = new();
        
         public override UniTask InitializeState(GamePlayViewState state, Memory<object> args)
         {
             endTurnBtn.SubscribeToCommand(state.EndTurnCommand);
             state.IsActiveEndTurnCommand.Subscribe(ToggleEndTurnButton).AddTo(this);
             state.CurrentRound.Subscribe(SetRound).AddTo(this);
-            
+            state.Stamina.Subscribe(OnStaminaChange).AddTo(this);
+            state.Mana.Subscribe(OnManaChange).AddTo(this);
             return UniTask.CompletedTask;
         }
 
@@ -58,6 +63,25 @@ namespace GameCore.Presentation.GamePlay
         }
 
         private void SetRound(int round) => roundAmountText.text = $"Round : {round}";
+        private void OnStaminaChange((int stamina, int maxStamina) value)
+        {
+            staminaText.text = value.stamina.ToString();
+            float fillTarget;
+            if (value.maxStamina == 0) fillTarget = 1;
+            else fillTarget = 1.0f * value.stamina / value.maxStamina;
+            DOTween.Kill(staminaFill.transform);
+            staminaFill.DOFillAmount(fillTarget, .1f).SetTarget(staminaFill.transform);
+        }
+
+        private void OnManaChange((int mana, int maxMana) value)
+        {
+            manaText.text = value.mana.ToString();
+            float fillTarget;
+            if (value.maxMana == 0) fillTarget = 1;
+            else fillTarget = 1.0f * value.mana / value.maxMana;
+            DOTween.Kill(manaFill.transform);
+            manaFill.DOFillAmount(fillTarget, .1f).SetTarget(manaFill.transform);
+        }
     }
 
 }

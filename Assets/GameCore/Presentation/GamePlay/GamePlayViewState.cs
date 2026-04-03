@@ -10,5 +10,7 @@ namespace GameCore.Presentation.GamePlay
         public ReactiveProperty<bool> IsActiveEndTurnCommand { get; } = new();
         public ReactiveProperty<int> CurrentRound { get; } = new();
         public List<SkillMetadata> SkillMetadatas = new();
+        public ReactiveProperty<(int mana, int maxMana)> Mana { get; } = new();
+        public ReactiveProperty<(int stamina, int maxStamina)> Stamina { get; } = new();
     }
 }

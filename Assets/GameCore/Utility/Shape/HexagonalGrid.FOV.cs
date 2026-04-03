@@ -12,7 +12,9 @@ namespace GameCore.Utility.Shape
         private bool IsCubeVisible(Cube from, Cube target, Predicate<T> isBlockVisible)
         {
             List<Cube> path = GetLinedPathIndices(from, target).ToList();
-            if (path.Count == 0) return false;
+            if (path.Count <= 2) return true;
+            path.Remove(from);
+            path.Remove(target);
             foreach (var point in path)
             {
                 if (isBlockVisible(Get(point))) return false;
@@ -29,15 +31,16 @@ namespace GameCore.Utility.Shape
           
             Dictionary<Cube, int> D = new();
             queue.Enqueue(from);
-           
+            
             D[from] = 0;
             while (queue.Count > 0)
             {
                 Cube currentNode = queue.Dequeue();
                 if(D[currentNode] == distance) continue;
+                
                 foreach (var neighbor in GetAllNeighborIndices(currentNode))
                 {
-                    if(D.ContainsKey(neighbor)) continue;
+                    if (D.ContainsKey(neighbor)) continue;
                     if(!IsCubeVisible(from, neighbor,isBlockVisible)) continue;
                     D[neighbor] = D[currentNode] + 1;
                     if (D[neighbor] > distance) continue;
