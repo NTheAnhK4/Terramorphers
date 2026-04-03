@@ -57,6 +57,16 @@ namespace Terramorphers.Stats
             }
         }
 
+        public int MaxHP
+        {
+            get
+            {
+                var q = new Query(EStatsType.MaxHP, MaxHP);
+                mediator.PerformQuery(this,q);
+                return q.Value;
+            }
+        }
+
         public int PhysicalDamage
         {
             get

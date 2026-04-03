@@ -66,19 +66,18 @@ namespace GameCore.Presentation.GamePlay
 
         private void EnableUseSkill(EnableSkillCommand command, PublishContext context)
         {
-            if (command.IsEnable)
-            {
-                if(_skillMetadata.SkillCosts <= currentMana) ChangeState(SkillState.Enable);
-                else ChangeState(SkillState.Disable);
-            }
-            else ChangeState(SkillState.Disable);
+            ChangeState(_skillMetadata.SkillCosts <= currentMana ? SkillState.Enable : SkillState.Disable);
         } 
 
         public void ChangeState(SkillState newState)
         {
-           
             if (_state.SkillState.Value == SkillState.Disable && newState == SkillState.Waiting) return;
-            _state.SkillState.Value = newState;
+            if (newState == SkillState.Enable)
+            {
+                if (currentMana < _skillMetadata.SkillCosts) _state.SkillState.Value = SkillState.Disable;
+                else _state.SkillState.Value = SkillState.Enable;
+            }
+            else _state.SkillState.Value = newState;
         }
     }
 }

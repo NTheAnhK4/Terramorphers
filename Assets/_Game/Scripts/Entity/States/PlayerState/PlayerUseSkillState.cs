@@ -2,6 +2,7 @@ using System;
 using CoreGame;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
+using log4net.Core;
 using Terramorphers.Command;
 using UnityEngine;
 
@@ -60,6 +61,14 @@ namespace Terramorphers.States.PlayerState
                     return;
                 }
 
+                if (entity.RemainMana < skillMetadata.SkillCosts)
+                {
+                    Debug.Log($"[Test] mana is not enough");
+                    entity.ChangeState(entity.PlayerSelectMoveTileState);
+                    return;
+                }
+
+                entity.RemainMana -= skillMetadata.SkillCosts;
                 await skillMetadata.Apply<ITile>(data.SelectedTile, entity.GetCancellationTokenOnDestroy());
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
             }
