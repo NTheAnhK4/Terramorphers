@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1106315416552481114}
   - component: {fileID: 1173972806653157558}
   - component: {fileID: 7521539522807013631}
-  m_Layer: 0
+  - component: {fileID: 4246851053984160431}
+  m_Layer: 6
   m_Name: Modal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,6 +121,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 3020265835851291835}
+--- !u!60 &4246851053984160431
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085985646553788937}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.2, y: 4.2}
+    newSize: {x: 5.2, y: 4.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.93, y: 0.56}
+      - {x: 0.9243414, y: 0.7579019}
+      - {x: 0.74803656, y: 1.1414251}
+      - {x: 0.47426185, y: 1.4601474}
+      - {x: 0.3093489, y: 1.5800574}
+      - {x: 0.22044447, y: 1.5825527}
+      - {x: 0.2255131, y: 1.4296012}
+      - {x: -0.13747787, y: 1.4491029}
+      - {x: -0.6348225, y: 1.3347242}
+      - {x: -0.94819605, y: 1.6062434}
+      - {x: -1.0509205, y: 1.5721493}
+      - {x: -0.9130579, y: 1.1305897}
+      - {x: -1.0848229, y: 0.7691386}
+      - {x: -1.0958929, y: 0.3812704}
+      - {x: -0.7795773, y: -0.112336636}
+      - {x: -0.75005233, y: -0.2971486}
+      - {x: -0.5375869, y: -0.37846923}
+      - {x: -0.68420607, y: -0.8123385}
+      - {x: -0.3869909, y: -0.98380363}
+      - {x: -0.35117504, y: -1.095854}
+      - {x: -0.29909495, y: -1.1296618}
+      - {x: 0.44037375, y: -1.1091268}
+      - {x: 0.6937386, y: -0.6890698}
+      - {x: 0.93675417, y: -0.25317913}
+      - {x: 1.2863109, y: 0.18560874}
+      - {x: 1.2787086, y: 0.30390012}
+      - {x: 1.4491239, y: 0.58907413}
+      - {x: 1.4008282, y: 0.72771716}
+      - {x: 1.2360544, y: 0.82814956}
+      - {x: 1.0970546, y: 0.8255588}
+      - {x: 0.9522971, y: 0.582301}
+  m_UseDelaunayMesh: 0
 --- !u!1 &4193307912710144658
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +246,6 @@ MonoBehaviour:
   IsAnimationTriggerFinished: 0
   Anim: {fileID: 1173972806653157558}
   Model: {fileID: 5001813018429096354}
-  Stamina: 3
-  MoveSpeed: 1
+  MoveSpeed: 0.5
   RemainStamina: 0
   AttackRange: 1

@@ -1,8 +1,6 @@
 
-using System;
 using System.Collections.Generic;
-using CoreGame;
-using Sirenix.Serialization;
+using Terramorphers.States;
 using Terramorphers.States.EnemyState;
 using UnityEngine;
 
@@ -28,11 +26,11 @@ namespace Terramorphers
         #region State
 
         private SatyrRiderThinkingState _thinkingState;
-        private EnemyIdleState _idleState;
+     
         private EnemyMoveState _moveState;
      
 
-        public EnemyIdleState IdleState => _idleState;
+      
 
         public EnemyMoveState MoveState => _moveState;
 
@@ -60,6 +58,8 @@ namespace Terramorphers
             AddState(_idleState);
             AddState(_thinkingState);
             AddState(_moveState);
+            AddState(_hurtState = new HurtState(this, hurtAnimHash));
+            AddState(_deadState = new DeadState(this, dyingAnimHash));
             ChangeState(_idleState);
         }
 

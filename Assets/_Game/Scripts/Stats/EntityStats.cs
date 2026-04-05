@@ -61,7 +61,7 @@ namespace Terramorphers.Stats
         {
             get
             {
-                var q = new Query(EStatsType.MaxHP, MaxHP);
+                var q = new Query(EStatsType.MaxHP, EntityStats.MaxHP);
                 mediator.PerformQuery(this,q);
                 return q.Value;
             }

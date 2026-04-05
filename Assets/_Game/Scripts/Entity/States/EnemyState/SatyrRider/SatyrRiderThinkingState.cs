@@ -26,21 +26,26 @@ namespace Terramorphers
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
+            Debug.Log($"[Test] enter thinking state");
             entity.ResetMinStateCost();
             
             List<TerramorphersEntity> terramorphersEntities = entity.EntityManager.GetEnemies(entity);
             if (terramorphersEntities == null || terramorphersEntities.Count == 0)
             {
-                
+                Debug.Log($"[Test] no enemy");
                 return;
             }
 
             var nearestEnemy = GetNearestEnemy(terramorphersEntities);
-            if (nearestEnemy == null) return;
+            if (nearestEnemy == null)
+            {
+                Debug.Log($"[Test] can not find neareast player");
+                return;
+            }
             float distance = Cube.Distance(entity.CurrentTile.Index, nearestEnemy.CurrentTile.Index);
             if (distance <= entity.AttackRange)
             {
-               
+                
                 entity.Publisher.PublishAsync(new EndEntityTurnCommand());
             }
             else

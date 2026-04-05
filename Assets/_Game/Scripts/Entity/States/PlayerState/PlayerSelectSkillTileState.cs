@@ -62,7 +62,10 @@ namespace Terramorphers.States.PlayerState
             var skillMetadata = entity.SkillManager.GetSkillMetadata(skillID);
             IReadOnlyList<ESkillTargetType> skillTargetTypes = skillMetadata.SkillTargetTypes;
             
+            SetInputTargetLayer(skillTargetTypes);
             FromSkillTargetToTileState(skillTargetTypes);
+          
+            
             
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             int newRange = skillMetadata.Range == 0 ? 1 : skillMetadata.Range + entity.StatsSystem.Stats.Range;
@@ -75,6 +78,24 @@ namespace Terramorphers.States.PlayerState
             });
         }
 
+        void SetInputTargetLayer(IReadOnlyList<ESkillTargetType> skillTargetTypes)
+        {
+            foreach (var skillTarget in skillTargetTypes)
+            {
+                switch (skillTarget)
+                {
+                    case ESkillTargetType.Ally:
+                    case ESkillTargetType.Enemy:
+                    case ESkillTargetType.Self:
+                        entity.InputManager.SetLayer(InputManager.ENTITY_LAYER);
+                        return;
+                    
+                    case ESkillTargetType.Tile:
+                        entity.InputManager.SetLayer(InputManager.TILE_LAYER);
+                        return;
+                }
+            }
+        }
         void FromSkillTargetToTileState(IReadOnlyList<ESkillTargetType> skillTargetTypes)
         {
             _tileStates.Clear();

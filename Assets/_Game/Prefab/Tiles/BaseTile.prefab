@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 7835619477808946810}
   - component: {fileID: 7711846920825064517}
   - component: {fileID: 6122729572857124400}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Modal
   m_TagString: Untagged
   m_Icon: {fileID: 0}

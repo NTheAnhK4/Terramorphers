@@ -96,11 +96,7 @@ namespace Terramorphers
             });
         }
 
-        public override void OnEnter()
-        {
-           
-            
-        }
+        
         public virtual void TurnToThinkingState(){}
 
         public override void OnUpdate()

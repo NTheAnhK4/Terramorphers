@@ -23,6 +23,7 @@ namespace Terramorphers.States.PlayerState
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
+            entity.InputManager.SetLayer(InputManager.TILE_LAYER);
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
             entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainStamina });

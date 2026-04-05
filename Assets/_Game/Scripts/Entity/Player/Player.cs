@@ -31,7 +31,7 @@ namespace Terramorphers
 
         private PlayerSelectMoveTileState _playerSelectMoveTileState;
         private PlayerMoveState _moveState;
-        private EntityWaitingState _waitingState;
+     
         private PlayerSelectSkillTileState _selectSkillTileState;
         private PlayerUseSkillState _useSkillState;
         #endregion
@@ -116,23 +116,36 @@ namespace Terramorphers
             base.Awake();
             _playerSelectMoveTileState = new PlayerSelectMoveTileState(this, string.Empty);
             _moveState = new PlayerMoveState(this, string.Empty);
-            _waitingState = new EntityWaitingState(this, string.Empty);
+            _idleState = new PlayerIdleState(this, string.Empty);
+           
             _selectSkillTileState = new PlayerSelectSkillTileState(this, string.Empty);
             _useSkillState = new PlayerUseSkillState(this, string.Empty);
-            AddState(_waitingState);
+            _hurtState = new HurtState(this, string.Empty);
+            _deadState = new DeadState(this, string.Empty);
+            AddState(_idleState);
             AddState(_playerSelectMoveTileState);
             AddState(_selectSkillTileState);
             AddState(_moveState);
             AddState(_useSkillState);
+            AddState(_hurtState);
+            AddState(_deadState);
+            ChangeState(_idleState);
+        }
+
+        public override void Init(EntityMetadata metadata, int teamID)
+        {
+            base.Init(metadata, teamID);
+            RemainStamina = statsSystem.Stats.Stamina;
+            RemainMana = statsSystem.Stats.Mana;
         }
 
 
         public override void OnEnter()
         {
+            base.OnEnter();
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
-            RemainStamina = statsSystem.Stats.Stamina;
-            RemainMana = statsSystem.Stats.Mana;
+            
             _inputManager.OnEnter();
            
             ChangeState(_playerSelectMoveTileState);
@@ -145,7 +158,9 @@ namespace Terramorphers
 
         public override void OnExit()
         {
-            ChangeState(_waitingState);
+            RemainStamina = statsSystem.Stats.Stamina;
+            RemainMana = statsSystem.Stats.Mana;
+            ChangeState(_idleState);
             _publisher.PublishAsync(new ClearSpecialTilesCommand());
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = false });
