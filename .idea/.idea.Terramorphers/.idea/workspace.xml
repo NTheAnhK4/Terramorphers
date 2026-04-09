@@ -6,30 +6,56 @@
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor/ComponentBehaviorEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor/ComponentBehaviorEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Scripts/ComponentBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/Component/Scripts/ComponentBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Attacking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Attacking.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/CanUseDirectDamage0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/CanUseDirectDamage0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/DirectDamageAction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/DirectDamageAction.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/DirectDamageComposite.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/DirectDamageComposite.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/HasEnoughMana0.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/DirectionDamage/HasEnoughMana0.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/EndTurn/ConstantConsideration.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/EndTurn/ConstantConsideration.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/EndTurn/EndTurnAction.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/EndTurn/EndTurnAction.asset.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectMoveTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectMoveTileState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/AIAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/AIAction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/EndTurnAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/EndTurnAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/UseSkillAction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/UseSkillAction.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/ActionDataBuilder.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/ActionDataBuilder/ActionDataBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/ActionDataBuilder/ActionDataBuilder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/ActionDataBuilder/ConstantSkillIDBuilder.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/ActionDataBuilder/ConstantSkillIDBuilder.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/BlackBoardConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/BlackBoardConstant.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CanUseDirectDamage.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CanUseDirectDamage.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CompositeConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CompositeConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CompositeConsideration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CompositeConsideration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/Consideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/Consideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/Consideration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/Consideration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConstantConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConstantConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConstantConsideration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConstantConsideration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CurveConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CurveConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CurveConsideration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CurveConsideration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/HasEnoughMana.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/HasEnoughMana.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/InverseConsideration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/InverseConsideration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/InverseConsideration.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/InverseConsideration.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/NoSkillAvailable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/NoSkillAvailable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/MoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/MoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +245,9 @@
       <workItem from="1775573892488" duration="11851000" />
       <workItem from="1775607047673" duration="839000" />
       <workItem from="1775655548324" duration="2472000" />
-      <workItem from="1775694489271" duration="521000" />
+      <workItem from="1775694489271" duration="810000" />
+      <workItem from="1775744028803" duration="2374000" />
+      <workItem from="1775746452721" duration="11748000" />
     </task>
     <servers />
   </component>

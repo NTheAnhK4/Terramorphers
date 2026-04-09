@@ -14,40 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedElements:
   - key: 0
-    value:
-      addressable: Player
-      _entityStats:
-        MaxHP: 100
-        Mana: 100
-        Stamina: 3
-        Range: 2
-        PhysicalDamage: 0
-        MagicalDamage: 0
-        PhysicalResistance: 0
-        MagicalResistance: 0
-        NeutralResistance: 0
-        CriticalChance: 0
-        Healing: 0
-      _actions: []
-      skillAnims: []
+    value: {fileID: 11400000, guid: 1196ab9016243564b944321548aae84a, type: 2}
   - key: 1
-    value:
-      addressable: SatyrRaider
-      _entityStats:
-        MaxHP: 20
-        Mana: 100
-        Stamina: 3
-        Range: 1
-        PhysicalDamage: 0
-        MagicalDamage: 0
-        PhysicalResistance: 0
-        MagicalResistance: 0
-        NeutralResistance: 0
-        CriticalChance: 0
-        Healing: 0
-      _actions:
-      - {fileID: 11400000, guid: af342ad6b70b0d447a3a9f5d25dd0f8b, type: 2}
-      - {fileID: 11400000, guid: 75cf8fbe27734244287187a8fe11090c, type: 2}
-      skillAnims:
-      - SkillID: 0
-        AnimName: Attacking
+    value: {fileID: 11400000, guid: c9e119bdb07ef6f4a803db8ea8ee80c3, type: 2}

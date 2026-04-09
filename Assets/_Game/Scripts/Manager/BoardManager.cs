@@ -181,14 +181,22 @@ namespace Terramorphers
             return result;
         }
 
+        public List<(ITile, int)> GetMovableTiles(ITile center, int distance)
+        {
+            if (distance == 0) return new List<(ITile, int)>();
+            return hexaBoard.GetMovableAndDistanceValue(
+                center.Index, 
+                distance, 
+                tile => tile.GetMoveCost(),
+                tile => !tile.IsPassable() || (tile != center && tile.CurrentOccupant != null)).ToList();
+        }
+
         
         private void SetMovableTiles(SetMovableTilesCommand tilesCommand, PublishContext context)
         {
             ClearSpecialTiles();
-            List<(ITile, int)> movableTiles =
-                hexaBoard.GetMovableAndDistanceValue(tilesCommand.CenterTile.Index, 
-                    tilesCommand.Distance, 
-                    tile => tile.GetMoveCost(), tile => !tile.IsPassable() || (tile != tilesCommand.CenterTile && tile.CurrentOccupant != null)).ToList();
+            List<(ITile, int)> movableTiles = GetMovableTiles(tilesCommand.CenterTile, tilesCommand.Distance);
+            
 
 
             currentSpecialTiles = movableTiles.Select(t => t.Item1).ToList();

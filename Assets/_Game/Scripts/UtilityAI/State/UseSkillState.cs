@@ -19,11 +19,11 @@ namespace UtilityAI.State
         private bool isFinishAnim = false;
         private Context _context;
       
-        public UseSkillState(Enemy entity, IReadOnlyList<EntityMetadata.SkillAnim> skillAnims) : base(entity)
+        public UseSkillState(Enemy entity,IReadOnlyList<SkillConsiderationData> skillEvaluationDatas) : base(entity)
         {
-            for (int i = 0; i < skillAnims.Count; ++i)
+            foreach (var skillEvaluationData in skillEvaluationDatas)
             {
-                skillToAnim[skillAnims[i].SkillID] = Animator.StringToHash(skillAnims[i].AnimName);
+                skillToAnim[skillEvaluationData.SkillID] = Animator.StringToHash(skillEvaluationData.AnimName);
             }
         }
 
@@ -45,7 +45,7 @@ namespace UtilityAI.State
                 if(entity.Anim.HasState(0, skillToAnim[data.SkillID])) entity.Anim.Play(skillToAnim[data.SkillID]);
                 isFinishAnim = false;
                 base.Execute(context);
-                await UniTask.WaitUntil(() => isFinishAnim, cancellationToken: context.Entity.GetCancellationTokenOnDestroy());
+                await UniTask.WaitUntil(() => isFinishAnim, cancellationToken: entity.GetCancellationTokenOnDestroy());
             }
             catch(OperationCanceledException){}
             

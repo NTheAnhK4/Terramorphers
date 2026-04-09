@@ -1,28 +1,20 @@
 
-
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Terramorphers;
+
 using UnityEngine;
-using UnityEngine.Serialization;
-using UtilityAI.ActionDataBuilder;
+
+using UtilityAI.Considerations;
 
 
 namespace UtilityAI.AIActions
 {
     public abstract class AIAction : ScriptableObject
     {
-        [FormerlySerializedAs("consideration")] public Consideration.Consideration Consideration;
-        public List<ActionDataBuilder.ActionDataBuilder> DataBuilders;
-        protected ActionExecutionData executionData;
-        
+        [SerializeField] protected Considerations.Consideration consideration;
         public void Initalize(Context context){}
-        public void Build()
-        {
-            foreach (var builder in DataBuilders) builder.Build(executionData);
-        }
+        
 
-        public float CaculateUtility(Context context) => Consideration.Evaluate(context, executionData);
+        public float CaculateUtility(Context context) => consideration.Evaluate(context);
 
         public abstract UniTask Execute(Context context);
     }

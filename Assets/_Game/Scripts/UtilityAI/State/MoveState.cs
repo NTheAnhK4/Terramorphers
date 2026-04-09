@@ -23,9 +23,10 @@ namespace UtilityAI.State
             base.Execute(context);
             try
             {
-                ITile currentTile = context.Entity.CurrentTile;
+               
+                ITile currentTile = entity.CurrentTile;
                 int remainStamina = context.GetData<int>(BlackBoardConstant.REMAIN_STAMINA_KEY);
-                List<ITile> moveTiles = context.Entity.BoardManager.GetPath(currentTile, data.TargetTile);
+                List<ITile> moveTiles = entity.BoardManager.GetPath(currentTile, data.TargetTile);
                 if (moveTiles == null || moveTiles.Count <= 1) return;
                 var movePath = moveTiles.Select(t => t.Transform.position).ToArray();
                 List<Vector3> directionList = new();
@@ -35,7 +36,7 @@ namespace UtilityAI.State
                     directionList.Add(direction);
                 }
 
-                var tween = context.Entity.transform.DOPath(movePath, (movePath.Count() - 1) * .75f, PathType.Linear).OnWaypointChange(index =>
+                var tween = entity.transform.DOPath(movePath, (movePath.Count() - 1) * .75f, PathType.Linear).OnWaypointChange(index =>
                 {
                     if (index < directionList.Count)
                         entity.SetDirection(directionList[index]);
@@ -45,9 +46,9 @@ namespace UtilityAI.State
                         context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, remainStamina);
                     }
 
-                    context.Entity.SetTile(moveTiles[index]);
+                    entity.SetTile(moveTiles[index]);
                 });
-                await tween.AwaitForStepComplete(cancellationToken:context.Entity.transform.GetCancellationTokenOnDestroy());
+                await tween.AwaitForStepComplete(cancellationToken:entity.transform.GetCancellationTokenOnDestroy());
             }
             catch(OperationCanceledException){}
            

@@ -1,6 +1,7 @@
 
 using GameCore.Utility.Shape;
 using UnityEngine;
+using UtilityAI;
 
 namespace Terramorphers
 {
@@ -14,6 +15,8 @@ namespace Terramorphers
         int GetMoveCost();
         Cube Index { get; set; }
         TerramorphersEntity CurrentOccupant { get; set; }
+        TileMetadata TileMetadata { get; set; }
+        Context Context { get; protected set; }
 
     }
 

@@ -41,7 +41,6 @@ namespace UtilityAI
         protected ThinkingState _thinkingState;
         protected MoveState _moveState;
         protected UseSkillState _useSkillState;
-        private List<int> skillIDs = new();
 
         public ThinkingState ThinkingState => _thinkingState;
 
@@ -49,8 +48,9 @@ namespace UtilityAI
         [HideInInspector] public IReadOnlyList<AIAction> AIActions;
 
         public MoveState MoveState => _moveState;
+        private EnemyMetadata _enemyMetadata;
 
-        public IReadOnlyList<int> SkillIDs => skillIDs;
+        public EnemyMetadata EnemyMetadata => _enemyMetadata;
 
 
         [Inject]
@@ -67,7 +67,7 @@ namespace UtilityAI
         protected override void Awake()
         {
             base.Awake();
-            _thinkingState = new ThinkingState(this,idleAnimHash);
+           
             _moveState = new MoveState(this,walkAnimHash);
             _idleState = new IdleState(this,
                 new List<int>() { idleAnimHash, idleBlinkAnimHah },
@@ -78,7 +78,7 @@ namespace UtilityAI
                     
                 });
             AddState(_idleState);
-            AddState(_thinkingState);
+            
             AddState(_moveState);
             ChangeState(_idleState);
         }
@@ -86,13 +86,22 @@ namespace UtilityAI
         public override void Init(EntityMetadata metadata, int teamID)
         {
             base.Init(metadata, teamID);
-            _useSkillState = new UseSkillState(this, metadata.SkillAnims);
-            skillIDs = metadata.SkillAnims.Select(t => t.SkillID).ToList();
+            if (metadata is not EnemyMetadata enemyMetadata)
+            {
+                Debug.Log($"[Test] type of enemy meta data is not correct");
+                return;
+            }
+
+            _enemyMetadata = enemyMetadata;
+            _thinkingState = new ThinkingState(this,idleAnimHash, enemyMetadata);
+            _useSkillState = new UseSkillState(this, enemyMetadata.SkillConsiderationDatas);
+           
             AddState(_useSkillState);
-          
-            AIActions = metadata.Actions;
+            AddState(_thinkingState);
+
+            AIActions = enemyMetadata.AIActions;
             context = new Context();
-            context.Entity = this;
+            context.SetData(BlackBoardConstant.OWNER_KEY, this);
             context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
             context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
           

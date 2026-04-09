@@ -8,29 +8,20 @@ using UtilityAI.AIActions;
 
 namespace Terramorphers
 {
-    [Serializable]
-    public class EntityMetadata
+    [CreateAssetMenu(menuName = "Database/EntityData/EntityMetadata", fileName = "EntityMetadata")]
+    public class EntityMetadata : ScriptableObject
     {
-        [Serializable]
-        public class SkillAnim
-        {
-            public int SkillID;
-            public string AnimName;
-        }
+       
         [SerializeField] private string addressable;
         [SerializeField] private EntityStats _entityStats;
-        [SerializeField]
-        private List<AIAction> _actions = new();
-
-        [SerializeField, TableList] private List<SkillAnim> skillAnims = new();
+        
     
         public string Addressable => addressable;
 
         public EntityStats EntityStats => _entityStats;
-
-        public IReadOnlyList<AIAction> Actions => _actions;
-
-        public IReadOnlyList<SkillAnim> SkillAnims => skillAnims;
+        
     }
+    
+    
 
 }

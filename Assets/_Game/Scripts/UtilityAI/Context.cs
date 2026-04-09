@@ -11,11 +11,8 @@ namespace UtilityAI
 {
     public class Context
     {
-       
-       
-        public Enemy Entity;
-       
-        public Transform Target;
+        
+        
         
         [OdinSerialize]
         private readonly Dictionary<string, object> data = new();
@@ -26,14 +23,6 @@ namespace UtilityAI
         public Action UpdateContext;
        
 
-        #region FOR ACTION
-
-        public ITile CandidateMoveTile;
-        public int CandidateSkillID;
-        public ITile CandidateTileApply;
-
-
-        #endregion
       
     }
 }
