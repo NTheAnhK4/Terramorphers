@@ -6,8 +6,9 @@ using UnityEngine;
 
 namespace CoreGame
 {
-    public class ComponentBehaviour : MonoBehaviour
+    public class ComponentBehaviour : SerializedMonoBehaviour
     {
+        [Button]
         public virtual void LoadComponent()
         {
         

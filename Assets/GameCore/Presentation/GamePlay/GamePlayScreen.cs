@@ -29,6 +29,9 @@ namespace GameCore.Presentation.GamePlay
 
         [SerializeField, TabGroup("Components")]
         private Image staminaFill, manaFill;
+
+        [SerializeField, TabGroup("Components")]
+        private TurnNotificationAnimation _turnNotificationAnimation;
         [SerializeField, TabGroup("Components")] private List<Image> skillImages = new();
        
         public override UniTask InitializeState(GamePlayViewState state, Memory<object> args)
@@ -62,7 +65,12 @@ namespace GameCore.Presentation.GamePlay
             coverEndTurnBtn.gameObject.SetActive(!isOn);
         }
 
-        private void SetRound(int round) => roundAmountText.text = $"Round : {round}";
+        private void SetRound(int round)
+        {
+            _turnNotificationAnimation.Show();
+            roundAmountText.text = $"Round : {round}";
+        }
+
         private void OnStaminaChange((int stamina, int maxStamina) value)
         {
             staminaText.text = value.stamina.ToString();

@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e7fcd0c0e32da43afa3ba49b8db9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 3020265835851291835}
+  entity: {fileID: 0}
 --- !u!60 &4246851053984160431
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5948124574109914207}
-  - component: {fileID: 3020265835851291835}
+  - component: {fileID: 176898046006044865}
   m_Layer: 0
   m_Name: Satyr Raider
   m_TagString: Untagged
@@ -230,7 +230,7 @@ Transform:
   - {fileID: 5001813018429096354}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3020265835851291835
+--- !u!114 &176898046006044865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4193307912710144658}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa873d92c0880642af3c9a76a10f055, type: 3}
+  m_Script: {fileID: 11500000, guid: 56c3a8904436468aa0e9f4003563c15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   curentState: 
@@ -247,5 +247,3 @@ MonoBehaviour:
   Anim: {fileID: 1173972806653157558}
   Model: {fileID: 5001813018429096354}
   MoveSpeed: 0.5
-  RemainStamina: 0
-  AttackRange: 1

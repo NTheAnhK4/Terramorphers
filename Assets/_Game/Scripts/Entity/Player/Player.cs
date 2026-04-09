@@ -2,7 +2,7 @@ using GameCore.Commands;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
-
+using UnityEngine;
 using VContainer;
 using VitalRouter;
 
@@ -143,6 +143,7 @@ namespace Terramorphers
         public override void OnEnter()
         {
             base.OnEnter();
+          
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
             

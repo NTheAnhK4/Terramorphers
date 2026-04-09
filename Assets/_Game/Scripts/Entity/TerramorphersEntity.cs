@@ -1,4 +1,4 @@
-using System;
+
 using CoreGame;
 using GameCore.Domain.Skill;
 using Sirenix.OdinInspector;
@@ -63,5 +63,6 @@ namespace Terramorphers
         {
             ChangeState(_hurtState, () => new HurtStateData(){Damage = damage,AttackType = attackType});
         }
+        public virtual void SetDirection(Vector3 direction){}
     }
 }

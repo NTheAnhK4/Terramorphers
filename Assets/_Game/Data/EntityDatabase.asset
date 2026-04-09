@@ -28,6 +28,8 @@ MonoBehaviour:
         NeutralResistance: 0
         CriticalChance: 0
         Healing: 0
+      _actions: []
+      skillAnims: []
   - key: 1
     value:
       addressable: SatyrRaider
@@ -43,3 +45,9 @@ MonoBehaviour:
         NeutralResistance: 0
         CriticalChance: 0
         Healing: 0
+      _actions:
+      - {fileID: 11400000, guid: af342ad6b70b0d447a3a9f5d25dd0f8b, type: 2}
+      - {fileID: 11400000, guid: 75cf8fbe27734244287187a8fe11090c, type: 2}
+      skillAnims:
+      - SkillID: 0
+        AnimName: Attacking

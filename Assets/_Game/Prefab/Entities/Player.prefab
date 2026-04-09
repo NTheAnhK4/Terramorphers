@@ -48,8 +48,8 @@ MonoBehaviour:
   curentState: 
   IsAnimationTriggerFinished: 0
   Anim: {fileID: 0}
-  Model: {fileID: 0}
-  MoveSpeed: 1
+  Model: {fileID: 5288525044127554926}
+  MoveSpeed: 0.5
 --- !u!1 &6172449971279582337
 GameObject:
   m_ObjectHideFlags: 0

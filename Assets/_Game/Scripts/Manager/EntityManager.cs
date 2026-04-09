@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
+using GameCore.Utility;
+using GameCore.Utility.Shape;
 using Sirenix.Utilities;
 using UnityEngine;
 using VitalRouter;
@@ -10,8 +13,10 @@ namespace Terramorphers
 {
     public class EntityManager
     {
-        private LinkedList<TerramorphersEntity> _entities = new();
-        private LinkedListNode<TerramorphersEntity> _currentEntity;
+       
+
+        private List<TerramorphersEntity> _entities = new();
+        private int currentEntityID;
         private EntityFactory _entityFactory;
         private List<IDisposable> bags = new();
         private ICommandSubscribable _subscribable;
@@ -24,6 +29,7 @@ namespace Terramorphers
             _entityFactory = entityFactory;
             _subscribable = subscribable;
             _publisher = publisher;
+            currentEntityID = -1;
         }
 
         public async UniTask AddEntity(int entityID, ITile tile, int teamID)
@@ -36,67 +42,90 @@ namespace Terramorphers
                 return;
             }
             entity.SetTile(tile);
-
-            if (_currentEntity == null)
+            if (currentEntityID == 0)
             {
-                _entities.AddFirst(entity);
-                _currentEntity = _entities.First;
+                _entities.Insert(1,entity);
             }
-            else _entities.AddAfter(_currentEntity, entity);
+            else
+            {
+                _entities.Add(entity);
+            }
         }
+
+        public void ResetEntityID() => currentEntityID = 0;
         
         public void OnEnter()
         {
-            currentRound = 1;
-            _currentEntity = _entities.First;
-            if(_currentEntity != null) _currentEntity.Value.OnEnter();
+            currentRound = 0;
+            _publisher.PublishAsync(new IncreaseRoundCommand() { NewRound = currentRound });
+            if(currentEntityID >= 0 && 
+               currentEntityID < _entities.Count && 
+               _entities[currentEntityID] != null) _entities[currentEntityID].OnEnter();
             
             bags.Add(_subscribable.Subscribe<EndEntityTurnCommand>(EndCurrentEntityTurn));
         }
 
         public void OnUpdate()
         {
-            if(_currentEntity != null) _currentEntity.Value.OnUpdate();
+            if(currentEntityID >= 0 && 
+               currentEntityID < _entities.Count && 
+               _entities[currentEntityID] != null) _entities[currentEntityID].OnUpdate();
+            
         }
 
         public void OnExit()
         {
-            if(_currentEntity != null) _currentEntity.Value.OnExit();
+            if(currentEntityID >= 0 && 
+               currentEntityID < _entities.Count && 
+               _entities[currentEntityID] != null) _entities[currentEntityID].OnExit();
+            
             foreach(var bag in bags) bag?.Dispose();
         }
 
         private void EndCurrentEntityTurn(EndEntityTurnCommand command, PublishContext context)
         {
-            _currentEntity.Value.OnExit();
-            
-            if (_currentEntity.Next == null)
+            if(currentEntityID >= 0 && 
+               currentEntityID < _entities.Count && 
+               _entities[currentEntityID] != null) _entities[currentEntityID].OnExit();
+            currentEntityID++;
+            if (currentEntityID >= _entities.Count)
             {
-                _currentEntity = _entities.First;
+                currentEntityID = 0;
                 currentRound++;
                 _publisher.PublishAsync(new IncreaseRoundCommand() {NewRound = currentRound});
             }
-            else _currentEntity = _currentEntity.Next;
            
-            _currentEntity.Value.OnEnter();
+           
+           if(_entities[currentEntityID] != null) _entities[currentEntityID].OnEnter();
+          
         }
 
         public List<TerramorphersEntity> GetEnemies(TerramorphersEntity owner)
         {
-            if (owner is Enemy)
-            {
-                return new List<TerramorphersEntity>() { Player };
-            }
-            else
-            {
-                List<TerramorphersEntity> result = new();
-                var firstNode = _entities.First;
-                while (firstNode.Next != null)
-                {
-                    if(firstNode.Value is Enemy) result.Add(firstNode.Value);
-                }
+            return null;
+        }
 
-                return result;
-            }
+        public List<TerramorphersEntity> GetEntitiesWithTeamID(int teamID) => _entities.Where(t => t.TeamID == teamID).ToList();
+
+        public TerramorphersEntity GetClosestEntityWithTeamID(int teamID, ITile center)
+        {
+            
+            List<TerramorphersEntity> entities = GetEntitiesWithTeamID(teamID);
+            if (entities == null || entities.Count == 0) return null;
+            return entities
+                .MinBy(e => Cube.Distance(e.CurrentTile.Index, center.Index));
+           
+        }
+
+        public List<TerramorphersEntity> GetEntitiesWithDiffTeamID(int teamID) => _entities.Where(t => t.TeamID != teamID).ToList();
+        public TerramorphersEntity GetClosestEntityWithDiffTeamID(int teamID, ITile center)
+        {
+            
+            List<TerramorphersEntity> entities = GetEntitiesWithDiffTeamID(teamID);
+            if (entities == null || entities.Count == 0) return null;
+            return entities
+                .MinBy(e => Cube.Distance(e.CurrentTile.Index, center.Index));
+           
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Terramorphers.States.PlayerState
 
         public override void OnEnter(StateData stateData = null)
         {
+          
             base.OnEnter(stateData);
             entity.InputManager.SetLayer(InputManager.TILE_LAYER);
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
@@ -34,6 +35,7 @@ namespace Terramorphers.States.PlayerState
         public override void Update()
         {
             base.Update();
+          
             entity.InputManager.OnUpdate();
         }
 

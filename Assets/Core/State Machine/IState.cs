@@ -58,7 +58,7 @@ namespace CoreGame
         {
             if (animNameFunc != null)   animBoolName = animNameFunc.Invoke();
             if(!string.IsNullOrEmpty(animBoolName)) entity.Anim.SetBool(animBoolName, true);
-            if(animHash > 0) entity.Anim.Play(animHash);
+            if(entity.Anim != null && entity.Anim.HasState(0, animHash)) entity.Anim.Play(animHash);
             entity.IsAnimationTriggerFinished = false;
             entity.curentState = this.GetType().Name;
             // Debug.Log(entity.name + " " + this.GetType().Name);

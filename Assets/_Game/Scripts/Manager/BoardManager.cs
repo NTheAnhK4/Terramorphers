@@ -38,6 +38,8 @@ namespace Terramorphers
         private HexagonalGrid<ITile> hexaBoard;
         AsyncOperationHandle<TextAsset> handle;
 
+        public HexagonalGrid<ITile> HexaBoard => hexaBoard;
+
         public List<List<ITile>> Board => board;
         public string path = "Assets/_Game/Scripts/Configs/GameConfig.json";
         private List<ITile> currentSpecialTiles = new();
@@ -179,7 +181,7 @@ namespace Terramorphers
             return result;
         }
 
-
+        
         private void SetMovableTiles(SetMovableTilesCommand tilesCommand, PublishContext context)
         {
             ClearSpecialTiles();

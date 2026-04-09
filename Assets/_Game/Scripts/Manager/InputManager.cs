@@ -41,7 +41,6 @@ namespace Terramorphers
         {
             if (Input.GetMouseButtonDown(0))
             {
-              
                 ITile tile = GetTile();
                 if (tile == null) return;
                 _publisher.PublishAsync(new SelectTileCommand() { SelectedTile = tile });

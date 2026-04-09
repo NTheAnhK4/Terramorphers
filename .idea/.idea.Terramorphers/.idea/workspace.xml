@@ -5,28 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/DeadState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/DeadState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/HurtState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/HurtState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Hurt.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Hurt.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor/ComponentBehaviorEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Editor/ComponentBehaviorEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/Component/Scripts/ComponentBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/Component/Scripts/ComponentBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/IState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Core/State Machine/StateMachine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.FOV.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Attacking.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Animations/Enemies/SatyrRaider/Attacking.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/_Font/FREDOKAONE-REGULAR SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/EntityDatabase.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/SatyrRider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Enemies/SatyrRider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/AdvantureGamePlayScreen.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EntityMetadata.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/SatyrRider/SatyrRiderThinkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EnemyState/SatyrRider/SatyrRiderThinkingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EntityWaitingState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/EntityWaitingState.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectMoveTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectMoveTileState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Stats/EntityStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/RouterModuleInstaller.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Domain/Shared/IMasterGateway.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/TurnNotificationAnimation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/ICloseTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Test/TestPresenter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,10 +70,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Stats/StatModifier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/SandTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/TileDatabase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CompositeConsideration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/CurveConsideration.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/InverseConsideration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.cysharp.unitask@73a63b7f67/Runtime/UniTask.WhenAll.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ae618ea15ea4f2ebfe58b132c1de82d2b600/f9/123f544b/TweenExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6ff3bcb667574bf9a8630184172fcfbf176600/4f/cd7c6659/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6ff3bcb667574bf9a8630184172fcfbf176600/5a/944ba403/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6ff3bcb667574bf9a8630184172fcfbf176600/8d/b3d395a0/Vector3.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6ff3bcb667574bf9a8630184172fcfbf176600/d3/dd9d4141/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f92b8f40b6654398a60889928a92f78e20a00/5d/7e721393/RaycastHit2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
@@ -97,7 +106,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/Utility__AI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -201,6 +210,16 @@
       <workItem from="1775229850522" duration="8102000" />
       <workItem from="1775294258727" duration="3643000" />
       <workItem from="1775313857374" duration="2477000" />
+      <workItem from="1775382360826" duration="596000" />
+      <workItem from="1775383051759" duration="329000" />
+      <workItem from="1775396562160" duration="9855000" />
+      <workItem from="1775433952012" duration="881000" />
+      <workItem from="1775481997149" duration="14082000" />
+      <workItem from="1775518988014" duration="1753000" />
+      <workItem from="1775573892488" duration="11851000" />
+      <workItem from="1775607047673" duration="839000" />
+      <workItem from="1775655548324" duration="2472000" />
+      <workItem from="1775694489271" duration="521000" />
     </task>
     <servers />
   </component>

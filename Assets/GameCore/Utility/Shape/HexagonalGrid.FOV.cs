@@ -2,14 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
+
 
 namespace GameCore.Utility.Shape
 {
     public partial class HexagonalGrid<T>
     {
         // tmp r^3
-        private bool IsCubeVisible(Cube from, Cube target, Predicate<T> isBlockVisible)
+        public bool IsCubeVisible(Cube from, Cube target, Predicate<T> isBlockVisible)
         {
             List<Cube> path = GetLinedPathIndices(from, target).ToList();
             if (path.Count <= 2) return true;
