@@ -1,9 +1,9 @@
-using System;
+
 using CoreGame;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
 using GameCore.Domain.Skill;
-using log4net.Core;
+
 using Terramorphers.Command;
 using UnityEngine;
 

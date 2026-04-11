@@ -12,8 +12,8 @@ namespace Terramorphers
 {
     public class Player : TerramorphersEntity
     {
-        [TabGroup("General"), SerializeField] private Vector3 rightModalPos = new Vector3(.36f, 1.65f, 0);
-        [TabGroup("General"), SerializeField] private Vector3 leftModalPos = new Vector3(-.33f, 1.65f, 0);
+        [TabGroup("General"), SerializeField] private Vector3 rightModalPos = new Vector3(.36f, 1.27f, 0);
+        [TabGroup("General"), SerializeField] private Vector3 leftModalPos = new Vector3(-.33f, 1.27f, 0);
         #region Dependencies
 
         private InputManager _inputManager;

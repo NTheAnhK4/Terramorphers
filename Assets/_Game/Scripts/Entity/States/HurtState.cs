@@ -13,21 +13,13 @@ namespace Terramorphers.States
     }
     public class HurtState : State<TerramorphersEntity>
     {
-        public HurtState(TerramorphersEntity entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
+        
 
         public HurtState(TerramorphersEntity entity, int animationHash) : base(entity, animationHash)
         {
         }
 
-        public HurtState(TerramorphersEntity entity) : base(entity)
-        {
-        }
-
-        public HurtState(TerramorphersEntity entity, Func<string> animNameFunc) : base(entity, animNameFunc)
-        {
-        }
+      
 
         public override void OnEnter(StateData stateData = null)
         {

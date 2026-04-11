@@ -40,7 +40,7 @@ namespace Terramorphers
 
         public IState DeadState => _deadState;
         protected ITile currentTile;
-
+        [HideInInspector] public Action OnInitialized;
         private void OnValidate()
         {
             MoveSpeed = .5f;
@@ -76,6 +76,7 @@ namespace Terramorphers
          
             ResetDataCache();
             dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;
+            OnInitialized?.Invoke();
         }
 
         protected void ResetDataCache()

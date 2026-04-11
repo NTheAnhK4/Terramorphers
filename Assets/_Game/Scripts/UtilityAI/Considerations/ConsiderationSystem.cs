@@ -2,11 +2,11 @@
     using System;
     using System.Collections.Generic;
     using System.Text.RegularExpressions;
-    using CodiceApp.Gravatar;
+
     using GameCore.Utility;
     using Sirenix.OdinInspector;
     using UnityEngine;
-    using UnityEngine.Serialization;
+    
 
     namespace UtilityAI.Considerations
     {
