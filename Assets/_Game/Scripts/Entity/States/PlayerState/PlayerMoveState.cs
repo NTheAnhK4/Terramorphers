@@ -18,13 +18,8 @@ namespace Terramorphers.States.PlayerState
     public class PlayerMoveState : State<Player>
     {
         private PlayerMoveStateData data;
-        public PlayerMoveState(Player entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
-
-        public PlayerMoveState(Player entity, Func<string> animNameFunc) : base(entity, animNameFunc)
-        {
-        }
+       
+        public PlayerMoveState(Player entity, int animHash) : base(entity, animHash){}
 
         public override void OnEnter(StateData stateData = null)
         {
@@ -51,8 +46,16 @@ namespace Terramorphers.States.PlayerState
             var moveTiles = entity.BoardManager.GetPath(entity.CurrentTile, data.TargetTile);
             if (moveTiles == null || moveTiles.Count <= 1) return;
             var movePath = moveTiles.Select(t => t.Transform.position).ToArray();
+            List<Vector3> directionList = new();
+            for(int i = 0; i < moveTiles.Count - 1; ++i)
+            {
+                Vector3 direction = moveTiles[i + 1].Transform.position - moveTiles[i].Transform.position;
+                directionList.Add(direction);
+            }
             entity.transform.DOPath(movePath,(movePath.Count() - 1) * entity.MoveSpeed, PathType.Linear).OnWaypointChange(index =>
             {
+                if (index < directionList.Count)
+                    entity.SetDirection(directionList[index]);
                 if (index > 0 && index < moveTiles.Count()) entity.RemainStamina -= moveTiles[index].GetMoveCost();
                 entity.SetTile(moveTiles[index]);
             }).OnComplete(() =>

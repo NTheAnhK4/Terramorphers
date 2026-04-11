@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 2085985646553788937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.76, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5948124574109914207}
@@ -120,6 +120,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e7fcd0c0e32da43afa3ba49b8db9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   entity: {fileID: 0}
 --- !u!60 &4246851053984160431
 PolygonCollider2D:
@@ -242,8 +251,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c3a8904436468aa0e9f4003563c15a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: statsSystem
+      Entry: 6
+      Data: 
+    - Name: Context
+      Entry: 6
+      Data: 
+    - Name: DataDebugger
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: AIActions
+      Entry: 6
+      Data: 
   curentState: 
   IsAnimationTriggerFinished: 0
   Anim: {fileID: 1173972806653157558}
   Model: {fileID: 5001813018429096354}
   MoveSpeed: 0.5
+  Name: 

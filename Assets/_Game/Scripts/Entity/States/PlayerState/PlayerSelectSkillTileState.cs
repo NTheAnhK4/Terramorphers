@@ -20,13 +20,8 @@ namespace Terramorphers.States.PlayerState
         private List<ETileState> _tileStates = new();
         private PlayerSelectSkillTileData data;
         
-        public PlayerSelectSkillTileState(Player entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
-
-        public PlayerSelectSkillTileState(Player entity, Func<string> animNameFunc) : base(entity, animNameFunc)
-        {
-        }
+   
+        public PlayerSelectSkillTileState(Player entity, int animHash) : base(entity, animHash){}
 
         public override void OnEnter(StateData stateData = null)
         {

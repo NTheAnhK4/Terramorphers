@@ -1,5 +1,6 @@
 using GameCore.Commands;
-using GameCore.Utility;
+using CoreGame;
+using Sirenix.OdinInspector;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
@@ -11,6 +12,8 @@ namespace Terramorphers
 {
     public class Player : TerramorphersEntity
     {
+        [TabGroup("General"), SerializeField] private Vector3 rightModalPos = new Vector3(.36f, 1.65f, 0);
+        [TabGroup("General"), SerializeField] private Vector3 leftModalPos = new Vector3(-.33f, 1.65f, 0);
         #region Dependencies
 
         private InputManager _inputManager;
@@ -21,6 +24,11 @@ namespace Terramorphers
 
         #endregion
 
+        private int idleAnimHash = Animator.StringToHash("Idle");
+        private int runAnimHash = Animator.StringToHash("Run");
+        private int attackAnimHash = Animator.StringToHash("Attack");
+        private int hurtAnimHash = Animator.StringToHash("Hurt");
+        private int deadAnimHash = Animator.StringToHash("Dead");
         #region Runtime Data
 
      
@@ -114,14 +122,14 @@ namespace Terramorphers
         protected override void Awake()
         {
             base.Awake();
-            _playerSelectMoveTileState = new PlayerSelectMoveTileState(this, string.Empty);
-            _moveState = new PlayerMoveState(this, string.Empty);
-            _idleState = new PlayerIdleState(this, string.Empty);
+            _playerSelectMoveTileState = new PlayerSelectMoveTileState(this, idleAnimHash);
+            _moveState = new PlayerMoveState(this, runAnimHash);
+            _idleState = new PlayerIdleState(this, idleAnimHash);
            
-            _selectSkillTileState = new PlayerSelectSkillTileState(this, string.Empty);
-            _useSkillState = new PlayerUseSkillState(this, string.Empty);
-            _hurtState = new HurtState(this, string.Empty);
-            _deadState = new DeadState(this, string.Empty);
+            _selectSkillTileState = new PlayerSelectSkillTileState(this, idleAnimHash);
+            _useSkillState = new PlayerUseSkillState(this, attackAnimHash);
+            _hurtState = new HurtState(this, hurtAnimHash);
+            _deadState = new DeadState(this, deadAnimHash);
             AddState(_idleState);
             AddState(_playerSelectMoveTileState);
             AddState(_selectSkillTileState);
@@ -176,6 +184,19 @@ namespace Terramorphers
             if (currentTile != null) currentTile.CurrentOccupant = this;
         }
 
+        public override void SetDirection(Vector3 direction)
+        {
+            if (direction.x > 0 && Model.localScale.x < 0)
+            {
+                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                Model.transform.localPosition = rightModalPos;
+            }
+            else if (direction.x < 0 && Model.localScale.x > 0)
+            {
+                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                Model.transform.localPosition = leftModalPos;
+            }
+        }
 
         public override bool IsDead()
         {

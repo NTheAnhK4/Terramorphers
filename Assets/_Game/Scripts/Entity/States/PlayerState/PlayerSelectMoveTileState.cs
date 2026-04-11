@@ -12,13 +12,8 @@ namespace Terramorphers.States.PlayerState
     {
 
         private List<IDisposable> _disposables = new();
-        public PlayerSelectMoveTileState(Player entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
-
-        public PlayerSelectMoveTileState(Player entity, Func<string> animNameFunc) : base(entity, animNameFunc)
-        {
-        }
+      
+        public PlayerSelectMoveTileState(Player entity, int animHash) : base(entity, animHash){}
 
         public override void OnEnter(StateData stateData = null)
         {

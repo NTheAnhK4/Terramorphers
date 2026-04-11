@@ -26,7 +26,7 @@ namespace UtilityAI.State
             {
                
                 ITile currentTile = entity.CurrentTile;
-                int remainStamina = context.GetData<int>(BlackBoardConstant.REMAIN_STAMINA_KEY);
+            
                 List<ITile> moveTiles = entity.BoardManager.GetPath(currentTile, data.TargetTile);
                 if (moveTiles == null || moveTiles.Count <= 1) return;
                 var movePath = moveTiles.Select(t => t.Transform.position).ToArray();
@@ -41,14 +41,15 @@ namespace UtilityAI.State
                 {
                     if (index < directionList.Count)
                         entity.SetDirection(directionList[index]);
-                    if (index > 0 && index < moveTiles.Count())
-                    {
-                        entity.DataCache.RemainStamina.Value -= moveTiles[index].GetMoveCost();
-                    }
+                    // if (index > 0 && index < moveTiles.Count())
+                    // {
+                    //     entity.DataCache.RemainStamina.Value -= moveTiles[index].GetMoveCost();
+                    // }
 
                     entity.SetTile(moveTiles[index]);
                 });
                 await tween.AwaitForStepComplete(cancellationToken:entity.transform.GetCancellationTokenOnDestroy());
+                entity.DataCache.RemainStamina.Value -= moveTiles.Select(t => t.GetMoveCost()).Sum();
             }
             catch(OperationCanceledException){}
            

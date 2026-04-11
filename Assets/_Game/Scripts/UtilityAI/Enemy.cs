@@ -160,16 +160,7 @@ namespace UtilityAI
             if (currentTile != null) currentTile.CurrentOccupant = this;
             //context.CurrentTile = tile;
         }
-        public override void SetDirection(Vector3 direction)
-        {
-           
-            if (direction.x > 0 && Model.localScale.x < 0) Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
-            else if (direction.x < 0 && Model.localScale.x > 0)
-            {
-
-                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
-            }
-        }
+       
 
         public override bool IsDead()
         {

@@ -88,7 +88,16 @@ namespace Terramorphers
         {
             ChangeState(_hurtState, () => new HurtStateData(){Damage = damage,AttackType = attackType});
         }
-        public virtual void SetDirection(Vector3 direction){}
+        public virtual void SetDirection(Vector3 direction)
+        {
+           
+            if (direction.x > 0 && Model.localScale.x < 0) Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+            else if (direction.x < 0 && Model.localScale.x > 0)
+            {
+
+                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+            }
+        }
 
         private void OnDestroy()
         {
