@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Utility/AI/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/AI/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaider.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaider.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaiderConsideration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaiderConsideration.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EnemyMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Data/Entities/EnemyMetadata.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/BaseTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Tiles/ITile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/AIAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/AIAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/UseSkillAction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/AIActions/UseSkillAction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/BlackBoardConstant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/BlackBoardConstant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConsiderationSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Considerations/ConsiderationSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Reasoner/TileReaonser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Reasoner/TileReaonser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Reasoner/SkillReasoner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Reasoner/SkillReasoner.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +207,7 @@
       <workItem from="1775868709448" duration="884000" />
       <workItem from="1775876774516" duration="4373000" />
       <workItem from="1775894091431" duration="8803000" />
-      <workItem from="1775923465769" duration="3344000" />
+      <workItem from="1775923465769" duration="4544000" />
     </task>
     <servers />
   </component>

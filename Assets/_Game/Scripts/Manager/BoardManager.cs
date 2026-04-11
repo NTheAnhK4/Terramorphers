@@ -275,7 +275,7 @@ namespace Terramorphers
         {
             List<(ITile, int)> movableTiles =hexaBoard.GetMovableAndDistanceValue(
                 command.Tile.Index, 
-                8, 
+                100, 
                 tile => tile.GetMoveCost(),
                 tile => !tile.IsPassable() || (tile == command.Tile)).ToList(); 
             foreach (var item in movableTiles)

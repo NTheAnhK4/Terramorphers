@@ -62,8 +62,6 @@ namespace Terramorphers
                 else
                 {
                     entity = hit.collider.GetComponentInParent<TerramorphersEntity>();
-                    if (entity == null) Debug.Log($"[Test] entity is null");
-                    else Debug.Log($"[Test] {entity.CurrentTile.Index}");
                     if (entity != null) entityCache[hit.collider] = entity;
                     else return null;
                 }

@@ -33,7 +33,7 @@ namespace UtilityAI.Reasoner
                 context.SetData(BlackBoardConstant.MANA_AFFORDABILITY_RATIO, manaAffordabilityRatio);
                 
             
-                entity.Context.SetData(BlackBoardConstant.MANA_AVAILABILITY_RATIO,1.0f * remainMana/entity.StatsSystem.Stats.Mana);
+               
                 var hexa = entity.BoardManager.HexaBoard;
                 
                 //visible

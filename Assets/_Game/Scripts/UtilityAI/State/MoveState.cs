@@ -43,8 +43,7 @@ namespace UtilityAI.State
                         entity.SetDirection(directionList[index]);
                     if (index > 0 && index < moveTiles.Count())
                     {
-                        remainStamina -= moveTiles[index].GetMoveCost();
-                        context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, remainStamina);
+                        entity.DataCache.RemainStamina.Value -= moveTiles[index].GetMoveCost();
                     }
 
                     entity.SetTile(moveTiles[index]);

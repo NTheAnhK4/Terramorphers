@@ -550,7 +550,7 @@ MonoBehaviour:
           m_RotationOrder: 4
       Value: 0
   - Index: 5
-    Text: 1 - x1 * x6
+    Text: max(1 - max(x1, x6),0.1)
     OperationElements:
     - OperationType: 0
       CurveEvaluator:
@@ -627,7 +627,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
       Value: 0
-    - OperationType: 1
+    - OperationType: 5
       CurveEvaluator:
         Index: 0
         ContextType: 0
@@ -641,6 +641,32 @@ MonoBehaviour:
           m_RotationOrder: 4
       Value: 0
     - OperationType: 3
+      CurveEvaluator:
+        Index: 0
+        ContextType: 0
+        ParamContextType: 0
+        Key: 
+        Curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      Value: 0
+    - OperationType: 0
+      CurveEvaluator:
+        Index: 0
+        ContextType: 0
+        ParamContextType: 0
+        Key: 
+        Curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      Value: 0.1
+    - OperationType: 5
       CurveEvaluator:
         Index: 0
         ContextType: 0

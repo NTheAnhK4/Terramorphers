@@ -1,4 +1,5 @@
 
+using System;
 using CoreGame;
 using GameCore.Domain.Skill;
 using GameCore.Utility;
@@ -7,6 +8,8 @@ using Terramorphers.States;
 using Terramorphers.Stats;
 using UnityEngine;
 using UtilityAI;
+using UtilityAI.DataCache;
+using VContainer;
 
 namespace Terramorphers
 {
@@ -19,13 +22,17 @@ namespace Terramorphers
         protected IState _idleState;
         protected IState _hurtState;
         protected IState _deadState;
-        protected int currentHP;
+      
+        protected EntityDataCache dataCache;
+        protected EntityDerivedDataCalculator derivedDataCalculator;
+        [Inject] protected BoardManager _boardManager;
 
-        public int CurrentHp
-        {
-            get => currentHP;
-            set => currentHP = value;
-        }
+        public BoardManager BoardManager => _boardManager;
+        public EntityDataCache DataCache => dataCache;
+
+        public EntityDerivedDataCalculator DerivedDataCalculator => derivedDataCalculator;
+
+       
 
         public IState IdleState => _idleState;
 
@@ -41,7 +48,7 @@ namespace Terramorphers
 
         public virtual void OnEnter()
         {
-            
+            ResetDataCache();
         }
         public abstract void OnUpdate();
         public abstract void OnExit();
@@ -58,11 +65,23 @@ namespace Terramorphers
         public virtual void Init(EntityMetadata metadata, int teamID)
         {
             statsSystem = new StatsSystem(metadata.EntityStats);
+            Context = new Context();
+            dataCache = new EntityDataCache();
+            derivedDataCalculator = new EntityDerivedDataCalculator(this);
             Name = metadata.Addressable;
             _teamID = teamID;
-            CurrentHp = statsSystem.Stats.MaxHP;
-            Context = new Context();
-            Context.SetData(string.Format(BlackBoardConstant.ENTITY_HEALTH_FULLNESS_RATIO, Name),1.0f);
+           
+            
+        
+         
+            ResetDataCache();
+            dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;
+        }
+
+        protected void ResetDataCache()
+        {
+            dataCache.RemainMana.Value = statsSystem.Stats.Mana;
+            dataCache.RemainStamina.Value = statsSystem.Stats.Stamina;
         }
 
         public void TakeDamage(int damage, EAttackType attackType)
@@ -70,5 +89,10 @@ namespace Terramorphers
             ChangeState(_hurtState, () => new HurtStateData(){Damage = damage,AttackType = attackType});
         }
         public virtual void SetDirection(Vector3 direction){}
+
+        private void OnDestroy()
+        {
+            derivedDataCalculator.Dispose();
+        }
     }
 }

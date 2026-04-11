@@ -10,6 +10,7 @@ using VitalRouter;
 
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using Terramorphers.States;
 using UtilityAI.AIActions;
 using VContainer;
 
@@ -29,12 +30,12 @@ namespace UtilityAI
         private readonly int walkAnimHash = Animator.StringToHash("Walking");
         private readonly int tauntAnimHash = Animator.StringToHash("Taunt");
         protected EntityManager _entityManager;
-        protected BoardManager _boardManager;
+    
         protected ICommandPublisher _publisher;
         protected SkillManager _skillManager;
       
         public EntityManager EntityManager => _entityManager;
-        public BoardManager BoardManager => _boardManager;
+       
 
         public ICommandPublisher Publisher => _publisher;
 
@@ -57,11 +58,10 @@ namespace UtilityAI
 
 
         [Inject]
-        public void Construct(BoardManager boardManager,
+        public void Construct(
             ICommandPublisher publisher, ICommandSubscribable commandSubscribable,
             EntityManager entityManager, SkillManager skillManager)
         {
-            _boardManager = boardManager;
             _publisher = publisher;
             _entityManager = entityManager;
             _skillManager = skillManager;
@@ -80,9 +80,13 @@ namespace UtilityAI
                     new List<float>(){.95f,.05f}
                     
                 });
+            _hurtState = new HurtState(this, hurtAnimHash);
+            _deadState = new DeadState(this, dyingAnimHash);
             AddState(_idleState);
             
             AddState(_moveState);
+            AddState(_hurtState);
+            AddState(_deadState);
             ChangeState(_idleState);
         }
 

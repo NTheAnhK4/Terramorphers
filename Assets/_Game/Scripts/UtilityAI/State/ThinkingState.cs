@@ -95,8 +95,8 @@ namespace UtilityAI.State
                 Debug.Log($"[Test] no entity valid");
                 return;
             }
-
             entity.Context.SetData(BlackBoardConstant.TARGET_ENTITY_KEY, targetEntity);
+            entity.DerivedDataCalculator.OnTargetChange(targetEntity);
             tileReasoner.EvaluateTile(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
             skillReasoner.EvaluateSkill(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
 

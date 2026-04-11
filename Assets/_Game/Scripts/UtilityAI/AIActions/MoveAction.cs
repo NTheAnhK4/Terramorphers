@@ -23,26 +23,6 @@ namespace UtilityAI.AIActions
             var selfContext = context.Get(EContextType.Self);
            
             var target = selfContext.GetData<TerramorphersEntity>(BlackBoardConstant.TARGET_ENTITY_KEY);
-           
-           
-           
-            int remainStamina = selfContext.GetData<int>(BlackBoardConstant.REMAIN_STAMINA_KEY);
-            int maxStamina = entity.StatsSystem.Stats.Stamina;
-            float staminaAvailability;
-            if (maxStamina == 0) staminaAvailability = 0;
-            else staminaAvailability = 1.0f * remainStamina / maxStamina;
-            selfContext.SetData(BlackBoardConstant.STAMINA_AVAILABILITY_RATIO, staminaAvailability);
-
-
-            float entityNearness;
-            if (remainStamina == 0) entityNearness = 0;
-            else
-                entityNearness = Mathf.Clamp01(1 - entity.CurrentTile.Context.GetData<int>(string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, target.Name))
-                    * 1.0f / remainStamina);
-
-            selfContext.SetData(
-                string.Format(BlackBoardConstant.ENTITY_NEARNESS_RATIO, target.Name), entityNearness);
-            
             
             context.SetParams(EContextType.Target, target.Name);
             context.SetParams(EContextType.Self, entity.Name);

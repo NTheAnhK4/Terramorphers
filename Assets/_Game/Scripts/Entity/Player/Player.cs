@@ -14,7 +14,7 @@ namespace Terramorphers
         #region Dependencies
 
         private InputManager _inputManager;
-        private BoardManager _boardManager;
+       
         private ICommandPublisher _publisher;
         private ICommandSubscribable _subscribable;
         private SkillManager _skillManager;
@@ -89,8 +89,7 @@ namespace Terramorphers
         public PlayerSelectSkillTileState SelectSkillTileState => _selectSkillTileState;
 
         public PlayerUseSkillState UseSkillState => _useSkillState;
-
-        public BoardManager BoardManager => _boardManager;
+        
 
       
 
@@ -101,12 +100,12 @@ namespace Terramorphers
         #endregion
 
         [Inject]
-        public void Construct(InputManager inputManager, BoardManager boardManager, 
+        public void Construct(InputManager inputManager, 
             ICommandPublisher publisher, ICommandSubscribable subscribable,
             SkillManager skillManager)
         {
             _inputManager = inputManager;
-            _boardManager = boardManager;
+          
             _publisher = publisher;
             _subscribable = subscribable;
             _skillManager = skillManager;

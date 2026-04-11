@@ -40,8 +40,8 @@ namespace Terramorphers.States
 
             int damage = GetDamage(hurtStateData.Damage, hurtStateData.AttackType);
            
-            entity.CurrentHp -= damage;
-            if (entity.CurrentHp <= 0)
+            entity.DataCache.RemainHP.Value -= damage;
+            if (entity.DataCache.RemainHP.Value <= 0)
             {
                 entity.ChangeState(entity.DeadState);
                 return;

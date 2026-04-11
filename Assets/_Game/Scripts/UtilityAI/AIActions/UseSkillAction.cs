@@ -1,9 +1,10 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using GameCore.Domain.Skill;
+
 using GameCore.Utility;
 using Terramorphers;
-using UnityEngine;
+
 using UtilityAI.Considerations;
 using UtilityAI.State;
 
@@ -42,13 +43,25 @@ namespace UtilityAI.AIActions
 
       
 
-        public override UniTask Execute(Context context)
+        public override async UniTask Execute(Context context)
         {
             #if UNITY_EDITOR
             entity.DataDebugger["skillID"] = bestSkillID;
             #endif
-            Debug.Log($"[Test] i will use skill {bestSkillID}");
-            return UniTask.CompletedTask;
+            try
+            {
+                var target = context.GetData<TerramorphersEntity>(BlackBoardConstant.TARGET_ENTITY_KEY);
+                entity.ChangeState(entity.UseSkillState, () => new UseSkillStateData()
+                {
+                    SkillID = bestSkillID,
+                    TargetTile = target.CurrentTile
+                });
+                await entity.UseSkillState.Execute(context);
+                await UniTask.Delay(100, cancellationToken: entity.GetCancellationTokenOnDestroy());
+                entity.ChangeState(entity.ThinkingState);
+            }
+            catch(OperationCanceledException){}
+           
         }
     }
 }
