@@ -6,11 +6,12 @@ using System.IO;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Utility.Shape;
-using Sirenix.OdinInspector;
+
 using Terramorphers.Command;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UtilityAI;
 using VContainer;
 using VitalRouter;
 
@@ -40,7 +41,7 @@ namespace Terramorphers
 
         public HexagonalGrid<ITile> HexaBoard => hexaBoard;
 
-        public List<List<ITile>> Board => board;
+       
         public string path = "Assets/_Game/Scripts/Configs/GameConfig.json";
         private List<ITile> currentSpecialTiles = new();
         private List<IDisposable> bags = new();
@@ -143,6 +144,7 @@ namespace Terramorphers
             bags.Add(_subscribable.Subscribe<SetMovableTilesCommand>(SetMovableTiles));
             bags.Add(_subscribable.Subscribe<ClearSpecialTilesCommand>(ClearSpecialTiles));
             bags.Add(_subscribable.Subscribe<SetSkillApplicableTilesCommand>(SetSkillApplicableTiles));
+            bags.Add(_subscribable.Subscribe<EntityTileDistCommand>(CaculatePlayerTileDistance));
         }
 
 
@@ -268,6 +270,15 @@ namespace Terramorphers
             }
 
             currentSpecialTiles.Clear();
+        }
+        private void CaculatePlayerTileDistance(EntityTileDistCommand command, PublishContext context)
+        {
+            List<(ITile, int)> movableTiles = GetMovableTiles(command.Tile, 8);
+            foreach (var item in movableTiles)
+            {
+                string key = string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, command.Name);
+                item.Item1.Context.SetData(key, item.Item2);
+            }
         }
     }
 }

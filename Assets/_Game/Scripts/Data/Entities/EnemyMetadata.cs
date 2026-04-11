@@ -2,8 +2,7 @@ using System;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UtilityAI.AIActions;
+
 using UtilityAI.Considerations;
 
 namespace Terramorphers
@@ -11,18 +10,37 @@ namespace Terramorphers
     [CreateAssetMenu(menuName = "Database/EntityData/EnemyMetadata", fileName = "EnemyMetadata")]
     public class EnemyMetadata : EntityMetadata
     {
-        
-        [SerializeField] private List<SkillConsiderationData> skillConsiderationDatas = new();
-        [SerializeField] private List<AIAction> aiActions = new();
-        [SerializeField, TableList] private List<TileConsiderationData> tileConsiderationDatas = new();
-        [SerializeField, TableList] private Consideration commonTileConsideration;
+        [TabGroup("Consideration",Icon =SdfIconType.Calculator, TextColor = "cyan")] [SerializeField] private ConsiderationSystem _considerationSystem;
+        [TabGroup("Skill", Icon = SdfIconType.Lightning, TextColor = "red")] [SerializeField, TableList] private List<SkillConsiderationData> skillConsiderationDatas = new();
 
-        public IReadOnlyList<AIAction> AIActions => aiActions;
+        [TabGroup("Consideration")] [SerializeField] private int selfConsiderationID  = -1;
+        [TabGroup("Consideration")] [SerializeField] private int allyConsiderationID = -1;
+        [TabGroup("Consideration")] [SerializeField] private int enemyConsiderationID = -1;
+        [TabGroup("Consideration")] [SerializeField] private int useSkillActionConsiderationID;
+
+        [TabGroup("Consideration")] [SerializeField] private int moveActionConsiderationID;
+     
+        [TabGroup("Tile", Icon = SdfIconType.Grid, TextColor = "green")] [SerializeField, TableList] private List<TileConsiderationData> tileConsiderationDatas = new();
+        [TabGroup("Consideration")] [SerializeField] private int commonTileConsiderationID;
+
+        public ConsiderationSystem ConsiderationSystem => _considerationSystem;
+        
         public IReadOnlyList<SkillConsiderationData> SkillConsiderationDatas => skillConsiderationDatas;
 
         public IReadOnlyList<TileConsiderationData> TileConsiderationDatas => tileConsiderationDatas;
-        
-        public Consideration CommonTileConsideration => commonTileConsideration;
+
+        public int CommonTileConsiderationID => commonTileConsiderationID;
+
+        public int UseSkillActionConsiderationID => useSkillActionConsiderationID;
+
+        public int MoveActionConsiderationID => moveActionConsiderationID;
+
+        public int SelfConsiderationID => selfConsiderationID;
+
+        public int EnemyConsiderationID => enemyConsiderationID;
+
+        public int AllyConsiderationID => allyConsiderationID;
+
 #if UNITY_EDITOR
         [Button]
         private void Bake()
@@ -38,7 +56,8 @@ namespace Terramorphers
                 if (tileTypeToConsideration.ContainsKey(tileType)) continue;
                 TileConsiderationData tileConsiderationData = new TileConsiderationData()
                 {
-                    TileType = tileType
+                    TileType = tileType,
+                    ConsiderationID = -1,
                 };
                 tileConsiderationDatas.Add(tileConsiderationData);
                 tileTypeToConsideration[tileType] = tileConsiderationData;
@@ -50,24 +69,28 @@ namespace Terramorphers
     [Serializable]
     public class SkillConsiderationData
     {
+        [HorizontalGroup("skillConsiderationData", Width = .2f)]
         [SerializeField] private int skillID;
+        [HorizontalGroup("skillConsiderationData", Width = .2f)]
+        [SerializeField] private int considerationID;
+        [HorizontalGroup("skillConsiderationData", Width = .6f)]
         [SerializeField] private string animName;
-        [SerializeField] private List<Consideration> consideration = new();
+       
 
         public int SkillID => skillID;
 
         public string AnimName => animName;
 
-        public IReadOnlyList<Consideration> Consideration => consideration;
+        public int ConsiderationID => considerationID;
     }
 
     [Serializable]
     public class TileConsiderationData
     {
+        [HorizontalGroup("tileConsiderationData", Width = .4f)] [HideLabel]
         public ETileType TileType;
-        [SerializeField] private Consideration consideration;
-
-        public Consideration Consideration => consideration;
+        [HorizontalGroup("tileConsiderationData", Width = .6f)] [HideLabel]
+        public int ConsiderationID;
     }
 
 }

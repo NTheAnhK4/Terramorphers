@@ -2,9 +2,15 @@ using System;
 using System.Collections.Generic;
 
 using CoreGame;
-
+using Cysharp.Threading.Tasks;
+using GameCore.Domain.Skill;
+using GameCore.Respository.Skill;
+using GameCore.Utility;
 using Terramorphers;
-
+using UnityEngine;
+using UtilityAI.AIActions;
+using UtilityAI.Considerations;
+using UtilityAI.Reasoner;
 
 
 namespace UtilityAI.State
@@ -12,8 +18,24 @@ namespace UtilityAI.State
     
     public class ThinkingState : EnemyState<StateData>
     {
-        private Dictionary<ETileType, Considerations.Consideration> tileConsiderationDict = new();
+        public class SkillInfo
+        {
+            public string AnimaName;
+            public int ConsiderationID;
+            public Context Context;
+            public SkillMetadata SkillMetaData;
+        }
        
+        private EnemyMetadata enemyMetadata;
+
+        private int remainStamina;
+        private List<(ITile, int)> movableTiles = new();
+        private ConsiderationContext considerationContext = new();
+        private List<AIAction> aiActions = new();
+        Dictionary<int, SkillInfo> skillInfos = new();
+        private EntityReasoner entityReasoner;
+        private TileReaonser tileReasoner;
+        private SkillReasoner skillReasoner;
         public ThinkingState(Enemy entity, string animBoolName) : base(entity, animBoolName)
         {
         }
@@ -33,63 +55,61 @@ namespace UtilityAI.State
         public ThinkingState(Enemy entity, int animationHash, EnemyMetadata enemyMetadata)
             : base(entity, animationHash)
         {
-            foreach (var tileConsideration in enemyMetadata.TileConsiderationDatas)
+            this.enemyMetadata = enemyMetadata;
+           
+            considerationContext.Set(EContextType.Self, entity.Context);
+
+            entityReasoner = new EntityReasoner(entity);
+            tileReasoner = new TileReaonser(entity);
+          
+            SkillManager skillManager = entity.SkillManager;
+            foreach (var skillconsiderationData in enemyMetadata.SkillConsiderationDatas)
             {
-                if(tileConsideration.Consideration == null) continue;
-                tileConsiderationDict[tileConsideration.TileType] = tileConsideration.Consideration;
+                var skillMetadata = skillManager.GetSkillMetadata(skillconsiderationData.SkillID);
+                var context = skillMetadata.GetContext();
+                skillInfos[skillconsiderationData.SkillID] = new SkillInfo()
+                {
+                    AnimaName = skillconsiderationData.AnimName,
+                    ConsiderationID = skillconsiderationData.ConsiderationID,
+                    Context = context,
+                    SkillMetaData = skillMetadata
+                };
+
             }
+
+            skillReasoner = new SkillReasoner(entity, skillInfos);
+            aiActions.Add(new UseSkillAction(enemyMetadata.UseSkillActionConsiderationID,  skillInfos));
         }
 
-        private float EvaluateTile(ITile tile)
-        {
-            if (tileConsiderationDict.ContainsKey(tile.TileMetadata.Type))
-            {
-                return tileConsiderationDict[tile.TileMetadata.Type].Evaluate(tile.Context);
-            }
-
-            return .25f;
-        }
+       
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
             entity.UpdateContext();
-            int remainStamina = entity.context.GetData<int>(BlackBoardConstant.REMAIN_STAMINA_KEY);
 
-            List<(ITile,int)> movableTile = entity.BoardManager.GetMovableTiles(entity.CurrentTile, remainStamina);
-            
-            entity.context.SetData(BlackBoardConstant.TILES_EVALUATION_KEY, EvaluateTiles(movableTile));
-            
-            // #if UNITY_EDITOR
-            // foreach (var action in entity.AIActions)
-            // {
-            //     entity.ActionEvaluationDebug[action.GetType().Name] = action.CaculateUtility(entity.context);
-            // }
-            // #endif
-            // AIAction bestAction = entity.AIActions.MaxBy(t => t.CaculateUtility(entity.context));
-            // if (bestAction != null) bestAction.Execute(entity.context);
-            // else
-            // {
-            //   
-            //     entity.Publisher.PublishAsync(new EndEntityTurnCommand());
-            // }
-        }
-
-        private Dictionary<ITile, float> EvaluateTiles(List<(ITile, int)> tiles)
-        {
-            Dictionary<ITile, float> result = new();
-            int remainStamina = entity.context.GetData<int>(BlackBoardConstant.REMAIN_STAMINA_KEY);
-            foreach (var tile in tiles)
+            var targetEntity = entityReasoner.GetBestEntity(enemyMetadata.ConsiderationSystem, considerationContext);
+            if (targetEntity == null)
             {
-                float pathRatio = remainStamina == 0 ? 0 : (1 - 1.0f * tile.Item2 / remainStamina);
-                tile.Item1.Context.SetData(BlackBoardConstant.PATH_FROM_OWNER_TO_TILE_RATIO_KEY,pathRatio);
-
-                float commonValue = entity.EnemyMetadata.CommonTileConsideration.Evaluate(tile.Item1.Context);
-                result[tile.Item1] = commonValue * EvaluateTile(tile.Item1);
+                Debug.Log($"[Test] no entity valid");
+                return;
             }
+            tileReasoner.EvaluateTile(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
+            skillReasoner.EvaluateSkill(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
 
-            return result;
+           
         }
 
        
+      
+
+      
+
+       
+
+     
+
+       
     }
+
+    
 }

@@ -25,33 +25,41 @@ MonoBehaviour:
     NeutralResistance: 0
     CriticalChance: 0
     Healing: 0
-  skillConsiderationDatas: []
-  aiActions: []
+  _considerationSystem: {fileID: 11400000, guid: d20169a7dc728204da2880fe8e2890bf, type: 2}
+  skillConsiderationDatas:
+  - skillID: 0
+    considerationID: 3
+    animName: Attacking
+  selfConsiderationID: -1
+  allyConsiderationID: -1
+  enemyConsiderationID: 2
+  useSkillActionConsiderationID: 0
+  moveActionConsiderationID: 0
   tileConsiderationDatas:
   - TileType: 0
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 1
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 2
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 3
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 4
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 5
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 6
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 7
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 8
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 9
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 10
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 11
-    consideration: {fileID: 0}
+    ConsiderationID: -1
   - TileType: 12
-    consideration: {fileID: 0}
-  commonTileConsideration: {fileID: 11400000, guid: 7ab7df7b56fec21438a9480fa594ebe5, type: 2}
+    ConsiderationID: -1
+  commonTileConsiderationID: 0

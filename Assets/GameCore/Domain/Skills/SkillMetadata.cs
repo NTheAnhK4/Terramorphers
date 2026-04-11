@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using GameCore.Utility;
 using Sirenix.OdinInspector;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 namespace GameCore.Domain.Skill{
     [Serializable]
@@ -49,6 +51,18 @@ namespace GameCore.Domain.Skill{
             }
             catch(OperationCanceledException){}
             
+        }
+
+        public Context GetContext()
+        {
+            Context context = new Context();
+           
+            foreach (var skillHandler in skillHandlers)
+            {
+                skillHandler.SetUpContext(context);
+            }
+
+            return context;
         }
     }
 

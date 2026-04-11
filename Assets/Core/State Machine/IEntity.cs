@@ -1,4 +1,5 @@
 using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace CoreGame
@@ -13,11 +14,11 @@ namespace CoreGame
     [Serializable]
     public class Entity : ComponentBehaviour, IEntity
     {
-        public string curentState;
-        public bool IsAnimationTriggerFinished;
-        public Animator Anim;
+        [TabGroup("General")]  public string curentState;
+        [TabGroup("General")] public bool IsAnimationTriggerFinished;
+        [TabGroup("Components")] public Animator Anim;
         protected StateMachine _stateMachine;
-        public Transform Model;
+        [TabGroup("Components")] public Transform Model;
         public override void LoadComponent()
         {
             base.LoadComponent();

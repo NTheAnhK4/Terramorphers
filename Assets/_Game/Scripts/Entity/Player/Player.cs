@@ -1,4 +1,5 @@
 using GameCore.Commands;
+using GameCore.Utility;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
@@ -165,6 +166,7 @@ namespace Terramorphers
             _publisher.PublishAsync(new ClearSpecialTilesCommand());
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = false });
+           
         }
 
         public override void SetTile(ITile tile)

@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using GameCore.Utility;
 using UnityEngine.UI;
 using UtilityAI;
 
@@ -27,7 +28,7 @@ namespace Terramorphers
             skillApplicableColor, enemyTargetSkillColor, allyTargetSkillColor, 
             tileTargetSkillColor, selftTargetSkillColor;
         private ETileState _currentState;
-        private Context _context;
+       [TabGroup("Debug"), SerializeField] private Context _context;
       
 
 

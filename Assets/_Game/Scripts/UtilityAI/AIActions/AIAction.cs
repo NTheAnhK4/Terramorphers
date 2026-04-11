@@ -1,6 +1,6 @@
 
 using Cysharp.Threading.Tasks;
-
+using GameCore.Utility;
 using UnityEngine;
 
 using UtilityAI.Considerations;
@@ -8,13 +8,19 @@ using UtilityAI.Considerations;
 
 namespace UtilityAI.AIActions
 {
-    public abstract class AIAction : ScriptableObject
-    {
-        [SerializeField] protected Considerations.Consideration consideration;
-        public void Initalize(Context context){}
-        
+    public abstract class AIAction 
+    { 
+        protected int considerationID;
+      
 
-        public float CaculateUtility(Context context) => consideration.Evaluate(context);
+        public AIAction(int considerationID)
+        {
+            this.considerationID = considerationID;
+        }
+        public void Initalize(Context context){}
+
+        public float CaculateUtility(ConsiderationSystem system, ConsiderationContext context) => system.Evaluate(considerationID, context) * GetBestOption(system, context);
+        public abstract float GetBestOption(ConsiderationSystem system, ConsiderationContext context);
 
         public abstract UniTask Execute(Context context);
     }

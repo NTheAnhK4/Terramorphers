@@ -3,6 +3,7 @@ using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
+using GameCore.Utility;
 using UnityEngine;
 
 
@@ -34,6 +35,11 @@ namespace Terramorphers.Skill
                 entity.TakeDamage(damage, attackType);
                 
             }catch(OperationCanceledException){}
+        }
+
+        public override void SetUpContext(Context context)
+        {
+            
         }
     }
 }

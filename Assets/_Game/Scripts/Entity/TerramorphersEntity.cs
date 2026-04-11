@@ -1,19 +1,21 @@
 
 using CoreGame;
 using GameCore.Domain.Skill;
+using GameCore.Utility;
 using Sirenix.OdinInspector;
 using Terramorphers.States;
 using Terramorphers.Stats;
 using UnityEngine;
+using UtilityAI;
 
 namespace Terramorphers
 {
     public abstract class TerramorphersEntity : Entity
     {
-        [SerializeField, TabGroup("Data")] public float MoveSpeed = .5f;
+        [SerializeField, TabGroup("General")] public float MoveSpeed = .5f;
         [SerializeField, TabGroup("Components")]
         protected StatsSystem statsSystem;
-
+        [TabGroup("Debug")] public Context Context;
         protected IState _idleState;
         protected IState _hurtState;
         protected IState _deadState;
@@ -51,12 +53,16 @@ namespace Terramorphers
         public int TeamID => _teamID;
 
         public StatsSystem StatsSystem => statsSystem;
+        [HideInInspector] public string Name;
 
         public virtual void Init(EntityMetadata metadata, int teamID)
         {
             statsSystem = new StatsSystem(metadata.EntityStats);
+            Name = metadata.Addressable;
             _teamID = teamID;
             CurrentHp = statsSystem.Stats.MaxHP;
+            Context = new Context();
+            Context.SetData(string.Format(BlackBoardConstant.ENTITY_HEALTH_FULLNESS_RATIO, Name),1.0f);
         }
 
         public void TakeDamage(int damage, EAttackType attackType)

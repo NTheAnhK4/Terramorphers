@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CoreGame;
+using GameCore.Utility;
 using Terramorphers;
 
 using UnityEngine;
@@ -16,7 +17,7 @@ namespace UtilityAI
 {
     public class Enemy : TerramorphersEntity
     {
-        [OdinSerialize, ShowInInspector, ReadOnly]
+        [OdinSerialize, ShowInInspector, ReadOnly, TabGroup("Debug")]
         public Dictionary<string, float> ActionEvaluationDebug = new();
         
         private readonly int idleAnimHash = Animator.StringToHash("Idle");
@@ -37,7 +38,7 @@ namespace UtilityAI
         public ICommandPublisher Publisher => _publisher;
 
         public SkillManager SkillManager => _skillManager;
-        public Context context;
+      
         protected ThinkingState _thinkingState;
         protected MoveState _moveState;
         protected UseSkillState _useSkillState;
@@ -91,6 +92,7 @@ namespace UtilityAI
                 Debug.Log($"[Test] type of enemy meta data is not correct");
                 return;
             }
+           
 
             _enemyMetadata = enemyMetadata;
             _thinkingState = new ThinkingState(this,idleAnimHash, enemyMetadata);
@@ -99,11 +101,10 @@ namespace UtilityAI
             AddState(_useSkillState);
             AddState(_thinkingState);
 
-            AIActions = enemyMetadata.AIActions;
-            context = new Context();
-            context.SetData(BlackBoardConstant.OWNER_KEY, this);
-            context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
-            context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
+          
+            Context.SetData(BlackBoardConstant.OWNER_KEY, this);
+            Context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
+            Context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
           
 
 
@@ -134,8 +135,8 @@ namespace UtilityAI
 
         public override void OnExit()
         {
-            context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
-            context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
+            Context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
+            Context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
             ChangeState(_idleState);
             statsSystem.Update();
         }
