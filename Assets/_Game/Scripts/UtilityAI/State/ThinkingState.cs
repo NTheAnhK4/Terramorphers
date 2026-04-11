@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using CoreGame;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
-using GameCore.Respository.Skill;
+
 using GameCore.Utility;
 using Terramorphers;
 using UnityEngine;
@@ -78,7 +78,9 @@ namespace UtilityAI.State
             }
 
             skillReasoner = new SkillReasoner(entity, skillInfos);
-            aiActions.Add(new UseSkillAction(enemyMetadata.UseSkillActionConsiderationID,  skillInfos));
+            aiActions.Add(new MoveAction(entity, enemyMetadata.MoveActionConsiderationID));
+            aiActions.Add(new UseSkillAction(entity,enemyMetadata.UseSkillActionConsiderationID,  skillInfos));
+            aiActions.Add(new EndTurnAction(entity, this.enemyMetadata.EndTurnActionConsiderationID));
         }
 
        
@@ -93,10 +95,31 @@ namespace UtilityAI.State
                 Debug.Log($"[Test] no entity valid");
                 return;
             }
+
+            entity.Context.SetData(BlackBoardConstant.TARGET_ENTITY_KEY, targetEntity);
             tileReasoner.EvaluateTile(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
             skillReasoner.EvaluateSkill(enemyMetadata.ConsiderationSystem, considerationContext, targetEntity);
 
-           
+            AIAction bestAction = null;
+            float highestScore = float.MinValue;
+            foreach (var action in aiActions)
+            {
+                float score = action.CaculateUtility(enemyMetadata.ConsiderationSystem, considerationContext);
+                #if UNITY_EDITOR
+                entity.DataDebugger[action.GetType().Name] = score;
+                #endif
+              
+                if (highestScore < score)
+                {
+                    highestScore = score;
+                    bestAction = action;
+                }
+            }
+
+            if (bestAction != null)
+            {
+                bestAction.Execute(entity.Context).Forget();
+            }
         }
 
        

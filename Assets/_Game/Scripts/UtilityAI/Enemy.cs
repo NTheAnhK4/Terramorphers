@@ -17,9 +17,10 @@ namespace UtilityAI
 {
     public class Enemy : TerramorphersEntity
     {
+        #if UNITY_EDITOR
         [OdinSerialize, ShowInInspector, ReadOnly, TabGroup("Debug")]
-        public Dictionary<string, float> ActionEvaluationDebug = new();
-        
+        public Dictionary<string, object> DataDebugger = new();
+        #endif
         private readonly int idleAnimHash = Animator.StringToHash("Idle");
         private readonly int attackAnimHash = Animator.StringToHash("Attacking");
         private readonly int dyingAnimHash = Animator.StringToHash("Dying");
@@ -44,6 +45,7 @@ namespace UtilityAI
         protected UseSkillState _useSkillState;
 
         public ThinkingState ThinkingState => _thinkingState;
+
 
         public UseSkillState UseSkillState => _useSkillState;
         [HideInInspector] public IReadOnlyList<AIAction> AIActions;
@@ -92,6 +94,8 @@ namespace UtilityAI
                 Debug.Log($"[Test] type of enemy meta data is not correct");
                 return;
             }
+
+           
            
 
             _enemyMetadata = enemyMetadata;

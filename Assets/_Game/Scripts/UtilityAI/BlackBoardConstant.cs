@@ -19,9 +19,10 @@ namespace UtilityAI
            }
        }
 
-        #region Entitty
+        #region Entity
 
         public const string MANA_AVAILABILITY_RATIO = "mana_availability_ratio";
+        public const string STAMINA_AVAILABILITY_RATIO = "stamina_availability_ratio";
         public const string REMAIN_MANA_KEY = "remain_mana";
         
         public const string REMAIN_STAMINA_KEY = "remain_stamina";
@@ -35,8 +36,7 @@ namespace UtilityAI
 
         public const string TILES_EVALUATION_KEY = "tile_evaluation";
         public const string ENTITY_TO_TILE_DISTANCE_KEY = "{0}_to_tile_distance";
-        public const string ENTITY_NEARNESS_RATIO = "{0}_nearness_ratio";
-
+     
         #endregion
         #region Skill
 
@@ -54,6 +54,7 @@ namespace UtilityAI
         public const string ALLY_REASONER = "ally_reasoner";
         public const string SELF_REASONER = "self_reasoner";
         public const string ENEMY_REASONER = "enemy_reasoner";
-
+        public const string ENTITY_NEARNESS_RATIO = "{0}_nearness_ratio";
+        public const string TARGET_ENTITY_KEY = "target_entity_key";
     }   
 }

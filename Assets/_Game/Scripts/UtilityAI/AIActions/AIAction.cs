@@ -11,15 +11,21 @@ namespace UtilityAI.AIActions
     public abstract class AIAction 
     { 
         protected int considerationID;
-      
+        protected Enemy entity;
 
-        public AIAction(int considerationID)
+        public AIAction(Enemy entity, int considerationID)
         {
+            this.entity = entity;
             this.considerationID = considerationID;
         }
         public void Initalize(Context context){}
+        protected virtual void SetData(ConsiderationSystem system, ConsiderationContext context){}
+        public float CaculateUtility(ConsiderationSystem system, ConsiderationContext context)
+        {
+            SetData(system, context);
+            return system.Evaluate(considerationID, context) * GetBestOption(system, context);
+        }
 
-        public float CaculateUtility(ConsiderationSystem system, ConsiderationContext context) => system.Evaluate(considerationID, context) * GetBestOption(system, context);
         public abstract float GetBestOption(ConsiderationSystem system, ConsiderationContext context);
 
         public abstract UniTask Execute(Context context);

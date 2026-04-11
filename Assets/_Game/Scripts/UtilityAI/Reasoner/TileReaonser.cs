@@ -59,6 +59,8 @@ namespace UtilityAI.Reasoner
 
             }
 
+           
+
             return result;
         }
         private float EvaluateTile(ConsiderationContext considerationContext, ITile tile)

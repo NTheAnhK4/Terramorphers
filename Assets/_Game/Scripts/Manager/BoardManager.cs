@@ -144,7 +144,7 @@ namespace Terramorphers
             bags.Add(_subscribable.Subscribe<SetMovableTilesCommand>(SetMovableTiles));
             bags.Add(_subscribable.Subscribe<ClearSpecialTilesCommand>(ClearSpecialTiles));
             bags.Add(_subscribable.Subscribe<SetSkillApplicableTilesCommand>(SetSkillApplicableTiles));
-            bags.Add(_subscribable.Subscribe<EntityTileDistCommand>(CaculatePlayerTileDistance));
+            bags.Add(_subscribable.Subscribe<EntityTileDistCommand>(CaculateEntityTileDistance));
         }
 
 
@@ -271,9 +271,13 @@ namespace Terramorphers
 
             currentSpecialTiles.Clear();
         }
-        private void CaculatePlayerTileDistance(EntityTileDistCommand command, PublishContext context)
+        private void CaculateEntityTileDistance(EntityTileDistCommand command, PublishContext context)
         {
-            List<(ITile, int)> movableTiles = GetMovableTiles(command.Tile, 8);
+            List<(ITile, int)> movableTiles =hexaBoard.GetMovableAndDistanceValue(
+                command.Tile.Index, 
+                8, 
+                tile => tile.GetMoveCost(),
+                tile => !tile.IsPassable() || (tile == command.Tile)).ToList(); 
             foreach (var item in movableTiles)
             {
                 string key = string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, command.Name);

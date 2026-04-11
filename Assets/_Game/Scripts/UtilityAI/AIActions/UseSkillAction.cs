@@ -11,17 +11,14 @@ namespace UtilityAI.AIActions
 {
     public class UseSkillAction : AIAction
     {
-      
 
-        private Dictionary<int, ThinkingState.SkillInfo> skillInfos = new();
+
+        private Dictionary<int, ThinkingState.SkillInfo> skillInfos;
         private EnemyMetadata enemyMetadata;
-        private List<SkillMetadata> skillMetadatas = new();
+       
         private int bestSkillID;
-        public UseSkillAction(int considerationID) : base(considerationID)
-        {
-        }
-
-        public UseSkillAction(int considerationID, Dictionary<int, ThinkingState.SkillInfo> skillInfos) : base(considerationID)
+        
+        public UseSkillAction(Enemy entity,int considerationID, Dictionary<int, ThinkingState.SkillInfo> skillInfos) : base(entity,considerationID)
         {
             this.skillInfos = skillInfos;
         }
@@ -29,18 +26,17 @@ namespace UtilityAI.AIActions
 
         public override float GetBestOption(ConsiderationSystem system, ConsiderationContext context)
         {
+            Dictionary<int, float> skillEvaluation = context.Get(EContextType.Self)
+                .GetData<Dictionary<int, float>>(BlackBoardConstant.SKILL_EVALUATION_KEY);
             float maxScore = float.MinValue;
-            foreach (var skillItem in skillInfos)
+            foreach (var item in skillEvaluation)
             {
-                context.Set(EContextType.Tile, skillItem.Value.Context);
-                float score = system.Evaluate(skillItem.Key, context);
-                if (score > maxScore)
+                if (item.Value > maxScore)
                 {
-                    maxScore = score;
-                    bestSkillID = skillItem.Key;
+                    maxScore = item.Value;
+                    bestSkillID = item.Key;
                 }
             }
-
             return maxScore;
         }
 
@@ -48,6 +44,9 @@ namespace UtilityAI.AIActions
 
         public override UniTask Execute(Context context)
         {
+            #if UNITY_EDITOR
+            entity.DataDebugger["skillID"] = bestSkillID;
+            #endif
             Debug.Log($"[Test] i will use skill {bestSkillID}");
             return UniTask.CompletedTask;
         }

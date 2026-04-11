@@ -104,7 +104,7 @@
 
                   
                     float rawInput = context.GetData<float>(key);
-                    //if(Key == BlackBoardConstant.SKILL_RANGE_AVAILABILITY_RATIO) Debug.Log($"[Test] {key} with {Mathf.Clamp01(Curve.Evaluate(rawInput))}");
+                    //if(Key == BlackBoardConstant.STAMINA_AVAILABILITY_RATIO || Key == BlackBoardConstant.ENTITY_NEARNESS_RATIO) Debug.Log($"[Test] {key} with {Mathf.Clamp01(Curve.Evaluate(rawInput))}");
                     return Mathf.Clamp01(Curve.Evaluate(rawInput));
                 }
 

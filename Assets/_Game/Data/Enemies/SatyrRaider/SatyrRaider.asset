@@ -33,8 +33,9 @@ MonoBehaviour:
   selfConsiderationID: -1
   allyConsiderationID: -1
   enemyConsiderationID: 2
-  useSkillActionConsiderationID: 0
-  moveActionConsiderationID: 0
+  useSkillActionConsiderationID: 1
+  moveActionConsiderationID: 4
+  endTurnActionConsiderationID: 5
   tileConsiderationDatas:
   - TileType: 0
     ConsiderationID: -1

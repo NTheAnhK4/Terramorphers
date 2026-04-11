@@ -19,6 +19,9 @@ namespace Terramorphers
         [TabGroup("Consideration")] [SerializeField] private int useSkillActionConsiderationID;
 
         [TabGroup("Consideration")] [SerializeField] private int moveActionConsiderationID;
+
+        [TabGroup("Consideration")] [SerializeField]
+        private int endTurnActionConsiderationID;
      
         [TabGroup("Tile", Icon = SdfIconType.Grid, TextColor = "green")] [SerializeField, TableList] private List<TileConsiderationData> tileConsiderationDatas = new();
         [TabGroup("Consideration")] [SerializeField] private int commonTileConsiderationID;
@@ -40,6 +43,8 @@ namespace Terramorphers
         public int EnemyConsiderationID => enemyConsiderationID;
 
         public int AllyConsiderationID => allyConsiderationID;
+
+        public int EndTurnActionConsiderationID => endTurnActionConsiderationID;
 
 #if UNITY_EDITOR
         [Button]
