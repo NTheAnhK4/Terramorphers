@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 5272384935674285974}
   - component: {fileID: 2695965137508273502}
   m_Layer: 5
-  m_Name: AdvantureGamePlayScreen
+  m_Name: GamePlayScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -5,6 +5,7 @@ using CoreGame;
 using System.IO;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
+using GameCore.Domain.Tile;
 using GameCore.Utility.Shape;
 
 using Terramorphers.Command;

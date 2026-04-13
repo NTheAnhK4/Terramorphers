@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e237cf9000fef3c408ce04feb5faac71
   m_SerializeEntries:
+  - m_GUID: 00a2a1b976c73f14b884ea6e67c99494
+    m_Address: LobbyScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1441df60962d351418a8124741973879
     m_Address: GameModalBackdrop
     m_ReadOnly: 0

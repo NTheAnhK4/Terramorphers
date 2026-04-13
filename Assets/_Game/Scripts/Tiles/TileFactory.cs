@@ -1,6 +1,6 @@
 using CoreGame;
 using Cysharp.Threading.Tasks;
-
+using GameCore.Domain.Tile;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using VContainer;
@@ -10,17 +10,19 @@ namespace Terramorphers
     public class TileFactory : ITileFactory
     {
         private IObjectResolver _resolver;
-        private TileDatabase _tileDatabase;
+        private ITileRepository _tileRepository;
+        private ITileDatabase _tileDatabase;
+        
         private Transform _parent;
-        public TileFactory(TileDatabase tileDatabase, IObjectResolver resolver)
+        public TileFactory(ITileRepository tileRepository, IObjectResolver resolver)
         {
-            _tileDatabase = tileDatabase;
+            _tileRepository = tileRepository;
             _resolver = resolver;
             
         }
         public async UniTask<ITile> CreateTile(ETileType type)
         {
-            
+            if (_tileDatabase == null) _tileDatabase = _tileRepository.Get();
             var tileMetadata = _tileDatabase.GetByType(type);
            
           

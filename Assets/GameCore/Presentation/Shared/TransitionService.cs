@@ -14,8 +14,9 @@ using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
 using GameCore.Presentation;
 using GameCore.Presentation.GamePlay;
+using GameCore.Presentation.Lobby;
 
-namespace GameCore.Presentaion.Shared
+namespace GameCore.Presentation.Shared
 {
     public class TransitionService : ICloseTransition
     {
@@ -139,6 +140,14 @@ namespace GameCore.Presentaion.Shared
             var presenter = await ShowScreenPresenterAsync<GamePlayPresenter, GamePlayScreen, GamePlayViewState>(
                 "GamePlayScreen",
                 screen => new GamePlayPresenter(screen), false);
+            return presenter;
+        }
+
+        public async UniTask<LobbyPresenter> ShowLobbyScreen()
+        {
+            var presenter = await ShowScreenPresenterAsync<LobbyPresenter, LobbyScreen, LobbyViewState>(
+                "LobbyScreen",
+                screen => new LobbyPresenter(screen), false);
             return presenter;
         }
 

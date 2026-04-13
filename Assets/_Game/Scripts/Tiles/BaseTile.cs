@@ -4,6 +4,7 @@ using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using GameCore.Domain.Tile;
 using GameCore.Utility;
 using UnityEngine.UI;
 using UtilityAI;

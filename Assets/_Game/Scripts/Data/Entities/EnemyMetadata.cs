@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameCore.Domain.Tile;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ namespace Terramorphers
     [CreateAssetMenu(menuName = "Database/EntityData/EnemyMetadata", fileName = "EnemyMetadata")]
     public class EnemyMetadata : EntityMetadata
     {
-        [TabGroup("Consideration",Icon =SdfIconType.Calculator, TextColor = "cyan")] [SerializeField] private ConsiderationSystem _considerationSystem;
+        [TabGroup("Consideration",Icon =SdfIconType.Cpu, TextColor = "cyan")] [SerializeField] private ConsiderationSystem _considerationSystem;
         [TabGroup("Skill", Icon = SdfIconType.Lightning, TextColor = "red")] [SerializeField, TableList] private List<SkillConsiderationData> skillConsiderationDatas = new();
 
         [TabGroup("Consideration")] [SerializeField] private int selfConsiderationID  = -1;
@@ -23,7 +24,7 @@ namespace Terramorphers
         [TabGroup("Consideration")] [SerializeField]
         private int endTurnActionConsiderationID;
      
-        [TabGroup("Tile", Icon = SdfIconType.Grid, TextColor = "green")] [SerializeField, TableList] private List<TileConsiderationData> tileConsiderationDatas = new();
+        [TabGroup("Tile", Icon = SdfIconType.HeptagonFill, TextColor = "green")] [SerializeField, TableList] private List<TileConsiderationData> tileConsiderationDatas = new();
         [TabGroup("Consideration")] [SerializeField] private int commonTileConsiderationID;
 
         public ConsiderationSystem ConsiderationSystem => _considerationSystem;

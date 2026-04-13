@@ -3,7 +3,7 @@ namespace Terramorphers
     public enum EGameStateType
     {
         Unknown = 0,
-        Lobby,
+        LobbyState,
         LoadingState,
         AdvantureMode,
         WinState,

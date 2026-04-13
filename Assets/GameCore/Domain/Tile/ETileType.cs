@@ -1,4 +1,4 @@
-namespace Terramorphers
+namespace GameCore.Domain.Tile
 {
     public enum ETileType
     {

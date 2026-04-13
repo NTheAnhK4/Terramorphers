@@ -7,27 +7,33 @@ using UnityEngine.UI;
 
 namespace Terramorphers
 {
-    public class EntityUI : ComponentBehaviour
+    public class EntityUI : MonoBehaviour
     {
-        [SerializeField] private TerramorphersEntity entity;
+        [SerializeField, TabGroup("Components")] private TerramorphersEntity entity;
 
-        [SerializeField, TabGroup("Health", Icon = SdfIconType.Heart, TextColor = "red")]
+        [SerializeField, TabGroup("Health")]
         private Image healthFill;
 
         [SerializeField, TabGroup("Health")] private TextMeshProUGUI healthText;
+
+       
+     
+        
         private DisposableBag bag;
-        public override void LoadComponent()
+        [Button]
+        public void LoadComponent()
         {
-            base.LoadComponent();
+           
             if (entity == null) entity = GetComponentInParent<TerramorphersEntity>();
             if (healthFill == null) healthFill = transform.Find("Health/HealthBar/Mask/Fill").GetComponent<Image>();
             if (healthText == null) healthText = transform.Find("Health/Value").GetComponent<TextMeshProUGUI>();
         }
 
-        protected override void Awake()
+        protected void Awake()
         {
-            base.Awake();
+            
             entity.OnInitialized += SubscribeEvent;
+            
         }
 
        
@@ -51,6 +57,8 @@ namespace Terramorphers
             healthFill.fillAmount = hpRatio;
             healthText.text = value.ToString();
         }
+
+       
     }
 
 }

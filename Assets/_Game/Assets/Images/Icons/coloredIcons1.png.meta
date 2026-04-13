@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 877abd3d9d6b6a4489648755b6c2adf8
+guid: d369799c86bef844ea6db0c68c6e89d1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -39,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -123,106 +123,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Continue
+      name: coloredIcons1_0
       rect:
         serializedVersion: 2
-        x: 346
-        y: 363
-        width: 52
-        height: 70
+        x: 28
+        y: 268
+        width: 200
+        height: 231
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70503088723458044b0587b2e006f5d4
-      internalID: 79724566
+      spriteID: 4b82671477a0d0d448326d01b5fb75c9
+      internalID: -1925224884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_1
+      name: coloredIcons1_1
       rect:
         serializedVersion: 2
-        x: 171
-        y: 435
-        width: 24
-        height: 24
+        x: 267
+        y: 288
+        width: 234
+        height: 190
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4bd89c22bb8c754594bc9169b61d772
-      internalID: 1939807960
+      spriteID: ed1c26d7cdf873e4ea056e771887b757
+      internalID: 745699533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_2
+      name: Coin
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 502
-        height: 249
+        x: 24
+        y: 22
+        width: 206
+        height: 212
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba259a18f52ef5b4a804970cd433f777
-      internalID: 557213887
+      spriteID: b2db676885809e94ea3de5610cff6517
+      internalID: 1667292961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_3
+      name: coloredIcons1_3
       rect:
         serializedVersion: 2
-        x: 340
-        y: 201
-        width: 81
-        height: 159
+        x: 284
+        y: 29
+        width: 201
+        height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2f2f5e646e8fa634b98afe5376741c51
-      internalID: -674852836
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_4
-      rect:
-        serializedVersion: 2
-        x: 378
-        y: 219
-        width: 57
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d3062d1e505948a4d8b1f70e2746227f
-      internalID: 1215852831
+      spriteID: 189aeee4ceb13a94090a417968d2ee8e
+      internalID: -394318241
       vertices: []
       indices: 
       edges: []
@@ -230,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 378cd220e1ae5b747ad574c93fbfdcad
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -238,11 +217,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Continue: 79724566
-      sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_1: 1939807960
-      sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_2: 557213887
-      sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_3: -674852836
-      sactx-0-512x512-ETC2-Play_Continue_Pause_Result-5e495eb9_4: 1215852831
+      Coin: 1667292961
+      coloredIcons1_0: -1925224884
+      coloredIcons1_1: 745699533
+      coloredIcons1_3: -394318241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

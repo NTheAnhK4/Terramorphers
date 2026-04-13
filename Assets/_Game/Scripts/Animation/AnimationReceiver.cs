@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using CoreGame;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace Terramorphers
 {
     public class AnimationReceiver : ComponentBehaviour
     {
-        [SerializeField] private Entity entity = null;
+       [SerializeField] private Entity entity = null;
         public override void LoadComponent()
         {
             base.LoadComponent();
@@ -21,7 +20,7 @@ namespace Terramorphers
 
         public void AnimationTrigger()
         {
-            if(entity != null) entity.AnimationTrigger();
+           if(entity != null) entity.AnimationTrigger();
         }
     }
 

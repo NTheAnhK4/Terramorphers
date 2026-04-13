@@ -188,11 +188,13 @@ namespace Terramorphers
         {
             if (direction.x > 0 && Model.localScale.x < 0)
             {
+               
                 Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
                 Model.transform.localPosition = rightModalPos;
             }
             else if (direction.x < 0 && Model.localScale.x > 0)
             {
+                
                 Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
                 Model.transform.localPosition = leftModalPos;
             }

@@ -19,7 +19,7 @@ namespace UtilityAI
     public class Enemy : TerramorphersEntity
     {
         #if UNITY_EDITOR
-        [OdinSerialize, ShowInInspector, ReadOnly, TabGroup("Debug")]
+        [ReadOnly, TabGroup("Debug")]
         public Dictionary<string, object> DataDebugger = new();
         #endif
         private readonly int idleAnimHash = Animator.StringToHash("Idle");

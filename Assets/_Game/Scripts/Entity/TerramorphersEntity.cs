@@ -41,6 +41,7 @@ namespace Terramorphers
         public IState DeadState => _deadState;
         protected ITile currentTile;
         [HideInInspector] public Action OnInitialized;
+     
         private void OnValidate()
         {
             MoveSpeed = .5f;
@@ -91,11 +92,13 @@ namespace Terramorphers
         }
         public virtual void SetDirection(Vector3 direction)
         {
-           
-            if (direction.x > 0 && Model.localScale.x < 0) Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+
+            if (direction.x > 0 && Model.localScale.x < 0)
+            {
+                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+            }
             else if (direction.x < 0 && Model.localScale.x > 0)
             {
-
                 Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
             }
         }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Terramorphers
+namespace GameCore.Domain.Tile
 {
     [Serializable]
     public class TileMetadata

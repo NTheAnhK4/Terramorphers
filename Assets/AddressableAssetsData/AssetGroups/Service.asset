@@ -17,6 +17,11 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 457f564ba91de8f449bfffc6ab06990f
   m_SerializeEntries:
+  - m_GUID: 2dc3744a224c82740b6d59d61b129ec3
+    m_Address: TileDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fec681fb924f9a541a1e359664b7218a
     m_Address: SkillDatabase
     m_ReadOnly: 0

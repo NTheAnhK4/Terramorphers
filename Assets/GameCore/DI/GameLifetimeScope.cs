@@ -25,7 +25,7 @@ namespace GameCore.DI
             builder.Register<LoadingState>(Lifetime.Scoped);
             builder.Register<AdvantureState>(Lifetime.Scoped);
             builder.Register<WinState>(Lifetime.Scoped);
-           
+            builder.Register<LobbyState>(Lifetime.Scoped);
            
             builder.RegisterVitalRouter(routing =>
             {
