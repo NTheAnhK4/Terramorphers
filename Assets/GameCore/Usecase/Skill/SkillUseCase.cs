@@ -3,7 +3,7 @@ using GameCore.Domain.Skill;
 
 namespace GameCore.Usecase.Skill
 {
-    public class SkillUseCase : BaseUsecase<SkillAPIGateway, SkillModel>
+    public class SkillUseCase : BaseUseCase<SkillAPIGateway, SkillModel>
     {
         public SkillUseCase(SkillAPIGateway apiGateway)
         {

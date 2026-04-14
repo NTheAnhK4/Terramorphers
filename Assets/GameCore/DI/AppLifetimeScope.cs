@@ -12,7 +12,7 @@ namespace GameCore.DI
     {
         [SerializeField] private UnityScreenNavigatorLauncher launcher;
         
-        [SerializeField] private LevelModuleInstaller _levelModuleInstaller;
+      
         [SerializeField] private EntityModuleInstaller _entityModuleInstaller;
         protected override void Configure(IContainerBuilder builder)
         {
@@ -20,8 +20,7 @@ namespace GameCore.DI
             builder.Register<TransitionService>(Lifetime.Singleton);
             builder.RegisterModuleInstaller<SkillModuleInstaller>();
             builder.RegisterModuleInstaller<TileModuleInstaller>();
-          
-            _levelModuleInstaller.Register(builder);
+            builder.RegisterModuleInstaller<LevelModuleInstaller>();
             _entityModuleInstaller.Register(builder);
             builder.RegisterComponent(launcher);
         }

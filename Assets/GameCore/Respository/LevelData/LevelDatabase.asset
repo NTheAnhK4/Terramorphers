@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7def5adbf5004696ae1c6247cf11d70c, type: 3}
+  m_Name: LevelDatabase
+  m_EditorClassIdentifier: 
+  serializedElements:
+  - key: 0
+    value:
+      levelName: Frost Hollow
+      levelSprite: {fileID: 246860589, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas:
+      - stageMap: {fileID: 0}
+        enemyIDs: 00000000
+      - stageMap: {fileID: 0}
+        enemyIDs: 00000000
+      - stageMap: {fileID: 0}
+        enemyIDs: 00000000
+  - key: 1
+    value:
+      levelName: Ice Abyss
+      levelSprite: {fileID: 1334177794, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 2
+    value:
+      levelName: Ice Maw
+      levelSprite: {fileID: 1190559884, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 3
+    value:
+      levelName: Root Den
+      levelSprite: {fileID: -1312561720, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 4
+    value:
+      levelName: Rune Cavern
+      levelSprite: {fileID: -1962128735, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 5
+    value:
+      levelName: Snow Den
+      levelSprite: {fileID: 676408848, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 6
+    value:
+      levelName: Spore Cave
+      levelSprite: {fileID: 324201282, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []
+  - key: 7
+    value:
+      levelName: Stone Gate
+      levelSprite: {fileID: -113159966, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelStageDatas: []

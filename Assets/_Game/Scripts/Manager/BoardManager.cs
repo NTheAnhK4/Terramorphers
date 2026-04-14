@@ -89,49 +89,49 @@ namespace Terramorphers
             return data;
         }
 
-        public async UniTask<bool> LoadingBoard(LevelMetadata levelMetadata)
-        {
-            TilePositionData positionData = LoadFromJson();
-            if (positionData == null) return false;
-            handle = Addressables.LoadAssetAsync<TextAsset>(levelMetadata.BoardDataAddressable);
-
-            TextAsset jsonFile = await handle.Task;
-            if (jsonFile == null)
-            {
-                Debug.Log($"[BoardManager] load file from json is failure");
-                return false;
-            }
-
-            BoardData boardData = JsonUtility.FromJson<BoardData>(jsonFile.text);
-
-
-            board.Clear();
-            _tileFactory.SetParent(transform);
-            for (int i = 0; i < boardData.Rows.Count; ++i)
-            {
-                List<ITile> row = new();
-
-                for (int j = 0; j < boardData.Rows[i].Tiles.Count(); ++j)
-                {
-                    ETileType type = boardData.Rows[i].Tiles[j];
-                    var tile = await _tileFactory.CreateTile(type);
-                    if (tile == null) return false;
-                    tile.Transform.position = positionData.rows[i].positions[j];
-
-                    row.Add(tile);
-                }
-
-                board.Add(row);
-            }
-
-            hexaBoard = new HexagonalGrid<ITile>(board, ((tile, cube) =>
-            {
-                tile.Index = cube;
-                tile.Transform.name = $"Tile_{cube.q}_{cube.r}_{cube.s}";
-            }));
-
-            return true;
-        }
+        // public async UniTask<bool> LoadingBoard(LevelMetadata levelMetadata)
+        // {
+        //     TilePositionData positionData = LoadFromJson();
+        //     if (positionData == null) return false;
+        //     handle = Addressables.LoadAssetAsync<TextAsset>(levelMetadata.BoardDataAddressable);
+        //
+        //     TextAsset jsonFile = await handle.Task;
+        //     if (jsonFile == null)
+        //     {
+        //         Debug.Log($"[BoardManager] load file from json is failure");
+        //         return false;
+        //     }
+        //
+        //     BoardData boardData = JsonUtility.FromJson<BoardData>(jsonFile.text);
+        //
+        //
+        //     board.Clear();
+        //     _tileFactory.SetParent(transform);
+        //     for (int i = 0; i < boardData.Rows.Count; ++i)
+        //     {
+        //         List<ITile> row = new();
+        //
+        //         for (int j = 0; j < boardData.Rows[i].Tiles.Count(); ++j)
+        //         {
+        //             ETileType type = boardData.Rows[i].Tiles[j];
+        //             var tile = await _tileFactory.CreateTile(type);
+        //             if (tile == null) return false;
+        //             tile.Transform.position = positionData.rows[i].positions[j];
+        //
+        //             row.Add(tile);
+        //         }
+        //
+        //         board.Add(row);
+        //     }
+        //
+        //     hexaBoard = new HexagonalGrid<ITile>(board, ((tile, cube) =>
+        //     {
+        //         tile.Index = cube;
+        //         tile.Transform.name = $"Tile_{cube.q}_{cube.r}_{cube.s}";
+        //     }));
+        //
+        //     return true;
+        // }
 
         public void ReleaseBoardData()
         {

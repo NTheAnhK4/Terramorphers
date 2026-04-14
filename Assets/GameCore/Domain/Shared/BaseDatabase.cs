@@ -35,7 +35,9 @@ namespace GameCore.Domain.Shared
         [Serializable]
         private sealed class SerializedElement
         {
+            [HorizontalGroup("row", width:.25f)][HideLabel]
             public TKey key;
+            [HorizontalGroup("row", width:.75f)][HideLabel]
             public TValue value;
 
             public SerializedElement(TKey key, TValue value)

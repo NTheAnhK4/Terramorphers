@@ -16,8 +16,8 @@ MonoBehaviour:
   _screenPushExitAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}
   _screenPopEnterAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}
   _screenPopExitAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}
-  _modalEnterAnimation: {fileID: 11400000, guid: 8ff7a22b521c9da478cf8e8196df1fc7, type: 2}
-  _modalExitAnimation: {fileID: 11400000, guid: e6c661202a033d1418bfc92d24588d53, type: 2}
+  _modalEnterAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}
+  _modalExitAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}
   _modalBackdropEnterAnimation: {fileID: 11400000, guid: 6f451577312c21f44a27d57096e28694, type: 2}
   _modalBackdropExitAnimation: {fileID: 0}
   _activityEnterAnimation: {fileID: 11400000, guid: 3bbf3c3ffe8ec2d4d92be17c077fe371, type: 2}

@@ -22,8 +22,13 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: fec681fb924f9a541a1e359664b7218a
+  - m_GUID: 4ae22f8af6305de429ff3e9a7e156cac
     m_Address: SkillDatabase
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9141663478de8e2418d2217bd5bb9902
+    m_Address: LevelDatabase
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

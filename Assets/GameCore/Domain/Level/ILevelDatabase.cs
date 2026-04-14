@@ -5,7 +5,7 @@ using UnityEngine;
 namespace GameCore.Domain.Level{
     public interface ILevelDatabase : IMasterDatabase<int, LevelMetadata>
     {
-       
+        int DataCount { get; }
     }
 }
 

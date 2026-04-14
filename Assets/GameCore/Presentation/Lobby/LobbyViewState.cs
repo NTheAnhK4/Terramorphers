@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+
+using R3;
+
 using WEngine.MVP;
 
 namespace GameCore.Presentation.Lobby
@@ -9,6 +9,6 @@ namespace GameCore.Presentation.Lobby
 
     public class LobbyViewState : ViewState
     {
-        
+        public ReactiveProperty<int> CurrentIndex { get; } = new ReactiveProperty<int>();
     }
 }

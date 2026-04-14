@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DungeonEntrance_0
+      name: Frost Hollow
       rect:
         serializedVersion: 2
         x: 43
@@ -131,7 +131,7 @@ TextureImporter:
         width: 445
         height: 398
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_1
+      name: Rune Cavern
       rect:
         serializedVersion: 2
         x: 678
@@ -152,7 +152,7 @@ TextureImporter:
         width: 529
         height: 421
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_2
+      name: Ice Maw
       rect:
         serializedVersion: 2
         x: 1464
@@ -173,7 +173,7 @@ TextureImporter:
         width: 548
         height: 398
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_3
+      name: Stone Gate
       rect:
         serializedVersion: 2
         x: 43
@@ -194,7 +194,7 @@ TextureImporter:
         width: 464
         height: 399
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,7 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_4
+      name: Ice Abyss
       rect:
         serializedVersion: 2
         x: 1490
@@ -215,7 +215,7 @@ TextureImporter:
         width: 447
         height: 408
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -228,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_5
+      name: Snow Den
       rect:
         serializedVersion: 2
         x: 45
@@ -236,7 +236,7 @@ TextureImporter:
         width: 474
         height: 498
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_6
+      name: Root Den
       rect:
         serializedVersion: 2
         x: 753
@@ -257,7 +257,7 @@ TextureImporter:
         width: 459
         height: 417
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DungeonEntrance_7
+      name: Spore Cave
       rect:
         serializedVersion: 2
         x: 1462
@@ -278,7 +278,7 @@ TextureImporter:
         width: 520
         height: 409
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DungeonEntrance_0: 246860589
-      DungeonEntrance_1: -1962128735
-      DungeonEntrance_2: 1190559884
-      DungeonEntrance_3: -113159966
-      DungeonEntrance_4: 1334177794
-      DungeonEntrance_5: 676408848
-      DungeonEntrance_6: -1312561720
-      DungeonEntrance_7: 324201282
+      Frost Hollow: 246860589
+      Ice Abyss: 1334177794
+      Ice Maw: 1190559884
+      Root Den: -1312561720
+      Rune Cavern: -1962128735
+      Snow Den: 676408848
+      Spore Cave: 324201282
+      Stone Gate: -113159966
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

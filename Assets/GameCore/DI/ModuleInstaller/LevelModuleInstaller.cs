@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using GameCore.APIGateway.Level;
+using GameCore.Respository.LevelData;
+using GameCore.Usecase.Level;
 using Terramorphers;
 using UnityEngine;
 using VContainer;
 
 namespace GameCore.DI.ModuleInstaller
 {
-    [CreateAssetMenu(fileName = "LevelInstaller", menuName = "ModuleInstaller/LevelInstaller")]
-    public class LevelModuleInstaller : ScriptableObject, IModuleInstaller
+   
+    public class LevelModuleInstaller :  IModuleInstaller
     {
-        [SerializeField] private LevelDatabase _levelDatabase;
+      
         public void Register(IContainerBuilder builder)
         {
-            builder.RegisterInstance(_levelDatabase);
+            builder.RegisterSelfAsEntryPoint<LevelRepository>();
+            builder.Register<LevelAPIGateway>(Lifetime.Singleton);
+            builder.Register<LevelUseCase>(Lifetime.Singleton);
         }
     }
 

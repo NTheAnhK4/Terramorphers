@@ -12,7 +12,9 @@ using ZBase.UnityScreenNavigator.Core.Modals;
 using ZBase.UnityScreenNavigator.Core.Screens;
 using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
+using GameCore.Domain.Level;
 using GameCore.Presentation;
+using GameCore.Presentation.ChooseStage;
 using GameCore.Presentation.GamePlay;
 using GameCore.Presentation.Lobby;
 
@@ -148,6 +150,14 @@ namespace GameCore.Presentation.Shared
             var presenter = await ShowScreenPresenterAsync<LobbyPresenter, LobbyScreen, LobbyViewState>(
                 "LobbyScreen",
                 screen => new LobbyPresenter(screen), false);
+            return presenter;
+        }
+
+        public async UniTask<ChooseStagePresenter> ShowChooseStageModal(int levelID, LevelMetadata levelMetadata)
+        {
+            var presenter = await ShowModalPresenterAsync<ChooseStagePresenter, ChooseStageModal, ChooseStageViewState>(
+                "ChooseStageModal",
+                modal => new ChooseStagePresenter(modal,levelID, levelMetadata));
             return presenter;
         }
 

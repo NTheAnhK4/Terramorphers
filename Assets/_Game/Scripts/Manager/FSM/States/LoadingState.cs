@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using GameCore.Domain.Level;
 using GameCore.Presentation.Shared;
 using UnityEngine;
 using VitalRouter;
@@ -8,17 +9,17 @@ namespace Terramorphers
 {
     public class LoadingState : GameState
     {
-        private LevelDatabase _levelDatabase;
+        
         private EntityManager _entityManager;
         private GameManager _gameManager;
         private BoardManager _boardManager;
         private ICommandPublisher _publisher;
         private TransitionService _transitionService;
 
-        public LoadingState(LevelDatabase levelDatabase, EntityManager entityManager, GameManager gameManager, BoardManager boardManager, ICommandPublisher publisher,
+        public LoadingState( EntityManager entityManager, GameManager gameManager, BoardManager boardManager, ICommandPublisher publisher,
             TransitionService transitionService)
         {
-            _levelDatabase = levelDatabase;
+           
             _gameManager = gameManager;
             _boardManager = boardManager;
             _publisher = publisher;
@@ -37,11 +38,11 @@ namespace Terramorphers
             if (_gameManager.GameMode == GameMode.Unknown) return;
             var gamePresenter = await _transitionService.ShowGamePlayScreen();
             int level = PlayerPrefs.GetInt(string.Format(GameConstant.LEVEL_PLAYER_PREFS, _gameManager.GameMode), 0);
-            LevelMetadata levelMetadata = _levelDatabase.GetByType(level);
+            //LevelMetadata levelMetadata = _levelDatabase.GetByType(level);
 
-            if (levelMetadata == null) return;
-            bool isLoadingBoardFinished = await _boardManager.LoadingBoard(levelMetadata);
-            if (!isLoadingBoardFinished) return;
+            // if (levelMetadata == null) return;
+            // bool isLoadingBoardFinished = await _boardManager.LoadingBoard(levelMetadata);
+           // if (!isLoadingBoardFinished) return;
 
             List<ITile> passibleTile = _boardManager.GetPassableTile();
             if (passibleTile == null)
