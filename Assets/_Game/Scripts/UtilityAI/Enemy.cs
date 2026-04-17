@@ -87,9 +87,9 @@ namespace UtilityAI
             ChangeState(_idleState);
         }
 
-        public override void Init(EntityMetadata metadata, int teamID, ITile tile)
+        public override void Init(int id,EntityMetadata metadata, int teamID, ITile tile)
         {
-            base.Init(metadata, teamID, tile);
+            base.Init(id,metadata, teamID, tile);
             if (metadata is not EnemyMetadata enemyMetadata)
             {
                 Debug.Log($"[Test] type of enemy meta data is not correct");

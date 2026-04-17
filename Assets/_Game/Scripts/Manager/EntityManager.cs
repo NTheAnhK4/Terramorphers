@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
+using GameCore.Domain.Quest;
+using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using GameCore.Utility.Shape;
 using Terramorphers.Command;
@@ -13,6 +15,7 @@ namespace Terramorphers
 {
     public class EntityManager
     {
+        private QuestUseCase _questUseCase;
         private List<TerramorphersEntity> _entities = new();
         private int currentEntityID;
         private EntityFactory _entityFactory;
@@ -23,12 +26,14 @@ namespace Terramorphers
         private Dictionary<int, int> teamMembersDict = new();
         public Player Player;
 
-        public EntityManager(EntityFactory entityFactory, ICommandSubscribable subscribable, ICommandPublisher publisher)
+        public EntityManager(EntityFactory entityFactory, ICommandSubscribable subscribable, ICommandPublisher publisher,
+            QuestUseCase questUseCase)
         {
             _entityFactory = entityFactory;
             _subscribable = subscribable;
             _publisher = publisher;
             currentEntityID = -1;
+            _questUseCase = questUseCase;
         }
 
         public void ClearEntity()
@@ -76,6 +81,11 @@ namespace Terramorphers
                 _entities[currentEntityID].OnExit();
             }
 
+            if (Player != null && entity.TeamID != Player.TeamID)
+            {
+                _questUseCase.IncreaseQuestProgress(EQuestActionType.Defeat,EQuestTargetType.Enemy, entity.ID);
+            }
+
             _entities.Remove(entity);
             _entityFactory.Despawn(entity);
             teamMembersDict[entity.TeamID]--;
@@ -88,10 +98,12 @@ namespace Terramorphers
         {
             if (teamMembersDict.Count == 0)
             {
+                _questUseCase.IncreaseQuestProgress(EQuestActionType.Defeat, EQuestTargetType.AllEnemies,0,1);
                 _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.WinState));
             }
             else if (teamMembersDict.Keys.First() == Player.TeamID)
             {
+                _questUseCase.IncreaseQuestProgress(EQuestActionType.Defeat, EQuestTargetType.AllEnemies,0,1);
                 _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.WinState));
             }
             else _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.LoseState));
@@ -144,6 +156,7 @@ namespace Terramorphers
             {
                 currentEntityID = 0;
                 currentRound++;
+                _questUseCase.IncreaseQuestProgress(EQuestActionType.Limit,EQuestTargetType.MatchRounds,0);
                 _publisher.PublishAsync(new IncreaseRoundCommand() { NewRound = currentRound });
             }
 

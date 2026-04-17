@@ -12,5 +12,10 @@ namespace GameCore.Presentation.GamePlay
         public List<SkillMetadata> SkillMetadatas = new();
         public ReactiveProperty<(int mana, int maxMana)> Mana { get; } = new();
         public ReactiveProperty<(int stamina, int maxStamina)> Stamina { get; } = new();
+      
+        public ReactiveCommand ExitCommand { get; } = new();
+        public ReactiveCommand SpeedCommand { get; } = new();
+        public ReactiveCommand ObjectiveCommand { get; } = new();
+     
     }
 }

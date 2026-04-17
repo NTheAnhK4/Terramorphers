@@ -24,8 +24,14 @@ namespace GameCore.Presentation.GamePlay
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI staminaText;
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI turnText;
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI roundAmountText;
-        [SerializeField, TabGroup("Components")] private Button continueBtn, settingBtn, endTurnBtn;
+        [SerializeField, TabGroup("Components")] private Button continueBtn, listBtn,speedBtn, objectiveBtn,exitBtn, endTurnBtn;
         [SerializeField, TabGroup("Components")] private Image coverEndTurnBtn;
+
+        [SerializeField, TabGroup("Components)")]
+        private List<CanvasGroup> dropDownBtnLists = new();
+
+        [SerializeField, TabGroup("Components")]
+        private Image pannelDropDownBtn;
 
         [SerializeField, TabGroup("Components")]
         private Image staminaFill, manaFill;
@@ -41,6 +47,11 @@ namespace GameCore.Presentation.GamePlay
             state.CurrentRound.Subscribe(SetRound).AddTo(this);
             state.Stamina.Subscribe(OnStaminaChange).AddTo(this);
             state.Mana.Subscribe(OnManaChange).AddTo(this);
+        
+            exitBtn.SubscribeToCommand(state.ExitCommand).AddTo(this);
+            objectiveBtn.SubscribeToCommand(state.ObjectiveCommand).AddTo(this);
+
+           
             return UniTask.CompletedTask;
         }
 
@@ -90,6 +101,8 @@ namespace GameCore.Presentation.GamePlay
             DOTween.Kill(manaFill.transform);
             manaFill.DOFillAmount(fillTarget, .1f).SetTarget(manaFill.transform);
         }
+
+       
     }
 
 }

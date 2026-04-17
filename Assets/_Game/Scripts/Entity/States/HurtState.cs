@@ -1,7 +1,7 @@
-using System;
+
 using CoreGame;
+using GameCore.Domain.Quest;
 using GameCore.Domain.Skill;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 
 namespace Terramorphers.States
@@ -31,7 +31,10 @@ namespace Terramorphers.States
             }
 
             int damage = GetDamage(hurtStateData.Damage, hurtStateData.AttackType);
-           
+            if (entity is Player)
+            {
+                entity.QuestUseCase.IncreaseQuestProgress(EQuestActionType.Limit,EQuestTargetType.DamageTaken,0, damage);
+            }
             entity.DataCache.RemainHP.Value -= damage;
             if (entity.DataCache.RemainHP.Value <= 0)
             {

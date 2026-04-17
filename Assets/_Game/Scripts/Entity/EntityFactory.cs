@@ -32,7 +32,7 @@
                     TerramorphersEntity result = entityGO.GetComponent<TerramorphersEntity>();
                     if (result == null) return null;
                     _resolver.Inject(result);
-                    result.Init(entityMetadata, entityTeamID, tile);
+                    result.Init(entityID,entityMetadata, entityTeamID, tile);
                     return result;
                 }
 

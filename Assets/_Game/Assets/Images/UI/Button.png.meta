@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_7
+      name: Gray_Btn
       rect:
         serializedVersion: 2
         x: 183
@@ -279,7 +279,7 @@ TextureImporter:
         height: 145
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 27, y: 0, z: 27, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -392,9 +392,9 @@ TextureImporter:
       Button_11: -1955450544
       Button_5: 582583918
       Button_6: -2139145260
-      Button_7: 1378090060
       Button_8: -1115325610
       Button_9: -1020115423
+      Gray_Btn: 1378090060
       Orange_Btn: -357735712
       Purple_Btn: 754633294
   mipmapLimitGroupName: 

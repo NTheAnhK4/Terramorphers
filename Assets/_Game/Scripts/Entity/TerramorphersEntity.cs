@@ -2,6 +2,7 @@
 using System;
 using CoreGame;
 using GameCore.Domain.Skill;
+using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
@@ -28,12 +29,15 @@ namespace Terramorphers
         protected EntityDerivedDataCalculator derivedDataCalculator;
         [Inject] protected BoardManager _boardManager;
         [Inject] protected EntityManager _entityManager;
+        [Inject] protected QuestUseCase _questUseCase;
         protected DisposableBag _bag;
 
         public EntityManager EntityManager => _entityManager;
 
         public BoardManager BoardManager => _boardManager;
         public EntityDataCache DataCache => dataCache;
+
+        public QuestUseCase QuestUseCase => _questUseCase;
 
         public EntityDerivedDataCalculator DerivedDataCalculator => derivedDataCalculator;
 
@@ -72,12 +76,13 @@ namespace Terramorphers
 
         public StatsSystem StatsSystem => statsSystem;
         [HideInInspector] public string Name;
+        [HideInInspector] public int ID { get; protected set; }
 
      
-        public virtual void Init(EntityMetadata metadata, int teamID, ITile tile)
+        public virtual void Init(int id, EntityMetadata metadata, int teamID, ITile tile)
         {
             SetTile(tile);
-          
+            ID = id;
             statsSystem = new StatsSystem(metadata.EntityStats);
             Context = new Context();
             dataCache = new EntityDataCache();

@@ -42,9 +42,9 @@ namespace Terramorphers
             if (Input.GetMouseButtonDown(0))
             {
                 ITile tile = GetTile();
-                Debug.Log($"[Test] OnMouse down");
+                
                 if (tile == null) return;
-                Debug.Log($"[Test] mouse down to {tile.Transform.name}");
+               
                 _publisher.PublishAsync(new SelectTileCommand() { SelectedTile = tile });
             }
         }

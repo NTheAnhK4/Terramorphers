@@ -7,7 +7,7 @@ using VContainer;
 using VitalRouter;
 using WEngine.MVP;
 using R3;
-using UnityEngine;
+
 
 namespace GameCore.Presentation.GamePlay
 {
@@ -38,12 +38,15 @@ namespace GameCore.Presentation.GamePlay
 
         protected override UniTask Initialize(Memory<object> args, GamePlayViewState state, GamePlayScreen view)
         {
-            Debug.Log($"[Test] Game play presenter is init");
+           
             _state = state;
             _subscribabale.Subscribe<EnableEndTurnCommand>(ToggleEndTurnButton).AddTo(view);
             _subscribabale.Subscribe<IncreaseRoundCommand>(SetRound).AddTo(view);
             _subscribabale.Subscribe<ChangePlayerStaminaCommand>(OnStaminaChange).AddTo(view);
             _subscribabale.Subscribe<ChangePlayerManaCommand>(OnManaChange).AddTo(view);
+
+        
+            state.SpeedCommand.Subscribe(SetSpeed).AddTo(view);
             state.EndTurnCommand.Subscribe(OnEndTurnBtnClick).AddTo(view);
 
             //Skill
@@ -57,6 +60,8 @@ namespace GameCore.Presentation.GamePlay
 
             return base.Initialize(args, state, view);
         }
+
+     
 
         private void OnStaminaChange(ChangePlayerStaminaCommand command, PublishContext context)
         {
@@ -80,5 +85,6 @@ namespace GameCore.Presentation.GamePlay
         {
             _state.IsActiveEndTurnCommand.Value = command.IsEnable;
         }
+        private void SetSpeed(Unit _){}
     }
 }

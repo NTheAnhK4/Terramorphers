@@ -194,7 +194,7 @@ TextureImporter:
         width: 98
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,6 +202,90 @@ TextureImporter:
       bones: []
       spriteID: e8b6067518130da4683b737120cb1c02
       internalID: 1054171499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: List_Icon
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1269
+        width: 72
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ed8324759c95b43862dade09ce6136
+      internalID: 789038312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Exit_Icon
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 1358
+        width: 74
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1596e3b63eb5f4ca3d9f82629c03e8
+      internalID: -158045333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pause_Icon
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 1432
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89dbed9e7aa07846a31ef2eb15d08c6
+      internalID: -1609167955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MultiStars
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 1442
+        width: 76
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39e87a906f5a4304c813c4b449c0b52c
+      internalID: 1602322713
       vertices: []
       indices: 
       edges: []
@@ -217,8 +301,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Exit_Icon: -158045333
       Icon_1: 1529110076
       Icon_2: 1081523772
+      List_Icon: 789038312
+      MultiStars: 1602322713
+      Pause_Icon: -1609167955
       Star: -1140629935
       Star_Off: 1054171499
   mipmapLimitGroupName: 

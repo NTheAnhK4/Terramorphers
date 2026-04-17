@@ -22,6 +22,7 @@ namespace GameCore.DI
             builder.RegisterModuleInstaller<TileModuleInstaller>();
             builder.RegisterModuleInstaller<LevelModuleInstaller>();
             builder.RegisterModuleInstaller<EntityModuleInstaller>();
+            builder.RegisterModuleInstaller<QuestModuleInstaller>();
             builder.RegisterComponent(launcher);
         }
     }

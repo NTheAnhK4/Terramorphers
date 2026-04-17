@@ -4,6 +4,7 @@ using GameCore.Commands;
 using GameCore.Domain.Level;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Level;
+using GameCore.Usecase.Quest;
 using GameCore.Utility.Shape;
 using R3;
 using UnityEngine;
@@ -21,12 +22,13 @@ namespace Terramorphers
         private TransitionService _transitionService;
         private ILevelRepository _levelRepository;
         private LevelUseCase _levelUseCase;
+        private QuestUseCase _questUseCase;
         private ReactiveProperty<float> progress = new();
         private UniTask loadingTask;
 
         public LoadingState( EntityManager entityManager, GameManager gameManager, BoardManager boardManager,
             ICommandPublisher publisher, TransitionService transitionService, ILevelRepository levelRepository,
-            LevelUseCase levelUseCase)
+            LevelUseCase levelUseCase, QuestUseCase questUseCase)
         {
             _levelRepository = levelRepository;
             _gameManager = gameManager;
@@ -35,6 +37,7 @@ namespace Terramorphers
             _entityManager = entityManager;
             _transitionService = transitionService;
             _levelUseCase = levelUseCase;
+            _questUseCase = questUseCase;
         }
 
         public override void OnEnter()
@@ -71,6 +74,13 @@ namespace Terramorphers
             if (levelStageData == null) return;
             var mapData = LoadingMap(levelStageData);
             if (mapData == null) return;
+            
+            
+            //add objectives
+            foreach (var questMetadata in levelStageData.StageStarObjectives)
+            {
+                _questUseCase.AddQuest(questMetadata);
+            }
             
             bool isLoadingBoardFinished = await _boardManager.LoadingBoard(mapData.Rows);
             if (!isLoadingBoardFinished)

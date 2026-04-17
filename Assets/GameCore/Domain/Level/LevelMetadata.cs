@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GameCore.Domain.Quest;
 using GameCore.Domain.Tile;
 
 using Sirenix.OdinInspector;
@@ -26,23 +27,31 @@ namespace GameCore.Domain.Level
     [Serializable]
     public class LevelStageData
     {
-        [HorizontalGroup("levelStageRow")]
-        [VerticalGroup("levelStageRow/left")]
+        [VerticalGroup("levelStage")]
+        [HorizontalGroup("levelStage/levelInfo")]
+        [VerticalGroup("levelStage/levelInfo/left")]
         [HideLabel]
         [SerializeField] private TextAsset stageMap;
 
-        [VerticalGroup("levelStageRow/left")] [SerializeField, PreviewField(Height = 75,Alignment = ObjectFieldAlignment.Center)]
+        [VerticalGroup("levelStage/levelInfo/left")] [SerializeField, PreviewField(Height = 75,Alignment = ObjectFieldAlignment.Center)]
         [HideLabel]
         private Sprite background;
-        [HorizontalGroup("levelStageRow")]
+        [VerticalGroup("levelStage")]
+        [HorizontalGroup("levelStage/levelInfo")]
         [HideLabel]
         [SerializeField] private List<int> enemyIDs = new();
+
+        [VerticalGroup("levelStage")]
+        [HorizontalGroup("levelStage/objective")] [SerializeField, HideLabel]
+        private List<QuestMetadata> stageStarObjectives = new();
 
         public IReadOnlyList<int> EnemyIDs => enemyIDs;
 
         public TextAsset StageMap => stageMap;
 
         public Sprite Background => background;
+
+        public IReadOnlyList<QuestMetadata> StageStarObjectives => stageStarObjectives;
     }
 
     [Serializable]
