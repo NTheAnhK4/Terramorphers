@@ -56,7 +56,7 @@ namespace Terramorphers.States.PlayerState
             {
                 if (index < directionList.Count)
                     entity.SetDirection(directionList[index]);
-                if (index > 0 && index < moveTiles.Count()) entity.RemainStamina -= moveTiles[index].GetMoveCost();
+                if (index > 0 && index < moveTiles.Count()) entity.DataCache.RemainStamina.Value -= moveTiles[index].GetMoveCost();
                 entity.SetTile(moveTiles[index]);
             }).OnComplete(() =>
             {

@@ -41,6 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3212780293
+    locked: 0
+  - name: Tile
+    uniqueID: 521770659
+    locked: 0
+  - name: Entity
+    uniqueID: 2838676603
+    locked: 0
   - name: UI
     uniqueID: 3858274695
     locked: 0

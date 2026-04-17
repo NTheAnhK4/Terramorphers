@@ -17,6 +17,16 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 3362b374d3db911418a926dd8b0df162
   m_SerializeEntries:
+  - m_GUID: 394ab48e78dca7d4b893cd533643fe92
+    m_Address: MountainTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 487b58b03bcfbb44f9143c5597d33bfd
+    m_Address: BasicTile
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 56e124ae727c44a42b7562b2e47513cb
     m_Address: VoidTile
     m_ReadOnly: 0
@@ -44,11 +54,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af88204cab2963e41a77b4e112ced4a2
     m_Address: HealingTile
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c0149e5843703b84c9ffe5d592efe1bc
-    m_Address: BaseTile
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

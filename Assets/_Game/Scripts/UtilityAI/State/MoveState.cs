@@ -6,7 +6,6 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Terramorphers;
 using UnityEngine;
-using Cysharp.Threading.Tasks;
 using GameCore.Utility;
 
 namespace UtilityAI.State
@@ -37,7 +36,7 @@ namespace UtilityAI.State
                     directionList.Add(direction);
                 }
 
-                var tween = entity.transform.DOPath(movePath, (movePath.Count() - 1) * .75f, PathType.Linear).OnWaypointChange(index =>
+                var tween = entity.transform.DOPath(movePath, (movePath.Count() - 1) * .75f).OnWaypointChange(index =>
                 {
                     if (index < directionList.Count)
                         entity.SetDirection(directionList[index]);

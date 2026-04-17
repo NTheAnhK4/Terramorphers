@@ -22,7 +22,8 @@ MonoBehaviour:
       costs: 50
       range: 1
       skillTargetTypes: 01000000
-      skillHandlers: []
+      skillHandlers:
+      - rid: 1827776807178338304
   - key: 1
     value:
       skillID: 1
@@ -55,4 +56,10 @@ MonoBehaviour:
       skillHandlers: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1827776807178338304
+      type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        damage: 6
+        attackType: 0

@@ -26,7 +26,7 @@ namespace GameCore.DI
             builder.Register<AdvantureState>(Lifetime.Scoped);
             builder.Register<WinState>(Lifetime.Scoped);
             builder.Register<LobbyState>(Lifetime.Scoped);
-           
+            builder.Register<LoseState>(Lifetime.Scoped);
             builder.RegisterVitalRouter(routing =>
             {
                 routing.MapEntryPoint<GameFSM>();

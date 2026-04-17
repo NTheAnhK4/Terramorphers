@@ -13,7 +13,7 @@ namespace GameCore.DI
         [SerializeField] private UnityScreenNavigatorLauncher launcher;
         
       
-        [SerializeField] private EntityModuleInstaller _entityModuleInstaller;
+     
         protected override void Configure(IContainerBuilder builder)
         {
             builder.RegisterModuleInstaller<RouterModuleInstaller>();
@@ -21,7 +21,7 @@ namespace GameCore.DI
             builder.RegisterModuleInstaller<SkillModuleInstaller>();
             builder.RegisterModuleInstaller<TileModuleInstaller>();
             builder.RegisterModuleInstaller<LevelModuleInstaller>();
-            _entityModuleInstaller.Register(builder);
+            builder.RegisterModuleInstaller<EntityModuleInstaller>();
             builder.RegisterComponent(launcher);
         }
     }

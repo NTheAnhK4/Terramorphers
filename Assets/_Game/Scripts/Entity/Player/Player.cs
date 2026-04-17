@@ -5,9 +5,10 @@ using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
 using UnityEngine;
+using UtilityAI.DataCache;
 using VContainer;
 using VitalRouter;
-
+using R3;
 namespace Terramorphers
 {
     public class Player : TerramorphersEntity
@@ -29,12 +30,7 @@ namespace Terramorphers
         private int attackAnimHash = Animator.StringToHash("Attack");
         private int hurtAnimHash = Animator.StringToHash("Hurt");
         private int deadAnimHash = Animator.StringToHash("Dead");
-        #region Runtime Data
-
-     
-        private int remainStamina;
-        private int remainMana;
-        #endregion
+       
 
         #region State
 
@@ -47,43 +43,7 @@ namespace Terramorphers
 
         #region Properties
 
-        public int RemainStamina
-        {
-            get => remainStamina;
-            set
-            {
-                if (value != remainStamina)
-                {
-                    if (_publisher != null)
-                        _publisher.PublishAsync(
-                            new ChangePlayerStaminaCommand()
-                            {
-                                Stamina = value,
-                                MaxStamina = statsSystem.Stats.Stamina
-                            });
-                    remainStamina = value;
-                }
-            }
-        }
-
-        public int RemainMana
-        {
-            get => remainMana;
-            set
-            {
-                if (value != remainMana)
-                {
-                    remainMana = value;
-                    if (_publisher != null) _publisher.PublishAsync(
-                        new ChangePlayerManaCommand()
-                        {
-                            Mana = remainMana,
-                            MaxMana = statsSystem.Stats.Mana
-                        });
-                }
-            }
-        }
-
+      
         public ICommandPublisher Publisher => _publisher;
 
         public ICommandSubscribable Subscribable => _subscribable;
@@ -140,18 +100,28 @@ namespace Terramorphers
             ChangeState(_idleState);
         }
 
-        public override void Init(EntityMetadata metadata, int teamID)
+       
+
+        protected override void RegisterDataCacheEvent()
         {
-            base.Init(metadata, teamID);
-            RemainStamina = statsSystem.Stats.Stamina;
-            RemainMana = statsSystem.Stats.Mana;
+            base.RegisterDataCacheEvent();
+            dataCache.RemainStamina.Subscribe(value =>    _publisher.PublishAsync(new ChangePlayerStaminaCommand()
+            {
+                Stamina = value,
+                MaxStamina = statsSystem.Stats.Stamina
+            })).AddTo(ref _bag);
+            dataCache.RemainMana.Subscribe(value => _publisher.PublishAsync(new ChangePlayerManaCommand()
+            {
+                Mana = value,
+                MaxMana = statsSystem.Stats.Mana
+            })).AddTo(ref _bag);
         }
 
 
         public override void OnEnter()
         {
             base.OnEnter();
-          
+           
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
             
@@ -167,8 +137,7 @@ namespace Terramorphers
 
         public override void OnExit()
         {
-            RemainStamina = statsSystem.Stats.Stamina;
-            RemainMana = statsSystem.Stats.Mana;
+            base.OnExit();
             ChangeState(_idleState);
             _publisher.PublishAsync(new ClearSpecialTilesCommand());
             _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
@@ -188,14 +157,16 @@ namespace Terramorphers
         {
             if (direction.x > 0 && Model.localScale.x < 0)
             {
-               
-                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                var localScale = Model.localScale;
+                localScale = localScale.Set(x: localScale.x * -1);
+                Model.localScale = localScale;
                 Model.transform.localPosition = rightModalPos;
             }
             else if (direction.x < 0 && Model.localScale.x > 0)
             {
-                
-                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                var localScale = Model.localScale;
+                localScale = localScale.Set(x: localScale.x * -1);
+                Model.localScale = localScale;
                 Model.transform.localPosition = leftModalPos;
             }
         }

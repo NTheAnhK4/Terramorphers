@@ -111,8 +111,12 @@ namespace Terramorphers
             set => _context = value;
         }
 
-       
-       
+        public void Init( TileMetadata tileMetadata)
+        {
+            
+            TileMetadata = tileMetadata;
+            CurrentOccupant = null;
+        }
 
 
         private void SetSkillTileEffect(Color color)

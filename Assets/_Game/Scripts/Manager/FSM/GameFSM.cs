@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-
+using GameCore.Commands;
 using VContainer.Unity;
 using VitalRouter;
 
@@ -15,7 +15,7 @@ namespace Terramorphers
 
 		public GameFSM(GameManager gameManager,LoadingState loadingState 
 			,AdvantureState advantureState, WinState winState,
-			LobbyState lobbyState)
+			LobbyState lobbyState, LoseState loseState)
 		{
 			_states = new()
 			{
@@ -23,6 +23,7 @@ namespace Terramorphers
 				[EGameStateType.AdvantureMode] = advantureState,
 				[EGameStateType.WinState] = winState,
 				[EGameStateType.LobbyState] = lobbyState,
+				[EGameStateType.LoseState] = loseState,
 			};
 			gameManager.GameFSM = this;
 		}

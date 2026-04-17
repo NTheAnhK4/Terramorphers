@@ -1,7 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
-using CoreGame;
-using GameCore.Utility;
+
 using Terramorphers;
 
 using UnityEngine;
@@ -9,7 +7,7 @@ using UtilityAI.State;
 using VitalRouter;
 
 using Sirenix.OdinInspector;
-using Sirenix.Serialization;
+
 using Terramorphers.States;
 using UtilityAI.AIActions;
 using VContainer;
@@ -29,12 +27,12 @@ namespace UtilityAI
         private readonly int hurtAnimHash = Animator.StringToHash("Hurt");
         private readonly int walkAnimHash = Animator.StringToHash("Walking");
         private readonly int tauntAnimHash = Animator.StringToHash("Taunt");
-        protected EntityManager _entityManager;
+      
     
         protected ICommandPublisher _publisher;
         protected SkillManager _skillManager;
       
-        public EntityManager EntityManager => _entityManager;
+    
        
 
         public ICommandPublisher Publisher => _publisher;
@@ -60,10 +58,9 @@ namespace UtilityAI
         [Inject]
         public void Construct(
             ICommandPublisher publisher, ICommandSubscribable commandSubscribable,
-            EntityManager entityManager, SkillManager skillManager)
+           SkillManager skillManager)
         {
             _publisher = publisher;
-            _entityManager = entityManager;
             _skillManager = skillManager;
         }
 
@@ -90,9 +87,9 @@ namespace UtilityAI
             ChangeState(_idleState);
         }
 
-        public override void Init(EntityMetadata metadata, int teamID)
+        public override void Init(EntityMetadata metadata, int teamID, ITile tile)
         {
-            base.Init(metadata, teamID);
+            base.Init(metadata, teamID, tile);
             if (metadata is not EnemyMetadata enemyMetadata)
             {
                 Debug.Log($"[Test] type of enemy meta data is not correct");
@@ -143,8 +140,7 @@ namespace UtilityAI
 
         public override void OnExit()
         {
-            Context.SetData(BlackBoardConstant.REMAIN_STAMINA_KEY, statsSystem.Stats.Stamina);
-            Context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, statsSystem.Stats.Mana);
+            base.OnExit();
             ChangeState(_idleState);
             statsSystem.Update();
         }

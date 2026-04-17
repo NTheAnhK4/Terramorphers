@@ -26,21 +26,40 @@ namespace GameCore.Domain.Level
     [Serializable]
     public class LevelStageData
     {
+        [HorizontalGroup("levelStageRow")]
+        [VerticalGroup("levelStageRow/left")]
+        [HideLabel]
         [SerializeField] private TextAsset stageMap;
+
+        [VerticalGroup("levelStageRow/left")] [SerializeField, PreviewField(Height = 75,Alignment = ObjectFieldAlignment.Center)]
+        [HideLabel]
+        private Sprite background;
+        [HorizontalGroup("levelStageRow")]
+        [HideLabel]
         [SerializeField] private List<int> enemyIDs = new();
 
         public IReadOnlyList<int> EnemyIDs => enemyIDs;
 
         public TextAsset StageMap => stageMap;
-    }
-    [Serializable]
-    public class BoardData
-    {
-        public List<BoardRow> Rows;
+
+        public Sprite Background => background;
     }
 
     [Serializable]
-    public class BoardRow
+    public class SpawnSlotData
+    {
+        public int TeamID;
+        public Vector2Int Position;
+    }
+    [Serializable]
+    public class MapData
+    {
+        public List<SpawnSlotData> SlotDatas;
+        public List<MapRow> Rows;
+    }
+
+    [Serializable]
+    public class MapRow
     {
         public List<ETileType> Tiles;
     }

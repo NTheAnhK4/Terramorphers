@@ -3,17 +3,18 @@ using System;
 using CoreGame;
 using GameCore.Domain.Skill;
 using GameCore.Utility;
+using R3;
 using Sirenix.OdinInspector;
 using Terramorphers.States;
 using Terramorphers.Stats;
 using UnityEngine;
-using UtilityAI;
+
 using UtilityAI.DataCache;
 using VContainer;
 
 namespace Terramorphers
 {
-    public abstract class TerramorphersEntity : Entity
+    public abstract class TerramorphersEntity : Entity, IDisposable
     {
         [SerializeField, TabGroup("General")] public float MoveSpeed = .5f;
         [SerializeField, TabGroup("Components")]
@@ -26,6 +27,10 @@ namespace Terramorphers
         protected EntityDataCache dataCache;
         protected EntityDerivedDataCalculator derivedDataCalculator;
         [Inject] protected BoardManager _boardManager;
+        [Inject] protected EntityManager _entityManager;
+        protected DisposableBag _bag;
+
+        public EntityManager EntityManager => _entityManager;
 
         public BoardManager BoardManager => _boardManager;
         public EntityDataCache DataCache => dataCache;
@@ -52,7 +57,12 @@ namespace Terramorphers
             ResetDataCache();
         }
         public abstract void OnUpdate();
-        public abstract void OnExit();
+
+        public virtual void OnExit()
+        {
+            dataCache.RemainMana.Value = statsSystem.Stats.Mana;
+            dataCache.RemainStamina.Value = statsSystem.Stats.Stamina;
+        }
         public abstract void SetTile(ITile tile);
         public abstract bool IsDead();
         public ITile CurrentTile => currentTile;
@@ -63,8 +73,11 @@ namespace Terramorphers
         public StatsSystem StatsSystem => statsSystem;
         [HideInInspector] public string Name;
 
-        public virtual void Init(EntityMetadata metadata, int teamID)
+     
+        public virtual void Init(EntityMetadata metadata, int teamID, ITile tile)
         {
+            SetTile(tile);
+          
             statsSystem = new StatsSystem(metadata.EntityStats);
             Context = new Context();
             dataCache = new EntityDataCache();
@@ -74,11 +87,12 @@ namespace Terramorphers
            
             
         
-         
+            RegisterDataCacheEvent();
             ResetDataCache();
             dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;
             OnInitialized?.Invoke();
         }
+        protected virtual void RegisterDataCacheEvent(){}
 
         protected void ResetDataCache()
         {
@@ -106,6 +120,12 @@ namespace Terramorphers
         private void OnDestroy()
         {
             derivedDataCalculator.Dispose();
+        }
+
+        public void Dispose()
+        {
+            derivedDataCalculator?.Dispose();
+            _bag.Dispose();
         }
     }
 }

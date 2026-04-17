@@ -73,9 +73,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -98
+  m_SortingLayerID: 521770659
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f181e36bba07aa5409a6b052ef458d82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -400,9 +400,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -98
+  m_SortingLayerID: 521770659
+  m_SortingLayer: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: f181e36bba07aa5409a6b052ef458d82, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -423,7 +423,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6691323707113128829}
-  - component: {fileID: 3008349796528636102}
   m_Layer: 0
   m_Name: BaseTile
   m_TagString: Untagged
@@ -447,28 +446,6 @@ Transform:
   - {fileID: 484033130623726321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3008349796528636102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077671866358935052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33147555349a410283bbcc4c37bb2f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountText: {fileID: 5389928864630335816}
-  interactableSR: {fileID: 6047573181115148412}
-  tileSkillEffect: {fileID: 8809685247166442843}
-  tileSkillSpriteRenderer: {fileID: 9059823819643841527}
-  movableColor: {r: 0.6156863, g: 1, b: 0.59607846, a: 1}
-  skillApplicableColor: {r: 1, g: 1, b: 1, a: 1}
-  enemyTargetSkillColor: {r: 1, g: 0, b: 0, a: 1}
-  allyTargetSkillColor: {r: 0.34528297, g: 0.679792, b: 1, a: 1}
-  tileTargetSkillColor: {r: 1, g: 0, b: 0, a: 1}
-  selftTargetSkillColor: {r: 0.34509805, g: 0.6784314, b: 1, a: 1}
 --- !u!1 &3671603804082959802
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,8 +674,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: -98
+  m_SortingLayerID: 521770659
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &5858975245971321321
 MonoBehaviour:
@@ -811,9 +788,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -99
+  m_SortingLayerID: 521770659
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f181e36bba07aa5409a6b052ef458d82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.19607843}
   m_FlipX: 0

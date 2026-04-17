@@ -5,20 +5,23 @@ namespace Terramorphers.States
 {
     public class DeadState : State<TerramorphersEntity>
     {
-        public DeadState(TerramorphersEntity entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
-
+      
         public DeadState(TerramorphersEntity entity, int animationHash) : base(entity, animationHash)
         {
         }
 
-        public DeadState(TerramorphersEntity entity) : base(entity)
+        public override void OnEnter(StateData stateData = null)
         {
+            base.OnEnter(stateData);
+            entity.CurrentTile.CurrentOccupant = null;
         }
 
-        public DeadState(TerramorphersEntity entity, Func<string> animNameFunc) : base(entity, animNameFunc)
+
+        public override void AnimationFinishTrigger()
         {
+            base.AnimationFinishTrigger();
+            entity.EntityManager.RemoveEntity(entity);
+           
         }
     }
 }

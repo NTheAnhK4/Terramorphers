@@ -56,7 +56,6 @@ namespace UtilityAI.State
             : base(entity, animationHash)
         {
             this.enemyMetadata = enemyMetadata;
-           
             considerationContext.Set(EContextType.Self, entity.Context);
 
             entityReasoner = new EntityReasoner(entity);
@@ -86,6 +85,7 @@ namespace UtilityAI.State
        
         public override void OnEnter(StateData stateData = null)
         {
+          
             base.OnEnter(stateData);
             entity.UpdateContext();
 

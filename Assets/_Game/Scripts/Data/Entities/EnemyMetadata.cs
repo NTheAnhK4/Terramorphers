@@ -75,11 +75,11 @@ namespace Terramorphers
     [Serializable]
     public class SkillConsiderationData
     {
-        [HorizontalGroup("skillConsiderationData", Width = .2f)]
+        [TableColumnWidth(50)]
         [SerializeField] private int skillID;
-        [HorizontalGroup("skillConsiderationData", Width = .2f)]
+        [TableColumnWidth(50)]
         [SerializeField] private int considerationID;
-        [HorizontalGroup("skillConsiderationData", Width = .6f)]
+        [TableColumnWidth(300)]
         [SerializeField] private string animName;
        
 

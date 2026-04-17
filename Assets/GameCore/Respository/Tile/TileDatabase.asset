@@ -18,7 +18,7 @@ MonoBehaviour:
       type: 0
       tileName: Basic Tile
       description: 
-      addresable: BaseTile
+      addresable: BasicTile
   - key: 1
     value:
       type: 1
@@ -82,9 +82,9 @@ MonoBehaviour:
   - key: 11
     value:
       type: 11
-      tileName: 
+      tileName: Mountain Tile
       description: 
-      addresable: 
+      addresable: MountainTile
   - key: 12
     value:
       type: 12

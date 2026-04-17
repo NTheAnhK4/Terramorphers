@@ -53,12 +53,15 @@ namespace UtilityAI.Reasoner
             if (enemyMetadata.EnemyConsiderationID >= 0)
             {
                 List<TerramorphersEntity> enemies =  entity.EntityManager.GetEntitiesWithDiffTeamID(entity.TeamID);
+               
                 Dictionary<TerramorphersEntity, float> enemyEvaluation = new();
                 foreach (var enemy in enemies)
                 {
+                   
                     considerationContext.Set(EContextType.Enemy, enemy.Context);
                     considerationContext.SetParams(EContextType.Enemy, enemy.Name);
                     float score = system.Evaluate(enemyMetadata.EnemyConsiderationID, considerationContext);
+                   
                     enemyEvaluation[enemy] = score;
                     if (score > maxScore)
                     {

@@ -13,7 +13,7 @@ namespace GameCore.Domain.Tile
         HealingTile = 8,
         RefreshingTile = 9,
         CorruptedTile = 10,
-        BlockingTile = 11,
+        MountainTile = 11,
         WaterTile = 12,
     }
 }

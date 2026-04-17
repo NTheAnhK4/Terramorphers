@@ -22,7 +22,11 @@ namespace Terramorphers.States.PlayerState
             entity.InputManager.SetLayer(InputManager.TILE_LAYER);
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
-            entity.Publisher.PublishAsync(new SetMovableTilesCommand() { CenterTile = entity.CurrentTile, Distance = entity.RemainStamina });
+            entity.Publisher.PublishAsync(new SetMovableTilesCommand()
+            {
+                CenterTile = entity.CurrentTile, 
+                Distance = entity.DataCache.RemainStamina.Value
+            });
             _disposables.Add(entity.Subscribable.Subscribe<SelectTileCommand>(OnSelectTile)); 
             _disposables.Add(entity.Subscribable.Subscribe<UseSkillCommand>(UseSkill));
         }

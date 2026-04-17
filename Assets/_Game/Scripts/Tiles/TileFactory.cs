@@ -34,10 +34,13 @@ namespace Terramorphers
             }
 
             var tile = PoolingManager.Spawn(tilePrefab,_parent).GetComponent<ITile>();
-            tile.TileMetadata = tileMetadata;
+            tile.Init(tileMetadata);
+          
             _resolver.Inject(tile);
             return tile;
         }
+
+        public void Despawn(ITile tile) => PoolingManager.Despawn(tile.Transform.gameObject);
 
         public void SetParent(Transform parent)
         {

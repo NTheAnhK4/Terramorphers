@@ -11,11 +11,7 @@ namespace GameCore.APIGateway.Skill
     {
         protected override string PlayerPrefsKey => "SkillData";
         public SkillAPIGateway(){}
-        public override UniTask Update(SkillModel model)
-        {
-            SaveToPlayerPref(model);
-            return UniTask.CompletedTask;
-        }
+     
 
        
 

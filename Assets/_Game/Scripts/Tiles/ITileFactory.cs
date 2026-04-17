@@ -10,6 +10,7 @@ namespace Terramorphers
     {
         UniTask<ITile> CreateTile(ETileType type);
         void SetParent(Transform parent);
+        void Despawn(ITile tile);
     }
 
 }

@@ -38,6 +38,7 @@ namespace GameCore.Presentation.GamePlay
 
         protected override UniTask Initialize(Memory<object> args, GamePlayViewState state, GamePlayScreen view)
         {
+            Debug.Log($"[Test] Game play presenter is init");
             _state = state;
             _subscribabale.Subscribe<EnableEndTurnCommand>(ToggleEndTurnButton).AddTo(view);
             _subscribabale.Subscribe<IncreaseRoundCommand>(SetRound).AddTo(view);

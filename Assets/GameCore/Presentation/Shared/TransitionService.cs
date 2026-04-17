@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using GameCore.Presentation.Shared;
 using UnityEngine;
 using UnityEngine.UI;
 using VContainer;
@@ -13,10 +10,13 @@ using ZBase.UnityScreenNavigator.Core.Screens;
 using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
 using GameCore.Domain.Level;
-using GameCore.Presentation;
 using GameCore.Presentation.ChooseStage;
 using GameCore.Presentation.GamePlay;
+using GameCore.Presentation.Loading;
 using GameCore.Presentation.Lobby;
+using GameCore.Presentation.LoseGame;
+using GameCore.Presentation.WinGame;
+using R3;
 
 namespace GameCore.Presentation.Shared
 {
@@ -58,6 +58,8 @@ namespace GameCore.Presentation.Shared
             var modalsCount = _modalContainer.Modals.Count;
             return modalsCount > 0 ? _modalContainer.PopAsync(true) : UniTask.CompletedTask;
         }
+
+        
 
         public void CloseAllPopup()
         {
@@ -161,6 +163,38 @@ namespace GameCore.Presentation.Shared
             return presenter;
         }
 
+        public async UniTask<LoadingViewPresenter> ShowLoadingView(bool isShow, ReactiveProperty<float> progress, Action onFinishLoading)
+        {
+            if (isShow)
+            {
+                var presenter = await ShowActivityPresenterAsync<LoadingViewPresenter, LoadingView, LoadingViewState>(
+                    "LoadingView",
+                    view => new LoadingViewPresenter(view,progress, onFinishLoading));
+                return presenter;
+            }
+            else
+            {
+                if (_activityContainer.TryGet("LoadingView", out var viewRef))
+                    await _activityContainer.HideAsync("LoadingView");
+                return null;
+            }
+        }
+
+        public async UniTask<WinGamePresenter> ShowWinGameModal()
+        {
+            var presentor = await ShowModalPresenterAsync<WinGamePresenter, WinGameModal, WinGameViewState>(
+                "WinGameModal",
+                modal => new WinGamePresenter(modal));
+            return presentor;
+        }
+
+        public async UniTask<LoseGamePresentor> ShowLoseGameModal()
+        {
+            var presentor = await ShowModalPresenterAsync<LoseGamePresentor, LoseGameModal, LoseGameViewState>(
+                "LoseGameModal",
+                modal => new LoseGamePresentor(modal));
+            return presentor;
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
-using Unity.Plastic.Newtonsoft.Json;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace GameCore.APIGateway.Level

@@ -19,7 +19,8 @@ namespace Terramorphers
         TerramorphersEntity CurrentOccupant { get; set; }
         TileMetadata TileMetadata { get; set; }
         Context Context { get; protected set; }
-       
+
+        void Init(TileMetadata tileMetadata);
 
     }
 

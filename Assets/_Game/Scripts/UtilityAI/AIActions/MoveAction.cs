@@ -27,6 +27,7 @@ namespace UtilityAI.AIActions
             context.SetParams(EContextType.Target, target.Name);
             context.SetParams(EContextType.Self, entity.Name);
         }
+        
 
         public override float GetBestOption(ConsiderationSystem system, ConsiderationContext context)
         {

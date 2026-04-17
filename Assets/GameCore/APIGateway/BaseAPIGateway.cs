@@ -15,7 +15,11 @@ namespace GameCore.APIGateway
             return _model ??= LoadFromPlayerPref();
         }
 
-        public abstract UniTask Update(T model);
+        public virtual UniTask Update(T model)
+        {
+            SaveToPlayerPref(model);
+            return UniTask.CompletedTask;
+        }
 
         protected virtual T LoadFromPlayerPref()
         {

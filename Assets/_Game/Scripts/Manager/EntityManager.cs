@@ -20,6 +20,7 @@ namespace Terramorphers
         private ICommandSubscribable _subscribable;
         private ICommandPublisher _publisher;
         private int currentRound;
+        private Dictionary<int, int> teamMembersDict = new();
         public Player Player;
 
         public EntityManager(EntityFactory entityFactory, ICommandSubscribable subscribable, ICommandPublisher publisher)
@@ -30,17 +31,34 @@ namespace Terramorphers
             currentEntityID = -1;
         }
 
+        public void ClearEntity()
+        {
+            currentEntityID = -1;
+            foreach (var entity in _entities)
+            {
+                if (entity != null)
+                {
+                    entity.OnExit();
+                    entity.Dispose();
+                    _entityFactory.Despawn(entity);
+                }
+            }
+            _entities.Clear();
+            teamMembersDict.Clear();
+            Player = null;
+        }
+
         public async UniTask AddEntity(int entityID, ITile tile, int teamID)
         {
-            TerramorphersEntity entity = await _entityFactory.Create(entityID, teamID);
+            TerramorphersEntity entity = await _entityFactory.Create(entityID, teamID, tile);
+            teamMembersDict.TryAdd(teamID, 0);
+            teamMembersDict[teamID]++;
             if (entity is Player player) Player = player;
             if (entity == null)
             {
                 Debug.Log($"[EntityManager] can not add entity {entityID}");
                 return;
             }
-
-            entity.SetTile(tile);
             if (currentEntityID == 0)
             {
                 _entities.Insert(1, entity);
@@ -51,6 +69,33 @@ namespace Terramorphers
             }
         }
 
+        public void RemoveEntity(TerramorphersEntity entity)
+        {
+            if (currentEntityID >= 0 && currentEntityID < _entities.Count && _entities[currentEntityID] == entity)
+            {
+                _entities[currentEntityID].OnExit();
+            }
+
+            _entities.Remove(entity);
+            _entityFactory.Despawn(entity);
+            teamMembersDict[entity.TeamID]--;
+            if (teamMembersDict[entity.TeamID] == 0) teamMembersDict.Remove(entity.TeamID);
+            if(teamMembersDict.Count <= 1) CheckEndGame();
+        }
+        
+
+        private void CheckEndGame()
+        {
+            if (teamMembersDict.Count == 0)
+            {
+                _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.WinState));
+            }
+            else if (teamMembersDict.Keys.First() == Player.TeamID)
+            {
+                _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.WinState));
+            }
+            else _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.LoseState));
+        }
         public void ResetEntityID() => currentEntityID = 0;
 
         public void OnEnter()

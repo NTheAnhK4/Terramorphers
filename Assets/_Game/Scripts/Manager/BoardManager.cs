@@ -4,14 +4,14 @@ using System.Linq;
 using CoreGame;
 using System.IO;
 using Cysharp.Threading.Tasks;
+using GameCore.Domain.Level;
 using GameCore.Domain.Skill;
 using GameCore.Domain.Tile;
 using GameCore.Utility.Shape;
 
 using Terramorphers.Command;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
+
 using UtilityAI;
 using VContainer;
 using VitalRouter;
@@ -33,15 +33,16 @@ namespace Terramorphers
 
     public class BoardManager : ComponentBehaviour
     {
+        [SerializeField] private SpriteRenderer backgroundSR;
         [Inject] private ITileFactory _tileFactory;
         [Inject] private ICommandSubscribable _subscribable;
         [Inject] private ICommandPublisher _publisher;
         private List<List<ITile>> board = new();
         private HexagonalGrid<ITile> hexaBoard;
-        AsyncOperationHandle<TextAsset> handle;
+        
 
         public HexagonalGrid<ITile> HexaBoard => hexaBoard;
-
+        
        
         public string path = "Assets/_Game/Scripts/Configs/GameConfig.json";
         private List<ITile> currentSpecialTiles = new();
@@ -89,54 +90,44 @@ namespace Terramorphers
             return data;
         }
 
-        // public async UniTask<bool> LoadingBoard(LevelMetadata levelMetadata)
-        // {
-        //     TilePositionData positionData = LoadFromJson();
-        //     if (positionData == null) return false;
-        //     handle = Addressables.LoadAssetAsync<TextAsset>(levelMetadata.BoardDataAddressable);
-        //
-        //     TextAsset jsonFile = await handle.Task;
-        //     if (jsonFile == null)
-        //     {
-        //         Debug.Log($"[BoardManager] load file from json is failure");
-        //         return false;
-        //     }
-        //
-        //     BoardData boardData = JsonUtility.FromJson<BoardData>(jsonFile.text);
-        //
-        //
-        //     board.Clear();
-        //     _tileFactory.SetParent(transform);
-        //     for (int i = 0; i < boardData.Rows.Count; ++i)
-        //     {
-        //         List<ITile> row = new();
-        //
-        //         for (int j = 0; j < boardData.Rows[i].Tiles.Count(); ++j)
-        //         {
-        //             ETileType type = boardData.Rows[i].Tiles[j];
-        //             var tile = await _tileFactory.CreateTile(type);
-        //             if (tile == null) return false;
-        //             tile.Transform.position = positionData.rows[i].positions[j];
-        //
-        //             row.Add(tile);
-        //         }
-        //
-        //         board.Add(row);
-        //     }
-        //
-        //     hexaBoard = new HexagonalGrid<ITile>(board, ((tile, cube) =>
-        //     {
-        //         tile.Index = cube;
-        //         tile.Transform.name = $"Tile_{cube.q}_{cube.r}_{cube.s}";
-        //     }));
-        //
-        //     return true;
-        // }
+        public void SetBackground(Sprite sprite) => backgroundSR.sprite = sprite;
 
-        public void ReleaseBoardData()
+        public async UniTask<bool> LoadingBoard(List<MapRow> gridData)
         {
-            if (handle.IsValid()) Addressables.Release(handle);
+            TilePositionData positionData = LoadFromJson();
+            if (positionData == null) return false;
+            
+        
+        
+            board.Clear();
+            _tileFactory.SetParent(transform);
+            for (int i = 0; i < gridData.Count; ++i)
+            {
+                List<ITile> row = new();
+        
+                for (int j = 0; j < gridData[i].Tiles.Count(); ++j)
+                {
+                    ETileType type = gridData[i].Tiles[j];
+                    var tile = await _tileFactory.CreateTile(type);
+                    if (tile == null) return false;
+                    tile.Transform.position = positionData.rows[i].positions[j];
+        
+                    row.Add(tile);
+                }
+        
+                board.Add(row);
+            }
+        
+            hexaBoard = new HexagonalGrid<ITile>(board, ((tile, cube) =>
+            {
+                tile.Index = cube;
+                tile.Transform.name = $"Tile_{cube.q}_{cube.r}_{cube.s}";
+            }));
+        
+            return true;
         }
+
+      
 
         #endregion
 
@@ -154,6 +145,14 @@ namespace Terramorphers
             foreach (var bag in bags) bag?.Dispose();
         }
 
+        public void ClearBoard()
+        {
+            foreach (var row in board)
+            {
+                foreach(var tile in row) _tileFactory.Despawn(tile);
+            }
+            board.Clear();
+        }
 
         public List<ITile> GetPassableTile()
         {

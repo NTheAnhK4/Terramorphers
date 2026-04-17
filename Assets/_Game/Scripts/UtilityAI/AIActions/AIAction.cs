@@ -20,7 +20,7 @@ namespace UtilityAI.AIActions
         }
         public void Initalize(Context context){}
         protected virtual void SetData(ConsiderationSystem system, ConsiderationContext context){}
-        public float CaculateUtility(ConsiderationSystem system, ConsiderationContext context)
+        public virtual float CaculateUtility(ConsiderationSystem system, ConsiderationContext context)
         {
             SetData(system, context);
             return system.Evaluate(considerationID, context) * GetBestOption(system, context);

@@ -47,7 +47,7 @@ namespace Terramorphers.States.PlayerState
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
-            if (entity.RemainMana < skillMetadata.SkillCosts)
+            if (entity.DataCache.RemainMana.Value < skillMetadata.SkillCosts)
             {
                 Debug.Log($"[Test] mana is not enough");
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
@@ -57,7 +57,7 @@ namespace Terramorphers.States.PlayerState
             Vector3 direction = data.SelectedTile.Transform.position - entity.transform.position;
             entity.SetDirection(direction);
             
-            entity.RemainMana -= skillMetadata.SkillCosts;
+            entity.DataCache.RemainMana.Value -= skillMetadata.SkillCosts;
         }
         
         public override void AnimationTrigger()

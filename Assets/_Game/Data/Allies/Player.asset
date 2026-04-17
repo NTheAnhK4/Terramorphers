@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   addressable: Player
+  entityName: 
+  entityIcon: {fileID: 0}
   _entityStats:
-    MaxHP: 100
+    MaxHP: 2
     Mana: 100
     Stamina: 3
     Range: 0

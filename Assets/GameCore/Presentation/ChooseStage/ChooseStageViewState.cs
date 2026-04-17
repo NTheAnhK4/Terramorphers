@@ -9,6 +9,7 @@ namespace GameCore.Presentation.ChooseStage
     public class ChooseStageViewState : ViewState
     {
         public ReactiveProperty<string> LevelName { get; } = new ReactiveProperty<string>();
+        public ReactiveCommand OnClose { get; } = new ReactiveCommand();
     }
 
 }

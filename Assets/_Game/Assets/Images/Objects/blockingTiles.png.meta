@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: blockingTiles_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 3
+        width: 93
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b357941253eb24c8baba5b41b05156
+      internalID: 851778738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockingTiles_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 3
+        width: 93
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b6200c9666b14349a742599d36ca937
+      internalID: -1051402464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockingTiles_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 3
+        width: 93
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dfcc08a1d60bba43aebbb864d79774b
+      internalID: 472346109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockingTiles_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 8
+        width: 94
+        height: 111
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4251502}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9d37ffa51167884cb8456c4beb36730
+      internalID: -1354516851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: blockingTiles_4
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 7
+        width: 93
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ac7204b94e15e546a40caf583eea26d
+      internalID: 972803183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blockingTiles_0: 851778738
+      blockingTiles_1: -1051402464
+      blockingTiles_2: 472346109
+      blockingTiles_3: -1354516851
+      blockingTiles_4: 972803183
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -15,15 +15,15 @@ MonoBehaviour:
   serializedElements:
   - key: 0
     value:
-      levelName: Frost Hollow
-      levelSprite: {fileID: 246860589, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      levelName: Spore Cave
+      levelSprite: {fileID: 324201282, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
       levelStageDatas:
+      - stageMap: {fileID: 4900000, guid: 91b7e80789825a048b12fce752178935, type: 3}
+        background: {fileID: 21300000, guid: 2075d41462ed16e49a7edd41b25bb7ca, type: 3}
+        enemyIDs: 01000000
       - stageMap: {fileID: 0}
-        enemyIDs: 00000000
-      - stageMap: {fileID: 0}
-        enemyIDs: 00000000
-      - stageMap: {fileID: 0}
-        enemyIDs: 00000000
+        background: {fileID: 21300000, guid: 2075d41462ed16e49a7edd41b25bb7ca, type: 3}
+        enemyIDs: 010000000100000001000000
   - key: 1
     value:
       levelName: Ice Abyss

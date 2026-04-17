@@ -165,16 +165,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: StagePannel
+      name: StagePanel_1
       rect:
         serializedVersion: 2
         x: 20
         y: 133
-        width: 1481
+        width: 445
         height: 366
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 1121, y: 0, z: 226, w: 0}
+      border: {x: 159, y: 0, z: 178, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -194,7 +194,7 @@ TextureImporter:
         width: 93
         height: 129
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
         width: 144
         height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,6 +223,48 @@ TextureImporter:
       bones: []
       spriteID: 3fe280b9678ce1549a19dba5afe02731
       internalID: -436802866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StagePanel_2
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 133
+        width: 408
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 61, y: 0, z: 117, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a7b013c259d324cb23e9c2882c1ea7
+      internalID: 1239004289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StagePanel_3
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 133
+        width: 629
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 148, y: 0, z: 205, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edccd3dc2883e24b859b29f9514f3b2
+      internalID: 1920401928
       vertices: []
       indices: 
       edges: []
@@ -243,7 +285,9 @@ TextureImporter:
       Close: -436802866
       Lock: -201458304
       Pannel: 343410782
-      StagePannel: -964620557
+      StagePanel_1: -964620557
+      StagePanel_2: 1239004289
+      StagePanel_3: 1920401928
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

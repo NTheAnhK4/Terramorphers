@@ -23,6 +23,7 @@ namespace UtilityAI.DataCache
 
         void OnManaChange(int value)
         {
+            
             int totalMana = entity.StatsSystem.Stats.Mana;
             float manaAvailabilityRatio;
             if (totalMana == 0)
