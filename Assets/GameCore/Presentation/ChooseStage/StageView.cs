@@ -15,12 +15,13 @@ namespace GameCore.Presentation.ChooseStage
 {
     public class StageView : AppView<StageViewState>
     {
-       
+        [SerializeField] private Sprite starOn, starOff;
         [SerializeField] private TextMeshProUGUI stageNameText;
         [SerializeField] private GameObject lockGO;
         [SerializeField] private GameObject unlockGO;
         [SerializeField] private Button enterStageBtn;
         [SerializeField] private List<ItemView> _enemyFrameViews = new();
+        [SerializeField] private List<Image> stars = new();
 
     
         protected override UniTask Initialize(StageViewState state)
@@ -28,8 +29,19 @@ namespace GameCore.Presentation.ChooseStage
            
             state.IsUnlock.Subscribe(UnlockStage).AddTo(this);
             state.StageName.Subscribe(SetStageName).AddTo(this);
+            SetStar(state.TotalStars);
             enterStageBtn.SubscribeToCommand(state.EnterStageCommand).AddTo(this);
             return UniTask.CompletedTask;
+        }
+
+        private void SetStar(int value)
+        {
+            for (int i = 0; i < stars.Count; ++i)
+            {
+                stars[i].sprite = i < value ? starOn :
+                starOff;
+                
+            }
         }
 
        

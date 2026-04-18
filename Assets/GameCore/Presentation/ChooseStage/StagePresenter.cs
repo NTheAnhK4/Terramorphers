@@ -35,6 +35,7 @@ namespace GameCore.Presentation.ChooseStage
             state.IsUnlock.Value = _stageID <= _levelUseCase.GetCurrentStageOfLevel(_levelID);
             state.StageName.Value = $"Stage {_stageID + 1}";
             state.EnterStageCommand.Subscribe(OnEnterLevel).AddTo(view);
+            state.TotalStars = _levelUseCase.GetStars(_levelID, _stageID);
             _entityDatabase = _entityRepository.Get();
             List<BaseEntityMetadata> baseEntityMetadatas = new();
             foreach (var enemyID in _levelStageData.EnemyIDs)

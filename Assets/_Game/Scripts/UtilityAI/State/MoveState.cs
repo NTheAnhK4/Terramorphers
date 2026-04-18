@@ -7,6 +7,8 @@ using DG.Tweening;
 using Terramorphers;
 using UnityEngine;
 using GameCore.Utility;
+using GameCore.Utility.Audio.GameAudio;
+using JSAM;
 
 namespace UtilityAI.State
 {
@@ -23,14 +25,14 @@ namespace UtilityAI.State
             base.Execute(context);
             try
             {
-               
+                AudioManager.PlaySound(ESoundType.FootstepDirt);
                 ITile currentTile = entity.CurrentTile;
-            
+
                 List<ITile> moveTiles = entity.BoardManager.GetPath(currentTile, data.TargetTile);
                 if (moveTiles == null || moveTiles.Count <= 1) return;
                 var movePath = moveTiles.Select(t => t.Transform.position).ToArray();
                 List<Vector3> directionList = new();
-                for(int i = 0; i < moveTiles.Count - 1; ++i)
+                for (int i = 0; i < moveTiles.Count - 1; ++i)
                 {
                     Vector3 direction = moveTiles[i + 1].Transform.position - moveTiles[i].Transform.position;
                     directionList.Add(direction);
@@ -47,11 +49,16 @@ namespace UtilityAI.State
 
                     entity.SetTile(moveTiles[index]);
                 });
-                await tween.AwaitForStepComplete(cancellationToken:entity.transform.GetCancellationTokenOnDestroy());
+                await tween.AwaitForStepComplete(cancellationToken: entity.transform.GetCancellationTokenOnDestroy());
                 entity.DataCache.RemainStamina.Value -= moveTiles.Select(t => t.GetMoveCost()).Sum();
             }
-            catch(OperationCanceledException){}
-           
+            catch (OperationCanceledException)
+            {
+            }
+            finally
+            {
+                AudioManager.StopSound(ESoundType.FootstepDirt);
+            }
 
         }
 

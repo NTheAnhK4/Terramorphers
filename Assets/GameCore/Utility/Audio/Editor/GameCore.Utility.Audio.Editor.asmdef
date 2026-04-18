@@ -1,0 +1,11 @@
+﻿{
+  "name": "GameCore.Utility.Audio.Editor",
+  "references": [
+    "com.Brogrammist.JSAM",
+    "com.Brogrammist.JSAM.Editor",
+    "GameCore.Utility"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}

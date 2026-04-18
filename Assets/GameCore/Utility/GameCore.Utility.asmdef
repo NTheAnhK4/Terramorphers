@@ -5,7 +5,9 @@
         "Unity.TextMeshPro",
         "UniTask",
         "UniTask.DOTween",
-        "R3.Unity"
+        "R3.Unity",
+        "com.Brogrammist.JSAM",
+        "com.Brogrammist.JSAM.Editor"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

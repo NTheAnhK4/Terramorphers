@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 8413790301684414733}
   - component: {fileID: 4400924074504943405}
   - component: {fileID: 1923097261383465551}
+  - component: {fileID: 4979399284292249512}
   m_Layer: 5
   m_Name: MenuBtn
   m_TagString: Untagged
@@ -889,6 +890,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4979399284292249512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4008459154793207275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034c105ce81c5b549b977da56dd72a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+  advancedMode: 1
 --- !u!1 &4105419501430806818
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,6 +1210,7 @@ GameObject:
   - component: {fileID: 6405255826920051562}
   - component: {fileID: 5144959333732174961}
   - component: {fileID: 5089793783361980039}
+  - component: {fileID: 625764986277991962}
   m_Layer: 5
   m_Name: Next
   m_TagString: Untagged
@@ -1304,6 +1320,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &625764986277991962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5311562965762275221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034c105ce81c5b549b977da56dd72a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+  advancedMode: 1
 --- !u!1 &6257514147288446233
 GameObject:
   m_ObjectHideFlags: 0

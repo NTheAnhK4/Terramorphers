@@ -1,8 +1,11 @@
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using GameCore.Domain.Level;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Level;
 using GameCore.Usecase.Quest;
+using GameCore.Utility.Audio.GameAudio;
+using JSAM;
 using UnityEngine;
 using VContainer;
 
@@ -33,14 +36,26 @@ namespace Terramorphers
             _levelDatabase = _levelRepository.Get();
             
             UnlockNextLevel();
+            PlayMusic();
             EnterAsync().Forget();
         }
 
         private async UniTask EnterAsync()
         {
             int totalStars = GetStars();
+           
             var winGamePresentor = await _transitionService.ShowWinGameModal(totalStars);
         }
+        private void PlayMusic()
+        {
+            var audio = AudioManager.PlayMusic(EMusicType.VictoryMusic);
+            if (!AudioManager.MusicMuted)
+            {
+                audio.AudioSource.volume = 0;
+                audio.AudioSource.DOFade(1, .15f);
+            }
+        }
+
 
         private int GetStars()
         {
@@ -54,7 +69,7 @@ namespace Terramorphers
                 if (isCompleted) totalStars++;
                 _questUseCase.RemoveQuest(questMetadata);
             }
-
+            _levelUseCase.SetStars(_levelModel.SelectedLevel, _levelModel.SelectedStage, totalStars);
             return totalStars;
         }
 
@@ -75,6 +90,19 @@ namespace Terramorphers
             _levelUseCase.SetCurrentStageOfLevel(currentLevelID, currentStageID);
             _levelUseCase.Update(_levelModel).Forget();
 
+        }
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            if (AudioManager.TryGetPlayingMusic(EMusicType.VictoryMusic, out MusicChannelHelper audio))
+            {
+                audio.AudioSource.DOFade(0, 0.5f)
+                    .OnComplete(() =>
+                    {
+                        AudioManager.StopMusic(EMusicType.VictoryMusic, stopInstantly: true);
+                    });
+            }
         }
     }
 }

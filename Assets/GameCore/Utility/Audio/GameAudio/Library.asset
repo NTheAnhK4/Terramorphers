@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2204bf128383ced4f8a374a536984a4c, type: 3}
+  m_Name: Library
+  m_EditorClassIdentifier: 
+  soundCategories:
+  - UI
+  - GamePlay
+  musicCategories:
+  - BGM
+  Sounds:
+  - {fileID: 11400000, guid: 3555c9ada61902d4e98cd2d6446210f1, type: 2}
+  - {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+  Music:
+  - {fileID: 11400000, guid: 3aed8d9f18ab6fa408517fce88d2a176, type: 2}
+  - {fileID: 11400000, guid: fab082f0a82e36e40bb52d920ffbd088, type: 2}
+  - {fileID: 11400000, guid: 348c0379432f9dd44a822387e45615df, type: 2}
+  - {fileID: 11400000, guid: 84200778dc7723f449725abd575fe8ae, type: 2}
+  useCustomNames: 1
+  generatedName: Library
+  musicEnum: EMusicType
+  musicEnumGenerated: EMusicType
+  musicNamespace: GameCore.Utility.Audio.GameAudio
+  musicNamespaceGenerated: GameCore.Utility.Audio.GameAudio
+  musicAssembly: GameCore.Utility
+  soundEnum: ESoundType
+  soundEnumGenerated: ESoundType
+  soundNamespace: GameCore.Utility.Audio.GameAudio
+  soundNamespaceGenerated: GameCore.Utility.Audio.GameAudio
+  soundAssembly: GameCore.Utility
+  soundCategoriesToList:
+  - name: UI
+    files:
+    - {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+    foldout: 0
+  - name: GamePlay
+    files:
+    - {fileID: 11400000, guid: 3555c9ada61902d4e98cd2d6446210f1, type: 2}
+    foldout: 1
+  musicCategoriesToList:
+  - name: BGM
+    files:
+    - {fileID: 11400000, guid: 3aed8d9f18ab6fa408517fce88d2a176, type: 2}
+    - {fileID: 11400000, guid: fab082f0a82e36e40bb52d920ffbd088, type: 2}
+    - {fileID: 11400000, guid: 348c0379432f9dd44a822387e45615df, type: 2}
+    - {fileID: 11400000, guid: 84200778dc7723f449725abd575fe8ae, type: 2}
+    foldout: 1

@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 9004354959082749296}
   - component: {fileID: 7271432123616781735}
   - component: {fileID: 5891246733971743078}
+  - component: {fileID: 4478072109361170096}
   m_Layer: 5
   m_Name: WorldImage
   m_TagString: Untagged
@@ -380,3 +381,17 @@ MonoBehaviour:
   optionalScrambleMode: 0
   optionalShakeRandomnessMode: 0
   optionalString: 
+--- !u!114 &4478072109361170096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744785596749064214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034c105ce81c5b549b977da56dd72a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+  advancedMode: 1

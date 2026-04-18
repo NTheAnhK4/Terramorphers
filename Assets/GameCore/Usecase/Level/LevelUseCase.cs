@@ -12,5 +12,7 @@ namespace GameCore.Usecase.Level
 
         public int GetCurrentStageOfLevel(int level) => _apiGateway.GetCurrentStageOfLevel(level);
         public void SetCurrentStageOfLevel(int level, int value) => _apiGateway.SetCurrentStageOfLevel(level, value);
+        public int GetStars(int level, int stage) => _apiGateway.GetStars(level, stage);
+        public void SetStars(int level, int stage, int value) => _apiGateway.SetStars(level, stage, value);
     }
 }

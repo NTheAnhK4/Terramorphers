@@ -5,6 +5,8 @@ using CoreGame;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameCore.Commands;
+using GameCore.Utility.Audio.GameAudio;
+using JSAM;
 using Terramorphers.Command;
 using UnityEngine;
 using VitalRouter;
@@ -29,6 +31,8 @@ namespace Terramorphers.States.PlayerState
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
+
+            AudioManager.PlaySound(ESoundType.FootstepDirt);
 
             data = playerMoveStateData;
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
@@ -66,6 +70,11 @@ namespace Terramorphers.States.PlayerState
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
             });
         }
-       
+
+        public override void OnExit()
+        {
+            base.OnExit();
+            AudioManager.StopSound(ESoundType.FootstepDirt);
+        }
     }
 }

@@ -35,6 +35,15 @@ namespace GameCore.APIGateway.Level
         {
             PlayerPrefs.SetInt($"current_stage_of_level_{level}", value);
         }
-        
+
+        public int GetStars(int level, int stage)
+        {
+            return PlayerPrefs.GetInt($"stars_of_level_{level}_stage_{stage}", 0);
+        }
+
+        public void SetStars(int level, int stage, int stars)
+        {
+            PlayerPrefs.SetInt($"stars_of_level_{level}_stage_{stage}", stars);
+        }
     }
 }

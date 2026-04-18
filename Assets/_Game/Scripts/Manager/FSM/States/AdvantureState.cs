@@ -1,3 +1,6 @@
+using DG.Tweening;
+using GameCore.Utility.Audio.GameAudio;
+using JSAM;
 using R3;
 namespace Terramorphers
 {
@@ -18,8 +21,19 @@ namespace Terramorphers
         public override void OnEnter()
         {
             base.OnEnter();
+            PlayMusic();
             _gameManager.GamePlayPresenter.IsShowingUI.Subscribe(_inputManager.StopInput).AddTo(ref _bag);
             _entityManager.OnEnter();
+        }
+
+        private void PlayMusic()
+        {
+            var audio = AudioManager.PlayMusic(EMusicType.AdvantureMusic);
+            if (!AudioManager.MusicMuted)
+            {
+                  audio.AudioSource.volume = 0;
+                  audio.AudioSource.DOFade(1, .15f);
+            }
         }
        
 
@@ -31,6 +45,14 @@ namespace Terramorphers
         public override void OnExit()
         {
             base.OnExit();
+            if (AudioManager.TryGetPlayingMusic(EMusicType.AdvantureMusic, out MusicChannelHelper audio))
+            {
+                audio.AudioSource.DOFade(0, 0.5f)
+                    .OnComplete(() =>
+                    {
+                        AudioManager.StopMusic(EMusicType.AdvantureMusic, stopInstantly: true);
+                    });
+            }
             _bag.Dispose();
             _entityManager.OnExit();
         }
