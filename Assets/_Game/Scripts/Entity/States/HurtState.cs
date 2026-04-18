@@ -30,7 +30,7 @@ namespace Terramorphers.States
                 return;
             }
 
-            int damage = GetDamage(hurtStateData.Damage, hurtStateData.AttackType);
+            int damage = entity.StatsSystem.Stats.GetDamageTaken(hurtStateData.Damage, hurtStateData.AttackType);
             
             if (entity is Player)
             {
@@ -54,23 +54,6 @@ namespace Terramorphers.States
             entity.ChangeState(entity.IdleState);
         }
 
-        private int GetDamage(int damage, EAttackType attackType)
-        {
-            float remainRatio = 1;
-            switch (attackType)
-            {
-                case EAttackType.PhysicalDamage:
-                    remainRatio = Mathf.Clamp01(1 - 1.0f * entity.StatsSystem.Stats.PhysicalDamage / 100);
-                    break;
-                case EAttackType.MagicalDamage:
-                    remainRatio = Mathf.Clamp01(1 - 1.0f * entity.StatsSystem.Stats.MagicalResistance / 100);
-                    break;
-                case EAttackType.NeutralDamage:
-                    remainRatio = Mathf.Clamp01(1 - 1.0f * entity.StatsSystem.Stats.NeutralResistance / 100);
-                    break;
-            }
-
-            return Mathf.RoundToInt(damage * remainRatio);
-        }
+       
     }
 }

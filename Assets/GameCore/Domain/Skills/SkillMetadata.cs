@@ -36,14 +36,14 @@ namespace GameCore.Domain.Skill{
 
         public int Range => range;
 
-        public async UniTask Apply<T>(T context, CancellationToken token) where T : class
+        public async UniTask Apply<TOwner, TTarget>(TOwner owner,TTarget target ,CancellationToken token) where TOwner : class where TTarget : class
         {
             try
             {
                 List<UniTask> uniTasks = new();
                 foreach (var skillHandler in skillHandlers)
                 {
-                    uniTasks.Add(skillHandler.Apply(context, token));
+                    uniTasks.Add(skillHandler.Apply(owner,target, token));
                 
                 }
 

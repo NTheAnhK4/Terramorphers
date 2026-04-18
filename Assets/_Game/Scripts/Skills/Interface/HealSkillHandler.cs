@@ -6,19 +6,13 @@ using GameCore.Domain.Skill;
 using GameCore.Utility;
 using UnityEngine;
 
-
 namespace Terramorphers.Skill
 {
     [Serializable]
-    public class AttackSkillHandler : SkillHandler<TerramorphersEntity,ITile>
+    public class HealSkillHandler : SkillHandler<TerramorphersEntity,ITile>
     {
         [SerializeField] private float delayTime;
-        [SerializeField] private int damage;
-        [SerializeField] private EAttackType attackType;
-
-
-     
-
+        [SerializeField] private int healthAmount;
         protected override async UniTask Use(TerramorphersEntity owner, ITile target, CancellationToken token)
         {
             try
@@ -26,8 +20,7 @@ namespace Terramorphers.Skill
                 if (delayTime > 0) await UniTask.Delay(TimeSpan.FromSeconds(delayTime), cancellationToken: token);
                 TerramorphersEntity entityTarget = target.CurrentOccupant;
                 if (entityTarget == null || owner == null) return;
-                entityTarget.TakeDamage(owner.StatsSystem.Stats.GetDamage(damage, attackType), attackType);
-                
+                entityTarget.Heal(owner.StatsSystem.Stats.GetHealAmount(healthAmount));
             }
             catch(OperationCanceledException){}
         }
@@ -37,5 +30,5 @@ namespace Terramorphers.Skill
             
         }
     }
-}
 
+}

@@ -31,7 +31,7 @@ namespace GameCore.Utility.Shape
           
             Dictionary<Cube, int> D = new();
             queue.Enqueue(from);
-            
+            result.Add(from);
             D[from] = 0;
             while (queue.Count > 0)
             {

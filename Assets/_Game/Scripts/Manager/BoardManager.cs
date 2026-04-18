@@ -217,6 +217,7 @@ namespace Terramorphers
             bool canSelf  = command.SkillTargetTypes.Contains(ESkillTargetType.Self);
             bool canAlly  = command.SkillTargetTypes.Contains(ESkillTargetType.Ally);
             bool canEnemy = command.SkillTargetTypes.Contains(ESkillTargetType.Enemy);
+          
             foreach (var tile in skillApplicableTiles)
             {
               
@@ -238,7 +239,10 @@ namespace Terramorphers
 
                 if (occupant == command.Entity)
                 {
-                    if (canSelf) state = ETileState.SelfTargetSkill;
+                    if (canSelf)
+                    {
+                        state = ETileState.SelfTargetSkill;
+                    }
                 }
                 else if (occupant.TeamID == command.Entity.TeamID)
                 {

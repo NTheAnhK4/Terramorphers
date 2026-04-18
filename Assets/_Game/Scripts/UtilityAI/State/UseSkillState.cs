@@ -62,7 +62,7 @@ namespace UtilityAI.State
                
                 entity.DataCache.RemainMana.Value -= skillMetadata.SkillCosts;
                 
-               skillMetadata.Apply(data.TargetTile, entity.transform.GetCancellationTokenOnDestroy()).Forget();
+               skillMetadata.Apply(entity,data.TargetTile, entity.transform.GetCancellationTokenOnDestroy()).Forget();
             }
         }
 

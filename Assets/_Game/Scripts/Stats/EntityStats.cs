@@ -1,3 +1,7 @@
+using System;
+using GameCore.Domain.Skill;
+using UnityEngine;
+
 namespace Terramorphers.Stats
 {
     [System.Serializable]
@@ -76,6 +80,7 @@ namespace Terramorphers.Stats
                 return q.Value;
             }
         }
+        
 
         public int MagicalDamage
         {
@@ -136,6 +141,48 @@ namespace Terramorphers.Stats
                 return q.Value;
             }
         }
+
+        public int GetDamage(int rawDamage, EAttackType attackType)
+        {
+            float addedDamage = 0;
+            switch (attackType)
+            {
+                case EAttackType.PhysicalDamage:
+                    addedDamage += 1.0f * PhysicalDamage / 100 * rawDamage;
+                    break;
+                case EAttackType.MagicalDamage:
+                    addedDamage += 1.0f * MagicalDamage / 100 * rawDamage;
+                    break;
+                case EAttackType.NeutralDamage:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(attackType), attackType, null);
+            }
+    
+            return Mathf.Max(rawDamage, rawDamage + Mathf.RoundToInt(addedDamage));
+        }
+
+        public int GetDamageTaken(int rawDamage, EAttackType attackType)
+        {
+            float reduceDamage = 0;
+            switch (attackType)
+            {
+                case EAttackType.PhysicalDamage:
+                    reduceDamage += 1.0f * PhysicalResistance / 100 * rawDamage;
+                    break;
+                case EAttackType.MagicalDamage:
+                    reduceDamage += 1.0f * MagicalDamage / 100 * rawDamage;
+                    break;
+                case EAttackType.NeutralDamage:
+                    reduceDamage += 1.0f * NeutralResistance / 100 * rawDamage;
+                    break;
+                
+            }
+
+            return Mathf.Clamp(rawDamage - Mathf.RoundToInt(reduceDamage), 0, rawDamage);
+        }
+
+        public int GetHealAmount(int rawHealAmount) => rawHealAmount + Healing;
     }
 }
 

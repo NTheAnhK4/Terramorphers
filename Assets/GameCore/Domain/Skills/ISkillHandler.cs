@@ -10,23 +10,20 @@ namespace GameCore.Domain.Skill
 {
     public interface ISkillHandler
     {
-        UniTask Apply<T>(T context, CancellationToken token) where T : class;
+        UniTask Apply<TOwner, TTarget>(TOwner owner, TTarget target, CancellationToken token) where TOwner : class where TTarget:class;
         void SetUpContext(Context context);
     }
-    public abstract class SkillHandler<T> : ISkillHandler where T : class
+    public abstract class SkillHandler<TOwner, TTarget> : ISkillHandler
+        where TOwner : class where TTarget : class
     {
         
-        protected abstract UniTask Use(T context, CancellationToken token);
-        async UniTask ISkillHandler.Apply<T1>(T1 context, CancellationToken token)
+        protected abstract UniTask Use(TOwner owner,TTarget target, CancellationToken token);
+       
+
+        public async UniTask Apply<TOwner1, TTarget1>(TOwner1 owner, TTarget1 target, CancellationToken token) where TOwner1 : class where TTarget1 : class
         {
-            if (context is T tContext)
-            {
-                await Use(tContext, token);
-            }
-            else
-            {
-                Debug.Log($"[Test]Invalid context type. Expected {typeof(T)}, got {typeof(T1)}");
-            }
+            if (owner is TOwner towner && target is TTarget ttarget) await Use(towner, ttarget, token);
+          
         }
 
         public abstract void SetUpContext(Context context);

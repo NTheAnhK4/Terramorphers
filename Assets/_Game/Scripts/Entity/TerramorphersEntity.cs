@@ -109,6 +109,12 @@ namespace Terramorphers
         {
             ChangeState(_hurtState, () => new HurtStateData(){Damage = damage,AttackType = attackType});
         }
+
+        public void Heal(int healAmount)
+        {
+            healAmount = statsSystem.Stats.GetHealAmount(healAmount);
+            dataCache.RemainHP.Value = Mathf.Min(dataCache.RemainHP.Value + healAmount, statsSystem.Stats.MaxHP);
+        }
         public virtual void SetDirection(Vector3 direction)
         {
 

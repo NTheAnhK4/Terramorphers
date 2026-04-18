@@ -62,7 +62,7 @@ namespace Terramorphers.States.PlayerState
         
         public override void AnimationTrigger()
         { 
-            skillMetadata.Apply<ITile>(data.SelectedTile, entity.GetCancellationTokenOnDestroy()).Forget();
+            skillMetadata.Apply(entity,data.SelectedTile, entity.GetCancellationTokenOnDestroy()).Forget();
         }
 
         public override void AnimationFinishTrigger()
