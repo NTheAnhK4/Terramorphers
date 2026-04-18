@@ -1,8 +1,9 @@
 
-using System;
+
 using System.Collections.Generic;
 using Terramorphers.Command;
 using UnityEngine;
+
 using VContainer;
 using VitalRouter;
 
@@ -12,21 +13,26 @@ namespace Terramorphers
     {
         public static string TILE_LAYER = "Tile";
         public static string ENTITY_LAYER = "Entity";
+        public static string UI_Layer = "UI";
         public static string IGNORE_RAYCAST = "Ignore Raycast";
         private ICommandPublisher _publisher;
         private Camera mainCamera;
         private LayerMask targetLayer;
         private Dictionary<Collider2D, ITile> tileCache = new();
         private Dictionary<Collider2D, TerramorphersEntity> entityCache = new();
+        private bool isStopInput = false;
         [Inject]
         public void Constructor(ICommandPublisher publisher)
         {
             _publisher = publisher;
         }
 
+        public void StopInput(bool isStop) => isStopInput = isStop;
+
         public void SetLayer(string layerName)
         {
-            targetLayer = LayerMask.NameToLayer(layerName);
+            targetLayer = (1 << LayerMask.NameToLayer(UI_Layer)) |
+                          (1 << LayerMask.NameToLayer(layerName));
         }
 
      
@@ -36,9 +42,11 @@ namespace Terramorphers
         {
             if(mainCamera == null) mainCamera = Camera.main;
         }
+       
 
         public void OnUpdate()
         {
+            if (isStopInput) return;
             if (Input.GetMouseButtonDown(0))
             {
                 ITile tile = GetTile();
@@ -56,8 +64,15 @@ namespace Terramorphers
             Vector2 mousePos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero,targetLayer);
             if(hit.collider == null) return null;
-            
-            if (targetLayer == LayerMask.NameToLayer(ENTITY_LAYER))
+           
+            if (tileCache.TryGetValue(hit.collider, out var tile)) return tile;
+            tile = hit.collider.GetComponentInParent<ITile>();
+            if (tile != null)
+            {
+                tileCache[hit.collider] = tile;
+                return tile;
+            }
+            if ((targetLayer & (1 << LayerMask.NameToLayer(ENTITY_LAYER))) != 0)
             {
                 TerramorphersEntity entity;
                 if (entityCache.TryGetValue(hit.collider, out var value1)) entity = value1;
@@ -67,24 +82,11 @@ namespace Terramorphers
                     if (entity != null) entityCache[hit.collider] = entity;
                     else return null;
                 }
-                var tile = entity.CurrentTile;
+                tile = entity.CurrentTile;
                 return tile;
             }
-            else
-            {
-                if (tileCache.TryGetValue(hit.collider, out var tile)) return tile;
-                else
-                {
-                    tile = hit.collider.GetComponentInParent<ITile>();
-                    if (tile != null)
-                    {
-                        tileCache[hit.collider] = tile;
-                        return tile;
-                    }
-
-                    return null;
-                }
-            }
+           
+            return null;
         }
         
        

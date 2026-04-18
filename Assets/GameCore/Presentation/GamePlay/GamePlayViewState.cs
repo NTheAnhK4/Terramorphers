@@ -14,8 +14,9 @@ namespace GameCore.Presentation.GamePlay
         public ReactiveProperty<(int stamina, int maxStamina)> Stamina { get; } = new();
       
         public ReactiveCommand ExitCommand { get; } = new();
-        public ReactiveCommand SpeedCommand { get; } = new();
+  
         public ReactiveCommand ObjectiveCommand { get; } = new();
-     
+      
+
     }
 }

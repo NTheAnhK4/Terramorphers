@@ -16,7 +16,7 @@ MonoBehaviour:
   entityName: 
   entityIcon: {fileID: 0}
   _entityStats:
-    MaxHP: 2
+    MaxHP: 100
     Mana: 100
     Stamina: 3
     Range: 0

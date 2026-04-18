@@ -6,6 +6,7 @@ using GameCore.Presentation.Shared;
 using GameCore.Usecase.Level;
 using WEngine.MVP;
 using R3;
+using UnityEngine;
 using VContainer;
 using VitalRouter;
 
@@ -21,7 +22,7 @@ namespace GameCore.Presentation.WinGame
         private TransitionService _transitionService;
         private int currentLevelID;
         private int currentStageID;
-
+        private int _totalStars;
         [Inject]
         public void Constructor(LevelUseCase levelUseCase, ILevelRepository levelRepository,
             ICommandPublisher publisher, TransitionService transitionService)
@@ -31,18 +32,21 @@ namespace GameCore.Presentation.WinGame
             _publisher = publisher;
             _transitionService = transitionService;
         }
-        public WinGamePresenter(WinGameModal view) : base(view)
+        public WinGamePresenter(WinGameModal view, int totalStars) : base(view)
         {
+            _totalStars = totalStars;
         }
 
         protected override UniTask Initialize(Memory<object> args, WinGameViewState state, WinGameModal view)
         {
             state.NextLevelCommand.Subscribe(NextLevel).AddTo(view);
+          
             state.ToMenuCommand.Subscribe(_ => ToMenu().Forget()).AddTo(view);
             _levelModel = _levelUseCase.GetModel();
             currentLevelID = _levelModel.SelectedLevel;
             currentStageID = _levelModel.SelectedStage;
             _levelDatabase = _levelRepository.Get();
+            state.TotalStars.Value = _totalStars;
             return UniTask.CompletedTask;
         }
 

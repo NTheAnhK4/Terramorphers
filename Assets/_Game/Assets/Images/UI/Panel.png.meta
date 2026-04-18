@@ -299,7 +299,7 @@ TextureImporter:
         width: 139
         height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 3, z: 5, w: 3}
       outline: []
       physicsShape: []
@@ -307,6 +307,153 @@ TextureImporter:
       bones: []
       spriteID: 32aa32b0c04c0774e817e9f26593ad93
       internalID: 574566683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Border_Panel
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1235
+        width: 105
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 70, z: 50, w: 45}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9956725836d11454d96a72b6867d3e58
+      internalID: -1081931201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue_Panel
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1248
+        width: 98
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 44, y: 44, z: 44, w: 44}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca9c07b898fac944ae054d96a73a9d5
+      internalID: -1245768295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choose_Stage_1
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 1336
+        width: 175
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 61, y: 0, z: 83, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7628072359e3d41aed1b80904365d5
+      internalID: 926831543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choose_Stage_2
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 1336
+        width: 160
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 0, z: 112, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a92507d6dcd6d14b9033fd987180ea1
+      internalID: 406104808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choose_Stage_3
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 1336
+        width: 247
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 69, y: 0, z: 131, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482af1c220aa0434e8921630f978662c
+      internalID: -599194513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Top_Green_Panel
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 951
+        width: 131
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 50, y: 0, z: 50, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a72d40b0fbbae84284147b9fdbae1c3
+      internalID: -697291925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Green_Panel
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 1231
+        width: 95
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 44, y: 49, z: 44, w: 44}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956d093d7de101543b8c4f16b12094d8
+      internalID: -1589725218
       vertices: []
       indices: 
       edges: []
@@ -323,7 +470,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Black_Panel: -1568341031
+      Blue_Border_Panel: -1081931201
+      Blue_Panel: -1245768295
+      Choose_Stage_1: 926831543
+      Choose_Stage_2: 406104808
+      Choose_Stage_3: -599194513
       Common_Frame: -865620235
+      Green_Panel: -1589725218
       MaskPanel: 574566683
       Panel_1: -958700868
       Panel_2: 660992883
@@ -331,6 +484,7 @@ TextureImporter:
       Panel_4: 646392188
       Panel_6: -1457279904
       Panel_7: 1336730906
+      Top_Green_Panel: -697291925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

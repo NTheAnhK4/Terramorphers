@@ -315,10 +315,6 @@ PrefabInstance:
       propertyPath: entity
       value: 
       objectReference: {fileID: 2310197045537752402}
-    - target: {fileID: 7438109714057850167, guid: b8f621fcc3476654e9ad6b9858e4ea5f, type: 3}
-      propertyPath: serializationData.Prefab
-      value: 
-      objectReference: {fileID: 7438109714057850167, guid: b8f621fcc3476654e9ad6b9858e4ea5f, type: 3}
     - target: {fileID: 9184652552305691624, guid: b8f621fcc3476654e9ad6b9858e4ea5f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

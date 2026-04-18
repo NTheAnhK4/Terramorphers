@@ -19,9 +19,14 @@ namespace GameCore.APIGateway.Quest
 
             return questProgress[questID];
         }
+
+        public void RemoveQuest(int questID)
+        {
+            questProgress.Remove(questID);
+        }
         public void IncreaseQuestProgress(int questID, int amount = 1)
         {
-            int questAmount = GetQuestProgress(questID) + 1;
+            int questAmount = GetQuestProgress(questID) + amount;
             questProgress[questID] = questAmount;
             //currently don't save if questID less than 0
             if (questID < 0) return;

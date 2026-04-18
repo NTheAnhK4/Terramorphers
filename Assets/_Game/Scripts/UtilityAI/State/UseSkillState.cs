@@ -59,8 +59,9 @@ namespace UtilityAI.State
             if (skillMetadata == null) isFinishAnim = true;
             else
             {
-                int currentMana = _context.GetData<int>(BlackBoardConstant.REMAIN_MANA_KEY);
-                _context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, currentMana - skillMetadata.SkillCosts);
+               
+                entity.DataCache.RemainMana.Value -= skillMetadata.SkillCosts;
+                
                skillMetadata.Apply(data.TargetTile, entity.transform.GetCancellationTokenOnDestroy()).Forget();
             }
         }

@@ -141,6 +141,7 @@ namespace UtilityAI
         public override void OnExit()
         {
             base.OnExit();
+          
             ChangeState(_idleState);
             statsSystem.Update();
         }

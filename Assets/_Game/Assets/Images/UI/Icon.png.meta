@@ -290,6 +290,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Close_Icon
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1172
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96c521d75504b547a7d6bb48b529ddf
+      internalID: -646782902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lock_Icon
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1029
+        width: 92
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1022b7d0151c9544cb117209db0556f0
+      internalID: -849269267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -301,10 +343,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Close_Icon: -646782902
       Exit_Icon: -158045333
       Icon_1: 1529110076
       Icon_2: 1081523772
       List_Icon: 789038312
+      Lock_Icon: -849269267
       MultiStars: 1602322713
       Pause_Icon: -1609167955
       Star: -1140629935

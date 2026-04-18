@@ -15,6 +15,8 @@ using GameCore.Presentation.GamePlay;
 using GameCore.Presentation.Loading;
 using GameCore.Presentation.Lobby;
 using GameCore.Presentation.LoseGame;
+using GameCore.Presentation.Menu;
+using GameCore.Presentation.StageObjective;
 using GameCore.Presentation.WinGame;
 using R3;
 
@@ -28,6 +30,7 @@ namespace GameCore.Presentation.Shared
         private ActivityContainer _loadingContainer ;
         private ScreenContainer _screenContainer;
         public bool IsModalInTransition => _modalContainer.IsInTransition;
+       
         
         [Inject]
         public void Construct(IObjectResolver resolver)
@@ -180,11 +183,11 @@ namespace GameCore.Presentation.Shared
             }
         }
 
-        public async UniTask<WinGamePresenter> ShowWinGameModal()
+        public async UniTask<WinGamePresenter> ShowWinGameModal(int totalStars)
         {
             var presentor = await ShowModalPresenterAsync<WinGamePresenter, WinGameModal, WinGameViewState>(
                 "WinGameModal",
-                modal => new WinGamePresenter(modal));
+                modal => new WinGamePresenter(modal, totalStars));
             return presentor;
         }
 
@@ -193,6 +196,22 @@ namespace GameCore.Presentation.Shared
             var presentor = await ShowModalPresenterAsync<LoseGamePresentor, LoseGameModal, LoseGameViewState>(
                 "LoseGameModal",
                 modal => new LoseGamePresentor(modal));
+            return presentor;
+        }
+
+        public async UniTask<StageObjectivePresentor> ShowStageObjectiveModal()
+        {
+            var presentor = await ShowModalPresenterAsync<StageObjectivePresentor, StageObjectiveModal, StageObjectiveViewState>(
+                "StageObjectiveModal",
+                modal => new StageObjectivePresentor(modal));
+            return presentor;
+        }
+
+        public async UniTask<MenuPresentor> ShowMenuModal()
+        {
+            var presentor = await ShowModalPresenterAsync<MenuPresentor, MenuModal, MenuViewState>(
+                "MenuModal",
+                modal => new MenuPresentor(modal));
             return presentor;
         }
     }

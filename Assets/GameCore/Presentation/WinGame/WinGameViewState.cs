@@ -7,6 +7,7 @@ namespace GameCore.Presentation.WinGame
     {
         public ReactiveCommand ToMenuCommand { get; } = new();
         public ReactiveCommand NextLevelCommand { get; } = new();
+        public ReactiveProperty<int> TotalStars { get; } = new();
     }
 
 }

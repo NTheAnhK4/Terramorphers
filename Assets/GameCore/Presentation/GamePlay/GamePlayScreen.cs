@@ -8,7 +8,6 @@ using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using WEngine.MVP;
 using UnityEngine.UI;
@@ -24,21 +23,18 @@ namespace GameCore.Presentation.GamePlay
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI staminaText;
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI turnText;
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI roundAmountText;
-        [SerializeField, TabGroup("Components")] private Button continueBtn, listBtn,speedBtn, objectiveBtn,exitBtn, endTurnBtn;
+        [SerializeField, TabGroup("Components")] private Button continueBtn,  objectiveBtn,exitBtn, endTurnBtn;
         [SerializeField, TabGroup("Components")] private Image coverEndTurnBtn;
 
-        [SerializeField, TabGroup("Components)")]
-        private List<CanvasGroup> dropDownBtnLists = new();
-
-        [SerializeField, TabGroup("Components")]
-        private Image pannelDropDownBtn;
+       
+      
 
         [SerializeField, TabGroup("Components")]
         private Image staminaFill, manaFill;
 
         [SerializeField, TabGroup("Components")]
         private TurnNotificationAnimation _turnNotificationAnimation;
-        [SerializeField, TabGroup("Components")] private List<Image> skillImages = new();
+      
        
         public override UniTask InitializeState(GamePlayViewState state, Memory<object> args)
         {
@@ -47,7 +43,8 @@ namespace GameCore.Presentation.GamePlay
             state.CurrentRound.Subscribe(SetRound).AddTo(this);
             state.Stamina.Subscribe(OnStaminaChange).AddTo(this);
             state.Mana.Subscribe(OnManaChange).AddTo(this);
-        
+            
+           
             exitBtn.SubscribeToCommand(state.ExitCommand).AddTo(this);
             objectiveBtn.SubscribeToCommand(state.ObjectiveCommand).AddTo(this);
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using GameCore.APIGateway.Quest;
 using GameCore.Domain.Quest;
+using UnityEngine;
 
 namespace GameCore.Usecase.Quest
 {
@@ -43,6 +44,14 @@ namespace GameCore.Usecase.Quest
             toQuestMetadata[key].Add(questMetadata);
         }
 
+        public void RemoveQuest(QuestMetadata questMetadata)
+        {
+            CacheData();
+            (EQuestActionType actionType, EQuestTargetType targetType, int targetID) key = (questMetadata.ActionType, questMetadata.TargetType, questMetadata.TargetID);
+            if (toQuestMetadata.TryGetValue(key, out List<QuestMetadata> questMetadatas)) questMetadatas.Remove(questMetadata);
+            _apiGateway.RemoveQuest(questMetadata.QuestID);
+        }
+
         public EQuestStatusType GetQuestStatus(int questID) => _apiGateway.GetQuestStatus(questID);
         public void SetQuestStatus(int questID, EQuestStatusType questStatusType) => _apiGateway.SetQuestStatus(questID, questStatusType);
         public int GetQuestProgress(int questID) => _apiGateway.GetQuestProgress(questID);
@@ -50,6 +59,7 @@ namespace GameCore.Usecase.Quest
         public void IncreaseQuestProgress(EQuestActionType actionType, EQuestTargetType targetType, int targetID, int value = 1)
         {
             CacheData();
+          
             if (toQuestMetadata.TryGetValue((actionType, targetType, targetID), out List<QuestMetadata> questMetadatas))
             {
                 foreach (var quest in questMetadatas)
@@ -68,7 +78,7 @@ namespace GameCore.Usecase.Quest
             
         }
 
-        private bool IsQuestFinish(QuestMetadata questMetadata)
+        public bool IsQuestFinish(QuestMetadata questMetadata)
         {
             int progress = _apiGateway.GetQuestProgress(questMetadata.QuestID);
             int required = questMetadata.RequiredAmount;

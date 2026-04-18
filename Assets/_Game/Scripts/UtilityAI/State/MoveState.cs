@@ -55,20 +55,11 @@ namespace UtilityAI.State
 
         }
 
-        public MoveState(Enemy entity, string animBoolName) : base(entity, animBoolName)
-        {
-        }
-
+      
         public MoveState(Enemy entity, int animationHash) : base(entity, animationHash)
         {
         }
 
-        public MoveState(Enemy entity) : base(entity)
-        {
-        }
-
-        public MoveState(Enemy entity, Func<string> animNameFunc) : base(entity, animNameFunc)
-        {
-        }
+      
     }
 }

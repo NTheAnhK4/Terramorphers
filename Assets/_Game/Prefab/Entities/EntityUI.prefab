@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3872556451606047887}
   - component: {fileID: 6982549496320354631}
   - component: {fileID: 6275313087870795320}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 2948592831484117232}
   - component: {fileID: 5371781014084021610}
   - component: {fileID: 7438109714057850167}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: EntityUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396540478784199061}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -249,21 +249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8264dfa255e318e459cd05e26388fd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   entity: {fileID: 0}
   healthFill: {fileID: 330785256930634377}
   healthText: {fileID: 6275313087870795320}
-  rectTransform: {fileID: 9184652552305691624}
-  leftAnchoredPosition: {x: 2.042, y: 3.5914}
-  rightAnchoredPosition: {x: 0, y: 0}
 --- !u!1 &2292204881416773111
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,7 +263,7 @@ GameObject:
   - component: {fileID: 5166236379598667082}
   - component: {fileID: 7232789291166552596}
   - component: {fileID: 4979686161543255082}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -351,7 +339,7 @@ GameObject:
   - component: {fileID: 5889584333436434364}
   - component: {fileID: 5792688881255543172}
   - component: {fileID: 330785256930634377}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +415,7 @@ GameObject:
   - component: {fileID: 4086219238319800197}
   - component: {fileID: 566720753035744046}
   - component: {fileID: 2519965417517626367}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -514,7 +502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1118225253974956643}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}

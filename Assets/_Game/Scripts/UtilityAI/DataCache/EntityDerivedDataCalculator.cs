@@ -34,6 +34,7 @@ namespace UtilityAI.DataCache
             {
                 manaAvailabilityRatio = 1.0f * value / totalMana;
             }
+
             entity.Context.SetData(BlackBoardConstant.REMAIN_MANA_KEY, value);
             entity.Context.SetData(BlackBoardConstant.MANA_AVAILABILITY_RATIO,manaAvailabilityRatio);
         }

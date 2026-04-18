@@ -5,56 +5,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/APIGateway/Quest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/APIGateway/Quest/QuestAPIGateway.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/APIGateway/Quest/QuestAPIGateway.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/QuestModuleInstaller.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/QuestModuleInstaller.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestActionType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestActionType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestComparisonType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestComparisonType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestStatusType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestStatusType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestTargetType.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/EQuestTargetType.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/IQuestDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/IQuestDatabase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/IQuestRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/IQuestRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/QuestMetadata.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Quest/QuestMetadata.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestDatabase.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestDatabase.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestDatabase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestDatabase.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestRepository.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/Quest/QuestRepository.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Usecase/Quest.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Usecase/Quest/QuestUseCase.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Usecase/Quest/QuestUseCase.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GameSpeedSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GameSpeedSetter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuModal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuModal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuPresentor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuPresentor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuViewState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuViewState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/ObjectiveItem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/ObjectiveItem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectiveModal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectiveModal.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectivePresentor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectivePresentor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectiveViewState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/StageObjective/StageObjectiveViewState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/PVZSetting.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/Setting.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/MenuModal.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/MenuModal.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/StageObjective.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/StageObjective/StageObjectiveModal.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/StageObjective/StageObjectiveModal.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/StageObjective/StageObjectiveView.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/InGame/StageObjective/StageObjectiveView.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Service.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Service.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/DI/AppLifetimeScope.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Domain/Level/LevelMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Level/LevelMetadata.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/UI.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/APIGateway/Quest/QuestAPIGateway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/APIGateway/Quest/QuestAPIGateway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Navigator/Modal/ShowModal.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Navigator/Modal/ShowModal.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayViewState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayViewState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Respository/LevelData/LevelDatabase.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Respository/LevelData/LevelDatabase.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGameModal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGameModal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGamePresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGamePresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGameViewState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGameViewState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Usecase/Quest/QuestUseCase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Usecase/Quest/QuestUseCase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/InGame.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/InGame.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/PVZSetting.jpg.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/z7733176288776_a3c0327d280d08aa70ab729b8c5b3efc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/z7733176288776_a3c0327d280d08aa70ab729b8c5b3efc.jpg.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/Demo/Setting.jpg.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Button.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Button.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Icon.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Icon.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Panel.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Panel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Panel.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Assets/Images/UI/Panel.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Allies/Player.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/Allies/Player.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaider.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Data/Enemies/SatyrRaider/SatyrRaider.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/EntityUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/EntityUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Entities/Satyr Raider.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/Tiles/BaseTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/EndGame/WinGameModal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/EndGame/WinGameModal.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/GamePlayScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/GamePlayScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/EntityFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/ChooseStageModal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/ChooseStageModal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/StageView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/StageView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scenes/InGame.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/HurtState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/HurtState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/EntityManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/BoardManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/AdvantureState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/LoadingState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/WinState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/FSM/States/WinState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/InputManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/DataCache/EntityDerivedDataCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/DataCache/EntityDerivedDataCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/MoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/MoveState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +106,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Item/ItemView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Loading/LoadingView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Lobby/WorldCellView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Menu/MenuViewState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/ICloseTransition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Shared/TransitionService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/Test/TestPresenter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -110,9 +134,20 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Activities/Activity.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Modals/Modal.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Modals/ModalContainer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Screens/IScreenLifecycleEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Shared/ITransitionAnimation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Shared/UnityScreenNavigatorSettings.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Views/View.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.zbase.unityscreennavigator@99b4c0bfd9/Runtime/Core/Windows/Window.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/35/c85ba0ec/0200006Apdb33.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/36/1e2a8986/02000067pdb30.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/36/46bd523a/02000045pdb84.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/44/f16f522a/0200004Dpdb78.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/aa/a65686f1/0200003Cpdb62.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/e0/d5d21153/0200005Bpdb42.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/fcdbc3c7637040ad939bf0dd122f7a4a43600/fa/d4e7757d/02000032pdb52.il" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/346750f1f4ad4252be08bb76a5495b7d19c00/28/a49ac460/SdfIconType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/346750f1f4ad4252be08bb76a5495b7d19c00/ec/fae96466/TabGroupAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5ae618ea15ea4f2ebfe58b132c1de82d2b600/f9/123f544b/TweenExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -281,6 +316,7 @@
       <workItem from="1776349483519" duration="7241000" />
       <workItem from="1776384263040" duration="1560000" />
       <workItem from="1776437273372" duration="6800000" />
+      <workItem from="1776479249933" duration="16950000" />
     </task>
     <servers />
   </component>

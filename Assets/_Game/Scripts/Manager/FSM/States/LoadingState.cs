@@ -25,6 +25,7 @@ namespace Terramorphers
         private QuestUseCase _questUseCase;
         private ReactiveProperty<float> progress = new();
         private UniTask loadingTask;
+       
 
         public LoadingState( EntityManager entityManager, GameManager gameManager, BoardManager boardManager,
             ICommandPublisher publisher, TransitionService transitionService, ILevelRepository levelRepository,
@@ -38,6 +39,7 @@ namespace Terramorphers
             _transitionService = transitionService;
             _levelUseCase = levelUseCase;
             _questUseCase = questUseCase;
+           
         }
 
         public override void OnEnter()
@@ -69,12 +71,15 @@ namespace Terramorphers
             _boardManager.ClearBoard();
             var gamePresenter = await _transitionService.ShowGamePlayScreen();
             await UniTask.WaitUntil(() =>gamePresenter.IsInitialized);
-          
+
+            _gameManager.GamePlayPresenter = gamePresenter;
+            
             var levelStageData = await LoadLevelStageData();
             if (levelStageData == null) return;
             var mapData = LoadingMap(levelStageData);
             if (mapData == null) return;
-            
+
+          
             
             //add objectives
             foreach (var questMetadata in levelStageData.StageStarObjectives)
@@ -184,7 +189,7 @@ namespace Terramorphers
         }
 
         private ITile GetTile(Vector2Int pos) => _boardManager.HexaBoard.Get(new Cube(pos.x, pos.y, -pos.x - pos.y));
-
+        
        
         
     }

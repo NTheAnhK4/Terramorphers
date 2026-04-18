@@ -2,7 +2,9 @@ using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
 using GameCore.Domain.Skill;
+using GameCore.Presentation.Shared;
 using GameCore.Usecase.Skill;
+using GameCore.Utility;
 using VContainer;
 using VitalRouter;
 using WEngine.MVP;
@@ -21,15 +23,20 @@ namespace GameCore.Presentation.GamePlay
         private ISkillDatabase _skillDatabase;
         private SkillModel _skillModel;
         private IObjectResolver _resolver;
+        private TransitionService _transitionService;
+        public ReactiveProperty<bool> IsShowingUI { get; } = new();
 
         [Inject]
-        public void Constructor(ICommandPublisher publisher, ICommandSubscribable subscribable, ISkillRepository skillRepository, SkillUseCase skillUseCase, IObjectResolver resolver)
+        public void Constructor(ICommandPublisher publisher, ICommandSubscribable subscribable
+            , ISkillRepository skillRepository, SkillUseCase skillUseCase, IObjectResolver resolver
+            ,TransitionService transitionService)
         {
             _publisher = publisher;
             _subscribabale = subscribable;
             _skillRepository = skillRepository;
             _skillUseCase = skillUseCase;
             _resolver = resolver;
+            _transitionService = transitionService;
         }
 
         public GamePlayPresenter(GamePlayScreen view) : base(view)
@@ -45,10 +52,12 @@ namespace GameCore.Presentation.GamePlay
             _subscribabale.Subscribe<ChangePlayerStaminaCommand>(OnStaminaChange).AddTo(view);
             _subscribabale.Subscribe<ChangePlayerManaCommand>(OnManaChange).AddTo(view);
 
-        
-            state.SpeedCommand.Subscribe(SetSpeed).AddTo(view);
+         
+           
             state.EndTurnCommand.Subscribe(OnEndTurnBtnClick).AddTo(view);
-
+            state.ObjectiveCommand.Subscribe(_ => ShowObjectives().Forget()).AddTo(view);
+            state.ExitCommand.Subscribe(_ => OnExit().Forget()).AddTo(view);
+           
             //Skill
             _skillDatabase = _skillRepository.Get();
             _skillModel = _skillUseCase.GetModel();
@@ -85,6 +94,32 @@ namespace GameCore.Presentation.GamePlay
         {
             _state.IsActiveEndTurnCommand.Value = command.IsEnable;
         }
-        private void SetSpeed(Unit _){}
+
+       
+
+        private async UniTask ShowObjectives()
+        {
+            try
+            {
+                IsShowingUI.Value = true;
+                var presentor = await _transitionService.ShowStageObjectiveModal();
+                await UniTask.WaitUntil(() => presentor.IsClose, cancellationToken: View.GetCancellationTokenOnDestroy());
+                IsShowingUI.Value = false;
+            }
+            catch(OperationCanceledException){}
+           
+        }
+
+        private async UniTask OnExit()
+        {
+            try
+            {
+                IsShowingUI.Value = true;
+                var menuPresentor = await _transitionService.ShowMenuModal();
+                await UniTask.WaitUntil(() => menuPresentor.IsContinue, cancellationToken: View.GetCancellationTokenOnDestroy());
+            }
+            catch(OperationCanceledException){}
+         
+        }
     }
 }

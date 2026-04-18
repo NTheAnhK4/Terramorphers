@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_6
+      name: Red_Btn
       rect:
         serializedVersion: 2
         x: 83
@@ -258,7 +258,7 @@ TextureImporter:
         height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 27, y: 0, z: 27, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -291,16 +291,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Button_8
+      name: Green_Btn
       rect:
         serializedVersion: 2
-        x: 257
+        x: 270
         y: 1120
-        width: 71
+        width: 56
         height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 27, y: 0, z: 27, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -391,12 +391,12 @@ TextureImporter:
       Button_10: -407963226
       Button_11: -1955450544
       Button_5: 582583918
-      Button_6: -2139145260
-      Button_8: -1115325610
       Button_9: -1020115423
       Gray_Btn: 1378090060
+      Green_Btn: -1115325610
       Orange_Btn: -357735712
       Purple_Btn: 754633294
+      Red_Btn: -2139145260
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

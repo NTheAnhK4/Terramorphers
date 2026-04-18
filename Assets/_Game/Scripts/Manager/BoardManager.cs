@@ -86,7 +86,7 @@ namespace Terramorphers
 
             TilePositionData data = JsonUtility.FromJson<TilePositionData>(json);
 
-            Debug.Log("Loaded JSON");
+          
             return data;
         }
 
