@@ -850,7 +850,7 @@ namespace JSAM
 
             var soundAssembly = l.soundAssembly.IsNullEmptyOrWhiteSpace() ? "Assembly-CSharp" : l.soundAssembly;
             var assembly = $"{soundType}, {soundAssembly}";
-          
+
             Type enumType = Type.GetType(assembly);
             enums.AddRange(Enum.GetNames(enumType));
 

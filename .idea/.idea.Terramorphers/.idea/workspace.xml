@@ -5,33 +5,478 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e0b35e3-c5de-49d2-976a-7e16667473e5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/SkillCoolDownCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Commands/SkillCoolDownCommand.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/UI.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/UI/HoldButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GameCore/Utility/UI/HoldButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/SkillSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Skills/SkillSystem.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Terramorphers/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/SkillModuleInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/DI/ModuleInstaller/SkillModuleInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Domain/Skills/SkillMetadata.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Domain/Skills/SkillMetadata.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/GamePlayPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillViewPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillViewPresenter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillViewState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameCore/Presentation/GamePlay/SkillViewState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/GameScreen/UISkill.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/StageView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Prefab/UIs/Lobby/StageView.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerMoveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerSelectSkillTileState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerUseSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/States/PlayerState/PlayerUseSkillState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/Entity/TerramorphersEntity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/SkillManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/Manager/SkillManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/DataCache/EntityDataCache.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/DataCache/EntityDataCache.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/ThinkingState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Game/Scripts/UtilityAI/State/UseSkillState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioClipList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioClipList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioCollisionFeedbackEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioCollisionFeedbackEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioEventsEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioEventsEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioLibraryEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioLibraryEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioManagerEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioManagerEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioManagerInternalEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioManagerInternalEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioMusicZoneEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioMusicZoneEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioParticlesEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioParticlesEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioPlaybackToolEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioPlaybackToolEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioTriggerFeedbackEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioTriggerFeedbackEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioUtilWrapper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/AudioUtilWrapper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseAudioEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseAudioEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseAudioFileObjectEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseAudioFileObjectEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseMusicEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseMusicEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseSoundEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/BaseSoundEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/EditorAudioHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/EditorAudioHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/EditorCompatability.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/EditorCompatability.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Fonts/AzeretMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Fonts/AzeretMono-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Fonts/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Fonts/OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMAudioFileWizard.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMAudioFileWizard.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMBaseEditorWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMBaseEditorWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMEditorFader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMEditorFader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMEditorHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMEditorHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMPaths.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMPaths.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMSettingsProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMSettingsProvider.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMStartupWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMStartupWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMStyles.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMStyles.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMUtilityWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/JSAMUtilityWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/MusicFileObjectEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/MusicFileObjectEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/MusicPlayerEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/MusicPlayerEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/SoundFileObjectEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/SoundFileObjectEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/SoundPlayerEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/SoundPlayerEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Startup.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Startup/JSAM card image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Startup/JSAM card image.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/BaseTimelineEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/BaseTimelineEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/MusicTimelineEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/MusicTimelineEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/SoundTimelineEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/Timeline/SoundTimelineEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/VideoPlayerVolumeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/VideoPlayerVolumeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/com.Brogrammist.JSAM.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Editor/com.Brogrammist.JSAM.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/LICENSE.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Plugins/ATL.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Plugins/ATL.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Plugins/ATL.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Plugins/ATL.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Mixer.mixer" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Mixer.mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Audio Manager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Audio Manager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Music Channel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Music Channel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Sound Channel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Prefabs/Sound Channel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Music.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Music.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Spatial Sound.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Spatial Sound.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/UI Sound.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/UI Sound.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Voice.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Presets/Voice.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioCollisionFeedback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioCollisionFeedback.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioEffectSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioEffectSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioEvents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioLibrary.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioLibrary.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioLibraryLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioLibraryLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioManagerInternal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioManagerInternal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioMusicZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioMusicZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioParticles.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioParticles.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioTriggerFeedback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/AudioTriggerFeedback.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioChannelHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioChannelHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioFeedback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioFeedback.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioFileObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioFileObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioMusicFeedback.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/BaseAudioMusicFeedback.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/IAudioHelperEvents.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/IAudioHelperEvents.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMCompatibility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMCompatibility.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/JSAMSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicChannelHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicChannelHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicFileObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicFileObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/MusicPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundChannelHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundChannelHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundFileObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundFileObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundPlayer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/SoundPlayer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/BaseJSAMPlayableBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/BaseJSAMPlayableBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicControlTrack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicControlTrack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicPlayableAsset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicPlayableAsset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicPlayableBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/MusicPlayableBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundControlTrack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundControlTrack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundPlayableAsset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundPlayableAsset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundPlayableBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/Timeline/SoundPlayableBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/VideoPlayerVolume.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/VideoPlayerVolume.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/VolumeListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/Scripts/VolumeListener.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/com.Brogrammist.JSAM.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Runtime/com.Brogrammist.JSAM.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files/Music.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files/Music/Menu.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files/Music/Menu.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files/Music/MenuPitched.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio Files/Music/MenuPitched.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio/Menu(Pitched).ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio/Menu(Pitched).ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio/Menu.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Audio/Menu.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/AudioEnums - DynamicMusic.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/AudioEnums - DynamicMusic.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Credits+License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Credits+License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/CrossFadeExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/CrossFadeExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Dynamic Music.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/Dynamic Music.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/ExampleCrossfade.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Dynamic Music/ExampleCrossfade.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Audio Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Audio Files/506718__jackyyang09__wooden-hit.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Audio Files/506718__jackyyang09__wooden-hit.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Extra Tips.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Extra Tips.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/RepeatingButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/RepeatingButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Sounds/506718__jackyyang09__wooden-hit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Extra Tips/Sounds/506718__jackyyang09__wooden-hit.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Crouch.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Crouch.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Equip.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Equip.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Fire.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Fire.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Reload - Full.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Reload - Full.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Shot Recovery.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Shot Recovery.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Single Fire.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Single Fire.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Sprint.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Sprint.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Zoom.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Animations/Zoom.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/BGM.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/BGM.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Chamber.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Chamber.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Dry Fire.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Dry Fire.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Equip.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Equip.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Grab.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Grab.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Insert.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Insert.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Remove.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Remove.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Tap.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/AK Mag Tap.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/Gunshot.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/AK Sounds/Gunshot.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Abstract Pop.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Abstract Pop.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Breathing.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Breathing.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Crouch.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Crouch.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Running.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Running.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Walk.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio Files/Sounds/Walk.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/371041__morganpurkis__single-gunshot-3.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/371041__morganpurkis__single-gunshot-3.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/390663__morganpurkis__submachine-gun.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/390663__morganpurkis__submachine-gun.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/391725__morganpurkis__battle-rifle.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/391725__morganpurkis__battle-rifle.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/391847__morganpurkis__single-gunshot-5-4.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/391847__morganpurkis__single-gunshot-5-4.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/676298__saha213131__breath.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/676298__saha213131__breath.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/BlacificBlenu.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/BlacificBlenu.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Crouch.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Crouch.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/chamber.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/chamber.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/empty.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/empty.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/equip.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/equip.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_grab.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_grab.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_insert.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_insert.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_remove.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_remove.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_tap.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/Gun/mag_tap.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/abstractpop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/abstractpop.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/machinegun_fire.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/machinegun_fire.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/running (loop).wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/running (loop).wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/walk (loop).wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Audio/walk (loop).wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/AudioEnums - FPS3D.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/AudioEnums - FPS3D.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/AudioEnums - FPSGun.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/AudioEnums - FPSGun.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Credits+License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Credits+License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Example3D.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Example3D.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/FPS 3D.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/FPS 3D.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/FPS Gun.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/FPS Gun.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Boombox.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Boombox.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Box.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Box.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Tunnel.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Tunnel.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Wall.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/Wall.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/texture_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Materials/texture_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/FPS Animations.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/FPS Animations.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/FrontColor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/FrontColor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray6.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray6.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray8.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/Materials/Gray8.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/machinegunLauncher.mtl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/machinegunLauncher.mtl.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/machinegunLauncher.obj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Models/Weapons/machinegunLauncher.obj.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Prefabs/Discarded Mag.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Prefabs/Discarded Mag.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSAnimator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSAnimator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSMouseLook.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSMouseLook.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSWalker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/FPSWalker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/RandomForceEmitter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/RandomForceEmitter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/TimeScaleUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/First-Person 3D/Scripts/TimeScaleUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio Files/Intro+Loop.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio Files/Intro+Loop.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio/Intro+Loop.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Audio/Intro+Loop.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/AudioEnums - LoopPoints.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/AudioEnums - LoopPoints.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Credits+License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Credits+License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Loop Points.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/Loop Points.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/LoopPointExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/LoopPointExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/LoopPointExample.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Loop Points/LoopPointExample.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/README.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Sample Pause Menu.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Sample Pause Menu/PauseMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Sample Pause Menu/PauseMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Sample Pause Menu/Sample Volume Controls.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Sample Pause Menu/Sample Volume Controls.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1idle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1idle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1left.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1left.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1right.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/P1right.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/Player1.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Animations/Player1.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Main Theme Combined.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Main Theme Combined.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Main Theme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Main Theme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Side Theme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Music/Side Theme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/BulletHit.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/BulletHit.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/EnemyShot.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/EnemyShot.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/Shooting.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio Files/Sounds/Shooting.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/Italian Slice ~ Indian Spice.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/Italian Slice ~ Indian Spice.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/MainChorusv4.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/MainChorusv4.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/MainIntro.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/Music/MainIntro.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/bulletHit.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/bulletHit.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/knifethrow.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/knifethrow.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/shot2.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Audio/SFX/shot2.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/AudioEnums - Shmup2D.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/AudioEnums - Shmup2D.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Credits+License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Credits+License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Example2D.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Example2D.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Graphics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Graphics/chefSpriteSheetPadded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Graphics/chefSpriteSheetPadded.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Graphics/knife_double_transparent.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Graphics/knife_double_transparent.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Prefabs/Enemy Bullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Prefabs/Enemy Bullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Prefabs/KnifeBullet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Prefabs/KnifeBullet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/BaseBullet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/BaseBullet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/EnemyBullet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/EnemyBullet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/EnemyController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/EnemyController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/ObjectPool.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/ObjectPool.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/PlayerBulletBasic.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/PlayerBulletBasic.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/SceneLoader.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/SceneLoader.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/ShipController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Scripts/ShipController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Shmup 2D.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Shmup 2D/Shmup 2D.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Credits+License.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Credits+License.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/RenderTexture.renderTexture" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/RenderTexture.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Video Volume.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Video Volume.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Yourname1960.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Samples~/Video Volume/Yourname1960.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Third-Party Licenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/Third-Party Licenses.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/jsam.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/jsam.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/com.brogrammist.jsam@3.1.1/package.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/JSAMPaths.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/JSAMPaths.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +513,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Presentation/WinGame/WinGameViewState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Respository/Shared/BaseRepository.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/AI/Context.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Audio/SoundPlayOnButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Bit/BigBitSet.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Shape/HexagonalGrid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameCore/Utility/Timer/Timer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -136,7 +580,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "feature/skill__system",
+    "git-widget-placeholder": "feature/fix__JSAM",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

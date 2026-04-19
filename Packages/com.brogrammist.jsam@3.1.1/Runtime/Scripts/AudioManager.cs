@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -95,7 +95,7 @@ namespace JSAM
         public static Action<SoundChannelHelper, SoundFileObject> OnSoundPlayed;
         public static Action<SoundChannelHelper, SoundFileObject> OnVoicePlayed;
         public static Action<MusicChannelHelper, MusicFileObject> OnMusicPlayed;
-        
+
         /// <summary>
         /// Invoked when the volume of the Master channel is changed
         /// </summary>
@@ -130,7 +130,7 @@ namespace JSAM
         {
             if (JSAMSettings.Settings.DontDestroyOnLoad)
             {
-                gameObject.transform.SetParent(null, true); 
+                gameObject.transform.SetParent(null, true);
                 DontDestroyOnLoad(gameObject);
             }
 
@@ -161,12 +161,27 @@ namespace JSAM
 
         void Start()
         {
+            // Game settings (GameCore SettingAPIGateway) use Setting_Sound / Setting_Music — apply before any
+            // library load or gameplay audio so mute matches PlayerPrefs on cold start. IAsyncStartable runs later.
+            ApplyGameSettingsFromPlayerPrefs();
+
             foreach (var library in preloadedLibraries)
             {
                 InternalInstance.LoadAudioLibrary(library);
             }
 
             initialized = true;
+        }
+
+        /// <summary>
+        /// Syncs mute state from the same PlayerPrefs keys as GameCore.APIGateway.Setting.SettingAPIGateway.
+        /// </summary>
+        static void ApplyGameSettingsFromPlayerPrefs()
+        {
+            bool enableSound = PlayerPrefs.GetInt("Setting_Sound", 1) == 1;
+            bool enableMusic = PlayerPrefs.GetInt("Setting_Music", 1) == 1;
+            SoundMuted = !enableSound;
+            MusicMuted = !enableMusic;
         }
 
         void OnSceneChanged(Scene scene1, Scene scene2)
@@ -257,7 +272,7 @@ namespace JSAM
         /// Passing this property will limit playback stopping 
         /// to only the sound playing at this specific position</param>
         /// <param name="stopInstantly">Optional: If true, stop the sound immediately, you may want to leave this false for looping sounds</param>
-        public static SoundChannelHelper StopSound<T>(T sound, Vector3 position, bool stopInstantly = true) where T : Enum => 
+        public static SoundChannelHelper StopSound<T>(T sound, Vector3 position, bool stopInstantly = true) where T : Enum =>
             InternalInstance.StopSoundInternal(SoundFileFromEnum(sound), position, stopInstantly);
 
         /// <summary>
@@ -277,7 +292,7 @@ namespace JSAM
         /// Passing this property will limit playback stopping 
         /// to only the sound playing at this specific position</param>
         /// <param name="stopInstantly">Optional: If true, stop the sound immediately, you may want to leave this false for looping sounds</param>
-        public static SoundChannelHelper StopSound(SoundFileObject sound, Vector3 position, bool stopInstantly = true) => 
+        public static SoundChannelHelper StopSound(SoundFileObject sound, Vector3 position, bool stopInstantly = true) =>
             InternalInstance.StopSoundInternal(sound, position, stopInstantly);
 
         /// <summary>
@@ -688,8 +703,8 @@ namespace JSAM
         /// <summary>
         /// The current overall volume from 0 to 1
         /// </summary>
-        public static float MasterVolume 
-        { 
+        public static float MasterVolume
+        {
             get => InternalInstance.MasterVolume;
             set
             {
@@ -702,10 +717,10 @@ namespace JSAM
                 OnVoiceVolumeChanged?.Invoke(InternalInstance.VoiceVolume, InternalInstance.ModifiedVoiceVolume);
             }
         }
-        public static bool MasterMuted 
-        { 
-            get => InternalInstance.MasterMuted; 
-            set 
+        public static bool MasterMuted
+        {
+            get => InternalInstance.MasterMuted;
+            set
             {
                 if (InternalInstance.MasterMuted == value) return;
                 InternalInstance.MasterMuted = value;
@@ -718,23 +733,24 @@ namespace JSAM
         /// <summary>
         /// Get the current volume of Music as a normalized float from 0 to 1
         /// </summary>
-        public static float MusicVolume 
+        public static float MusicVolume
         {
-            get => InternalInstance.MusicVolume; 
+            get => InternalInstance.MusicVolume;
             set
             {
                 var vol = Mathf.Clamp01(value);
-                if (InternalInstance.MusicVolume == vol) return; 
+                if (InternalInstance.MusicVolume == vol) return;
                 InternalInstance.MusicVolume = vol;
                 OnMusicVolumeChanged?.Invoke(InternalInstance.MusicVolume, InternalInstance.ModifiedMusicVolume);
             }
         }
-        public static bool MusicMuted 
+        public static bool MusicMuted
         {
             get => InternalInstance.MusicMuted;
-            set 
-            { 
+            set
+            {
                 InternalInstance.MusicMuted = value;
+                Debug.Log($"CHECK ON MUSIC MUTED: {value}, {OnMusicVolumeChanged != null}");
                 OnMusicVolumeChanged?.Invoke(InternalInstance.MusicVolume, InternalInstance.ModifiedMusicVolume);
             }
         }
@@ -742,7 +758,7 @@ namespace JSAM
         /// Get the current volume of Sounds as a normalized float from 0 to 1
         /// </summary>
         public static float SoundVolume
-        { 
+        {
             get => InternalInstance.SoundVolume;
             set
             {
@@ -752,20 +768,20 @@ namespace JSAM
                 OnSoundVolumeChanged?.Invoke(InternalInstance.SoundVolume, InternalInstance.ModifiedSoundVolume);
             }
         }
-        public static bool SoundMuted 
+        public static bool SoundMuted
         {
-            get => InternalInstance.SoundMuted; 
-            set 
-            { 
-                InternalInstance.SoundMuted = value; 
+            get => InternalInstance.SoundMuted;
+            set
+            {
+                InternalInstance.SoundMuted = value;
                 OnSoundVolumeChanged?.Invoke(InternalInstance.SoundVolume, InternalInstance.ModifiedSoundVolume);
             }
         }
         /// <summary>
         /// Get the current volume of Voices as a normalized float from 0 to 1
         /// </summary>
-        public static float VoiceVolume 
-        { 
+        public static float VoiceVolume
+        {
             get => InternalInstance.VoiceVolume;
             set
             {
@@ -797,7 +813,7 @@ namespace JSAM
             {
                 return;
             }
-            
+
             if (Instance != this && Instance != null)
             {
                 // A unique case where the Singleton exists but not in this scene
