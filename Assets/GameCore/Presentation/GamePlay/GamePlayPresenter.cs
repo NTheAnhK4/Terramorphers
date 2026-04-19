@@ -84,8 +84,8 @@ namespace GameCore.Presentation.GamePlay
                {
                    skillView.gameObject.SetActive(true);
                    SkillViewPresenter skillViewPresenter = new SkillViewPresenter(skillView, _state.SkillMetadatas[i], skillInfoPresenter);
-                   _resolver.Inject(skillInfoPresenter);
-                   skillInfoPresenter.Initialize();
+                   _resolver.Inject(skillViewPresenter);
+                   skillViewPresenter.Initialize();
                }
            }
         }

@@ -21,7 +21,7 @@ namespace GameCore.Domain.Skill{
         [SerializeField] private int areaOfEffect;
         [SerializeField] private int coolDown;
         [SerializeField] private int precoolDown;
-        [SerializeField] private string description;
+        [SerializeField, TextArea] private string description;
         [SerializeField] private List<ESkillTargetType> skillTargetTypes;
         [SerializeReference] private List<ISkillHandler> skillHandlers = new();
 

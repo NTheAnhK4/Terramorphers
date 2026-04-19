@@ -21,8 +21,10 @@ MonoBehaviour:
       skillName: Punch
       costs: 50
       range: 1
+      areaOfEffect: 0
       coolDown: 0
       precoolDown: 0
+      description: '- Deal 6 <sprite=1> damage'
       skillTargetTypes: 01000000
       skillHandlers:
       - rid: 1827776807178338304
@@ -34,8 +36,10 @@ MonoBehaviour:
       skillName: Healing Potion
       costs: 50
       range: 1
+      areaOfEffect: 0
       coolDown: 3
       precoolDown: 2
+      description: '- Restore 35 <sprite=0>'
       skillTargetTypes: 0000000002000000
       skillHandlers:
       - rid: 1827776874170286080
@@ -47,8 +51,13 @@ MonoBehaviour:
       skillName: Poison Arrow
       costs: 50
       range: 3
-      coolDown: 0
+      areaOfEffect: 0
+      coolDown: 2
       precoolDown: 0
+      description: '- Deal 7 <sprite=1> damage
+
+        - Apply <color=#006400>Poison</color>
+        (Deal 5 <sprite=14> damage for 3 turns)'
       skillTargetTypes: 01000000
       skillHandlers: []
   - key: 3
@@ -58,9 +67,11 @@ MonoBehaviour:
       _eSkillRarity: 0
       skillName: Shockwave
       costs: 100
-      range: 3
-      coolDown: 0
+      range: 0
+      areaOfEffect: 2
+      coolDown: 3
       precoolDown: 0
+      description: '- Deal 14 <sprite=2> damage to nearby enemies'
       skillTargetTypes: 00000000
       skillHandlers: []
   references:

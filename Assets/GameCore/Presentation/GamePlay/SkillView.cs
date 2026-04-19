@@ -17,13 +17,14 @@ namespace GameCore.Presentation.GamePlay
         [SerializeField] private Image coverImage;
         [SerializeField] private HoldButton endWaitingButton;
         [SerializeField] private TextMeshProUGUI coolDownText;
+        [SerializeField] private HoldButton coverButton;
         protected override UniTask Initialize(SkillViewState state)
         {
             skillImage.sprite = state.SkillMetadata.SkillSprite;
             skillButton.OnClick.SubscribeToCommand(state.UseSkillCommand).AddTo(this);
             skillButton.IsHolding.SubscribeToReactiveProperty(state.ShowSkillInfo).AddTo(this);
-            
-            skillCosts.text = state.SkillMetadata.SkillCosts.ToString();
+            coverButton.IsHolding.SubscribeToReactiveProperty(state.ShowSkillInfo).AddTo(this);
+            skillCosts.text = $"<sprite=8>{state.SkillMetadata.SkillCosts}" ;
             state.SkillState.Subscribe(ChangeState).AddTo(this);
             endWaitingButton.OnClick.SubscribeToCommand(state.EndWaitingCommand).AddTo(this);
             endWaitingButton.IsHolding.SubscribeToReactiveProperty(state.ShowSkillInfo).AddTo(this);

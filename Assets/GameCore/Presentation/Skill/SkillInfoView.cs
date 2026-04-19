@@ -28,6 +28,7 @@ namespace GameCore.Presentation.Skill
 
         private void SetupSkillInfo(SkillMetadata skillMetadata)
         {
+            if (skillMetadata == null) return;
             skillNameText.text = skillMetadata.SkillName;
             skillImage.sprite = skillMetadata.SkillSprite;
             targetText.text = "<sprite=5>" + string.Join(",", skillMetadata.SkillTargetTypes);
