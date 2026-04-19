@@ -11,5 +11,7 @@ namespace GameCore.Presentation.GamePlay
 
         public ReactiveProperty<SkillViewPresenter.SkillState> SkillState { get; } = new ReactiveProperty<SkillViewPresenter.SkillState>();
         public ReactiveCommand EndWaitingCommand { get; } = new();
+        public ReactiveProperty<int> CoolDown { get; } = new(0);
+        public ReactiveProperty<bool> ShowSkillInfo { get; } = new ReactiveProperty<bool>();
     }
 }

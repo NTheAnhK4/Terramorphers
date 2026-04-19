@@ -446,7 +446,7 @@ TextureImporter:
         width: 95
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 44, y: 49, z: 44, w: 44}
       outline: []
       physicsShape: []
@@ -454,6 +454,27 @@ TextureImporter:
       bones: []
       spriteID: 956d093d7de101543b8c4f16b12094d8
       internalID: -1589725218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Info_Outline
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 717
+        width: 225
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 110, y: 110, z: 110, w: 110}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf2f49139cb51047a020e251d2da320
+      internalID: 164682384
       vertices: []
       indices: 
       edges: []
@@ -484,6 +505,7 @@ TextureImporter:
       Panel_4: 646392188
       Panel_6: -1457279904
       Panel_7: 1336730906
+      Skill_Info_Outline: 164682384
       Top_Green_Panel: -697291925
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

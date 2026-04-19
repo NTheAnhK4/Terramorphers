@@ -1,11 +1,9 @@
 using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
-using GameCore.Domain.Quest;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Level;
 using GameCore.Usecase.Quest;
-using GameCore.Utility;
 using VContainer;
 using WEngine.MVP;
 using R3;
@@ -13,7 +11,7 @@ using R3;
 
 namespace GameCore.Presentation.StageObjective
 {
-    public class StageObjectivePresentor : ModalPresenter<StageObjectiveModal, StageObjectiveViewState>
+    public class StageObjectivePresenter : ModalPresenter<StageObjectiveModal, StageObjectiveViewState>
     {
         private TransitionService _transitionService;
         private ILevelRepository _levelRepository;
@@ -31,7 +29,7 @@ namespace GameCore.Presentation.StageObjective
             _levelUseCase = levelUseCase;
             _questUseCase = questUseCase;
         }
-        public StageObjectivePresentor(StageObjectiveModal view) : base(view)
+        public StageObjectivePresenter(StageObjectiveModal view) : base(view)
         {
         }
 

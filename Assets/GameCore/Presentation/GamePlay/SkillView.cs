@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using GameCore.Domain.Shared;
 using GameCore.Utility;
+using GameCore.Utility.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,17 +12,23 @@ namespace GameCore.Presentation.GamePlay
     public class SkillView : AppView<SkillViewState>
     {
         [SerializeField] private Image skillImage;
-        [SerializeField] private Button skillButton;
+        [SerializeField] private HoldButton skillButton;
         [SerializeField] private TextMeshProUGUI skillCosts;
         [SerializeField] private Image coverImage;
-        [SerializeField] private Button endWaitingButton;
+        [SerializeField] private HoldButton endWaitingButton;
+        [SerializeField] private TextMeshProUGUI coolDownText;
         protected override UniTask Initialize(SkillViewState state)
         {
             skillImage.sprite = state.SkillMetadata.SkillSprite;
-            skillButton.SubscribeToCommand(state.UseSkillCommand).AddTo(this);
+            skillButton.OnClick.SubscribeToCommand(state.UseSkillCommand).AddTo(this);
+            skillButton.IsHolding.SubscribeToReactiveProperty(state.ShowSkillInfo).AddTo(this);
+            
             skillCosts.text = state.SkillMetadata.SkillCosts.ToString();
             state.SkillState.Subscribe(ChangeState).AddTo(this);
-            endWaitingButton.SubscribeToCommand(state.EndWaitingCommand).AddTo(this);
+            endWaitingButton.OnClick.SubscribeToCommand(state.EndWaitingCommand).AddTo(this);
+            endWaitingButton.IsHolding.SubscribeToReactiveProperty(state.ShowSkillInfo).AddTo(this);
+           
+            state.CoolDown.Subscribe(SetCoolDownText).AddTo(this);
             return UniTask.CompletedTask;
         }
 
@@ -45,6 +49,20 @@ namespace GameCore.Presentation.GamePlay
                 case SkillViewPresenter.SkillState.Waiting:
                     endWaitingButton.gameObject.SetActive(true);
                     break;
+                case SkillViewPresenter.SkillState.CoolDown:
+                    coverImage.transform.localScale = Vector3.one;
+                    endWaitingButton.gameObject.SetActive(false);
+                    break;
+            }
+        }
+
+        private void SetCoolDownText(int value)
+        {
+            if(value == 0) coolDownText.gameObject.SetActive(false);
+            else
+            {
+                coolDownText.text = value.ToString();
+                coolDownText.gameObject.SetActive(true);
             }
         }
 

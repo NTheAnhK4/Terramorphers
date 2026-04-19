@@ -4,7 +4,6 @@ using GameCore.Commands;
 using GameCore.Domain.Skill;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Skill;
-using GameCore.Utility;
 using VContainer;
 using VitalRouter;
 using WEngine.MVP;
@@ -25,6 +24,7 @@ namespace GameCore.Presentation.GamePlay
         private IObjectResolver _resolver;
         private TransitionService _transitionService;
         public ReactiveProperty<bool> IsShowingUI { get; } = new();
+        
 
         [Inject]
         public void Constructor(ICommandPublisher publisher, ICommandSubscribable subscribable
@@ -65,11 +65,30 @@ namespace GameCore.Presentation.GamePlay
             {
                 state.SkillMetadatas.Add(_skillDatabase.GetByType(skillId));
             }
-            view.InitSkillView(_resolver, state.SkillMetadatas);
-
+         
+            InitAppView();
             return base.Initialize(args, state, view);
         }
 
+        private void InitAppView()
+        {
+           var skillInfoPresenter =  View.InitSkillInfoPresenter();
+           _resolver.Inject(skillInfoPresenter);
+           skillInfoPresenter.Initialize();
+
+           for (int i = 0; i < View.SkillViews.Count; ++i)
+           {
+               var skillView = View.SkillViews[i];
+               if (i >= _state.SkillMetadatas.Count) skillView.gameObject.SetActive(false);
+               else
+               {
+                   skillView.gameObject.SetActive(true);
+                   SkillViewPresenter skillViewPresenter = new SkillViewPresenter(skillView, _state.SkillMetadatas[i], skillInfoPresenter);
+                   _resolver.Inject(skillInfoPresenter);
+                   skillInfoPresenter.Initialize();
+               }
+           }
+        }
      
 
         private void OnStaminaChange(ChangePlayerStaminaCommand command, PublishContext context)

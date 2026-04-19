@@ -18,11 +18,18 @@ namespace GameCore.Domain.Skill{
         [SerializeField] private int costs;
         
         [SerializeField] private int range;
-
+        [SerializeField] private int areaOfEffect;
+        [SerializeField] private int coolDown;
+        [SerializeField] private int precoolDown;
+        [SerializeField] private string description;
         [SerializeField] private List<ESkillTargetType> skillTargetTypes;
         [SerializeReference] private List<ISkillHandler> skillHandlers = new();
 
         public Sprite SkillSprite => skillSprite;
+
+        public int CoolDown => coolDown;
+
+        public int PrecoolDown => precoolDown;
 
         public ESkillRarity ESkillRarity => _eSkillRarity;
 
@@ -32,7 +39,11 @@ namespace GameCore.Domain.Skill{
 
         public int SkillID => skillID;
 
+        public int AreaOfEffect => areaOfEffect;
+
         public IReadOnlyList<ESkillTargetType> SkillTargetTypes => skillTargetTypes;
+
+        public string Description => description;
 
         public int Range => range;
 

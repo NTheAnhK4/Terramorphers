@@ -1,15 +1,12 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using CoreGame;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameCore.Commands;
 using GameCore.Utility.Audio.GameAudio;
 using JSAM;
 using Terramorphers.Command;
 using UnityEngine;
-using VitalRouter;
 
 namespace Terramorphers.States.PlayerState
 {

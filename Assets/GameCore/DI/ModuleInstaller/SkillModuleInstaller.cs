@@ -1,9 +1,7 @@
 using GameCore.APIGateway.Skill;
-using GameCore.Domain.Skill;
 using GameCore.Respository.Skill;
 using GameCore.Usecase.Skill;
-using Terramorphers;
-using UnityEngine;
+using Terramorphers.Skill;
 using VContainer;
 
 namespace GameCore.DI.ModuleInstaller
@@ -15,7 +13,7 @@ namespace GameCore.DI.ModuleInstaller
             builder.RegisterSelfAsEntryPoint<SkillRepository>();
             builder.Register<SkillAPIGateway>(Lifetime.Singleton);
             builder.Register<SkillUseCase>(Lifetime.Singleton);
-            builder.Register<SkillManager>(Lifetime.Singleton);
+            builder.Register<SkillSystem>(Lifetime.Transient);
         }
     }
 }

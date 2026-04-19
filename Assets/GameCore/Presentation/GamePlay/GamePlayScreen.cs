@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
+using GameCore.Presentation.Skill;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
@@ -17,25 +18,51 @@ namespace GameCore.Presentation.GamePlay
 {
     public class GamePlayScreen : Screen<GamePlayViewState>
     {
-        [SerializeField, TabGroup("Components")]
+        [SerializeField, TabGroup("Skills")]
         private List<SkillView> _skillViews = new();
-        [SerializeField, TabGroup("Components")] private TextMeshProUGUI manaText;
-        [SerializeField, TabGroup("Components")] private TextMeshProUGUI staminaText;
-        [SerializeField, TabGroup("Components")] private TextMeshProUGUI turnText;
-        [SerializeField, TabGroup("Components")] private TextMeshProUGUI roundAmountText;
-        [SerializeField, TabGroup("Components")] private Button continueBtn,  objectiveBtn,exitBtn, endTurnBtn;
-        [SerializeField, TabGroup("Components")] private Image coverEndTurnBtn;
 
-       
-      
+        [SerializeField, TabGroup("Resources")]
+        private TextMeshProUGUI manaText;
 
-        [SerializeField, TabGroup("Components")]
-        private Image staminaFill, manaFill;
+        [SerializeField, TabGroup("Resources")]
+        private TextMeshProUGUI staminaText;
 
-        [SerializeField, TabGroup("Components")]
+        [SerializeField, TabGroup("Turn")]
+        private TextMeshProUGUI turnText;
+
+        [SerializeField, TabGroup("Turn")]
+        private TextMeshProUGUI roundAmountText;
+
+        [SerializeField, TabGroup("Actions")]
+        private Button continueBtn;
+
+        [SerializeField, TabGroup("Actions")]
+        private Button objectiveBtn;
+
+        [SerializeField, TabGroup("Actions")]
+        private Button exitBtn;
+
+        [SerializeField, TabGroup("Actions")]
+        private Button endTurnBtn;
+
+        [SerializeField, TabGroup("Actions")]
+        private Image coverEndTurnBtn;
+
+        [SerializeField, TabGroup("Skills")]
+        private SkillInfoView skillInfoView;
+
+        [SerializeField, TabGroup("Resources")]
+        private Image staminaFill;
+
+        [SerializeField, TabGroup("Resources")]
+        private Image manaFill;
+
+        [SerializeField, TabGroup("Turn")]
         private TurnNotificationAnimation _turnNotificationAnimation;
-      
-       
+
+        public List<SkillView> SkillViews => _skillViews;
+
+
         public override UniTask InitializeState(GamePlayViewState state, Memory<object> args)
         {
             endTurnBtn.SubscribeToCommand(state.EndTurnCommand);
@@ -52,22 +79,14 @@ namespace GameCore.Presentation.GamePlay
             return UniTask.CompletedTask;
         }
 
-        public void InitSkillView(IObjectResolver resolver, List<SkillMetadata> skillMetadatas)
+        public SkillInfoPresenter InitSkillInfoPresenter()
         {
-            for (int i = 0; i < _skillViews.Count; ++i)
-            {
-                if(i >= skillMetadatas.Count) _skillViews[i].gameObject.SetActive(false);
-                else
-                {
-                    _skillViews[i].gameObject.SetActive(true);
-                    SkillViewPresenter skillViewPresenter = new SkillViewPresenter(_skillViews[i], skillMetadatas[i]);
-                    resolver.Inject(skillViewPresenter);
-                    skillViewPresenter.Initialize();
-                }
-            }
-           
+            skillInfoView.gameObject.SetActive(false);
+            SkillInfoPresenter skillInfoPresenter = new SkillInfoPresenter(skillInfoView);
+            return skillInfoPresenter;
         }
 
+       
         private void ToggleEndTurnButton(bool isOn)
         {
             coverEndTurnBtn.gameObject.SetActive(!isOn);

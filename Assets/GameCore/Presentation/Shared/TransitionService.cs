@@ -191,27 +191,27 @@ namespace GameCore.Presentation.Shared
             return presentor;
         }
 
-        public async UniTask<LoseGamePresentor> ShowLoseGameModal()
+        public async UniTask<LoseGamePresenter> ShowLoseGameModal()
         {
-            var presentor = await ShowModalPresenterAsync<LoseGamePresentor, LoseGameModal, LoseGameViewState>(
+            var presentor = await ShowModalPresenterAsync<LoseGamePresenter, LoseGameModal, LoseGameViewState>(
                 "LoseGameModal",
-                modal => new LoseGamePresentor(modal));
+                modal => new LoseGamePresenter(modal));
             return presentor;
         }
 
-        public async UniTask<StageObjectivePresentor> ShowStageObjectiveModal()
+        public async UniTask<StageObjectivePresenter> ShowStageObjectiveModal()
         {
-            var presentor = await ShowModalPresenterAsync<StageObjectivePresentor, StageObjectiveModal, StageObjectiveViewState>(
+            var presentor = await ShowModalPresenterAsync<StageObjectivePresenter, StageObjectiveModal, StageObjectiveViewState>(
                 "StageObjectiveModal",
-                modal => new StageObjectivePresentor(modal));
+                modal => new StageObjectivePresenter(modal));
             return presentor;
         }
 
-        public async UniTask<MenuPresentor> ShowMenuModal()
+        public async UniTask<MenuPresenter> ShowMenuModal()
         {
-            var presentor = await ShowModalPresenterAsync<MenuPresentor, MenuModal, MenuViewState>(
+            var presentor = await ShowModalPresenterAsync<MenuPresenter, MenuModal, MenuViewState>(
                 "MenuModal",
-                modal => new MenuPresentor(modal));
+                modal => new MenuPresenter(modal));
             return presentor;
         }
     }

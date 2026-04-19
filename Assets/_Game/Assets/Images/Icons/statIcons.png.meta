@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 12e9b7cee8ac920458533e16d027a53a
+guid: 79951d1c7a8583448b50355fc1df133c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: statIcons_0
+      name: Health
       rect:
         serializedVersion: 2
         x: 18
@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_1
+      name: PhysicalDamage
       rect:
         serializedVersion: 2
         x: 148
@@ -165,7 +165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_2
+      name: MagicalDamage
       rect:
         serializedVersion: 2
         x: 277
@@ -186,7 +186,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_3
+      name: AOE
       rect:
         serializedVersion: 2
         x: 392
@@ -207,28 +207,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stamina
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 272
-        width: 86
-        height: 92
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ed93de03cb1b7db4986d3f75cf3f0fdc
-      internalID: -444144765
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: statIcons_5
+      name: Mark
       rect:
         serializedVersion: 2
         x: 146
@@ -249,7 +228,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_6
+      name: Range
       rect:
         serializedVersion: 2
         x: 273
@@ -270,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_7
+      name: Cooldown
       rect:
         serializedVersion: 2
         x: 413
@@ -286,27 +265,6 @@ TextureImporter:
       bones: []
       spriteID: a3294b5627f2dbb458a7aff250bc8803
       internalID: 1975555268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mana
-      rect:
-        serializedVersion: 2
-        x: 24
-        y: 141
-        width: 84
-        height: 98
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c085c84029b04374889d8cb5e58b6f59
-      internalID: -52222088
       vertices: []
       indices: 
       edges: []
@@ -458,6 +416,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Stamina
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 272
+        width: 86
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86517deab1f15d84ebd26ce77f455623
+      internalID: -2078182142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mana
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 141
+        width: 84
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b014cb8c05bb5f8418d477ce6d8ba05c
+      internalID: -497331588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -469,21 +469,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Mana: -52222088
-      Stamina: -444144765
-      statIcons_0: 775260951
-      statIcons_1: 509003898
+      AOE: 1185782525
+      Cooldown: 1975555268
+      Health: 775260951
+      MagicalDamage: -2006145000
+      Mana: -497331588
+      Mark: 1948043540
+      PhysicalDamage: 509003898
+      Range: 463898666
+      Stamina: -2078182142
       statIcons_10: -1750180464
       statIcons_11: 2145148070
       statIcons_12: -1426534016
       statIcons_13: -183568883
       statIcons_14: 631895460
       statIcons_15: 1161761966
-      statIcons_2: -2006145000
-      statIcons_3: 1185782525
-      statIcons_5: 1948043540
-      statIcons_6: 463898666
-      statIcons_7: 1975555268
       statIcons_9: -902101473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

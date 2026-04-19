@@ -40,7 +40,7 @@ namespace Terramorphers.States.PlayerState
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = false });
             entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = false });
             entity.Publisher.PublishAsync(new ClearSpecialTilesCommand());
-            skillMetadata =  entity.SkillManager.GetSkillMetadata(data.SkillID);
+            skillMetadata =  entity.SkillSystem.GetSkillMetadata(data.SkillID);
             if (skillMetadata == null)
             {
                 Debug.Log($"[Test] cannot get skillMetadata for {data.SkillID}");
@@ -62,6 +62,7 @@ namespace Terramorphers.States.PlayerState
         
         public override void AnimationTrigger()
         { 
+            entity.SkillSystem.UseSkill(data.SkillID);
             skillMetadata.Apply(entity,data.SelectedTile, entity.GetCancellationTokenOnDestroy()).Forget();
         }
 

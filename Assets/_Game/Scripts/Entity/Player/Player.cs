@@ -1,11 +1,12 @@
 using GameCore.Commands;
 using CoreGame;
+using GameCore.Usecase.Skill;
 using Sirenix.OdinInspector;
 using Terramorphers.Command;
 using Terramorphers.States;
 using Terramorphers.States.PlayerState;
 using UnityEngine;
-using UtilityAI.DataCache;
+
 using VContainer;
 using VitalRouter;
 using R3;
@@ -21,8 +22,8 @@ namespace Terramorphers
        
         private ICommandPublisher _publisher;
         private ICommandSubscribable _subscribable;
-        private SkillManager _skillManager;
-
+        private SkillUseCase _skillUseCase;
+        
         #endregion
 
         private int idleAnimHash = Animator.StringToHash("Idle");
@@ -61,7 +62,7 @@ namespace Terramorphers
 
       
 
-        public SkillManager SkillManager => _skillManager;
+     
         
         
 
@@ -69,14 +70,14 @@ namespace Terramorphers
 
         [Inject]
         public void Construct(InputManager inputManager, 
-            ICommandPublisher publisher, ICommandSubscribable subscribable,
-            SkillManager skillManager)
+            ICommandPublisher publisher, ICommandSubscribable subscribable
+            ,SkillUseCase skillUseCase)
         {
             _inputManager = inputManager;
           
             _publisher = publisher;
             _subscribable = subscribable;
-            _skillManager = skillManager;
+            _skillUseCase = skillUseCase;
         }
 
         protected override void Awake()
@@ -102,9 +103,16 @@ namespace Terramorphers
 
        
 
-        protected override void RegisterDataCacheEvent()
+      
+
+        public override void Init(int id, EntityMetadata metadata, int teamID, ITile tile)
         {
-            base.RegisterDataCacheEvent();
+            base.Init(id, metadata, teamID, tile);
+            var skillModel = _skillUseCase.GetModel();
+            _skillSystem.Init(this,skillModel.CurrentSkills);
+            
+            
+            //Register event
             dataCache.RemainStamina.Subscribe(value =>    _publisher.PublishAsync(new ChangePlayerStaminaCommand()
             {
                 Stamina = value,
@@ -115,6 +123,23 @@ namespace Terramorphers
                 Mana = value,
                 MaxMana = statsSystem.Stats.Mana
             })).AddTo(ref _bag);
+            
+            //skill cool down
+            foreach (var item in dataCache.SkillCoolDown)
+            {
+               
+                int skillID = item.Key;
+                item.Value.Subscribe(t =>
+                {
+                    _publisher.PublishAsync(new SkillCoolDownCommand() { SkillID = skillID, CoolDown = t });
+                }).AddTo(ref _bag);
+               
+            }
+            
+            //
+            ResetDataCache();
+            dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;
+            OnInitialized?.Invoke();
         }
 
 

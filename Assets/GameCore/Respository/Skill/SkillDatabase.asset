@@ -21,6 +21,8 @@ MonoBehaviour:
       skillName: Punch
       costs: 50
       range: 1
+      coolDown: 0
+      precoolDown: 0
       skillTargetTypes: 01000000
       skillHandlers:
       - rid: 1827776807178338304
@@ -32,8 +34,11 @@ MonoBehaviour:
       skillName: Healing Potion
       costs: 50
       range: 1
+      coolDown: 3
+      precoolDown: 2
       skillTargetTypes: 0000000002000000
-      skillHandlers: []
+      skillHandlers:
+      - rid: 1827776874170286080
   - key: 2
     value:
       skillID: 2
@@ -42,6 +47,8 @@ MonoBehaviour:
       skillName: Poison Arrow
       costs: 50
       range: 3
+      coolDown: 0
+      precoolDown: 0
       skillTargetTypes: 01000000
       skillHandlers: []
   - key: 3
@@ -52,6 +59,8 @@ MonoBehaviour:
       skillName: Shockwave
       costs: 100
       range: 3
+      coolDown: 0
+      precoolDown: 0
       skillTargetTypes: 00000000
       skillHandlers: []
   references:
@@ -63,3 +72,8 @@ MonoBehaviour:
         delayTime: 0
         damage: 6
         attackType: 0
+    - rid: 1827776874170286080
+      type: {class: HealSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        healthAmount: 35

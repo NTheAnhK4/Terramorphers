@@ -55,10 +55,11 @@ namespace UtilityAI.State
         public override void AnimationTrigger()
         {
             base.AnimationTrigger();
-            var skillMetadata = entity.SkillManager.GetSkillMetadata(data.SkillID);
+            var skillMetadata = entity.SkillSystem.GetSkillMetadata(data.SkillID);
             if (skillMetadata == null) isFinishAnim = true;
             else
             {
+                entity.SkillSystem.UseSkill(data.SkillID);
                
                 entity.DataCache.RemainMana.Value -= skillMetadata.SkillCosts;
                 

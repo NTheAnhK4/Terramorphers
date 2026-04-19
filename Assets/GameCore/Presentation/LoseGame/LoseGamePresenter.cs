@@ -1,68 +1,60 @@
 using System;
-
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
 using GameCore.Domain.Level;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Level;
-using GameCore.Utility;
-using WEngine.MVP;
-using R3;
 using VContainer;
 using VitalRouter;
-
-namespace GameCore.Presentation.Menu
+using WEngine.MVP;
+using R3;
+namespace GameCore.Presentation.LoseGame
 {
-    public class MenuPresentor :  ModalPresenter<MenuModal, MenuViewState>
+    public class LoseGamePresenter : ModalPresenter<LoseGameModal, LoseGameViewState>
     {
-        private TransitionService _transitionService;
-        private ICommandPublisher _publisher;
         private LevelUseCase _levelUseCase;
+        private LevelModel _levelModel;
         private ILevelRepository _levelRepository;
-        public bool IsContinue { get; private set; }
+        private ILevelDatabase _levelDatabase;
+        private ICommandPublisher _publisher;
+        private TransitionService _transitionService;
+        private int currentLevelID;
+      
 
         [Inject]
-        public void Constructor(TransitionService transitionService, ICommandPublisher publisher,
-            LevelUseCase levelUseCase, ILevelRepository levelRepository)
+        public void Constructor(LevelUseCase levelUseCase, ILevelRepository levelRepository,
+            ICommandPublisher publisher, TransitionService transitionService)
         {
-            _transitionService = transitionService;
-            _publisher = publisher;
             _levelUseCase = levelUseCase;
             _levelRepository = levelRepository;
+            _publisher = publisher;
+            _transitionService = transitionService;
         }
-        public MenuPresentor(MenuModal view) : base(view)
+        public LoseGamePresenter(LoseGameModal view) : base(view)
         {
         }
 
-        protected override UniTask Initialize(Memory<object> args, MenuViewState state, MenuModal view)
+        protected override UniTask Initialize(Memory<object> args, LoseGameViewState state, LoseGameModal view)
         {
-            IsContinue = false;
-            state.CloseCommand.Subscribe(OnClose).AddTo(View);
-            state.RestartCommand.Subscribe(OnRestart).AddTo(View);
-            state.QuitCommand.Subscribe(_ => QuitAsync().Forget()).AddTo(View);
+            state.RetryCommand.Subscribe(RetryLevel).AddTo(view);
+            state.ToMenuCommand.Subscribe(_ => ToMenu().Forget()).AddTo(view);
+            _levelModel = _levelUseCase.GetModel();
+            currentLevelID = _levelModel.SelectedLevel;
+           
+            _levelDatabase = _levelRepository.Get();
             return UniTask.CompletedTask;
         }
 
-        private void OnClose(Unit _)
-        {
-            IsContinue = true;
-            _transitionService.ClosePopup();
-        }
-
-        private void OnRestart(Unit _)
+        private void RetryLevel(Unit _)
         {
             _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.LoadingState));
             _transitionService.ClosePopup();
         }
-
-        private async UniTask QuitAsync()
+        private async UniTask ToMenu()
         {
             await  _transitionService.ClosePopup();
             async UniTask OnFinishLoading()
             {
-                var levelModel = _levelUseCase.GetModel();
-                var _levelDatabase = _levelRepository.Get();
-                int currentLevelID = levelModel.CurrentLevel;
                 await _transitionService.ShowChooseStageModal(currentLevelID, _levelDatabase.GetByType(currentLevelID));
             }
             ReactiveProperty<float> progress = new ReactiveProperty<float>();
@@ -72,6 +64,8 @@ namespace GameCore.Presentation.Menu
             await loadingPresenter.GetLoading();
             await _publisher.PublishAsync(new ChangeGameStateTypeCommand(EGameStateType.LobbyState));
             progress.Value = 1;
+
+            
         }
     }
 }

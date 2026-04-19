@@ -791,7 +791,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
+  m_fontSize: 18
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1201,8 +1201,8 @@ MonoBehaviour:
   - {fileID: 440605260072144482}
   stars:
   - {fileID: 7032723317803141516}
-  - {fileID: 8020516707441524268}
   - {fileID: 5798003072036170255}
+  - {fileID: 8020516707441524268}
 --- !u!1 &8301020013782494755
 GameObject:
   m_ObjectHideFlags: 0

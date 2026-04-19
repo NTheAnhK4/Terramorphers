@@ -6,6 +6,7 @@ using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
+using Terramorphers.Skill;
 using Terramorphers.States;
 using Terramorphers.Stats;
 using UnityEngine;
@@ -18,7 +19,7 @@ namespace Terramorphers
     public abstract class TerramorphersEntity : Entity, IDisposable
     {
         [SerializeField, TabGroup("General")] public float MoveSpeed = .5f;
-        [SerializeField, TabGroup("Components")]
+        [TabGroup("Components")]
         protected StatsSystem statsSystem;
         [TabGroup("Debug")] public Context Context;
         protected IState _idleState;
@@ -30,6 +31,11 @@ namespace Terramorphers
         [Inject] protected BoardManager _boardManager;
         [Inject] protected EntityManager _entityManager;
         [Inject] protected QuestUseCase _questUseCase;
+
+        [Inject] protected SkillSystem _skillSystem;
+
+
+        public SkillSystem SkillSystem => _skillSystem;
         protected DisposableBag _bag;
 
         public EntityManager EntityManager => _entityManager;
@@ -58,7 +64,9 @@ namespace Terramorphers
 
         public virtual void OnEnter()
         {
+            _skillSystem.OnEnter();
             ResetDataCache();
+            
         }
         public abstract void OnUpdate();
 
@@ -76,7 +84,7 @@ namespace Terramorphers
 
         public StatsSystem StatsSystem => statsSystem;
         [HideInInspector] public string Name;
-        [HideInInspector] public int ID { get; protected set; }
+        public int ID { get; protected set; }
 
      
         public virtual void Init(int id, EntityMetadata metadata, int teamID, ITile tile)
@@ -89,15 +97,10 @@ namespace Terramorphers
             derivedDataCalculator = new EntityDerivedDataCalculator(this);
             Name = metadata.Addressable;
             _teamID = teamID;
-           
             
-        
-            RegisterDataCacheEvent();
-            ResetDataCache();
-            dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;
-            OnInitialized?.Invoke();
+          
         }
-        protected virtual void RegisterDataCacheEvent(){}
+      
 
         protected void ResetDataCache()
         {
@@ -120,11 +123,15 @@ namespace Terramorphers
 
             if (direction.x > 0 && Model.localScale.x < 0)
             {
-                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                var localScale = Model.localScale;
+                localScale = localScale.Set(x: localScale.x * -1);
+                Model.localScale = localScale;
             }
             else if (direction.x < 0 && Model.localScale.x > 0)
             {
-                Model.localScale = Model.localScale.Set(x: Model.localScale.x * -1);
+                var localScale = Model.localScale;
+                localScale = localScale.Set(x: localScale.x * -1);
+                Model.localScale = localScale;
             }
         }
 
@@ -138,5 +145,7 @@ namespace Terramorphers
             derivedDataCalculator?.Dispose();
             _bag.Dispose();
         }
+
+      
     }
 }

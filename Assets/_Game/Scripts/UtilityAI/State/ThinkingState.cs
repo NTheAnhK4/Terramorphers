@@ -61,10 +61,10 @@ namespace UtilityAI.State
             entityReasoner = new EntityReasoner(entity);
             tileReasoner = new TileReaonser(entity);
           
-            SkillManager skillManager = entity.SkillManager;
+            
             foreach (var skillconsiderationData in enemyMetadata.SkillConsiderationDatas)
             {
-                var skillMetadata = skillManager.GetSkillMetadata(skillconsiderationData.SkillID);
+                var skillMetadata = entity.SkillSystem.GetSkillMetadata(skillconsiderationData.SkillID);
                 var context = skillMetadata.GetContext();
                 skillInfos[skillconsiderationData.SkillID] = new SkillInfo()
                 {

@@ -16,7 +16,7 @@ namespace GameCore.Presentation.GamePlay
         public ReactiveCommand ExitCommand { get; } = new();
   
         public ReactiveCommand ObjectiveCommand { get; } = new();
-      
+        public ReactiveProperty<bool> ShowSkillInfoCommand { get; } = new();
 
     }
 }

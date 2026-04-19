@@ -54,7 +54,7 @@ namespace Terramorphers.States.PlayerState
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
-            var skillMetadata = entity.SkillManager.GetSkillMetadata(skillID);
+            var skillMetadata = entity.SkillSystem.GetSkillMetadata(skillID);
             IReadOnlyList<ESkillTargetType> skillTargetTypes = skillMetadata.SkillTargetTypes;
             
             SetInputTargetLayer(skillTargetTypes);
