@@ -7,7 +7,7 @@ namespace GameCore.Domain.Skill
 {
     public interface ISkillDatabase : IMasterDatabase<int, SkillMetadata>
     {
-        
+        int DataCount { get; }
     }
 
 }

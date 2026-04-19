@@ -12,6 +12,7 @@ using System;
 using GameCore.Domain.Level;
 using GameCore.Presentation.ChooseStage;
 using GameCore.Presentation.GamePlay;
+using GameCore.Presentation.HeroInfo;
 using GameCore.Presentation.Loading;
 using GameCore.Presentation.Lobby;
 using GameCore.Presentation.LoseGame;
@@ -213,6 +214,14 @@ namespace GameCore.Presentation.Shared
                 "MenuModal",
                 modal => new MenuPresenter(modal));
             return presentor;
+        }
+
+        public async UniTask<HeroInfoPresenter> ShowHeroInfoScreen()
+        {
+            var presenter = await ShowScreenPresenterAsync<HeroInfoPresenter, HeroInfoScreen, HeroInfoViewState>(
+                "HeroInfoScreen",
+                screen => new HeroInfoPresenter(screen));
+            return presenter;
         }
     }
 

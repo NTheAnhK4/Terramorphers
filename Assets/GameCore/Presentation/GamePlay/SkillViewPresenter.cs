@@ -57,7 +57,7 @@ namespace GameCore.Presentation.GamePlay
         private void ShowSkillInfo(bool isShow)
         {
             if (isShow)  _skillInfoPresenter.SkillMetadata.Value = _skillMetadata;
-            _skillInfoPresenter.ShowSkillInfoCommand.Value = isShow;
+            _skillInfoPresenter.ShowSkillInfo.Value = isShow;
 
         }
 

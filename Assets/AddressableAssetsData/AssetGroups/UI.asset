@@ -37,6 +37,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 486a1933fb6c6db43b8c434f8c4e8cba
+    m_Address: HeroInfoScreen
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 534a2efce0633bd4eb3012e5af3fa18d
     m_Address: CorruptedTile
     m_ReadOnly: 0

@@ -9,7 +9,7 @@ namespace GameCore.Presentation.Skill
     public class SkillInfoPresenter : AppViewPresenter<SkillInfoView, SkillInfoViewState>
     {
         public ReactiveProperty<SkillMetadata> SkillMetadata { get; } = new();
-        public ReactiveProperty<bool> ShowSkillInfoCommand { get; } = new();
+        public ReactiveProperty<bool> ShowSkillInfo { get; } = new();
         private SkillInfoViewState _state;
         public SkillInfoPresenter(SkillInfoView view) : base(view)
         {
@@ -19,7 +19,7 @@ namespace GameCore.Presentation.Skill
         {
             _state = state;
             SkillMetadata.SubscribeToReactiveProperty(state.skillMetaData).AddTo(view);
-            ShowSkillInfoCommand.SubscribeToReactiveProperty(state.ShowSkillInfoCommand).AddTo(view);
+            ShowSkillInfo.SubscribeToReactiveProperty(state.ShowSkillInfoCommand).AddTo(view);
             return UniTask.CompletedTask;
         }
 

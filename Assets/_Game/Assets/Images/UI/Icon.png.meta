@@ -341,7 +341,7 @@ TextureImporter:
         width: 217
         height: 251
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -349,6 +349,27 @@ TextureImporter:
       bones: []
       spriteID: 6edb6dbea2e4a894384c65489744d487
       internalID: 71210034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Skill_Icon
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 1268
+        width: 135
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8faf86bf41c6d441a83759efbd5a38d
+      internalID: -1344712031
       vertices: []
       indices: 
       edges: []
@@ -373,6 +394,7 @@ TextureImporter:
       Lock_Icon: -849269267
       MultiStars: 1602322713
       Pause_Icon: -1609167955
+      Skill_Icon: -1344712031
       Star: -1140629935
       Star_Off: 1054171499
   mipmapLimitGroupName: 

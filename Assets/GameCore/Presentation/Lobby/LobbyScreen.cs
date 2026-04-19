@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
+using GameCore.Utility;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,10 +18,14 @@ namespace GameCore.Presentation.Lobby{
         [SerializeField, TabGroup("Components")]
         private ScrollRect scrollRect;
 
+        [SerializeField, TabGroup("Components")]
+        private Button heroInfoBtn;
+
         private List<RectTransform> worldCellRects = new();
         public override UniTask InitializeState(LobbyViewState state, Memory<object> args)
         {
             state.CurrentIndex.Subscribe(ScrollTo).AddTo(this);
+            heroInfoBtn.SubscribeToCommand(state.ShowHeroInfo).AddTo(this);
             return UniTask.CompletedTask;
         }
 
