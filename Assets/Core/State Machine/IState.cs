@@ -75,7 +75,8 @@ namespace CoreGame
         }
 
         public virtual void OnExit()
-        { 
+        {
+           
             if(!string.IsNullOrEmpty(animBoolName)) entity.Anim.SetBool(animBoolName, false);
         }
 

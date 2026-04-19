@@ -19,6 +19,7 @@ namespace CoreGame
         [TabGroup("Components")] public Animator Anim;
         protected StateMachine _stateMachine;
         [TabGroup("Components")] public Transform Model;
+        public IState CurrentState => _stateMachine?.State;
         public override void LoadComponent()
         {
             base.LoadComponent();
@@ -29,6 +30,7 @@ namespace CoreGame
         protected override void Awake()
         {
             _stateMachine = new StateMachine();
+            IsAnimationTriggerFinished = true;
         }
 
         public void To(IState from, IState to, IPredicate condition, Func<StateData> getData = null) => _stateMachine.AddTransition(from, to, condition, getData);

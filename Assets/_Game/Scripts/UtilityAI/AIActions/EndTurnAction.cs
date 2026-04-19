@@ -25,7 +25,7 @@ namespace UtilityAI.AIActions
         {
             try
             {
-                await UniTask.Delay(1100, cancellationToken: entity.GetCancellationTokenOnDestroy());
+                await UniTask.Delay(100, cancellationToken: entity.GetCancellationTokenOnDestroy());
                 await entity.Publisher.PublishAsync(new EndEntityTurnCommand() { });
             }
            

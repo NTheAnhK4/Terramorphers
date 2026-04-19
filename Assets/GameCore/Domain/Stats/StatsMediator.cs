@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
     public class StatsMediator
     {

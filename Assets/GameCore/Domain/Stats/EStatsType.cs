@@ -1,4 +1,4 @@
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
     public enum EStatsType
     {

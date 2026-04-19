@@ -2,13 +2,14 @@
 using System;
 using CoreGame;
 using GameCore.Domain.Skill;
+using GameCore.Domain.Stats;
 using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
 using Terramorphers.Skill;
 using Terramorphers.States;
-using Terramorphers.Stats;
+
 using UnityEngine;
 
 using UtilityAI.DataCache;
@@ -48,7 +49,7 @@ namespace Terramorphers
         public EntityDerivedDataCalculator DerivedDataCalculator => derivedDataCalculator;
 
        
-
+      
         public IState IdleState => _idleState;
 
         public IState HurtState => _hurtState;
@@ -62,10 +63,14 @@ namespace Terramorphers
             MoveSpeed = .5f;
         }
 
-        public virtual void OnEnter()
+        public virtual void PreEnter()
         {
             _skillSystem.OnEnter();
             ResetDataCache();
+        }
+        public virtual void OnEnter()
+        {
+           
             
         }
         public abstract void OnUpdate();

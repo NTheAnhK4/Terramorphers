@@ -24,6 +24,7 @@ namespace Terramorphers.States
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
+          
             if (stateData == null || stateData is not HurtStateData hurtStateData)
             {
                 entity.ChangeState(entity.IdleState);
@@ -51,6 +52,7 @@ namespace Terramorphers.States
         public override void AnimationFinishTrigger()
         {
             base.AnimationFinishTrigger();
+         
             entity.ChangeState(entity.IdleState);
         }
 

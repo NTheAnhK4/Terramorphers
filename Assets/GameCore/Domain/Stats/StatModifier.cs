@@ -1,7 +1,7 @@
 using System;
 using GameCore.Utility;
 
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
     public abstract class StatModifier : IDisposable
     {

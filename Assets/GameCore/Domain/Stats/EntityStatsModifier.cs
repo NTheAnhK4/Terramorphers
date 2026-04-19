@@ -1,7 +1,7 @@
 using System;
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
-    public class EntityStatsModifier : StatModifier
+    public class EntityStatModifier : StatModifier
     {
         private readonly EStatsType type;
         private readonly Func<int, int> operation;
@@ -13,7 +13,7 @@ namespace Terramorphers.Stats
         }
 
 
-        public EntityStatsModifier( int turnApplyValue, EStatsType type, Func<int,int> operation) : base( turnApplyValue)
+        public EntityStatModifier( int turnApplyValue, EStatsType type, Func<int,int> operation) : base( turnApplyValue)
         {
             this.type = type;
             this.operation = operation;

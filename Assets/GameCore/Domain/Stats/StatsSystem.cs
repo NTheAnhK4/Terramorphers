@@ -1,11 +1,10 @@
-using CoreGame;
-using UnityEngine;
+
 using System;
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
-    public class StatsSystem 
+    public class StatsSystem
     {
-        [SerializeField] private Entity entity;
+        
         public Stats Stats;
 
         public StatsSystem(EntityStats stats)

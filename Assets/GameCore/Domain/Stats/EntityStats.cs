@@ -2,7 +2,7 @@ using System;
 using GameCore.Domain.Skill;
 using UnityEngine;
 
-namespace Terramorphers.Stats
+namespace GameCore.Domain.Stats
 {
     [System.Serializable]
     public class EntityStats

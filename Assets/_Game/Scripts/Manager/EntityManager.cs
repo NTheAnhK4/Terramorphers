@@ -7,7 +7,9 @@ using GameCore.Domain.Quest;
 using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using GameCore.Utility.Shape;
+using R3;
 using Terramorphers.Command;
+using Terramorphers.States;
 using UnityEngine;
 using VitalRouter;
 
@@ -19,7 +21,7 @@ namespace Terramorphers
         private List<TerramorphersEntity> _entities = new();
         private int currentEntityID;
         private EntityFactory _entityFactory;
-        private List<IDisposable> bags = new();
+        private DisposableBag _bag;
         private ICommandSubscribable _subscribable;
         private ICommandPublisher _publisher;
         private int currentRound;
@@ -114,11 +116,11 @@ namespace Terramorphers
         {
             currentRound = 0;
             _publisher.PublishAsync(new IncreaseRoundCommand() { NewRound = currentRound });
-            if (currentEntityID >= 0 &&
-                currentEntityID < _entities.Count &&
-                _entities[currentEntityID] != null) _entities[currentEntityID].OnEnter();
+           
+            EnterEntityAsync().Forget();
 
-            bags.Add(_subscribable.Subscribe<EndEntityTurnCommand>(EndCurrentEntityTurn));
+
+            _subscribable.Subscribe<EndEntityTurnCommand>(EndCurrentEntityTurn).AddTo(ref _bag);
         }
 
         public void OnUpdate()
@@ -134,7 +136,7 @@ namespace Terramorphers
                 currentEntityID < _entities.Count &&
                 _entities[currentEntityID] != null) _entities[currentEntityID].OnExit();
 
-            foreach (var bag in bags) bag?.Dispose();
+            _bag.Dispose();
         }
 
         private void EndCurrentEntityTurn(EndEntityTurnCommand command, PublishContext context)
@@ -161,7 +163,27 @@ namespace Terramorphers
             }
 
 
-            if (_entities[currentEntityID] != null) _entities[currentEntityID].OnEnter();
+            EnterEntityAsync().Forget();
+        }
+
+        private async UniTask EnterEntityAsync()
+        {
+            try
+            {
+                if (currentEntityID < 0 || currentEntityID > _entities.Count) return;
+                var entity = _entities[currentEntityID];
+                if (entity == null) return;
+                entity.PreEnter();
+                var timeAsync = UniTask.Delay(200);
+                var entityAsync = UniTask.WaitUntil(() => entity == null || (entity != null && entity.CurrentState is not HurtState));
+                await UniTask.WhenAll(timeAsync, entityAsync);
+                if (entity != null) entity.OnEnter();
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"[Test][EntityManager] {e}");
+            }
+           
         }
 
         public List<TerramorphersEntity> GetEnemies(TerramorphersEntity owner)

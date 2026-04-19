@@ -69,6 +69,7 @@ namespace Terramorphers
                 if (isCompleted) totalStars++;
                 _questUseCase.RemoveQuest(questMetadata);
             }
+           
             _levelUseCase.SetStars(_levelModel.SelectedLevel, _levelModel.SelectedStage, totalStars);
             return totalStars;
         }

@@ -142,13 +142,19 @@ namespace Terramorphers
             OnInitialized?.Invoke();
         }
 
+        public override void PreEnter()
+        {
+            base.PreEnter();
+            _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
+            _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
+        }
+
 
         public override void OnEnter()
         {
             base.OnEnter();
            
-            _publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
-            _publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
+          
             
             _inputManager.OnEnter();
            
