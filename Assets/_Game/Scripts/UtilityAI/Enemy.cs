@@ -109,8 +109,9 @@ namespace UtilityAI
 
         public override void OnEnter()
         {
+            
             base.OnEnter();
-
+           
             ChangeState(_thinkingState);
         }
 
@@ -134,7 +135,7 @@ namespace UtilityAI
             base.OnExit();
 
             ChangeState(_idleState);
-            statsSystem.Update();
+          
         }
 
         public override void SetTile(ITile tile)

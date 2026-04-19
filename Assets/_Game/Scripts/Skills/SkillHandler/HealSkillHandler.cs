@@ -11,7 +11,7 @@ namespace Terramorphers.Skill
     [Serializable]
     public class HealSkillHandler : SkillHandler<TerramorphersEntity,ITile>
     {
-        [SerializeField] private float delayTime;
+       
         [SerializeField] private int healthAmount;
         protected override async UniTask Use(TerramorphersEntity owner, ITile target, CancellationToken token)
         {

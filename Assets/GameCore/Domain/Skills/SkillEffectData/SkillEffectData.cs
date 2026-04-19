@@ -12,11 +12,20 @@ namespace GameCore.Domain.Skill
             Add,
             Multiple
         };
-        [SerializeField] private ESkillEffectType skillEffectType;
+
+        public enum EEffectTargetType
+        {
+            Self,
+            Target,
+        }
+
+        [SerializeField] private EEffectTargetType targetType;
+        [SerializeField] private ESkillEffectType effectType;
         [SerializeField] private EStatsType statsType;
         [SerializeField] private ESkillOperationType operationType;
         [SerializeField] private int value;
         [SerializeField] private int turnApply;
+        [SerializeReference] private IEffect effect;
 
         public StatModifier GetStatModifier()
         {
@@ -30,8 +39,11 @@ namespace GameCore.Domain.Skill
                     func = t => Mathf.RoundToInt(1.0f * t * (1 + value) / 100);
                     break;
             }
-            return new EntityStatModifier(turnApply, statsType, func);
+            return new EntityStatModifier(turnApply, statsType, func, effect);
         }
-        
+
+        public ESkillEffectType EffectType => effectType;
+
+        public EEffectTargetType TargetType => targetType;
     }
 }

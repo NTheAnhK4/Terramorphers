@@ -2,6 +2,7 @@ namespace GameCore.Domain.Stats
 {
     public enum EStatsType
     {
+        None,
         MaxHP,
         Mana,
         Stamina,

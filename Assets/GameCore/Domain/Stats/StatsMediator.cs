@@ -19,6 +19,16 @@ namespace GameCore.Domain.Stats
                   Queries -= modifier.Handle;
               };
           }
+          public void HandleEvent<T>(T owner, EEffectTriggerType trigger)
+          {
+              var node = modifiers.First;
+              while (node != null)
+              {
+                  var modifier = node.Value;
+                  if(!node.Value.MarkedForRemoval) modifier.HandleEvent(owner,trigger);
+                  node = node.Next;
+              }
+          }
           public void Update()
           {
               var node = modifiers.First;

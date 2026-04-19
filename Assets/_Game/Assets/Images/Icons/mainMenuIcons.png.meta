@@ -144,7 +144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mainMenuIcons_1
+      name: Hero
       rect:
         serializedVersion: 2
         x: 122
@@ -301,8 +301,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Hero: -1086708774
       Setting: -1448807838
-      mainMenuIcons_1: -1086708774
       mainMenuIcons_2: -1083985160
       mainMenuIcons_3: 492825416
       mainMenuIcons_4: 622882469

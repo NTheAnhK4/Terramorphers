@@ -1,7 +1,9 @@
+using GameCore.Domain.Stats;
+
 namespace GameCore.Domain.Skill
 {
-    public class IEffect
+    public interface IEffect
     {
-        
+        void Execute<T>(T owner, EEffectTriggerType trigger);
     }
 }

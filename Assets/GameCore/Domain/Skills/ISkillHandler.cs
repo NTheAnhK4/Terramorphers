@@ -16,7 +16,7 @@ namespace GameCore.Domain.Skill
     public abstract class SkillHandler<TOwner, TTarget> : ISkillHandler
         where TOwner : class where TTarget : class
     {
-        
+        [SerializeField] protected float delayTime;
         protected abstract UniTask Use(TOwner owner,TTarget target, CancellationToken token);
        
 

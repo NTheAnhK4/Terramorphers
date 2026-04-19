@@ -66,17 +66,19 @@ namespace Terramorphers
         public virtual void PreEnter()
         {
             _skillSystem.OnEnter();
+            statsSystem.HandeEvent(this,EEffectTriggerType.EnterTurn);
             ResetDataCache();
         }
         public virtual void OnEnter()
         {
-           
+            
             
         }
         public abstract void OnUpdate();
 
         public virtual void OnExit()
         {
+            statsSystem.Update();
             dataCache.RemainMana.Value = statsSystem.Stats.Mana;
             dataCache.RemainStamina.Value = statsSystem.Stats.Stamina;
         }

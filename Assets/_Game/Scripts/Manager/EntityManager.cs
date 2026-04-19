@@ -177,7 +177,7 @@ namespace Terramorphers
                 var timeAsync = UniTask.Delay(200);
                 var entityAsync = UniTask.WaitUntil(() => entity == null || (entity != null && entity.CurrentState is not HurtState));
                 await UniTask.WhenAll(timeAsync, entityAsync);
-                if (entity != null) entity.OnEnter();
+                if (entity != null && entity.CurrentState is not DeadState) entity.OnEnter();
             }
             catch (Exception e)
             {

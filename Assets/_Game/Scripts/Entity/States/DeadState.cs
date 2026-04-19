@@ -1,5 +1,6 @@
 using System;
 using CoreGame;
+using UnityEngine;
 
 namespace Terramorphers.States
 {
@@ -13,6 +14,7 @@ namespace Terramorphers.States
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
+         
             entity.CurrentTile.CurrentOccupant = null;
         }
 

@@ -33,6 +33,7 @@ namespace Terramorphers.States
 
             int damage = entity.StatsSystem.Stats.GetDamageTaken(hurtStateData.Damage, hurtStateData.AttackType);
             
+            
             if (entity is Player)
             {
                 entity.QuestUseCase.IncreaseQuestProgress(
@@ -42,6 +43,7 @@ namespace Terramorphers.States
                     damage);
             }
             entity.DataCache.RemainHP.Value -= damage;
+           
             if (entity.DataCache.RemainHP.Value <= 0)
             {
                 entity.ChangeState(entity.DeadState);
