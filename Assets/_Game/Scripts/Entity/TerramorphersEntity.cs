@@ -37,6 +37,7 @@ namespace Terramorphers
 
         [Inject] protected SkillSystem _skillSystem;
         [Inject] protected ICommandPublisher _publisher;
+        [HideInInspector] public ReactiveProperty<string> StatsNoti { get; } = new();
 
         public ICommandPublisher Publisher => _publisher;
 
@@ -86,6 +87,14 @@ namespace Terramorphers
         {
             
             statsSystem.Update();
+            int manaDis = statsSystem.Stats.Mana - dataCache.RemainMana.Value;
+            if (manaDis > 0)
+                StatsNoti.Value = $"<sprite=8><color=#BFE9FF>+{manaDis}</color>";
+
+            int staminaDis = statsSystem.Stats.Stamina - dataCache.RemainStamina.Value;
+            if (staminaDis > 0)
+                StatsNoti.Value = $"<sprite=4><color=#B8F5C0>+{staminaDis}</color>";
+            
             dataCache.RemainMana.Value = statsSystem.Stats.Mana;
             dataCache.RemainStamina.Value = statsSystem.Stats.Stamina;
         }
@@ -130,6 +139,11 @@ namespace Terramorphers
         public void Heal(int healAmount)
         {
             healAmount = statsSystem.Stats.GetHealAmount(healAmount);
+            int healDis = Mathf.Min(dataCache.RemainHP.Value + healAmount, statsSystem.Stats.MaxHP) - dataCache.RemainHP.Value;
+            if (healDis > 0)
+            {
+                StatsNoti.Value = $"<sprite=0><color=red>+{healDis}</color>";
+            }
             dataCache.RemainHP.Value = Mathf.Min(dataCache.RemainHP.Value + healAmount, statsSystem.Stats.MaxHP);
         }
         public virtual void SetDirection(Vector3 direction)

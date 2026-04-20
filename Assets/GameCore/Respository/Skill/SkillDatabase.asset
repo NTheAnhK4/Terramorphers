@@ -37,8 +37,8 @@ MonoBehaviour:
       costs: 50
       range: 1
       areaOfEffect: 0
-      coolDown: 3
-      precoolDown: 2
+      coolDown: 12
+      precoolDown: 0
       description: '- Restore 35 <sprite=0>'
       skillTargetTypes: 0000000002000000
       skillHandlers:
@@ -64,17 +64,63 @@ MonoBehaviour:
   - key: 3
     value:
       skillID: 3
-      skillSprite: {fileID: 21300000, guid: d9f2dad98980ff84d8a2e0f204133062, type: 3}
+      skillSprite: {fileID: 21300000, guid: 19aa1195c54e60e4b943c1753c360a3b, type: 3}
       _eSkillRarity: 0
-      skillName: Shockwave
-      costs: 100
-      range: 0
-      areaOfEffect: 2
+      skillName: Throwing knife
+      costs: 35
+      range: 3
+      areaOfEffect: 0
+      coolDown: 1
+      precoolDown: 0
+      description: -Deal 8 <sprite=1>damage
+      skillTargetTypes: 01000000
+      skillHandlers:
+      - rid: 1827776923759542273
+  - key: 4
+    value:
+      skillID: 4
+      skillSprite: {fileID: 21300000, guid: 0d7f77fb7ce194e4faeb32d6cb603097, type: 3}
+      _eSkillRarity: 0
+      skillName: Zap
+      costs: 20
+      range: 2
+      areaOfEffect: 0
       coolDown: 3
       precoolDown: 0
-      description: '- Deal 14 <sprite=2> damage to nearby enemies'
-      skillTargetTypes: 00000000
-      skillHandlers: []
+      description: -Deal 12<sprite=2> damage
+      skillTargetTypes: 01000000
+      skillHandlers:
+      - rid: 1827776923759542272
+  - key: 5
+    value:
+      skillID: 5
+      skillSprite: {fileID: 21300000, guid: e8ea240944bd11941b296d79c179e041, type: 3}
+      _eSkillRarity: 0
+      skillName: Slash
+      costs: 50
+      range: 1
+      areaOfEffect: 0
+      coolDown: 1
+      precoolDown: 0
+      description: -Deal 11<sprite=1> damage
+      skillTargetTypes: 01000000
+      skillHandlers:
+      - rid: 1827776923759542274
+  - key: 6
+    value:
+      skillID: 6
+      skillSprite: {fileID: 21300000, guid: 0a943f21be28f554682d7855fd7180c9, type: 3}
+      _eSkillRarity: 0
+      skillName: Heavy Strike
+      costs: 100
+      range: 1
+      areaOfEffect: 0
+      coolDown: 3
+      precoolDown: 0
+      description: '- Deal 30 <sprite=1>damage'
+      skillTargetTypes: 01000000
+      skillHandlers:
+      - rid: 1827776923759542275
   references:
     version: 2
     RefIds:
@@ -120,3 +166,63 @@ MonoBehaviour:
       data:
         triggerType: 0
         damage: 5
+    - rid: 1827776923759542272
+      type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        damage: 12
+        attackType: 1
+        skillEffectData:
+          targetType: 0
+          effectType: 0
+          statsType: 0
+          operationType: 0
+          value: 0
+          turnApply: 0
+          effect:
+            rid: -2
+    - rid: 1827776923759542273
+      type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        damage: 8
+        attackType: 0
+        skillEffectData:
+          targetType: 0
+          effectType: 0
+          statsType: 0
+          operationType: 0
+          value: 0
+          turnApply: 0
+          effect:
+            rid: -2
+    - rid: 1827776923759542274
+      type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        damage: 11
+        attackType: 0
+        skillEffectData:
+          targetType: 0
+          effectType: 0
+          statsType: 0
+          operationType: 0
+          value: 0
+          turnApply: 0
+          effect:
+            rid: -2
+    - rid: 1827776923759542275
+      type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
+      data:
+        delayTime: 0
+        damage: 30
+        attackType: 0
+        skillEffectData:
+          targetType: 0
+          effectType: 0
+          statsType: 0
+          operationType: 0
+          value: 0
+          turnApply: 0
+          effect:
+            rid: -2

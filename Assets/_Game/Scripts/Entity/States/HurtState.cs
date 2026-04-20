@@ -32,7 +32,27 @@ namespace Terramorphers.States
             }
 
             int damage = entity.StatsSystem.Stats.GetDamageTaken(hurtStateData.Damage, hurtStateData.AttackType);
-            
+            if (damage > 0)
+            {
+                int damageSprite = 1;
+                switch (hurtStateData.AttackType)
+                {
+                    case EAttackType.PhysicalDamage:
+                        damageSprite = 1;
+                        break;
+                    case EAttackType.MagicalDamage:
+                        damageSprite = 2;
+                        break;
+                    case EAttackType.NeutralDamage:
+                        damageSprite = 14;
+                        break;
+                }
+                string damageNoti =  $"<sprite={damageSprite}><color=#FFA500>-{damage}</color>";
+
+                if (damage < hurtStateData.Damage) damageNoti += $"<color=#E0F7FF>({hurtStateData.Damage - damage})</color>";
+                entity.StatsNoti.Value = damageNoti;
+            }
+           
             
             if (entity is Player)
             {
@@ -51,6 +71,7 @@ namespace Terramorphers.States
                 return;
             }
         }
+        
 
         public override void AnimationFinishTrigger()
         {
