@@ -1,5 +1,6 @@
 using System;
 using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using GameCore.Presentation.HeroInfo.CurrentSkill;
 using GameCore.Presentation.HeroInfo.SkillFrame;
 using GameCore.Presentation.Skill;
@@ -26,12 +27,31 @@ namespace GameCore.Presentation.HeroInfo
         {
             skillInfoView.gameObject.SetActive(false);
             exitBtn.SubscribeToCommand(state.ExitCommand).AddTo(this);
-            chooseSkillBtn.SubscribeToCommand(state.ChooseSkillCommand).AddTo(this);
+            chooseSkillBtn.SubscribeToCommand(state.HandleSelectionCommand).AddTo(this);
+            state.SelectSkillCommand.Subscribe(SelectSkill).AddTo(this);
+            state.UnselectSkillCommand.Subscribe(UnselectSkill).AddTo(this);
+            state.PreviewSkillCommand.Subscribe(SelectSkill).AddTo(this);
             return UniTask.CompletedTask;
         }
 
         public SkillFrameView AddSkillFrameView() => Instantiate(skillFrameViewPrefab, skillFrameHolder);
 
+        private void SelectSkill(int _)
+        {
+            DOTween.Kill(chooseSkillBtn.transform);
+            var sequence = DOTween.Sequence();
+            sequence.Append(chooseSkillBtn.transform.DOScale(1.1f, .2f))
+                .Append(chooseSkillBtn.transform.DOScale(1, .2f)).SetTarget(chooseSkillBtn.transform);
+            
+        }
+
+        private void UnselectSkill(int _)
+        {
+            DOTween.Kill(chooseSkillBtn.transform);
+            var sequence = DOTween.Sequence();
+            sequence.Append(chooseSkillBtn.transform.DOScale(.9f, .2f))
+                .Append(chooseSkillBtn.transform.DOScale(1, .2f)).SetTarget(chooseSkillBtn.transform);
+        }
         
     }
 }

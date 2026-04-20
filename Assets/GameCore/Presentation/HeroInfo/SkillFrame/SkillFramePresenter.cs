@@ -1,9 +1,7 @@
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Presentation.Skill;
-using GameCore.Utility;
 using R3;
-using UnityEngine;
 using WEngine.MVP;
 
 namespace GameCore.Presentation.HeroInfo.SkillFrame
@@ -12,16 +10,21 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
     {
         private SkillMetadata _skillMetadata;
         private SkillInfoPresenter _skillInfoPresenter;
-        private ReactiveCommand<int> _selectCommand;
+        private ReactiveCommand<int> _previewSkillCommand;
         private int _id;
         private SkillFrameViewState _state;
+        private ReactiveCommand<int> _selectSkillCommand;
+        private ReactiveCommand<int> _unselectSkillCommand;
        
         public SkillFramePresenter(SkillFrameView view, SkillMetadata skillMetadata, 
-            ReactiveCommand<int> selectCommand, int id, SkillInfoPresenter skillInfoPresenter) : base(view)
+            ReactiveCommand<int> previewSkillCommand, int id, SkillInfoPresenter skillInfoPresenter,
+            ReactiveCommand<int> selectSkillCommand, ReactiveCommand<int> unselectSkillCommand) : base(view)
         {
             _skillMetadata = skillMetadata;
             _skillInfoPresenter = skillInfoPresenter;
-            _selectCommand = selectCommand;
+            _previewSkillCommand = previewSkillCommand;
+            _selectSkillCommand = selectSkillCommand;
+            _unselectSkillCommand = unselectSkillCommand;
             _id = id;
         }
 
@@ -29,25 +32,38 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
         {
             _state = state;
             state.SkillMetadata = _skillMetadata;
-            _selectCommand.Subscribe(SelectSkill).AddTo(view);
-            state.SelectCommand.Subscribe(_ => _selectCommand.Execute(_id)).AddTo(view);
-           
+            _previewSkillCommand.Subscribe(PreviewSkill).AddTo(view);
+            state.PreviewSkillCommand.Subscribe(_ => _previewSkillCommand.Execute(_id)).AddTo(view);
+            _selectSkillCommand.Subscribe(SelectSkill).AddTo(view);
+            _unselectSkillCommand.Subscribe(UnselectSkill).AddTo(view);
             return UniTask.CompletedTask;
         }
 
-        private void SelectSkill(int frameID)
+        private void PreviewSkill(int frameID)
         {
             if (frameID == _id)
             {
                 _skillInfoPresenter.SkillMetadata.Value = _skillMetadata;
                 _skillInfoPresenter.ShowSkillInfo.Value = true;
-                View.UnselectImage.gameObject.SetActive(false);
+                View.UnpreviewImage.gameObject.SetActive(false);
             }
             else
             {
-                View.UnselectImage.gameObject.SetActive(true);
+                View.UnpreviewImage.gameObject.SetActive(true);
             }
            
+        }
+
+        private void SelectSkill(int skillID)
+        {
+            if (skillID != _id) return;
+            View.SelectImage.gameObject.SetActive(true);
+        }
+
+        private void UnselectSkill(int skillID)
+        {
+            if (skillID != _id) return;
+            View.SelectImage.gameObject.SetActive(false);
         }
     }
 }

@@ -13,12 +13,14 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
     {
         private ISkillRepository _skillRepository;
         private SkillUseCase _skillUseCase;
-        private ReactiveCommand<int> _showSkillInfo;
+        private ReactiveCommand<int> _previewCommand;
         private int currentSelectSkill;
-        private ReactiveCommand _chooseSkillCommand;
+        private ReactiveCommand _handleSelectionCommand;
         private CurrentSkillViewState _state;
         private ISkillDatabase _skillDatabase;
         private SkillModel _skillModel;
+        private ReactiveCommand<int> _selectCommand;
+        private ReactiveCommand<int> _unselectCommand;
 
         [Inject]
         public void Constructor(ISkillRepository skillRepository, SkillUseCase skillUseCase)
@@ -27,10 +29,13 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
             _skillUseCase = skillUseCase;
           
         }
-        public CurrentSkillPresenter(CurrentSkillView view,ReactiveCommand<int> showSkillInfo, ReactiveCommand chooseSkillCommand) : base(view)
+        public CurrentSkillPresenter(CurrentSkillView view,ReactiveCommand<int> previewCommand,
+            ReactiveCommand handleSelectionCommand, ReactiveCommand<int> selectCommand, ReactiveCommand<int> unselectCommand) : base(view)
         {
-            _showSkillInfo = showSkillInfo;
-            _chooseSkillCommand = chooseSkillCommand;
+            _previewCommand = previewCommand;
+            _handleSelectionCommand = handleSelectionCommand;
+            _selectCommand = selectCommand;
+            _unselectCommand = unselectCommand;
         }
 
         protected override UniTask Initialize(CurrentSkillViewState state, CurrentSkillView view)
@@ -39,13 +44,14 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
             _skillDatabase = _skillRepository.Get();
             _skillModel = _skillUseCase.GetModel();
             state.SkillMetadatas.Clear();
-            _showSkillInfo.Subscribe(OnSelectSkill).AddTo(view);
-            _chooseSkillCommand.Subscribe(OnChooseSkill).AddTo(view);
+            _previewCommand.Subscribe(OnPreviewSkill).AddTo(view);
+            _handleSelectionCommand.Subscribe(OnChooseSkill).AddTo(view);
             for(int i = 0; i < 7; ++i) state.SkillMetadatas.Add(new ReactiveProperty<SkillMetadata>());
-            state.SelectSkill.SubscribeToCommand(_showSkillInfo);
+            state.SelectSkill.SubscribeToCommand(_previewCommand);
             for (int i = 0; i < _skillModel.CurrentSkills.Count; ++i)
             {
                 var skillMetadata = _skillDatabase.GetByType(_skillModel.CurrentSkills[i]);
+                _selectCommand.Execute(_skillModel.CurrentSkills[i]);
                 state.SkillMetadatas[i].Value = skillMetadata;
             }
             
@@ -53,7 +59,7 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
             return UniTask.CompletedTask;
         }
 
-        private void OnSelectSkill(int id) => currentSelectSkill = id;
+        private void OnPreviewSkill(int id) => currentSelectSkill = id;
 
         private void OnChooseSkill(Unit _)
         {
@@ -65,6 +71,7 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
                     _skillUseCase.RemoveSkill(_skillModel,currentSelectSkill);
                    
                     skillMetadata.Value = null;
+                    _unselectCommand.Execute(currentSelectSkill);
                     return;
                 }
             }
@@ -75,7 +82,7 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
                 {
                     skillMetadata.Value = _skillDatabase.GetByType(currentSelectSkill);
                     _skillUseCase.AddSkill(_skillModel,currentSelectSkill);
-                    
+                    _selectCommand.Execute(currentSelectSkill);
                     return;
                 }
             }

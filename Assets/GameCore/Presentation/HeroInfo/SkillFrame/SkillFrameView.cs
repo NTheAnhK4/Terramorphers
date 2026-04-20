@@ -6,19 +6,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using WEngine.MVP;
 using R3;
+using UnityEngine.Serialization;
+
 namespace GameCore.Presentation.HeroInfo.SkillFrame
 {
     public class SkillFrameView : AppView<SkillFrameViewState>
     {
         [SerializeField] private Image skillImage;
         [SerializeField] private Image skillFrame;
-        [SerializeField] private Image unselectImage;
+        [FormerlySerializedAs("unselectImage")] [SerializeField] private Image unpreviewImage;
         [SerializeField] private Button selectBtn;
+        [SerializeField] private Image selectImage;
 
-        public Image UnselectImage => unselectImage;
+        public Image SelectImage => selectImage;
+
+
+        public Image UnpreviewImage => unpreviewImage;
         protected override UniTask Initialize(SkillFrameViewState state)
         {
-            selectBtn.SubscribeToCommand(state.SelectCommand).AddTo(this);
+            selectBtn.SubscribeToCommand(state.PreviewSkillCommand).AddTo(this);
             Setup(state.SkillMetadata);
             
             return UniTask.CompletedTask;

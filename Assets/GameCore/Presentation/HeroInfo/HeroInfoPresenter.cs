@@ -17,7 +17,8 @@ namespace GameCore.Presentation.HeroInfo
         private IObjectResolver _resolver;
         private ISkillRepository _skillRepository;
         private TransitionService _transitionService;
-        private ReactiveCommand<int> selectSkillCommand { get; } = new ReactiveCommand<int>();
+        
+       
 
         [Inject]
         public void Constructor(IObjectResolver resolver, ISkillRepository skillRepository, TransitionService transitionService)
@@ -46,12 +47,16 @@ namespace GameCore.Presentation.HeroInfo
                 SkillMetadata skillMetadata = skillDatabase.GetByType(i);
                 SkillFrameView skillFrameView = view.AddSkillFrameView();
 
-                SkillFramePresenter presenter = new SkillFramePresenter(skillFrameView, skillMetadata, selectSkillCommand, skillID, skillInfoPresenter);
+                SkillFramePresenter presenter = new SkillFramePresenter(
+                    skillFrameView, skillMetadata,state.PreviewSkillCommand, skillID, skillInfoPresenter,
+                    state.SelectSkillCommand, state.UnselectSkillCommand);
                 _resolver.Inject(presenter);
                 presenter.Initialize();
             }
 
-            CurrentSkillPresenter currentSkillPresenter = new CurrentSkillPresenter(view.CurrentSkillView, selectSkillCommand, state.ChooseSkillCommand);
+            CurrentSkillPresenter currentSkillPresenter = new CurrentSkillPresenter(
+                view.CurrentSkillView, state.PreviewSkillCommand, state.HandleSelectionCommand,
+                state.SelectSkillCommand, state.UnselectSkillCommand);
             _resolver.Inject(currentSkillPresenter);
             currentSkillPresenter.Initialize();
             return UniTask.CompletedTask;

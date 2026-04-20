@@ -362,7 +362,7 @@ TextureImporter:
         width: 135
         height: 143
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -370,6 +370,27 @@ TextureImporter:
       bones: []
       spriteID: c8faf86bf41c6d441a83759efbd5a38d
       internalID: -1344712031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Check
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1385
+        width: 100
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6cc18e99415db345a3aa233412bb6ab
+      internalID: 828974389
       vertices: []
       indices: 
       edges: []
@@ -385,6 +406,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Check: 828974389
       Close_Icon: -646782902
       Exit_Icon: -158045333
       Gray_Hexa: 71210034

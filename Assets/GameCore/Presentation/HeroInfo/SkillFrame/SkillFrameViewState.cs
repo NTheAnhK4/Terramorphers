@@ -6,7 +6,7 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
 {
     public class SkillFrameViewState : ViewState
     {
-        public ReactiveCommand SelectCommand { get; } = new ReactiveCommand();
+        public ReactiveCommand PreviewSkillCommand { get; } = new ReactiveCommand();
        
         public SkillMetadata SkillMetadata;
        
