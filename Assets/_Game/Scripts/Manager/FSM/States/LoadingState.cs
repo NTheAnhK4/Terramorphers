@@ -130,6 +130,7 @@ namespace Terramorphers
                 else
                 {
                     List<Vector2Int> slotData = teamPos.Value;
+                    
                     for (int i = 0; i < levelStageData.EnemyIDs.Count; ++i)
                     {
                         int enemyID = levelStageData.EnemyIDs[i];

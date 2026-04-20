@@ -167,7 +167,13 @@ namespace Terramorphers
                 _entities[currentEntityID] != null)
             {
                 
-                _entities[currentEntityID].OnExit();
+                _entities[currentEntityID].OnExit(); 
+                _publisher.PublishAsync(new EntityTileDistCommand()
+                {
+                    Tile = _entities[currentEntityID].CurrentTile, 
+                    Name = _entities[currentEntityID].Name,
+                    entityTiles = _entities.Where(t => t != _entities[currentEntityID] && t != null).Select(t => t.CurrentTile).ToList()
+                });
             }
             
 

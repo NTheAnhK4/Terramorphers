@@ -37,6 +37,7 @@ namespace Terramorphers
         [Inject] private ITileFactory _tileFactory;
         [Inject] private ICommandSubscribable _subscribable;
         [Inject] private ICommandPublisher _publisher;
+        
         private List<List<ITile>> board = new();
         private HexagonalGrid<ITile> hexaBoard;
         
@@ -281,12 +282,29 @@ namespace Terramorphers
                 command.Tile.Index, 
                 100, 
                 tile => tile.GetMoveCost(),
-                tile => !tile.IsPassable() || (tile == command.Tile) ).ToList(); 
+                tile => !tile.IsPassable() || (tile != command.Tile && tile.CurrentOccupant != null)).ToList();
+            Dictionary<ITile, int> tileDis = new();
             foreach (var item in movableTiles)
             {
                 string key = string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, command.Name);
                 item.Item1.Context.SetData(key, item.Item2);
+                tileDis[item.Item1] = item.Item2;
             }
+            void SetDistanceToEntity(ITile tile)
+            {
+                List<ITile> neighbours = hexaBoard.GetAllNeighborsValue(tile.Index).ToList();
+                List<int> distance = neighbours.Where(t => tileDis.ContainsKey(t)).Select(t => tileDis[t]).ToList();
+                if (distance.Count == 0) return;
+                int minDis = distance.Min();
+                string key = string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, command.Name);
+                tile.Context.SetData(key, minDis + 1);
+
+            }
+            foreach(var tile in command.entityTiles) SetDistanceToEntity(tile);
+           
+
+            
+            
         }
     }
 }
