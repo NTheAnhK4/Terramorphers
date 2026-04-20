@@ -74,8 +74,26 @@ namespace Terramorphers
 
             _gameManager.GamePlayPresenter = gamePresenter;
             
-            var levelStageData = await LoadLevelStageData();
-            if (levelStageData == null) return;
+            var levelDatabase = _levelRepository.Get();
+            var levelModel = _levelUseCase.GetModel();
+            int selectedLevel = levelModel.SelectedLevel;
+            int selectedStage = levelModel.SelectedStage;
+
+            var levelMetaData = levelDatabase.GetByType(selectedLevel);
+            if (levelMetaData == null)
+            {
+                Debug.Log($"[LoadingState] cannot load level metadata for {selectedLevel}");
+                return;
+            }
+
+            var levelStageData = levelMetaData.LevelStageDatas[selectedStage];
+            if (levelStageData == null)
+            {
+                Debug.Log($"[LoadingState] cannot load level stage data for {selectedStage} and {selectedLevel}");
+                return;
+            }
+          
+          
             var mapData = LoadingMap(levelStageData);
             if (mapData == null) return;
 
@@ -93,7 +111,7 @@ namespace Terramorphers
                 Debug.Log($"[LoadingState] loading board not success");
                 return;
             }
-            _boardManager.SetBackground(levelStageData.Background);
+            _boardManager.SetBackground(levelMetaData.BackgroundSprite);
 
             Dictionary<int, List<Vector2Int>> teamPositons = GetTeamPositionsMap(mapData.SlotDatas);
             
@@ -137,30 +155,7 @@ namespace Terramorphers
            
         }
 
-        private async UniTask<LevelStageData> LoadLevelStageData()
-        {
-            var levelDatabase = _levelRepository.Get();
-            var levelModel = _levelUseCase.GetModel();
-            int selectedLevel = levelModel.SelectedLevel;
-            int selectedStage = levelModel.SelectedStage;
-
-            var levelMetaData = levelDatabase.GetByType(selectedLevel);
-            if (levelMetaData == null)
-            {
-                Debug.Log($"[LoadingState] cannot load level metadata for {selectedLevel}");
-                return null;
-            }
-
-            var levelStageData = levelMetaData.LevelStageDatas[selectedStage];
-            if (levelStageData == null)
-            {
-                Debug.Log($"[LoadingState] cannot load level stage data for {selectedStage} and {selectedLevel}");
-                return null;
-            }
-
-            return levelStageData;
-        }
-
+       
         private MapData LoadingMap(LevelStageData levelStageData)
         {
            
@@ -188,9 +183,13 @@ namespace Terramorphers
             return result;
         }
 
-        private ITile GetTile(Vector2Int pos) => _boardManager.HexaBoard.Get(new Cube(pos.x, pos.y, -pos.x - pos.y));
+        private ITile GetTile(Vector2Int pos)
+        {
+            int q = pos.y - (pos.x + 1) / 2;
+            int r = pos.x;
+            int s = -q - r;
         
-       
-        
+            return _boardManager.HexaBoard.Get(new Cube(q,r,s));
+        }
     }
 }

@@ -18,12 +18,18 @@ namespace GameCore.Domain.Stats
            
          
             
-            if (turnApplyValue <= 0) return;
+            if (turnApplyValue == 0) return;
             _effect = effect;
-            timer = new CountdownTimer(turnApplyValue);
+            if (turnApplyValue > 0)
+            {
+                timer = new CountdownTimer(turnApplyValue);
 
-            timer.OnTimerStop += () => MarkedForRemoval = true;
-            timer.Start();
+                timer.OnTimerStop += () => MarkedForRemoval = true;
+                timer.Start();
+            }
+            //< 0 for forever
+
+           
         }
 
         public void HandleEvent<T>(T owner, EEffectTriggerType trigger)
@@ -32,7 +38,7 @@ namespace GameCore.Domain.Stats
         }
         public void Update()
         {
-            
+            if(timer == null) return;
             timer.Tick(1);
         }
 

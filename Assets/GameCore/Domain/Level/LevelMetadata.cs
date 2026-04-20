@@ -12,14 +12,22 @@ namespace GameCore.Domain.Level
     public class LevelMetadata
     {
         [SerializeField] private string levelName;
-        [SerializeField, PreviewField(Height = 50)]
+        [HorizontalGroup("Sprites")]
+        [PreviewField(Height = 50)]
+        [SerializeField]
         private Sprite levelSprite;
 
+        [HorizontalGroup("Sprites")]
+        [PreviewField(Height = 50)]
+        [SerializeField]
+        private Sprite backgroundSprite;
         [SerializeField, TableList] private List<LevelStageData> levelStageDatas = new();
 
         public Sprite LevelSprite => levelSprite;
 
         public string LevelName => levelName;
+
+        public Sprite BackgroundSprite => backgroundSprite;
 
         public IReadOnlyList<LevelStageData> LevelStageDatas => levelStageDatas;
     }
@@ -33,9 +41,7 @@ namespace GameCore.Domain.Level
         [HideLabel]
         [SerializeField] private TextAsset stageMap;
 
-        [VerticalGroup("levelStage/levelInfo/left")] [SerializeField, PreviewField(Height = 75,Alignment = ObjectFieldAlignment.Center)]
-        [HideLabel]
-        private Sprite background;
+       
         [VerticalGroup("levelStage")]
         [HorizontalGroup("levelStage/levelInfo")]
         [HideLabel]
@@ -49,7 +55,7 @@ namespace GameCore.Domain.Level
 
         public TextAsset StageMap => stageMap;
 
-        public Sprite Background => background;
+     
 
         public IReadOnlyList<QuestMetadata> StageStarObjectives => stageStarObjectives;
     }

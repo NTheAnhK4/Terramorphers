@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb934ab0b294a0383d06dbcb7fba8c7, type: 3}
+  m_Name: Satyr Berserker
+  m_EditorClassIdentifier: 
+  addressable: SatyrBerserker
+  entityName: Satyr Berserker
+  entityIcon: {fileID: 21300000, guid: d1d7525e6ce1f1848ae73913c0ea0987, type: 3}
+  _entityStats:
+    MaxHP: 24
+    Mana: 100
+    Stamina: 2
+    Range: 1
+    PhysicalDamage: 0
+    MagicalDamage: 0
+    PhysicalResistance: 30
+    MagicalResistance: 0
+    NeutralResistance: 0
+    CriticalChance: 0
+    Healing: 0
+  _considerationSystem: {fileID: 11400000, guid: 5a5916e081f723943962dc2f9b437037, type: 2}
+  skillConsiderationDatas:
+  - skillID: 0
+    considerationID: 3
+    animName: Attacking
+  selfConsiderationID: -1
+  allyConsiderationID: -1
+  enemyConsiderationID: 2
+  useSkillActionConsiderationID: 1
+  moveActionConsiderationID: 4
+  endTurnActionConsiderationID: 5
+  tileConsiderationDatas:
+  - TileType: 0
+    ConsiderationID: 6
+  - TileType: 1
+    ConsiderationID: 6
+  - TileType: 2
+    ConsiderationID: 7
+  - TileType: 3
+    ConsiderationID: 6
+  - TileType: 4
+    ConsiderationID: 6
+  - TileType: 5
+    ConsiderationID: 6
+  - TileType: 6
+    ConsiderationID: 6
+  - TileType: 7
+    ConsiderationID: 6
+  - TileType: 8
+    ConsiderationID: 6
+  - TileType: 9
+    ConsiderationID: 6
+  - TileType: 10
+    ConsiderationID: 6
+  - TileType: 11
+    ConsiderationID: 6
+  - TileType: 12
+    ConsiderationID: 6
+  commonTileConsiderationID: 0

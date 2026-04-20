@@ -281,7 +281,7 @@ namespace Terramorphers
                 command.Tile.Index, 
                 100, 
                 tile => tile.GetMoveCost(),
-                tile => !tile.IsPassable() || (tile == command.Tile)).ToList(); 
+                tile => !tile.IsPassable() || (tile == command.Tile) ).ToList(); 
             foreach (var item in movableTiles)
             {
                 string key = string.Format(BlackBoardConstant.ENTITY_TO_TILE_DISTANCE_KEY, command.Name);

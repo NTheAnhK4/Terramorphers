@@ -82,6 +82,7 @@ namespace Terramorphers
 
             if (currentStageID >= levelMetaData.LevelStageDatas.Count)
             {
+                _levelUseCase.SetCurrentStageOfLevel(currentLevelID, currentStageID);
                 currentLevelID++;
                 if (currentLevelID >= _levelDatabase.DataCount) return;
                 currentStageID = 0;

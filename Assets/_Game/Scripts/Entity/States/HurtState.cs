@@ -42,7 +42,8 @@ namespace Terramorphers.States
                     0, 
                     damage);
             }
-            entity.DataCache.RemainHP.Value -= damage;
+
+            entity.DataCache.RemainHP.Value = Mathf.Max(0, entity.DataCache.RemainHP.Value - damage);
            
             if (entity.DataCache.RemainHP.Value <= 0)
             {

@@ -18,6 +18,11 @@ namespace GameCore.Domain.Stats
             Stats.Mediator.AddModifier(modifier, onRemoved);
         }
 
+        public void RemoveModifier(StatModifier modifier)
+        {
+            Stats.Mediator.RemoveModifier(modifier);
+        }
+
         public void HandeEvent<T> (T  owner, EEffectTriggerType trigger) => Stats?.Mediator.HandleEvent(owner, trigger);
 
         public void Update() => Stats?.Mediator.Update();

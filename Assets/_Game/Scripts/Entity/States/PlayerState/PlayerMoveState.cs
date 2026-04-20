@@ -48,6 +48,7 @@ namespace Terramorphers.States.PlayerState
             if (moveTiles == null || moveTiles.Count <= 1) return;
             var movePath = moveTiles.Select(t => t.Transform.position).ToArray();
             List<Vector3> directionList = new();
+            entity.CurrentTile.RemoveEffect(entity);
             for(int i = 0; i < moveTiles.Count - 1; ++i)
             {
                 Vector3 direction = moveTiles[i + 1].Transform.position - moveTiles[i].Transform.position;
@@ -63,7 +64,7 @@ namespace Terramorphers.States.PlayerState
             {
               
                 //entity.RemainStamina -= moveTiles.Skip(1).Select(t => t.GetMoveCost()).Sum();
-             
+                entity.CurrentTile.ApplyEffect(entity);
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
             });
         }

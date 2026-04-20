@@ -27,10 +27,9 @@ namespace UtilityAI
         private readonly int tauntAnimHash = Animator.StringToHash("Taunt");
 
 
-        protected ICommandPublisher _publisher;
+       
 
-
-        public ICommandPublisher Publisher => _publisher;
+    
 
 
         protected ThinkingState _thinkingState;
@@ -51,10 +50,10 @@ namespace UtilityAI
 
         [Inject]
         public void Construct(
-            ICommandPublisher publisher, ICommandSubscribable commandSubscribable
+            ICommandSubscribable commandSubscribable
         )
         {
-            _publisher = publisher;
+          
             
         }
 

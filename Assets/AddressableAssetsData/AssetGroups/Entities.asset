@@ -22,6 +22,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 775a4d7c41fd7a948a5484082867dc2f
+    m_Address: SatyrBerserker
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: add556da2cfcea340a7210f4453b152d
+    m_Address: SatyrFighter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f033d961976316f4c8acf5b1c951ec58
     m_Address: SatyrRaider
     m_ReadOnly: 0

@@ -7,6 +7,7 @@ using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using R3;
 using Sirenix.OdinInspector;
+using Terramorphers.Command;
 using Terramorphers.Skill;
 using Terramorphers.States;
 
@@ -14,6 +15,7 @@ using UnityEngine;
 
 using UtilityAI.DataCache;
 using VContainer;
+using VitalRouter;
 
 namespace Terramorphers
 {
@@ -34,6 +36,9 @@ namespace Terramorphers
         [Inject] protected QuestUseCase _questUseCase;
 
         [Inject] protected SkillSystem _skillSystem;
+        [Inject] protected ICommandPublisher _publisher;
+
+        public ICommandPublisher Publisher => _publisher;
 
 
         public SkillSystem SkillSystem => _skillSystem;
@@ -65,6 +70,7 @@ namespace Terramorphers
 
         public virtual void PreEnter()
         {
+            _publisher.PublishAsync(new EntityTileDistCommand() { Tile = CurrentTile, Name = Name });
             _skillSystem.OnEnter();
             statsSystem.HandeEvent(this,EEffectTriggerType.EnterTurn);
             ResetDataCache();
@@ -78,6 +84,7 @@ namespace Terramorphers
 
         public virtual void OnExit()
         {
+            if(this != null)  _publisher.PublishAsync(new EntityTileDistCommand() { Tile = CurrentTile, Name = Name });
             statsSystem.Update();
             dataCache.RemainMana.Value = statsSystem.Stats.Mana;
             dataCache.RemainStamina.Value = statsSystem.Stats.Stamina;

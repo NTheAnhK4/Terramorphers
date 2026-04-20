@@ -52,6 +52,7 @@ namespace Terramorphers
             }
             _entities.Clear();
             teamMembersDict.Clear();
+            
             Player = null;
         }
 
@@ -78,8 +79,11 @@ namespace Terramorphers
 
         public void RemoveEntity(TerramorphersEntity entity)
         {
+            
+            bool isCurrent = false;
             if (currentEntityID >= 0 && currentEntityID < _entities.Count && _entities[currentEntityID] == entity)
             {
+                isCurrent = true;
                 _entities[currentEntityID].OnExit();
             }
 
@@ -93,6 +97,20 @@ namespace Terramorphers
             teamMembersDict[entity.TeamID]--;
             if (teamMembersDict[entity.TeamID] == 0) teamMembersDict.Remove(entity.TeamID);
             if(teamMembersDict.Count <= 1) CheckEndGame();
+            else
+            {
+                if (!isCurrent) return;
+                if (currentEntityID >= _entities.Count)
+                {
+                    currentEntityID = 0;
+                    currentRound++;
+                    _questUseCase.IncreaseQuestProgress(EQuestActionType.Limit,EQuestTargetType.MatchRounds,0);
+                    _publisher.PublishAsync(new IncreaseRoundCommand() { NewRound = currentRound });
+                }
+
+
+                EnterEntityAsync().Forget();
+            }
         }
         
 
@@ -118,8 +136,8 @@ namespace Terramorphers
             _publisher.PublishAsync(new IncreaseRoundCommand() { NewRound = currentRound });
            
             EnterEntityAsync().Forget();
-
-
+          
+            _bag = new DisposableBag();
             _subscribable.Subscribe<EndEntityTurnCommand>(EndCurrentEntityTurn).AddTo(ref _bag);
         }
 
@@ -141,17 +159,17 @@ namespace Terramorphers
 
         private void EndCurrentEntityTurn(EndEntityTurnCommand command, PublishContext context)
         {
+            
+            
+           
             if (currentEntityID >= 0 &&
                 currentEntityID < _entities.Count &&
                 _entities[currentEntityID] != null)
             {
-                _publisher.PublishAsync(new EntityTileDistCommand()
-                {
-                    Tile = _entities[currentEntityID].CurrentTile,
-                    Name = _entities[currentEntityID].Name
-                });
+                
                 _entities[currentEntityID].OnExit();
             }
+            
 
             currentEntityID++;
             if (currentEntityID >= _entities.Count)

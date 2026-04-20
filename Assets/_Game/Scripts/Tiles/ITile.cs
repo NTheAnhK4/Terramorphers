@@ -21,6 +21,8 @@ namespace Terramorphers
         Context Context { get; protected set; }
 
         void Init(TileMetadata tileMetadata);
+        void ApplyEffect(TerramorphersEntity entity);
+        void RemoveEffect(TerramorphersEntity entity);
 
     }
 

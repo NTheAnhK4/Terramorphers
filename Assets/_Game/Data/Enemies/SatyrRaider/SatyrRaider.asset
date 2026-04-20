@@ -40,29 +40,29 @@ MonoBehaviour:
   endTurnActionConsiderationID: 5
   tileConsiderationDatas:
   - TileType: 0
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 1
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 2
-    ConsiderationID: -1
+    ConsiderationID: 7
   - TileType: 3
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 4
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 5
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 6
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 7
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 8
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 9
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 10
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 11
-    ConsiderationID: -1
+    ConsiderationID: 6
   - TileType: 12
-    ConsiderationID: -1
+    ConsiderationID: 6
   commonTileConsiderationID: 0

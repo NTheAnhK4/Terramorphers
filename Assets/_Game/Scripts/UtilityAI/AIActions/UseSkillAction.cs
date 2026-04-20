@@ -57,7 +57,9 @@ namespace UtilityAI.AIActions
                     TargetTile = target.CurrentTile
                 });
                 await entity.UseSkillState.Execute(context);
+                if (entity == null) return;
                 await UniTask.Delay(100, cancellationToken: entity.GetCancellationTokenOnDestroy());
+                if (entity == null) return;
                 entity.ChangeState(entity.ThinkingState);
             }
             catch(OperationCanceledException){}

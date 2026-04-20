@@ -1,5 +1,3 @@
-using CoreGame;
-
 namespace Terramorphers
 {
     public class BasicTile : BaseTile

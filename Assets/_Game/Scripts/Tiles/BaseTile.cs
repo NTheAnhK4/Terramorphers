@@ -6,8 +6,7 @@ using UnityEngine;
 using DG.Tweening;
 using GameCore.Domain.Tile;
 using GameCore.Utility;
-using UnityEngine.UI;
-using UtilityAI;
+using UnityEngine.Serialization;
 
 namespace Terramorphers
 {
@@ -27,13 +26,29 @@ namespace Terramorphers
 
         [SerializeField, TabGroup("Config")] protected Color movableColor, 
             skillApplicableColor, enemyTargetSkillColor, allyTargetSkillColor, 
-            tileTargetSkillColor, selftTargetSkillColor;
+            tileTargetSkillColor;
+
+        [FormerlySerializedAs("selftTargetSkillColor")] [SerializeField, TabGroup("Config")] protected Color selfTargetSkillColor;
         private ETileState _currentState;
        [TabGroup("Debug"), SerializeField] private Context _context;
-      
+       public override void LoadComponent()
+       {
+           base.LoadComponent();
+           if(amountText == null) amountText = transform.Find("Modal/Canvas").GetComponentInChildren<TextMeshProUGUI>();
+           if(interactableSR == null) interactableSR = transform.Find("Modal/Interactable").GetComponent<SpriteRenderer>();
+           if(tileSkillEffect == null) tileSkillEffect = transform.Find("Modal/Effect").GetComponent<DOTweenAnimation>();
+           if (tileSkillSpriteRenderer == null) tileSkillSpriteRenderer = transform.Find("Modal/Effect").GetComponent<SpriteRenderer>();
+           ColorUtility.TryParseHtmlString("#0CFF00", out movableColor);
+           ColorUtility.TryParseHtmlString("#FFFFFF", out skillApplicableColor);
+           ColorUtility.TryParseHtmlString("#FF0000", out enemyTargetSkillColor);
+           ColorUtility.TryParseHtmlString("#00FFFB", out allyTargetSkillColor);
+           ColorUtility.TryParseHtmlString("#FF0000", out tileTargetSkillColor);
+           ColorUtility.TryParseHtmlString("#00FFFB", out selfTargetSkillColor);
+           
+       }
 
 
-        ETileState ITile.CurrentState
+       ETileState ITile.CurrentState
         {
             get => _currentState;
             set => _currentState = value;
@@ -87,9 +102,9 @@ namespace Terramorphers
                     SetSkillTileEffect(allyTargetSkillColor);
                     break;
                 case ETileState.SelfTargetSkill:
-                    interactableSR.color = selftTargetSkillColor;
+                    interactableSR.color = selfTargetSkillColor;
                     interactableSR.gameObject.SetActive(true);
-                    SetSkillTileEffect(selftTargetSkillColor);
+                    SetSkillTileEffect(selfTargetSkillColor);
                     break;
             }
         }
@@ -116,6 +131,16 @@ namespace Terramorphers
             
             TileMetadata = tileMetadata;
             CurrentOccupant = null;
+        }
+
+        public virtual void ApplyEffect(TerramorphersEntity entity)
+        {
+           
+        }
+
+        public virtual void RemoveEffect(TerramorphersEntity entity)
+        {
+           
         }
 
 

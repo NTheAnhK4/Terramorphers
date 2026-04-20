@@ -79,5 +79,93 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2077671866358935052, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 139013379908575360}
   m_SourcePrefab: {fileID: 100100000, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+--- !u!212 &741889139800632923 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6047573181115148412, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1398979319617761135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5389928864630335816, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2586396559769840508 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8809685247166442843, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &2601961534858669520 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9059823819643841527, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5004533226482493483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2077671866358935052, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &139013379908575360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004533226482493483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1df8647feb274015bebfad0857c4e47b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: _context
+      Entry: 6
+      Data: 
+  amountText: {fileID: 1398979319617761135}
+  interactableSR: {fileID: 741889139800632923}
+  tileSkillEffect: {fileID: 2586396559769840508}
+  tileSkillSpriteRenderer: {fileID: 2601961534858669520}
+  movableColor: {r: 0.047058824, g: 1, b: 0, a: 1}
+  skillApplicableColor: {r: 1, g: 1, b: 1, a: 1}
+  enemyTargetSkillColor: {r: 1, g: 0, b: 0, a: 1}
+  allyTargetSkillColor: {r: 0, g: 1, b: 0.9843137, a: 1}
+  tileTargetSkillColor: {r: 1, g: 0, b: 0, a: 1}
+  selfTargetSkillColor: {r: 0, g: 1, b: 0.9843137, a: 1}
+  skillEffectData:
+    targetType: 0
+    effectType: 0
+    statsType: 0
+    operationType: 0
+    value: 0
+    turnApply: 0
+    effect:
+      rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Codice.CM.Common.Checkin.Partial;
 
 namespace GameCore.Domain.Stats
 {
@@ -18,6 +19,18 @@ namespace GameCore.Domain.Stats
                   modifiers.Remove(modifier);
                   Queries -= modifier.Handle;
               };
+          }
+
+          public void RemoveModifier(StatModifier value)
+          {
+              var node = modifiers.First;
+              while (node != null)
+              {
+                  var modifier = node.Value;
+                  var nextNode = node.Next;
+                  if (modifier == value) modifier.Dispose();
+                  node = nextNode;
+              }
           }
           public void HandleEvent<T>(T owner, EEffectTriggerType trigger)
           {

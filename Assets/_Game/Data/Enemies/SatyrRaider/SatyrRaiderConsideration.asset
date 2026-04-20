@@ -679,3 +679,35 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
       Value: 0
+  - Index: 6
+    Text: 0.5
+    OperationElements:
+    - OperationType: 0
+      CurveEvaluator:
+        Index: 0
+        ContextType: 0
+        ParamContextType: 0
+        Key: 
+        Curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      Value: 0.5
+  - Index: 7
+    Text: 0.6
+    OperationElements:
+    - OperationType: 0
+      CurveEvaluator:
+        Index: 0
+        ContextType: 0
+        ParamContextType: 0
+        Key: 
+        Curve:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+      Value: 0.6

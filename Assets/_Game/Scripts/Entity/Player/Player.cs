@@ -20,7 +20,7 @@ namespace Terramorphers
 
         private InputManager _inputManager;
        
-        private ICommandPublisher _publisher;
+       
         private ICommandSubscribable _subscribable;
         private SkillUseCase _skillUseCase;
         
@@ -45,7 +45,7 @@ namespace Terramorphers
         #region Properties
 
       
-        public ICommandPublisher Publisher => _publisher;
+       
 
         public ICommandSubscribable Subscribable => _subscribable;
 
@@ -70,12 +70,12 @@ namespace Terramorphers
 
         [Inject]
         public void Construct(InputManager inputManager, 
-            ICommandPublisher publisher, ICommandSubscribable subscribable
+           ICommandSubscribable subscribable
             ,SkillUseCase skillUseCase)
         {
             _inputManager = inputManager;
           
-            _publisher = publisher;
+         
             _subscribable = subscribable;
             _skillUseCase = skillUseCase;
         }

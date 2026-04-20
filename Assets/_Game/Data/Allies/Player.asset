@@ -18,7 +18,7 @@ MonoBehaviour:
   _entityStats:
     MaxHP: 100
     Mana: 100
-    Stamina: 3
+    Stamina: 2
     Range: 0
     PhysicalDamage: 0
     MagicalDamage: 0

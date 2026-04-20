@@ -17,9 +17,9 @@ MonoBehaviour:
     value:
       levelName: Spore Cave
       levelSprite: {fileID: 324201282, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 21300000, guid: 2075d41462ed16e49a7edd41b25bb7ca, type: 3}
       levelStageDatas:
       - stageMap: {fileID: 4900000, guid: 91b7e80789825a048b12fce752178935, type: 3}
-        background: {fileID: 21300000, guid: 2075d41462ed16e49a7edd41b25bb7ca, type: 3}
         enemyIDs: 01000000
         stageStarObjectives:
         - actionType: 0
@@ -43,49 +43,141 @@ MonoBehaviour:
           targetID: 0
           questID: -3
           description: Match duration is less than 4({0}) rounds
-      - stageMap: {fileID: 0}
-        background: {fileID: 21300000, guid: 2075d41462ed16e49a7edd41b25bb7ca, type: 3}
+      - stageMap: {fileID: 4900000, guid: 93cb3fce697af5747a5592de364dc4c0, type: 3}
         enemyIDs: 010000000100000001000000
         stageStarObjectives:
         - actionType: 0
-          targetType: 0
-          comparisonType: 0
-          requiredAmount: 0
+          targetType: 1
+          comparisonType: 2
+          requiredAmount: 1
           targetID: 0
-          questID: 0
-          description: 
+          questID: -1
+          description: Defeat all enemies
+        - actionType: 1
+          targetType: 3
+          comparisonType: 0
+          requiredAmount: 48
+          targetID: 0
+          questID: -2
+          description: Take less than 25 ({0}) damage
+        - actionType: 1
+          targetType: 2
+          comparisonType: 0
+          requiredAmount: 5
+          targetID: 0
+          questID: -3
+          description: Match duration is less than 4({0}) rounds
+      - stageMap: {fileID: 4900000, guid: 1c2977da90ca25b4ba0b421510967140, type: 3}
+        enemyIDs: 0100000002000000
+        stageStarObjectives:
+        - actionType: 0
+          targetType: 1
+          comparisonType: 2
+          requiredAmount: 1
+          targetID: 0
+          questID: -1
+          description: Defeat all enemies
+        - actionType: 1
+          targetType: 3
+          comparisonType: 0
+          requiredAmount: 44
+          targetID: 0
+          questID: -2
+          description: Take less than 25 ({0}) damage
+        - actionType: 1
+          targetType: 2
+          comparisonType: 0
+          requiredAmount: 5
+          targetID: 0
+          questID: -3
+          description: Match duration is less than 4({0}) rounds
+      - stageMap: {fileID: 4900000, guid: 7675bb145350efd4793e56381feaac2d, type: 3}
+        enemyIDs: 0100000003000000
+        stageStarObjectives:
+        - actionType: 0
+          targetType: 1
+          comparisonType: 2
+          requiredAmount: 1
+          targetID: 0
+          questID: -1
+          description: Defeat all enemies
+        - actionType: 1
+          targetType: 3
+          comparisonType: 0
+          requiredAmount: 207
+          targetID: 0
+          questID: -2
+          description: Take less than 25 ({0}) damage
+        - actionType: 1
+          targetType: 2
+          comparisonType: 0
+          requiredAmount: 19
+          targetID: 0
+          questID: -3
+          description: Match duration is less than 4({0}) rounds
+      - stageMap: {fileID: 4900000, guid: 33317e8987534274cb48af7bfdc6070d, type: 3}
+        enemyIDs: 010000000100000001000000
+        stageStarObjectives:
+        - actionType: 0
+          targetType: 1
+          comparisonType: 2
+          requiredAmount: 1
+          targetID: 0
+          questID: -1
+          description: Defeat all enemies
+        - actionType: 1
+          targetType: 3
+          comparisonType: 0
+          requiredAmount: 69
+          targetID: 0
+          questID: -2
+          description: Take less than 25 ({0}) damage
+        - actionType: 1
+          targetType: 2
+          comparisonType: 0
+          requiredAmount: 7
+          targetID: 0
+          questID: -3
+          description: Match duration is less than 4({0}) rounds
   - key: 1
     value:
       levelName: Ice Abyss
       levelSprite: {fileID: 1334177794, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 2
     value:
       levelName: Ice Maw
       levelSprite: {fileID: 1190559884, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 3
     value:
       levelName: Root Den
       levelSprite: {fileID: -1312561720, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 4
     value:
       levelName: Rune Cavern
       levelSprite: {fileID: -1962128735, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 5
     value:
       levelName: Snow Den
       levelSprite: {fileID: 676408848, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 6
     value:
       levelName: Spore Cave
       levelSprite: {fileID: 324201282, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
   - key: 7
     value:
       levelName: Stone Gate
       levelSprite: {fileID: -113159966, guid: 9581f3beb60556a41b90ac7e2b173a34, type: 3}
+      backgroundSprite: {fileID: 0}
       levelStageDatas: []
