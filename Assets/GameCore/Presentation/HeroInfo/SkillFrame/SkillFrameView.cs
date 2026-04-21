@@ -14,10 +14,10 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
     {
         [SerializeField] private Image skillImage;
         [SerializeField] private Image skillFrame;
-        [FormerlySerializedAs("unselectImage")] [SerializeField] private Image unpreviewImage;
+        [SerializeField] private Image unpreviewImage;
         [SerializeField] private Button selectBtn;
         [SerializeField] private Image selectImage;
-
+        [SerializeField] private Image lockImage;
         public Image SelectImage => selectImage;
 
 
@@ -26,7 +26,7 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
         {
             selectBtn.SubscribeToCommand(state.PreviewSkillCommand).AddTo(this);
             Setup(state.SkillMetadata);
-            
+            state.IsLock.Subscribe(SetLock).AddTo(this);
             return UniTask.CompletedTask;
         }
 
@@ -35,6 +35,8 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
             skillImage.sprite = skillMetadata.SkillSprite;
         }
 
-       
+        private void SetLock(bool isLock) => lockImage.gameObject.SetActive(isLock);
+
+
     }
 }

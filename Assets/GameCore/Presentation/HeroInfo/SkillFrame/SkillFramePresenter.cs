@@ -1,7 +1,9 @@
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Presentation.Skill;
+using GameCore.Usecase.Skill;
 using R3;
+using VContainer;
 using WEngine.MVP;
 
 namespace GameCore.Presentation.HeroInfo.SkillFrame
@@ -15,6 +17,7 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
         private SkillFrameViewState _state;
         private ReactiveCommand<int> _selectSkillCommand;
         private ReactiveCommand<int> _unselectSkillCommand;
+        [Inject] private SkillUseCase _skillUseCase;
        
         public SkillFramePresenter(SkillFrameView view, SkillMetadata skillMetadata, 
             ReactiveCommand<int> previewSkillCommand, int id, SkillInfoPresenter skillInfoPresenter,
@@ -36,21 +39,20 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
             state.PreviewSkillCommand.Subscribe(_ => _previewSkillCommand.Execute(_id)).AddTo(view);
             _selectSkillCommand.Subscribe(SelectSkill).AddTo(view);
             _unselectSkillCommand.Subscribe(UnselectSkill).AddTo(view);
+            state.IsLock.Value = !_skillUseCase.IsSkillUnlock(_skillMetadata.SkillID);
             return UniTask.CompletedTask;
         }
 
         private void PreviewSkill(int frameID)
         {
+            if(_state.IsLock.Value) View.UnpreviewImage.gameObject.SetActive(true);
+            else View.UnpreviewImage.gameObject.SetActive(frameID != _id);
             if (frameID == _id)
             {
                 _skillInfoPresenter.SkillMetadata.Value = _skillMetadata;
                 _skillInfoPresenter.ShowSkillInfo.Value = true;
-                View.UnpreviewImage.gameObject.SetActive(false);
             }
-            else
-            {
-                View.UnpreviewImage.gameObject.SetActive(true);
-            }
+            
            
         }
 

@@ -9,6 +9,7 @@ namespace GameCore.Presentation.HeroInfo.SkillFrame
         public ReactiveCommand PreviewSkillCommand { get; } = new ReactiveCommand();
        
         public SkillMetadata SkillMetadata;
-       
+        public ReactiveProperty<bool> IsLock { get; } = new ReactiveProperty<bool>();
+
     }
 }

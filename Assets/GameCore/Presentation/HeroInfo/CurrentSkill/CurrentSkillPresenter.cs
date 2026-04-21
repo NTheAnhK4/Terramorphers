@@ -21,6 +21,7 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
         private SkillModel _skillModel;
         private ReactiveCommand<int> _selectCommand;
         private ReactiveCommand<int> _unselectCommand;
+       
 
         [Inject]
         public void Constructor(ISkillRepository skillRepository, SkillUseCase skillUseCase)
@@ -63,6 +64,7 @@ namespace GameCore.Presentation.HeroInfo.CurrentSkill
 
         private void OnChooseSkill(Unit _)
         {
+            if (!_skillUseCase.IsSkillUnlock(currentSelectSkill)) return;
             foreach (var skillMetadata in _state.SkillMetadatas)
             {
                 if(skillMetadata.Value == null) continue;
