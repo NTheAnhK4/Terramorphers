@@ -17,6 +17,8 @@ using GameCore.Presentation.Loading;
 using GameCore.Presentation.Lobby;
 using GameCore.Presentation.LoseGame;
 using GameCore.Presentation.Menu;
+using GameCore.Presentation.Panel;
+
 using GameCore.Presentation.StageObjective;
 using GameCore.Presentation.WinGame;
 using R3;
@@ -151,11 +153,11 @@ namespace GameCore.Presentation.Shared
             return presenter;
         }
 
-        public async UniTask<LobbyPresenter> ShowLobbyScreen()
+        public async UniTask<LobbyPresenter> ShowLobbyScreen(PanelActivityPresenter panelActivityPresenter = null)
         {
             var presenter = await ShowScreenPresenterAsync<LobbyPresenter, LobbyScreen, LobbyViewState>(
                 "LobbyScreen",
-                screen => new LobbyPresenter(screen), false);
+                screen => new LobbyPresenter(screen, panelActivityPresenter), false);
             return presenter;
         }
 
@@ -216,12 +218,30 @@ namespace GameCore.Presentation.Shared
             return presentor;
         }
 
-        public async UniTask<HeroInfoPresenter> ShowHeroInfoScreen()
+        public async UniTask<HeroInfoPresenter> ShowHeroInfoScreen(PanelActivityPresenter panelActivityPresenter)
         {
             var presenter = await ShowScreenPresenterAsync<HeroInfoPresenter, HeroInfoScreen, HeroInfoViewState>(
                 "HeroInfoScreen",
-                screen => new HeroInfoPresenter(screen));
+                screen => new HeroInfoPresenter(screen, panelActivityPresenter));
             return presenter;
+        }
+        public async UniTask<PanelActivityPresenter> ShowPanelActivity(bool isShow)
+        {
+            if (isShow)
+            {
+                var presenter = await ShowActivityPresenterAsync<PanelActivityPresenter, PanelActivity, PanelActivityViewState>(
+                    "PanelActivity",
+                    activity => new PanelActivityPresenter(activity));
+                return presenter;
+            }
+            else
+            {
+                if (_activityContainer.TryGet("PanelActivity", out var viewRef))
+                    await _activityContainer.HideAsync("PanelActivity");
+                return null;
+            }
+          
+          
         }
     }
 

@@ -13,6 +13,7 @@ namespace GameCore.Presentation.HeroInfo
 {
     public class HeroInfoScreen : Screen<HeroInfoViewState>
     {
+      
         [SerializeField] private Button chooseSkillBtn;
         [SerializeField] private Button exitBtn;
         [SerializeField] private SkillFrameView skillFrameViewPrefab;
@@ -23,7 +24,7 @@ namespace GameCore.Presentation.HeroInfo
 
         public CurrentSkillView CurrentSkillView => currentSkillView;
 
-        public override UniTask InitializeState(HeroInfoViewState state, Memory<object> args)
+        public override async UniTask InitializeState(HeroInfoViewState state, Memory<object> args)
         {
             skillInfoView.gameObject.SetActive(false);
             exitBtn.SubscribeToCommand(state.ExitCommand).AddTo(this);
@@ -31,9 +32,12 @@ namespace GameCore.Presentation.HeroInfo
             state.SelectSkillCommand.Subscribe(SelectSkill).AddTo(this);
             state.UnselectSkillCommand.Subscribe(UnselectSkill).AddTo(this);
             state.PreviewSkillCommand.Subscribe(SelectSkill).AddTo(this);
-            return UniTask.CompletedTask;
+            
+            state.HidePanelCommand.Execute(default);
+         
         }
 
+       
         public SkillFrameView AddSkillFrameView() => Instantiate(skillFrameViewPrefab, skillFrameHolder);
 
         private void SelectSkill(int _)

@@ -26,6 +26,7 @@ namespace GameCore.Presentation.Lobby{
         {
             state.CurrentIndex.Subscribe(ScrollTo).AddTo(this);
             heroInfoBtn.SubscribeToCommand(state.ShowHeroInfo).AddTo(this);
+            state.HidePanelCommand.Execute(default);
             return UniTask.CompletedTask;
         }
 
@@ -35,6 +36,7 @@ namespace GameCore.Presentation.Lobby{
             worldCell.transform.name = levelMetadata.LevelName;
             WorldCellPresenter worldCellPresenter = new WorldCellPresenter(worldCell,levelID, levelMetadata);
             worldCellRects.Add(worldCell.RectTransform);
+          
             return worldCellPresenter;
         }
 

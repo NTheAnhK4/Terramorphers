@@ -1,8 +1,8 @@
 using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
+using GameCore.Presentation.Panel;
 using GameCore.Presentation.Shared;
-using UnityEngine;
 using VContainer;
 using WEngine.MVP;
 using R3;
@@ -14,6 +14,7 @@ namespace GameCore.Presentation.Lobby
         private ILevelDatabase _levelDatabase;
         private IObjectResolver _resolver;
         private TransitionService _transitionService;
+        private PanelActivityPresenter _panelActivityPresenter;
 
         [Inject]
         public void Constructor(ILevelRepository levelRepository, IObjectResolver resolver,
@@ -23,15 +24,16 @@ namespace GameCore.Presentation.Lobby
             _resolver = resolver;
             _transitionService = transitionService;
         }
-        public LobbyPresenter(LobbyScreen view) : base(view)
+        public LobbyPresenter(LobbyScreen view, PanelActivityPresenter panelActivityPresenter) : base(view)
         {
+            _panelActivityPresenter = panelActivityPresenter;
         }
 
         protected override UniTask Initialize(Memory<object> args, LobbyViewState state, LobbyScreen view)
         {
             base.Initialize(args, state, view);
             _levelDatabase = _levelRepository.Get();
-            state.ShowHeroInfo.Subscribe(ShowHeroInfo).AddTo(view);
+            state.ShowHeroInfo.Subscribe(_ =>ShowHeroInfo().Forget()).AddTo(view);
             
             for (int i = 0; i < _levelDatabase.DataCount; ++i)
             {
@@ -43,13 +45,23 @@ namespace GameCore.Presentation.Lobby
             }
 
             state.CurrentIndex.Value = 0;
+            state.HidePanelCommand.Subscribe(_ => HidePanel().Forget()).AddTo(view);
            
             return UniTask.CompletedTask;
         }
 
-        private void ShowHeroInfo(Unit _)
+        private async UniTask HidePanel()
         {
-            _transitionService.ShowHeroInfoScreen().Forget();
+            if (_panelActivityPresenter == null) return;
+            await  _panelActivityPresenter.HidePanel();
+            await _transitionService.ShowPanelActivity(false);
+        }
+
+        private async UniTask ShowHeroInfo()
+        {
+            var panelPresenter = await _transitionService.ShowPanelActivity(true);
+            await panelPresenter.ShowPanel();
+            _transitionService.ShowHeroInfoScreen(panelPresenter).Forget();
         }
     }
 }

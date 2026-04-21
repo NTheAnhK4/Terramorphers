@@ -4,6 +4,7 @@ using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Presentation.HeroInfo.CurrentSkill;
 using GameCore.Presentation.HeroInfo.SkillFrame;
+using GameCore.Presentation.Panel;
 using GameCore.Presentation.Shared;
 using GameCore.Presentation.Skill;
 using R3;
@@ -17,7 +18,7 @@ namespace GameCore.Presentation.HeroInfo
         private IObjectResolver _resolver;
         private ISkillRepository _skillRepository;
         private TransitionService _transitionService;
-        
+        private PanelActivityPresenter _panelActivityPresenter;
        
 
         [Inject]
@@ -27,14 +28,15 @@ namespace GameCore.Presentation.HeroInfo
             _skillRepository = skillRepository;
             _transitionService = transitionService;
         }
-        public HeroInfoPresenter(HeroInfoScreen view) : base(view)
+        public HeroInfoPresenter(HeroInfoScreen view, PanelActivityPresenter panelPresenter) : base(view)
         {
+            _panelActivityPresenter = panelPresenter;
         }
 
-        protected override UniTask Initialize(Memory<object> args, HeroInfoViewState state, HeroInfoScreen view)
+        protected override async UniTask Initialize(Memory<object> args, HeroInfoViewState state, HeroInfoScreen view)
         {
             base.Initialize(args, state, view);
-            state.ExitCommand.Subscribe(OnExit).AddTo(view);
+            state.ExitCommand.Subscribe(_ =>OnExit().Forget()).AddTo(view);
             var skillInfoPresenter = new SkillInfoPresenter(view.SkillInfoView);
             _resolver.Inject(skillInfoPresenter);
             skillInfoPresenter.Initialize();
@@ -59,12 +61,24 @@ namespace GameCore.Presentation.HeroInfo
                 state.SelectSkillCommand, state.UnselectSkillCommand);
             _resolver.Inject(currentSkillPresenter);
             currentSkillPresenter.Initialize();
-            return UniTask.CompletedTask;
+
+
+            state.HidePanelCommand.Subscribe(_ =>HidePanel().Forget()).AddTo(view);
+            
         }
 
-        private void OnExit(Unit _)
+        private async UniTask HidePanel()
         {
-            _transitionService.ShowLobbyScreen().Forget();
+            if (_panelActivityPresenter == null) return;
+             await _panelActivityPresenter.HidePanel();
+            await _transitionService.ShowPanelActivity(false);
+        }
+
+        private async UniTask OnExit()
+        {
+            var panelPresenter = await _transitionService.ShowPanelActivity(true);
+            await panelPresenter.ShowPanel();
+            _transitionService.ShowLobbyScreen(panelPresenter).Forget();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace GameCore.Presentation.HeroInfo
         public ReactiveCommand<int> PreviewSkillCommand { get; } = new ReactiveCommand<int>();
         public ReactiveCommand<int> SelectSkillCommand { get; } = new();
         public ReactiveCommand<int> UnselectSkillCommand { get; } = new();
+        public ReactiveCommand HidePanelCommand { get; } = new();
     }
 
 }

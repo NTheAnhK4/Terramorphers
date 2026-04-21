@@ -11,5 +11,6 @@ namespace GameCore.Presentation.Lobby
     {
         public ReactiveProperty<int> CurrentIndex { get; } = new ReactiveProperty<int>();
         public ReactiveCommand ShowHeroInfo { get; } = new ReactiveCommand();
+        public ReactiveCommand HidePanelCommand { get; } = new ReactiveCommand();
     }
 }
