@@ -694,6 +694,7 @@ MonoBehaviour:
   worldHolder: {fileID: 8710525334996475065}
   scrollRect: {fileID: 2003197292172562189}
   heroInfoBtn: {fileID: 6862672064517416748}
+  goldView: {fileID: 3888086160659472408}
 --- !u!1 &6033212235242879927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,3 +1404,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1132160577486178690, guid: cbad4d4c9aa66574ca7d4c14c9946419, type: 3}
   m_PrefabInstance: {fileID: 1593194553192343394}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3888086160659472408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2587717942257223546, guid: cbad4d4c9aa66574ca7d4c14c9946419, type: 3}
+  m_PrefabInstance: {fileID: 1593194553192343394}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f1aebc7df04769afdfa0b3d313783f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

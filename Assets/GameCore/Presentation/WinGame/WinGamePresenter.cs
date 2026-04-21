@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
 using GameCore.Domain.Level;
@@ -23,18 +24,22 @@ namespace GameCore.Presentation.WinGame
         private int currentLevelID;
         private int currentStageID;
         private int _totalStars;
+        private List<StageRewardItem> _rewards;
+        private IObjectResolver _resolver;
         [Inject]
         public void Constructor(LevelUseCase levelUseCase, ILevelRepository levelRepository,
-            ICommandPublisher publisher, TransitionService transitionService)
+            ICommandPublisher publisher, TransitionService transitionService, IObjectResolver resolver)
         {
             _levelUseCase = levelUseCase;
             _levelRepository = levelRepository;
             _publisher = publisher;
             _transitionService = transitionService;
+            _resolver = resolver;
         }
-        public WinGamePresenter(WinGameModal view, int totalStars) : base(view)
+        public WinGamePresenter(WinGameModal view, int totalStars, List<StageRewardItem> rewards) : base(view)
         {
             _totalStars = totalStars;
+            _rewards = rewards;
         }
 
         protected override UniTask Initialize(Memory<object> args, WinGameViewState state, WinGameModal view)
@@ -47,6 +52,15 @@ namespace GameCore.Presentation.WinGame
             currentStageID = _levelModel.SelectedStage;
             _levelDatabase = _levelRepository.Get();
             state.TotalStars.Value = _totalStars;
+
+          
+            for (int i = 0; i < 4; ++i)
+            {
+                RewardFramePresenter rewardFramePresenter =
+                    new RewardFramePresenter(view.RewardFrameViews[i], i < _rewards.Count ? _rewards[i] : null);
+                _resolver.Inject(rewardFramePresenter);
+                rewardFramePresenter.Initialize();
+            }
             return UniTask.CompletedTask;
         }
 

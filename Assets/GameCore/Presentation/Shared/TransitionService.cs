@@ -9,6 +9,7 @@ using ZBase.UnityScreenNavigator.Core.Modals;
 using ZBase.UnityScreenNavigator.Core.Screens;
 using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
+using System.Collections.Generic;
 using GameCore.Domain.Level;
 using GameCore.Presentation.ChooseStage;
 using GameCore.Presentation.GamePlay;
@@ -186,11 +187,11 @@ namespace GameCore.Presentation.Shared
             }
         }
 
-        public async UniTask<WinGamePresenter> ShowWinGameModal(int totalStars)
+        public async UniTask<WinGamePresenter> ShowWinGameModal(int totalStars, List<StageRewardItem> rewards)
         {
             var presentor = await ShowModalPresenterAsync<WinGamePresenter, WinGameModal, WinGameViewState>(
                 "WinGameModal",
-                modal => new WinGamePresenter(modal, totalStars));
+                modal => new WinGamePresenter(modal, totalStars, rewards));
             return presentor;
         }
 

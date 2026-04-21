@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
+using GameCore.Presentation.Currency.Gold;
 using GameCore.Presentation.HeroInfo.CurrentSkill;
 using GameCore.Presentation.HeroInfo.SkillFrame;
 using GameCore.Presentation.Skill;
@@ -20,6 +21,9 @@ namespace GameCore.Presentation.HeroInfo
         [SerializeField] private Transform skillFrameHolder;
         [SerializeField] private SkillInfoView skillInfoView;
         [SerializeField] private CurrentSkillView currentSkillView;
+        [SerializeField] private GoldView goldView;
+
+        public GoldView GoldView => goldView;
         public SkillInfoView SkillInfoView => skillInfoView;
 
         public CurrentSkillView CurrentSkillView => currentSkillView;

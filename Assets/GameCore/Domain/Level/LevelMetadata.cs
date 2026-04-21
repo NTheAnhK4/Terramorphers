@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using GameCore.Domain.Quest;
+using GameCore.Domain.Reward;
 using GameCore.Domain.Tile;
 
 using Sirenix.OdinInspector;
@@ -21,6 +22,9 @@ namespace GameCore.Domain.Level
         [PreviewField(Height = 50)]
         [SerializeField]
         private Sprite backgroundSprite;
+
+        [HorizontalGroup("Reward")] [SerializeField]
+        private List<StageRewardData> rewardData = new();
         [SerializeField, TableList] private List<LevelStageData> levelStageDatas = new();
 
         public Sprite LevelSprite => levelSprite;
@@ -30,6 +34,8 @@ namespace GameCore.Domain.Level
         public Sprite BackgroundSprite => backgroundSprite;
 
         public IReadOnlyList<LevelStageData> LevelStageDatas => levelStageDatas;
+
+        public IReadOnlyList<StageRewardData> RewardData => rewardData;
     }
 
     [Serializable]
@@ -77,6 +83,32 @@ namespace GameCore.Domain.Level
     public class MapRow
     {
         public List<ETileType> Tiles;
+    }
+
+    [Serializable]
+    public class StageRewardData
+    {
+        [HorizontalGroup("col")]
+        [VerticalGroup("col/row")]
+        [SerializeField] private int minStageRewquired;
+
+        [VerticalGroup("col/row")] [SerializeField]
+        private int requiredStars;
+        
+        [HorizontalGroup("col")][SerializeField] private RewardItemData rewardItemData;
+
+        public int MinStageRewquired => minStageRewquired;
+
+        public RewardItemData RewardItemData => rewardItemData;
+
+        public int RequiredStars => requiredStars;
+    }
+
+    public class StageRewardItem
+    {
+        public ERewardItemType RewardItemType;
+        public int SkillID;
+        public int Amount;
     }
 
 }

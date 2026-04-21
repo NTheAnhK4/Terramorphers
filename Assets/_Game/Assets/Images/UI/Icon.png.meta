@@ -395,6 +395,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: MultiCoin
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 1259
+        width: 125
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8337904190930254cae7872ed68132c7
+      internalID: -794605552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -414,6 +435,7 @@ TextureImporter:
       Icon_2: 1081523772
       List_Icon: 789038312
       Lock_Icon: -849269267
+      MultiCoin: -794605552
       MultiStars: 1602322713
       Pause_Icon: -1609167955
       Skill_Icon: -1344712031

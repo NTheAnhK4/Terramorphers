@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
+using GameCore.Presentation.Currency.Gold;
 using GameCore.Presentation.HeroInfo.CurrentSkill;
 using GameCore.Presentation.HeroInfo.SkillFrame;
 using GameCore.Presentation.Panel;
@@ -64,7 +65,11 @@ namespace GameCore.Presentation.HeroInfo
 
 
             state.HidePanelCommand.Subscribe(_ =>HidePanel().Forget()).AddTo(view);
-            
+
+            var goldPresenter = new GoldPresenter(view.GoldView);
+            _resolver.Inject(goldPresenter);
+            goldPresenter.Initialize();
+
         }
 
         private async UniTask HidePanel()

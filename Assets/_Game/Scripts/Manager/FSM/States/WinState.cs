@@ -1,9 +1,13 @@
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameCore.Domain.Level;
+using GameCore.Domain.Reward;
 using GameCore.Presentation.Shared;
+using GameCore.Usecase.Currency;
 using GameCore.Usecase.Level;
 using GameCore.Usecase.Quest;
+using GameCore.Usecase.Skill;
 using GameCore.Utility.Audio.GameAudio;
 using JSAM;
 using UnityEngine;
@@ -20,14 +24,18 @@ namespace Terramorphers
         private QuestUseCase _questUseCase;
         private LevelModel _levelModel;
         private ILevelDatabase _levelDatabase;
+        private CurrencyUseCase _currencyUseCase;
+        private SkillUseCase _skillUseCase;
         [Inject]
         public void Constructor(TransitionService transitionService, ILevelRepository levelRepository, 
-            LevelUseCase levelUseCase, QuestUseCase questUseCase)
+            LevelUseCase levelUseCase, QuestUseCase questUseCase, CurrencyUseCase currencyUseCase, SkillUseCase skillUseCase)
         {
             _transitionService = transitionService;
             _levelRepository = levelRepository;
             _levelUseCase = levelUseCase;
             _questUseCase = questUseCase;
+            _currencyUseCase = currencyUseCase;
+            _skillUseCase = skillUseCase;
         }
         public override void OnEnter()
         {
@@ -43,8 +51,8 @@ namespace Terramorphers
         private async UniTask EnterAsync()
         {
             int totalStars = GetStars();
-           
-            var winGamePresentor = await _transitionService.ShowWinGameModal(totalStars);
+            List<StageRewardItem> rewardItems = GetReward(totalStars);
+            var winGamePresentor = await _transitionService.ShowWinGameModal(totalStars, rewardItems);
         }
         private void PlayMusic()
         {
@@ -94,6 +102,51 @@ namespace Terramorphers
 
         }
 
+        private List<StageRewardItem> GetReward(int stars)
+        {
+            List<StageRewardItem> result = new();
+            LevelMetadata levelMetadata = _levelDatabase.GetByType(_levelModel.SelectedLevel);
+            int currentStage = _levelModel.SelectedStage;
+            Dictionary<(ERewardItemType, int), int> mergeRewardDict = new();
+            foreach (var stageRewardData in levelMetadata.RewardData)
+            {
+                if (currentStage < stageRewardData.MinStageRewquired) continue;
+                int requiredStars = stageRewardData.RequiredStars;
+                if(stars < requiredStars) continue;
+
+                int amount = stageRewardData.RewardItemData.GetAmount();
+                if(amount == 0) continue;
+                (ERewardItemType, int) key = (stageRewardData.RewardItemData.RewardItemType, stageRewardData.RewardItemData.SkillID);
+                mergeRewardDict.TryAdd(key, 0);
+                mergeRewardDict[key] += amount;
+               
+                
+            }
+
+            foreach (var item in mergeRewardDict)
+            {
+                if (item.Key.Item1 == ERewardItemType.Coin)
+                {
+                    var currencyModel = _currencyUseCase.GetModel();
+                    _currencyUseCase.AddGold(currencyModel, item.Value);
+                }
+                else
+                {
+                    if(_skillUseCase.IsSkillUnlock(item.Key.Item2)) continue;
+                    _skillUseCase.UnlockSkill(item.Key.Item2);
+                }
+                StageRewardItem stageRewardItem = new StageRewardItem()
+                {
+                    RewardItemType = item.Key.Item1,
+                    SkillID = item.Key.Item2,
+                    Amount = item.Value
+                };
+                result.Add(stageRewardItem);
+                if (result.Count == 4) return result;
+            }
+
+            return result;
+        }
         public override void OnExit()
         {
             base.OnExit();

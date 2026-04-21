@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
+using GameCore.Presentation.Currency.Gold;
 using GameCore.Utility;
 using Sirenix.OdinInspector;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace GameCore.Presentation.Lobby{
         [SerializeField, TabGroup("Data")] private WorldCellView worldCellPrefab;
         [SerializeField, TabGroup("Components")]
         private Transform worldHolder;
+        
 
         [SerializeField, TabGroup("Components")]
         private ScrollRect scrollRect;
@@ -21,7 +23,12 @@ namespace GameCore.Presentation.Lobby{
         [SerializeField, TabGroup("Components")]
         private Button heroInfoBtn;
 
+        [SerializeField, TabGroup("Components")]
+        private GoldView goldView;
+
         private List<RectTransform> worldCellRects = new();
+
+        public GoldView GoldView => goldView;
         public override UniTask InitializeState(LobbyViewState state, Memory<object> args)
         {
             state.CurrentIndex.Subscribe(ScrollTo).AddTo(this);

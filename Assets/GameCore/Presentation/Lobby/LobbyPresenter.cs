@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
+using GameCore.Presentation.Currency.Gold;
 using GameCore.Presentation.Panel;
 using GameCore.Presentation.Shared;
 using VContainer;
@@ -46,7 +47,11 @@ namespace GameCore.Presentation.Lobby
 
             state.CurrentIndex.Value = 0;
             state.HidePanelCommand.Subscribe(_ => HidePanel().Forget()).AddTo(view);
-           
+
+
+            var goldPresenter = new GoldPresenter(view.GoldView);
+            _resolver.Inject(goldPresenter);
+            goldPresenter.Initialize();
             return UniTask.CompletedTask;
         }
 

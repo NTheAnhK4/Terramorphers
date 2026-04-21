@@ -34,7 +34,13 @@ namespace GameCore.APIGateway
                 return CreateDefaultModel();
             }
         }
-        protected abstract void SaveToPlayerPref(T model);
+
+        protected virtual void SaveToPlayerPref(T model)
+        {
+            var json = JsonConvert.SerializeObject(model);
+            PlayerPrefs.SetString(PlayerPrefsKey, json);
+            PlayerPrefs.Save();
+        }
         protected abstract T CreateDefaultModel();
     }
 }

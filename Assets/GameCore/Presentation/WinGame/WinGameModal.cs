@@ -7,18 +7,22 @@ using UnityEngine;
 using WEngine.MVP;
 using UnityEngine.UI;
 using R3;
+using Sirenix.OdinInspector;
+
 namespace GameCore.Presentation.WinGame
 {
     
     
     public class WinGameModal : Modal<WinGameViewState>
     {
-        [SerializeField] private Button menuBtn;
-        [SerializeField] private Button nextBtn;
-        [SerializeField] private float showStarDuration = .5f;
-        [SerializeField] private List<Image> starOffs = new();
-        [SerializeField] private List<Image> starOns = new();
-        
+        [SerializeField, TabGroup("Components")] private Button menuBtn;
+        [SerializeField, TabGroup("Components")] private Button nextBtn;
+        [SerializeField, TabGroup("Config")] private float showStarDuration = .5f;
+        [SerializeField, TabGroup("Star")] private List<Image> starOffs = new();
+        [SerializeField, TabGroup("Star")] private List<Image> starOns = new();
+        [SerializeField, TabGroup("Rewards")] private List<RewardFrameView> rewardFrameViews = new();
+
+        public List<RewardFrameView> RewardFrameViews => rewardFrameViews;
         public override UniTask InitializeState(WinGameViewState state, Memory<object> args)
         {
             menuBtn.SubscribeToCommand(state.ToMenuCommand).AddTo(this);

@@ -1819,6 +1819,7 @@ MonoBehaviour:
   skillFrameHolder: {fileID: 5115125996712112214}
   skillInfoView: {fileID: 659990984139413140}
   currentSkillView: {fileID: 2133292624094731625}
+  goldView: {fileID: 4119976560305354965}
 --- !u!1 &4582596159968928262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3880,3 +3881,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1132160577486178690, guid: cbad4d4c9aa66574ca7d4c14c9946419, type: 3}
   m_PrefabInstance: {fileID: 1928793088559038383}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4119976560305354965 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2587717942257223546, guid: cbad4d4c9aa66574ca7d4c14c9946419, type: 3}
+  m_PrefabInstance: {fileID: 1928793088559038383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f1aebc7df04769afdfa0b3d313783f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

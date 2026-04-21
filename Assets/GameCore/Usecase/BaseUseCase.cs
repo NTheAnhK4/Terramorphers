@@ -7,6 +7,6 @@ namespace GameCore.Usecase
     {
         protected TAPI _apiGateway;
         public virtual async UniTask Update(TModel model) => await _apiGateway.Update(model);
-        public TModel GetModel() => _apiGateway.GetModel();
+        public virtual TModel GetModel() => _apiGateway.GetModel();
     }
 }
