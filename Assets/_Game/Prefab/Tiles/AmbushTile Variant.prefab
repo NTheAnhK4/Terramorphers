@@ -63,26 +63,38 @@ PrefabInstance:
     - target: {fileID: 7711846920825064517, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1690358311, guid: 4cd1466691dba7b4e8535b287d73264e, type: 3}
+      objectReference: {fileID: 969137147, guid: 204c213eabeb17e4f98f3d7e8aa2555e, type: 3}
     - target: {fileID: 7711846920825064517, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7835619477808946810, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.024612
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835619477808946810, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.9989906
+      objectReference: {fileID: 0}
+    - target: {fileID: 7835619477808946810, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.0201
       objectReference: {fileID: 0}
     - target: {fileID: 7835619477808946810, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0053
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6122729572857124400, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2077671866358935052, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 139013379908575360}
+    - targetCorrespondingSourceObject: {fileID: 8623737663267880505, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1972454042872147850}
   m_SourcePrefab: {fileID: 100100000, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
 --- !u!212 &741889139800632923 stripped
 SpriteRenderer:
@@ -116,6 +128,69 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9059823819643841527, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
   m_PrefabInstance: {fileID: 6460118969453200935}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3317842648596248606 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8623737663267880505, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
+  m_PrefabInstance: {fileID: 6460118969453200935}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &1972454042872147850
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3317842648596248606}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.7, y: 1.7}
+    newSize: {x: 0.8828125, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.68, y: 0.55}
+      - {x: 0.0655659, y: 0.846554}
+      - {x: -0.05079384, y: 0.8465539}
+      - {x: -0.8501922, y: 0.42597663}
+      - {x: -0.8494018, y: -0.4065591}
+      - {x: -0.84460825, y: -0.42244732}
+      - {x: -0.83238244, y: -0.435736}
+      - {x: -0.055625346, y: -0.84853226}
+      - {x: 0.056954175, y: -0.8485883}
+      - {x: 0.0985263, y: -0.83005995}
+      - {x: 0.74920595, y: -0.48886222}
+      - {x: 0.8504642, y: -0.41029906}
+      - {x: 0.8496603, y: 0.40785256}
+  m_UseDelaunayMesh: 0
 --- !u!1 &5004533226482493483 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2077671866358935052, guid: c0149e5843703b84c9ffe5d592efe1bc, type: 3}
@@ -155,17 +230,3 @@ MonoBehaviour:
   allyTargetSkillColor: {r: 0, g: 1, b: 0.9843137, a: 1}
   tileTargetSkillColor: {r: 1, g: 0, b: 0, a: 1}
   selfTargetSkillColor: {r: 0, g: 1, b: 0.9843137, a: 1}
-  skillEffectData:
-    targetType: 0
-    effectType: 0
-    statsType: 0
-    operationType: 0
-    value: 0
-    turnApply: 0
-    effect:
-      rid: -2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }

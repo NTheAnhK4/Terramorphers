@@ -35,7 +35,7 @@ namespace GameCore.Presentation.Lobby
             base.Initialize(args, state, view);
             _levelDatabase = _levelRepository.Get();
             state.ShowHeroInfo.Subscribe(_ =>ShowHeroInfo().Forget()).AddTo(view);
-            
+            state.SettingCommand.Subscribe(ShowSettingModal).AddTo(view);
             for (int i = 0; i < _levelDatabase.DataCount; ++i)
             {
                 var levelMetadata = _levelDatabase.GetByType(i);
@@ -68,5 +68,7 @@ namespace GameCore.Presentation.Lobby
             await panelPresenter.ShowPanel();
             _transitionService.ShowHeroInfoScreen(panelPresenter).Forget();
         }
+
+        private void ShowSettingModal(Unit _) => _transitionService.ShowSettingModal().Forget();
     }
 }

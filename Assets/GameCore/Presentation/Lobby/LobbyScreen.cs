@@ -28,12 +28,15 @@ namespace GameCore.Presentation.Lobby{
 
         private List<RectTransform> worldCellRects = new();
 
+        [SerializeField, TabGroup("Components")]
+        private Button settingBtn;
         public GoldView GoldView => goldView;
         public override UniTask InitializeState(LobbyViewState state, Memory<object> args)
         {
             state.CurrentIndex.Subscribe(ScrollTo).AddTo(this);
             heroInfoBtn.SubscribeToCommand(state.ShowHeroInfo).AddTo(this);
             state.HidePanelCommand.Execute(default);
+            settingBtn.SubscribeToCommand(state.SettingCommand).AddTo(this);
             return UniTask.CompletedTask;
         }
 

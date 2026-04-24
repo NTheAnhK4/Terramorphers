@@ -52,6 +52,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d126b3d86d153d44892b98dbcd1f6f0
+    m_Address: SettingModal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9594ffe434f94cc479106caa883b2390
     m_Address: LoseGameModal
     m_ReadOnly: 0

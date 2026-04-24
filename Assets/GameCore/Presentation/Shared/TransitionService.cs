@@ -19,7 +19,7 @@ using GameCore.Presentation.Lobby;
 using GameCore.Presentation.LoseGame;
 using GameCore.Presentation.Menu;
 using GameCore.Presentation.Panel;
-
+using GameCore.Presentation.Setting;
 using GameCore.Presentation.StageObjective;
 using GameCore.Presentation.WinGame;
 using R3;
@@ -243,6 +243,14 @@ namespace GameCore.Presentation.Shared
             }
           
           
+        }
+
+        public async UniTask<SettingModalPresenter> ShowSettingModal()
+        {
+            var presenter = await ShowModalPresenterAsync<SettingModalPresenter, SettingModal, SettingViewState>(
+                "SettingModal",
+                modal => new SettingModalPresenter(modal));
+            return presenter;
         }
     }
 

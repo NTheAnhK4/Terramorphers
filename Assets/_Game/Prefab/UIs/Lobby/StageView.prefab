@@ -105,7 +105,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 406104808, guid: b173b7d5d3bacc145906b4005bac4553, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -124,7 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4716124302343823159}
   - component: {fileID: 8508051328419634071}
-  - component: {fileID: 2394248050877333603}
+  - component: {fileID: 8660862706952887919}
   m_Layer: 5
   m_Name: StageName
   m_TagString: Untagged
@@ -160,7 +160,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2653745855198933358}
   m_CullTransparentMesh: 1
---- !u!114 &2394248050877333603
+--- !u!114 &8660862706952887919
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,7 +181,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 926831543, guid: b173b7d5d3bacc145906b4005bac4553, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -689,7 +689,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -849269267, guid: a579efdccf3bed34c8107ab7cdb1ee7a, type: 3}
+  m_Sprite: {fileID: -1415347410, guid: a579efdccf3bed34c8107ab7cdb1ee7a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_text: Stage  1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: aa1d1f16b02ab5f40a3660c630516491, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 4141abd2cfe4ea945ab14fc42ea5bd65, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 09d7e2651c1529e408a8bbed60e668e3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 35
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1137,6 +1137,7 @@ GameObject:
   - component: {fileID: 7808292348406646027}
   - component: {fileID: 1253471869729776156}
   - component: {fileID: 4313805682397005983}
+  - component: {fileID: 8359387670142299739}
   m_Layer: 5
   m_Name: StageView
   m_TagString: Untagged
@@ -1203,6 +1204,36 @@ MonoBehaviour:
   - {fileID: 7032723317803141516}
   - {fileID: 5798003072036170255}
   - {fileID: 8020516707441524268}
+--- !u!114 &8359387670142299739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7432907609795406222}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1713572751, guid: 40b20b5c59024414ab574778dae752e3, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1.5
 --- !u!1 &8301020013782494755
 GameObject:
   m_ObjectHideFlags: 0

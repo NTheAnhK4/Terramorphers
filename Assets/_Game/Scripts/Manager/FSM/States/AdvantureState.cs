@@ -1,4 +1,6 @@
+using System;
 using DG.Tweening;
+using GameCore.Usecase.Audio;
 using GameCore.Utility.Audio.GameAudio;
 using JSAM;
 using R3;
@@ -10,12 +12,14 @@ namespace Terramorphers
         private InputManager _inputManager;
         private GameManager _gameManager;
         private DisposableBag _bag;
+        private AudioUseCase _audioUseCase;
         public AdvantureState(EntityManager entityManager, InputManager inputManager,
-            GameManager gameManager)
+            GameManager gameManager, AudioUseCase audioUseCase)
         {
             _entityManager = entityManager;
             _inputManager = inputManager;
             _gameManager = gameManager;
+            _audioUseCase = audioUseCase;
         }
         
         public override void OnEnter()
@@ -28,11 +32,14 @@ namespace Terramorphers
 
         private void PlayMusic()
         {
-            var audio = AudioManager.PlayMusic(EMusicType.AdvantureMusic);
-            if (!AudioManager.MusicMuted)
+            try
             {
-                  audio.AudioSource.volume = 0;
-                  audio.AudioSource.DOFade(1, .15f);
+                if (AudioManager.MusicMuted) return;
+                AudioManager.FadeMusicIn(EMusicType.AdvantureMusic, .15f);
+            }
+            catch (Exception e)
+            {
+                // ignored
             }
         }
        

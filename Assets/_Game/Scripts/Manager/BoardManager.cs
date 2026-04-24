@@ -11,7 +11,8 @@ using GameCore.Utility.Shape;
 
 using Terramorphers.Command;
 using UnityEngine;
-
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UtilityAI;
 using VContainer;
 using VitalRouter;
@@ -75,19 +76,23 @@ namespace Terramorphers
             Debug.Log("Saved to: " + path);
         }
 
-        public TilePositionData LoadFromJson()
+        public async UniTask<TilePositionData> LoadFromJson()
         {
-            if (!File.Exists(path))
+            var handle = Addressables.LoadAssetAsync<TextAsset>("GameConfig");
+            await handle.Task;
+
+            if (handle.Status != AsyncOperationStatus.Succeeded)
             {
-                Debug.LogWarning("File not found!");
+                Debug.LogError("[Test][BoardManager][LoadFromJson]Load Addressable failed!");
                 return null;
             }
 
-            string json = File.ReadAllText(path);
+            string json = handle.Result.text;
 
             TilePositionData data = JsonUtility.FromJson<TilePositionData>(json);
 
-          
+            Addressables.Release(handle);
+
             return data;
         }
 
@@ -95,8 +100,12 @@ namespace Terramorphers
 
         public async UniTask<bool> LoadingBoard(List<MapRow> gridData)
         {
-            TilePositionData positionData = LoadFromJson();
-            if (positionData == null) return false;
+            TilePositionData positionData  = await LoadFromJson();
+            if (positionData == null)
+            {
+                Debug.Log($"[Test][BoardManager][LoadingBoard] position data is null");
+                return false;
+            }
             
         
         
@@ -110,7 +119,11 @@ namespace Terramorphers
                 {
                     ETileType type = gridData[i].Tiles[j];
                     var tile = await _tileFactory.CreateTile(type);
-                    if (tile == null) return false;
+                    if (tile == null)
+                    {
+                        Debug.Log($"[Test][BoardManager][LoadingBoard] tile is null");
+                        return false;
+                    }
                     tile.Transform.position = positionData.rows[i].positions[j];
         
                     row.Add(tile);

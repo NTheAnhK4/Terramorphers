@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Codice.CM.Common.Checkin.Partial;
 
 namespace GameCore.Domain.Stats
 {

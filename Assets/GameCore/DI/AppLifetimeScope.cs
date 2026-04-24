@@ -25,6 +25,7 @@ namespace GameCore.DI
             builder.RegisterModuleInstaller<QuestModuleInstaller>();
             builder.RegisterModuleInstaller<RewardModuleInstaller>();
             builder.RegisterModuleInstaller<CurrencyModuleInstaller>();
+            builder.RegisterModuleInstaller<AudioModuleInstaller>();
             builder.RegisterComponent(launcher);
         }
     }

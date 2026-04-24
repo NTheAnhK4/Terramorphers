@@ -5,6 +5,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameCore.Presentation.Shared;
+using GameCore.Usecase.Audio;
 using GameCore.Utility.Audio.GameAudio;
 using JSAM;
 using UnityEngine;
@@ -16,11 +17,13 @@ namespace Terramorphers
         private readonly TransitionService _transitionService;
         private readonly GameManager _gameManager;
         private CancellationTokenSource _cancellationTokenSource;
+        private AudioUseCase _audioUseCase;
 
-        public LobbyState(GameManager gameManager, TransitionService transitionService)
+        public LobbyState(GameManager gameManager, TransitionService transitionService, AudioUseCase audioUseCase)
         {
             _gameManager = gameManager;
             _transitionService = transitionService;
+            _audioUseCase = audioUseCase;
         }
         public override void OnEnter()
         {
@@ -37,17 +40,16 @@ namespace Terramorphers
           {
               try
               {
+                  _audioUseCase.SetUp();
                   await UniTask.WaitUntil(
                       () => AudioManager.Instance != null && AudioManager.Instance.Initialized, 
                       cancellationToken:_cancellationTokenSource.Token);
                   if (_cancellationTokenSource == null || _cancellationTokenSource.IsCancellationRequested)
                       return;
-                  var audio = AudioManager.PlayMusic(EMusicType.LobbyMusic);
-                  if (!AudioManager.MusicMuted)
-                  {
-                      audio.AudioSource.volume = 0;
-                      audio.AudioSource.DOFade(1, .15f);
-                  }
+
+                  if(AudioManager.MusicMuted) return;
+                  AudioManager.FadeMusicIn(EMusicType.LobbyMusic, .15f);
+                 
               }
               catch(OperationCanceledException){}
               

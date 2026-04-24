@@ -7,7 +7,9 @@
         "UniTask.DOTween",
         "R3.Unity",
         "com.Brogrammist.JSAM",
-        "com.Brogrammist.JSAM.Editor"
+        "com.Brogrammist.JSAM.Editor",
+        "DOTween.Modules",
+        "DOTweenPro.Scripts"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
