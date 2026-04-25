@@ -1,8 +1,10 @@
 
 using System;
 using CoreGame;
+using Cysharp.Threading.Tasks;
 using GameCore.Domain.Skill;
 using GameCore.Domain.Stats;
+using GameCore.Presentation.Shared;
 using GameCore.Usecase.Quest;
 using GameCore.Utility;
 using R3;
@@ -19,7 +21,7 @@ using VitalRouter;
 
 namespace Terramorphers
 {
-    public abstract class TerramorphersEntity : Entity, IDisposable
+    public abstract class TerramorphersEntity : Entity, IInfoProvider, IDisposable
     {
         [SerializeField, TabGroup("General")] public float MoveSpeed = .5f;
         [TabGroup("Components")]
@@ -37,6 +39,11 @@ namespace Terramorphers
 
         [Inject] protected SkillSystem _skillSystem;
         [Inject] protected ICommandPublisher _publisher;
+        [Inject] protected TransitionService _transitionService;
+        [Inject] protected InputManager _inputManager;
+
+        public InputManager InputManager => _inputManager;
+
         [HideInInspector] public ReactiveProperty<string> StatsNoti { get; } = new();
 
         public ICommandPublisher Publisher => _publisher;
@@ -63,6 +70,7 @@ namespace Terramorphers
         public IState DeadState => _deadState;
         protected ITile currentTile;
         [HideInInspector] public Action OnInitialized;
+        public ReactiveProperty<bool> IsShowInfo { get; } = new();
      
         private void OnValidate()
         {
@@ -112,6 +120,7 @@ namespace Terramorphers
      
         public virtual void Init(int id, EntityMetadata metadata, int teamID, ITile tile)
         {
+            IsShowInfo.Subscribe(t => ShowEntityInfo(t).Forget()).AddTo(ref _bag);
             SetTile(tile);
             ID = id;
             statsSystem = new StatsSystem(metadata.EntityStats);
@@ -174,6 +183,28 @@ namespace Terramorphers
             _bag.Dispose();
         }
 
-      
+
+    
+
+        private async UniTask ShowEntityInfo(bool isShow)
+        {
+           
+            try
+            {
+                if (isShow)
+                {
+                    _inputManager.StopInput(true);
+                    var presenter = await _transitionService.ShowEntityInfoModal(statsSystem.Stats);
+                    await UniTask.WaitUntil(() => presenter.IsClose, cancellationToken: this.GetCancellationTokenOnDestroy());
+                    IsShowInfo.Value = false;
+                    _inputManager.StopInput(false);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Log($"[Test][{this.GetType().Name}] {e}");
+            }
+           
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace Terramorphers.States.PlayerState
         {
           
             base.OnEnter(stateData);
+            entity.InputManager.IsObjectClickable = true;
             entity.InputManager.SetLayer(InputManager.TILE_LAYER);
             entity.Publisher.PublishAsync(new EnableEndTurnCommand() { IsEnable = true });
             entity.Publisher.PublishAsync(new EnableSkillCommand() { IsEnable = true });
@@ -31,13 +32,7 @@ namespace Terramorphers.States.PlayerState
             _disposables.Add(entity.Subscribable.Subscribe<UseSkillCommand>(UseSkill));
         }
 
-        public override void Update()
-        {
-            base.Update();
-          
-            entity.InputManager.OnUpdate();
-        }
-
+       
         private void UseSkill(UseSkillCommand command, PublishContext context)
         {
             PlayerSelectSkillTileData playerSelectSkillTileData = new PlayerSelectSkillTileData() { SkillID = command.SkillID };
@@ -55,6 +50,7 @@ namespace Terramorphers.States.PlayerState
         public override void OnExit()
         {
             base.OnExit();
+            entity.InputManager.IsObjectClickable = false;
             foreach(var disposable in _disposables) disposable.Dispose();
             _disposables.Clear();
         }

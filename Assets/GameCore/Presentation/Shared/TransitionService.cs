@@ -11,7 +11,9 @@ using ZBase.UnityScreenNavigator.Core.Windows;
 using System;
 using System.Collections.Generic;
 using GameCore.Domain.Level;
+using GameCore.Domain.Stats;
 using GameCore.Presentation.ChooseStage;
+using GameCore.Presentation.EntityInfo;
 using GameCore.Presentation.GamePlay;
 using GameCore.Presentation.HeroInfo;
 using GameCore.Presentation.Loading;
@@ -21,6 +23,7 @@ using GameCore.Presentation.Menu;
 using GameCore.Presentation.Panel;
 using GameCore.Presentation.Setting;
 using GameCore.Presentation.StageObjective;
+using GameCore.Presentation.TileInfo;
 using GameCore.Presentation.WinGame;
 using R3;
 
@@ -252,6 +255,35 @@ namespace GameCore.Presentation.Shared
                 modal => new SettingModalPresenter(modal));
             return presenter;
         }
+
+        public async UniTask<TileInfoPresenter> ShowTileView(bool isShow, string title, string description, Vector3 position, bool isDisplayRight)
+        {
+            
+            if (isShow)
+            {
+                var presenter = await ShowActivityPresenterAsync<TileInfoPresenter, TileInfoActivity, TileInfoViewState>(
+                    "TileInfoActivity",
+                    activity => new TileInfoPresenter(activity, title, description, position, isDisplayRight));
+                return presenter;
+            }
+            else
+            {
+                if (_activityContainer.TryGet("TileInfoActivity", out var viewRef))
+                    await _activityContainer.HideAsync("TileInfoActivity");
+                return null;
+            }
+
+        }
+
+        public async UniTask<EntityInfoPresenter> ShowEntityInfoModal(Stats stats)
+        {
+            var presenter = await ShowModalPresenterAsync<EntityInfoPresenter, EntityInfoModal, EntityInfoViewState>(
+                "EntityInfoModal",
+                modal => new EntityInfoPresenter(modal, stats));
+            return presenter;
+        }
+        
     }
+    
 
 }

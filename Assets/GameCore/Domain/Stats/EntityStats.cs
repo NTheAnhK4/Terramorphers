@@ -26,6 +26,32 @@ namespace GameCore.Domain.Stats
         private readonly StatsMediator mediator; // Mediator responsible for modifying stat queries dynamically
         public readonly EntityStats EntityStats; // The base stats data
 
+        public int GetRawStatValue(EStatsType stats)
+        {
+            switch (stats)
+            {
+                case EStatsType.None: return 0;
+                case EStatsType.MaxHP: return EntityStats.MaxHP;
+                case EStatsType.Mana: return EntityStats.Mana;
+                case EStatsType.Stamina: return EntityStats.Stamina;
+                case EStatsType.Range: return EntityStats.Range;
+                case EStatsType.PhysicalDamage: return EntityStats.PhysicalDamage;
+                case EStatsType.MagicalDamage: return EntityStats.MagicalDamage;
+                case EStatsType.PhysicalResistance: return EntityStats.PhysicalResistance;
+                case EStatsType.MagicalResistance: return EntityStats.MagicalResistance;
+                case EStatsType.NeutralResistance: return EntityStats.NeutralResistance;
+                case EStatsType.CriticalChance: return EntityStats.CriticalChance;
+                case EStatsType.Healing: return EntityStats.Healing;
+                default: return 0;
+            }
+        }
+
+        public int GetStatValue(EStatsType statsType)
+        {
+            var q = new Query(statsType, GetRawStatValue(statsType));
+            mediator.PerformQuery(this, q);
+            return q.Value;
+        }
         // Property to expose the mediator (read-only)
         public StatsMediator Mediator => mediator;
         public Stats(StatsMediator mediator, EntityStats entityStats)

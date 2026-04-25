@@ -1,17 +1,23 @@
+using System;
 using CoreGame;
+using Cysharp.Threading.Tasks;
 using GameCore.Utility.Shape;
 using Sirenix.OdinInspector;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
 using GameCore.Domain.Tile;
+using GameCore.Presentation.Shared;
 using GameCore.Utility;
+using R3;
 using UnityEngine.Serialization;
+using VContainer;
 
 namespace Terramorphers
 {
-    public abstract class BaseTile : ComponentBehaviour, ITile
+    public abstract class BaseTile : ComponentBehaviour, ITile, IInfoProvider
     {
+        [Inject] protected TransitionService _transitionService;
         [SerializeField, TabGroup("Components")]
         private TextMeshProUGUI amountText;
 
@@ -30,6 +36,7 @@ namespace Terramorphers
 
         [FormerlySerializedAs("selftTargetSkillColor")] [SerializeField, TabGroup("Config")] protected Color selfTargetSkillColor;
         private ETileState _currentState;
+        protected DisposableBag _bag;
        [TabGroup("Debug"), SerializeField] private Context _context;
        public override void LoadComponent()
        {
@@ -46,6 +53,7 @@ namespace Terramorphers
            ColorUtility.TryParseHtmlString("#00FFFB", out selfTargetSkillColor);
            
        }
+       
 
 
        ETileState ITile.CurrentState
@@ -57,7 +65,13 @@ namespace Terramorphers
         protected override void Awake()
         {
             base.Awake();
+            IsShowInfo.Skip(1).Subscribe(ShowInfo).AddTo(ref _bag);
             _context = new Context();
+        }
+
+        protected void OnDestroy()
+        {
+            _bag.Dispose();
         }
 
         protected virtual void OnEnable()
@@ -150,6 +164,37 @@ namespace Terramorphers
             color.a = 1;
             tileSkillSpriteRenderer.color = color;
             tileSkillEffect.DOPlay();
+        }
+
+        public ReactiveProperty<bool> IsShowInfo { get; } = new();
+
+        protected void ShowInfo(bool isShow)
+        {
+            
+            if (TileMetadata.Type == ETileType.BasicTile) return;
+
+           
+            bool isDisplayRight;
+           
+            if ((int)(Index.q) + Mathf.FloorToInt((Index.r + 1) / 2) <= 3)
+            {
+                
+                isDisplayRight = false;
+            }
+            else
+            {
+               
+                isDisplayRight = true;
+            }
+            
+         
+
+            _transitionService.ShowTileView(
+                isShow, 
+                TileMetadata.TileName, 
+                TileMetadata.Description, 
+                transform.position,
+                isDisplayRight).Forget();
         }
     }
 }

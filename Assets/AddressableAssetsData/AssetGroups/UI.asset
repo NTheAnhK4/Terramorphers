@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 346a93145937bf64f9ce94882738460b
+    m_Address: EntityInfoModal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 486a1933fb6c6db43b8c434f8c4e8cba
     m_Address: HeroInfoScreen
     m_ReadOnly: 0
@@ -59,6 +64,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9594ffe434f94cc479106caa883b2390
     m_Address: LoseGameModal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b55988e121702da4f8a2092b5f728f25
+    m_Address: TileInfoActivity
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

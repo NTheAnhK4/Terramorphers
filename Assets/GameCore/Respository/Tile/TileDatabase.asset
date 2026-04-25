@@ -29,7 +29,7 @@ MonoBehaviour:
     value:
       type: 2
       tileName: Ambush Tile
-      description: 
+      description: +25%<sprite=1>damage
       addresable: AmbushTile
   - key: 3
     value:

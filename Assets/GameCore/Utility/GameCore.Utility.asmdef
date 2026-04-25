@@ -9,7 +9,8 @@
         "com.Brogrammist.JSAM",
         "com.Brogrammist.JSAM.Editor",
         "DOTween.Modules",
-        "DOTweenPro.Scripts"
+        "DOTweenPro.Scripts",
+        "ZBase.UnityScreenNavigator"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

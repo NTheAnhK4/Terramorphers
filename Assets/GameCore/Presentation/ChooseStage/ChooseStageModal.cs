@@ -32,6 +32,9 @@ namespace GameCore.Presentation.ChooseStage
         [SerializeField, TabGroup("Animation")]
         private RectTransform rightRect;
 
+        [SerializeField, TabGroup("Animation")]
+        private AnimationCurve showRightCurve;
+
         private ChooseStageViewState _state;
       
      
@@ -67,7 +70,8 @@ namespace GameCore.Presentation.ChooseStage
                pannelImg.color = color;
 
                topRect.anchoredPosition = new Vector2(0, 235);
-               rightRect.anchoredPosition = new Vector2(1300, 0);
+               rightRect.transform.localScale = new Vector3(1, 0, 1);
+               
        
                var seq = DOTween.Sequence().SetTarget(transform);
        
@@ -79,8 +83,7 @@ namespace GameCore.Presentation.ChooseStage
                );
        
                seq.Insert(0.15f,
-                   rightRect.DOAnchorPosX(0,.5f)
-                           .SetEase(Ease.OutCubic)
+                   rightRect.DOScaleY(1,.5f).SetEase(showRightCurve)
                );
        
                await seq.ToUniTask(cancellationToken: this.GetCancellationTokenOnDestroy());
@@ -104,7 +107,7 @@ namespace GameCore.Presentation.ChooseStage
                );
 
                seq.Join(
-                   rightRect.DOAnchorPosX(1300, 0.3f)
+                   rightRect.DOScaleY(0, 0.3f)
                        .SetEase(Ease.InQuad)
                );
 

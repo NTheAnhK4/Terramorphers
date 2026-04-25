@@ -270,7 +270,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_9
+      name: Critical_Chance
       rect:
         serializedVersion: 2
         x: 150
@@ -291,7 +291,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_10
+      name: Healing
       rect:
         serializedVersion: 2
         x: 277
@@ -312,7 +312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_11
+      name: Physical_Resistance
       rect:
         serializedVersion: 2
         x: 407
@@ -333,7 +333,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_12
+      name: Magical_Resistance
       rect:
         serializedVersion: 2
         x: 20
@@ -396,7 +396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: statIcons_15
+      name: Neutral_Resistance
       rect:
         serializedVersion: 2
         x: 407
@@ -471,20 +471,20 @@ TextureImporter:
     nameFileIdTable:
       AOE: 1185782525
       Cooldown: 1975555268
+      Critical_Chance: -902101473
+      Healing: -1750180464
       Health: 775260951
       MagicalDamage: -2006145000
+      Magical_Resistance: -1426534016
       Mana: -497331588
       Mark: 1948043540
+      Neutral_Resistance: 1161761966
       PhysicalDamage: 509003898
+      Physical_Resistance: 2145148070
       Range: 463898666
       Stamina: -2078182142
-      statIcons_10: -1750180464
-      statIcons_11: 2145148070
-      statIcons_12: -1426534016
       statIcons_13: -183568883
       statIcons_14: 631895460
-      statIcons_15: 1161761966
-      statIcons_9: -902101473
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

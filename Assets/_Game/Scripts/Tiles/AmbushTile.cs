@@ -26,5 +26,7 @@ namespace Terramorphers
             base.RemoveEffect(entity);
             entity.StatsSystem.RemoveModifier(GetEffect());
         }
+
+       
     }
 }

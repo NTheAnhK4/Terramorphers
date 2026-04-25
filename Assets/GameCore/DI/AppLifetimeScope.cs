@@ -26,6 +26,7 @@ namespace GameCore.DI
             builder.RegisterModuleInstaller<RewardModuleInstaller>();
             builder.RegisterModuleInstaller<CurrencyModuleInstaller>();
             builder.RegisterModuleInstaller<AudioModuleInstaller>();
+            builder.RegisterModuleInstaller<StatModuleInstaller>();
             builder.RegisterComponent(launcher);
         }
     }

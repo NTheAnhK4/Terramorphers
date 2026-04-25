@@ -18,7 +18,6 @@ namespace Terramorphers
         [TabGroup("General"), SerializeField] private Vector3 leftModalPos = new Vector3(-.33f, 1.27f, 0);
         #region Dependencies
 
-        private InputManager _inputManager;
        
        
         private ICommandSubscribable _subscribable;
@@ -49,7 +48,7 @@ namespace Terramorphers
 
         public ICommandSubscribable Subscribable => _subscribable;
 
-        public InputManager InputManager => _inputManager;
+      
 
         public PlayerSelectMoveTileState PlayerSelectMoveTileState => _playerSelectMoveTileState;
 
@@ -58,22 +57,15 @@ namespace Terramorphers
         public PlayerSelectSkillTileState SelectSkillTileState => _selectSkillTileState;
 
         public PlayerUseSkillState UseSkillState => _useSkillState;
-        
 
-      
-
-     
-        
-        
 
         #endregion
 
         [Inject]
-        public void Construct(InputManager inputManager, 
+        public void Construct( 
            ICommandSubscribable subscribable
             ,SkillUseCase skillUseCase)
         {
-            _inputManager = inputManager;
           
          
             _subscribable = subscribable;
@@ -153,11 +145,7 @@ namespace Terramorphers
         public override void OnEnter()
         {
             base.OnEnter();
-           
-          
             
-            _inputManager.OnEnter();
-           
             ChangeState(_playerSelectMoveTileState);
         }
 

@@ -4,6 +4,8 @@ using GameCore.Usecase.Audio;
 using GameCore.Utility.Audio.GameAudio;
 using JSAM;
 using R3;
+using UnityEngine;
+
 namespace Terramorphers
 {
     public class AdvantureState : GameState
@@ -26,6 +28,7 @@ namespace Terramorphers
         {
             base.OnEnter();
             PlayMusic();
+            _inputManager.OnEnter();
             _gameManager.GamePlayPresenter.IsShowingUI.Subscribe(_inputManager.StopInput).AddTo(ref _bag);
             _entityManager.OnEnter();
         }
@@ -34,6 +37,7 @@ namespace Terramorphers
         {
             try
             {
+               
                 if (AudioManager.MusicMuted) return;
                 AudioManager.FadeMusicIn(EMusicType.AdvantureMusic, .15f);
             }
@@ -47,6 +51,7 @@ namespace Terramorphers
         public override void OnUpdate()
         {
             _entityManager.OnUpdate();
+            _inputManager.OnUpdate();
         }
 
         public override void OnExit()

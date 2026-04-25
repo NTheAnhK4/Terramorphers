@@ -6,5 +6,6 @@ namespace Terramorphers
         public override bool IsBlockVisibility() => false;
 
         public override int GetMoveCost() => 1;
+       
     }
 }

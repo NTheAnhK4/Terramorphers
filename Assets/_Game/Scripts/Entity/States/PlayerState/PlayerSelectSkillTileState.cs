@@ -33,6 +33,7 @@ namespace Terramorphers.States.PlayerState
                 entity.ChangeState(entity.PlayerSelectMoveTileState);
                 return;
             }
+            entity.InputManager.IsObjectClickable = true;
 
             data = selectSkillTileData;
            
@@ -114,12 +115,7 @@ namespace Terramorphers.States.PlayerState
             }
 
         }
-        public override void Update()
-        {
-            base.Update();
-           
-            entity.InputManager.OnUpdate();
-        }
+      
         private void OnSelectTile(SelectTileCommand command, PublishContext context)
         {
             ITile selectedTile = command.SelectedTile;
@@ -135,6 +131,7 @@ namespace Terramorphers.States.PlayerState
         public override void OnExit()
         {
             base.OnExit();
+            entity.InputManager.IsObjectClickable = false;
             foreach(var disposable in _disposables) disposable?.Dispose();
         }
     }
