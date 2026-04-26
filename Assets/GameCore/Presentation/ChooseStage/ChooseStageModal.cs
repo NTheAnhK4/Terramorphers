@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameCore.Domain.Level;
-
+using GameCore.Presentation.ChooseStage.Reward;
 using TMPro;
 using UnityEngine;
 using WEngine.MVP;
@@ -19,6 +19,9 @@ namespace GameCore.Presentation.ChooseStage
         [SerializeField, TabGroup("Components")] private Transform holder;
         [SerializeField, TabGroup("Components")] private StageView stagePrefab;
         [SerializeField, TabGroup("Components")] private TextMeshProUGUI levelText;
+
+        [SerializeField, TabGroup("Components")]
+        private AllRewardView _allRewardView;
 
         [SerializeField, TabGroup("Animation")]
         private Image pannelImg;
@@ -36,8 +39,9 @@ namespace GameCore.Presentation.ChooseStage
         private AnimationCurve showRightCurve;
 
         private ChooseStageViewState _state;
-      
-     
+
+        public AllRewardView AllRewardView => _allRewardView;
+
         public override UniTask InitializeState(ChooseStageViewState state, Memory<object> args)
         {
             _state = state;
@@ -85,6 +89,7 @@ namespace GameCore.Presentation.ChooseStage
                seq.Insert(0.15f,
                    rightRect.DOScaleY(1,.5f).SetEase(showRightCurve)
                );
+               seq.InsertCallback(.15f, () => _allRewardView.ShowItem().Forget());
        
                await seq.ToUniTask(cancellationToken: this.GetCancellationTokenOnDestroy());
            }
@@ -109,7 +114,8 @@ namespace GameCore.Presentation.ChooseStage
                seq.Join(
                    rightRect.DOScaleY(0, 0.3f)
                        .SetEase(Ease.InQuad)
-               );
+               )
+                   .JoinCallback(() => _allRewardView.HideItem());
 
                await seq.ToUniTask(cancellationToken: this.GetCancellationTokenOnDestroy());
 
@@ -117,6 +123,13 @@ namespace GameCore.Presentation.ChooseStage
                _state.OnClose.Execute(default);
            }
            catch { }
+       }
+
+       public override UniTask WillPopExit(Memory<object> args)
+       {
+           _allRewardView.WillExit();
+           return base.WillPopExit(args);
+          
        }
     }
 

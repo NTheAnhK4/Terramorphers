@@ -2,6 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Stats;
 using GameCore.Domain.Stats.Icon;
+using GameCore.Domain.Tile;
 using GameCore.Presentation.Shared;
 using UnityEngine;
 using VContainer;
@@ -11,19 +12,27 @@ namespace GameCore.Presentation.EntityInfo
 {
     public class EntityInfoPresenter : ModalPresenter<EntityInfoModal, EntityInfoViewState>
     {
-        private Stats _stats;
+       
         [Inject] private IStatIconRepository _statIconRepository;
         [Inject] private TransitionService _transitionService;
+        private Stats _stats;
+        private TileMetadata _tileMetadata;
+        private Sprite _entitySprite;
         public bool IsClose { get; protected set; }
-        public EntityInfoPresenter(EntityInfoModal view, Stats stats) : base(view)
+        public EntityInfoPresenter(EntityInfoModal view, Stats stats, TileMetadata tileMetadata, Sprite entitySprite) : base(view)
         {
             _stats = stats;
+            _tileMetadata = tileMetadata;
+            _entitySprite = entitySprite;
         }
 
         protected override UniTask Initialize(Memory<object> args, EntityInfoViewState state, EntityInfoModal view)
         {
             var statsTypes = Enum.GetValues(typeof(EStatsType));
             state.OnClose.Subscribe(_ =>OnClose().Forget()).AddTo(view);
+            state.TileTitle = _tileMetadata.TileName;
+            state.TileDescription = _tileMetadata.Description;
+            state.EntitySprite = _entitySprite;
             var statIconDatabase = _statIconRepository.Get();
             for (int i = 0; i < statsTypes.Length; ++i)
             {

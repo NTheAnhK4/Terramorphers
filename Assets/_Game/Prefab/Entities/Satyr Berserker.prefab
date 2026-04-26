@@ -293,6 +293,7 @@ MonoBehaviour:
   curentState: 
   IsAnimationTriggerFinished: 0
   Anim: {fileID: 198563765670485792}
+  entitySpriteRenderer: {fileID: 3576689075459929763}
   Model: {fileID: 1047196113498362285}
   MoveSpeed: 0.5
   Name: 

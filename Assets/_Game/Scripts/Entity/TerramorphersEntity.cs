@@ -194,7 +194,7 @@ namespace Terramorphers
                 if (isShow)
                 {
                     _inputManager.StopInput(true);
-                    var presenter = await _transitionService.ShowEntityInfoModal(statsSystem.Stats);
+                    var presenter = await _transitionService.ShowEntityInfoModal(statsSystem.Stats, currentTile.TileMetadata, entitySpriteRenderer.sprite);
                     await UniTask.WaitUntil(() => presenter.IsClose, cancellationToken: this.GetCancellationTokenOnDestroy());
                     IsShowInfo.Value = false;
                     _inputManager.StopInput(false);

@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using GameCore.Domain.Level;
 using GameCore.Domain.Stats;
+using GameCore.Domain.Tile;
 using GameCore.Presentation.ChooseStage;
 using GameCore.Presentation.EntityInfo;
 using GameCore.Presentation.GamePlay;
@@ -141,13 +142,7 @@ namespace GameCore.Presentation.Shared
             return tcs.Task;
         }
 
-        public async UniTask<TestPresenter> ShowTestModal()
-        {
-            var presentor = await ShowModalPresenterAsync<TestPresenter, TestModal, TestViewState>(
-                "TestModal",
-                modal => new TestPresenter(modal));
-            return presentor;
-        }
+       
 
         public async UniTask<GamePlayPresenter> ShowGamePlayScreen()
         {
@@ -275,11 +270,11 @@ namespace GameCore.Presentation.Shared
 
         }
 
-        public async UniTask<EntityInfoPresenter> ShowEntityInfoModal(Stats stats)
+        public async UniTask<EntityInfoPresenter> ShowEntityInfoModal(Stats stats, TileMetadata tileMetadata, Sprite entitySprite)
         {
             var presenter = await ShowModalPresenterAsync<EntityInfoPresenter, EntityInfoModal, EntityInfoViewState>(
                 "EntityInfoModal",
-                modal => new EntityInfoPresenter(modal, stats));
+                modal => new EntityInfoPresenter(modal, stats, tileMetadata, entitySprite));
             return presenter;
         }
         

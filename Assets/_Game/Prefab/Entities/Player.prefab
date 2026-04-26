@@ -55,9 +55,6 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes:
-    - Name: statsSystem
-      Entry: 6
-      Data: 
     - Name: Context
       Entry: 6
       Data: 
@@ -67,6 +64,7 @@ MonoBehaviour:
   curentState: 
   IsAnimationTriggerFinished: 0
   Anim: {fileID: 2607463121571686481}
+  entitySpriteRenderer: {fileID: 6146387400259655254}
   Model: {fileID: 8407285692463629916}
   MoveSpeed: 0.5
   Name: 

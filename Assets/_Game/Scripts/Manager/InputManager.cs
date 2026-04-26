@@ -28,7 +28,7 @@ namespace Terramorphers
 
         private Dictionary<Collider2D, IInfoProvider> infoProviderCache = new();
         private float holdTime = 0f;
-        private float holdThreshold = 0.15f;
+        private float holdThreshold = 0.3f;
 
         private bool isHolding = false;
         private bool isHoldTriggered = false;
@@ -168,7 +168,7 @@ namespace Terramorphers
 
         private void HandleClick()
         {
-            Debug.Log($"[Test] handle click with {IsObjectClickable}");
+          
             if (!IsObjectClickable) return;
             ITile tile = GetTile();
                 

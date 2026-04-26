@@ -750,7 +750,7 @@ namespace JSAM
             set
             {
                 InternalInstance.MusicMuted = value;
-                Debug.Log($"CHECK ON MUSIC MUTED: {value}, {OnMusicVolumeChanged != null}");
+                // Debug.Log($"CHECK ON MUSIC MUTED: {value}, {OnMusicVolumeChanged != null}");
                 OnMusicVolumeChanged?.Invoke(InternalInstance.MusicVolume, InternalInstance.ModifiedMusicVolume);
             }
         }

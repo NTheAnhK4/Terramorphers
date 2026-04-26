@@ -36,6 +36,12 @@ namespace GameCore.Domain.Level
         public IReadOnlyList<LevelStageData> LevelStageDatas => levelStageDatas;
 
         public IReadOnlyList<StageRewardData> RewardData => rewardData;
+
+        private void OnValidate()
+        {
+            
+        }
+        
     }
 
     [Serializable]
@@ -102,6 +108,7 @@ namespace GameCore.Domain.Level
         public RewardItemData RewardItemData => rewardItemData;
 
         public int RequiredStars => requiredStars;
+        
     }
 
     public class StageRewardItem

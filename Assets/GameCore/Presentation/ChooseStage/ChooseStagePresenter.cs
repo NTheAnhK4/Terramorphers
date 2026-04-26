@@ -1,6 +1,7 @@
 using System;
 using Cysharp.Threading.Tasks;
 using GameCore.Domain.Level;
+using GameCore.Presentation.ChooseStage.Reward;
 using GameCore.Presentation.Shared;
 using VContainer;
 using WEngine.MVP;
@@ -30,7 +31,11 @@ namespace GameCore.Presentation.ChooseStage
                 _resolver.Inject(presenter);
                 presenter.Initialize();
             }
+
+            var allRewardPresenter = new AllRewardPresenter(view.AllRewardView, _levelMetadata.RewardData);
            
+            _resolver.Inject(allRewardPresenter);
+            allRewardPresenter.Initialize();
             return UniTask.CompletedTask;
         }
 

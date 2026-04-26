@@ -113,8 +113,11 @@ namespace Terramorphers
                 if (currentStage < stageRewardData.MinStageRewquired) continue;
                 int requiredStars = stageRewardData.RequiredStars;
                 if(stars < requiredStars) continue;
-
-                int amount = stageRewardData.RewardItemData.GetAmount();
+                
+                int amount;
+                if(stageRewardData.RewardItemData.RewardItemType == ERewardItemType.Skill) amount = 1;
+                amount = stageRewardData.RewardItemData.GetAmount();
+                
                 if(amount == 0) continue;
                 (ERewardItemType, int) key = (stageRewardData.RewardItemData.RewardItemType, stageRewardData.RewardItemData.SkillID);
                 mergeRewardDict.TryAdd(key, 0);

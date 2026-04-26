@@ -92,11 +92,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: f23d8492ff6035c4b91d38a6b941ec6b
-    m_Address: TestModal
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fe72ec0b07692ad44a6b8f4761ce2076
     m_Address: StageObjectiveModal
     m_ReadOnly: 0

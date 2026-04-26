@@ -35,6 +35,30 @@ MonoBehaviour:
           MinAmount: 50
           MaxAmount: 50
           DropRate: 1
+      - minStageRewquired: 3
+        requiredStars: -2
+        rewardItemData:
+          rewardItemType: 1
+          skillID: 4
+          MinAmount: 1
+          MaxAmount: 1
+          DropRate: 0.8
+      - minStageRewquired: 4
+        requiredStars: -2
+        rewardItemData:
+          rewardItemType: 1
+          skillID: 5
+          MinAmount: 1
+          MaxAmount: 1
+          DropRate: 0.8
+      - minStageRewquired: 4
+        requiredStars: -1
+        rewardItemData:
+          rewardItemType: 1
+          skillID: 6
+          MinAmount: 0
+          MaxAmount: 0
+          DropRate: 0.1
       levelStageDatas:
       - stageMap: {fileID: 4900000, guid: 91b7e80789825a048b12fce752178935, type: 3}
         enemyIDs: 01000000

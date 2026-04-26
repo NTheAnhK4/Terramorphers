@@ -17,6 +17,9 @@ namespace CoreGame
         [TabGroup("General")]  public string curentState;
         [TabGroup("General")] public bool IsAnimationTriggerFinished;
         [TabGroup("Components")] public Animator Anim;
+
+        [SerializeField, TabGroup("Components")]
+        protected SpriteRenderer entitySpriteRenderer;
         protected StateMachine _stateMachine;
         [TabGroup("Components")] public Transform Model;
         public IState CurrentState => _stateMachine?.State;
@@ -24,7 +27,8 @@ namespace CoreGame
         {
             base.LoadComponent();
             if (Anim == null) Anim = GetComponentInChildren<Animator>();
-            if (Model == null) Model = transform.Find("Modal");
+            if (Model == null) Model = transform.Find("Model");
+            if (entitySpriteRenderer == null) entitySpriteRenderer = transform.Find("Model").GetComponent<SpriteRenderer>();
         }
 
         protected override void Awake()
