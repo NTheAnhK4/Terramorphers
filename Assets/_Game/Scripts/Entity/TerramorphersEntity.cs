@@ -116,11 +116,14 @@ namespace Terramorphers
         public StatsSystem StatsSystem => statsSystem;
         [HideInInspector] public string Name;
         public int ID { get; protected set; }
+        protected EntityMetadata _entityMetadata;
 
-     
+        public EntityMetadata EntityMetadata => _entityMetadata;
+
         public virtual void Init(int id, EntityMetadata metadata, int teamID, ITile tile)
         {
             IsShowInfo.Subscribe(t => ShowEntityInfo(t).Forget()).AddTo(ref _bag);
+            _entityMetadata = metadata;
             SetTile(tile);
             ID = id;
             statsSystem = new StatsSystem(metadata.EntityStats);

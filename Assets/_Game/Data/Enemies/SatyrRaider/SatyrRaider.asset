@@ -27,6 +27,8 @@ MonoBehaviour:
     NeutralResistance: 0
     CriticalChance: 0
     Healing: 0
+  hurtSound: {fileID: 11400000, guid: ff295cae465b05f428df1cbd702c68f9, type: 2}
+  deadSound: {fileID: 11400000, guid: 823649251707cf445b49cce21d283aeb, type: 2}
   _considerationSystem: {fileID: 11400000, guid: d20169a7dc728204da2880fe8e2890bf, type: 2}
   skillConsiderationDatas:
   - skillID: 0

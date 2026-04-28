@@ -20,6 +20,11 @@ MonoBehaviour:
   Sounds:
   - {fileID: 11400000, guid: 3555c9ada61902d4e98cd2d6446210f1, type: 2}
   - {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
+  - {fileID: 11400000, guid: 38d24cb227c0bdb43ac0a42ca398a79e, type: 2}
+  - {fileID: 11400000, guid: b0a587e4d2d098243a07b0104b2c6281, type: 2}
+  - {fileID: 11400000, guid: aba5f104d2e6a444ab3426e08f170f7e, type: 2}
+  - {fileID: 11400000, guid: 4057965060687634d82dd84bf7438ec5, type: 2}
+  - {fileID: 11400000, guid: ff295cae465b05f428df1cbd702c68f9, type: 2}
   Music:
   - {fileID: 11400000, guid: 3aed8d9f18ab6fa408517fce88d2a176, type: 2}
   - {fileID: 11400000, guid: fab082f0a82e36e40bb52d920ffbd088, type: 2}
@@ -41,10 +46,15 @@ MonoBehaviour:
   - name: UI
     files:
     - {fileID: 11400000, guid: 117fb0dfa27c11d4c88c6af6cbb29722, type: 2}
-    foldout: 0
+    foldout: 1
   - name: GamePlay
     files:
     - {fileID: 11400000, guid: 3555c9ada61902d4e98cd2d6446210f1, type: 2}
+    - {fileID: 11400000, guid: 38d24cb227c0bdb43ac0a42ca398a79e, type: 2}
+    - {fileID: 11400000, guid: b0a587e4d2d098243a07b0104b2c6281, type: 2}
+    - {fileID: 11400000, guid: aba5f104d2e6a444ab3426e08f170f7e, type: 2}
+    - {fileID: 11400000, guid: 4057965060687634d82dd84bf7438ec5, type: 2}
+    - {fileID: 11400000, guid: ff295cae465b05f428df1cbd702c68f9, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: BGM

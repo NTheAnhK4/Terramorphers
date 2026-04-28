@@ -129,6 +129,7 @@ MonoBehaviour:
     - rid: 1827776807178338304
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 0}
         delayTime: 0
         damage: 6
         attackType: 0
@@ -144,11 +145,13 @@ MonoBehaviour:
     - rid: 1827776874170286080
       type: {class: HealSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 11400000, guid: aba5f104d2e6a444ab3426e08f170f7e, type: 2}
         delayTime: 0
         healthAmount: 35
     - rid: 1827776892463742976
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 11400000, guid: 38d24cb227c0bdb43ac0a42ca398a79e, type: 2}
         delayTime: 0
         damage: 7
         attackType: 0
@@ -169,6 +172,7 @@ MonoBehaviour:
     - rid: 1827776923759542272
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 11400000, guid: b0a587e4d2d098243a07b0104b2c6281, type: 2}
         delayTime: 0
         damage: 12
         attackType: 1
@@ -184,6 +188,7 @@ MonoBehaviour:
     - rid: 1827776923759542273
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 11400000, guid: 4057965060687634d82dd84bf7438ec5, type: 2}
         delayTime: 0
         damage: 8
         attackType: 0
@@ -199,6 +204,7 @@ MonoBehaviour:
     - rid: 1827776923759542274
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 11400000, guid: 4057965060687634d82dd84bf7438ec5, type: 2}
         delayTime: 0
         damage: 11
         attackType: 0
@@ -214,6 +220,7 @@ MonoBehaviour:
     - rid: 1827776923759542275
       type: {class: AttackSkillHandler, ns: Terramorphers.Skill, asm: Terramorphers}
       data:
+        sound: {fileID: 0}
         delayTime: 0
         damage: 30
         attackType: 0

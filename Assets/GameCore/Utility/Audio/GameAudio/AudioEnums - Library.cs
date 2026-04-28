@@ -1,7 +1,12 @@
 namespace GameCore.Utility.Audio.GameAudio {
     public enum ESoundType {
         FootstepDirt,
-        ButtonClick
+        ButtonClick,
+        BowArrow,
+        Electric,
+        Heal,
+        HitSword,
+        MaleHurt
     }
 }
 namespace GameCore.Utility.Audio.GameAudio {

@@ -1,5 +1,6 @@
 using System;
 using CoreGame;
+using JSAM;
 using UnityEngine;
 
 namespace Terramorphers.States
@@ -14,7 +15,7 @@ namespace Terramorphers.States
         public override void OnEnter(StateData stateData = null)
         {
             base.OnEnter(stateData);
-         
+            if (entity.EntityMetadata.DeadSound != null) AudioManager.PlaySound(entity.EntityMetadata.DeadSound);
             entity.CurrentTile.CurrentOccupant = null;
         }
 

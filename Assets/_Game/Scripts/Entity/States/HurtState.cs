@@ -2,6 +2,7 @@
 using CoreGame;
 using GameCore.Domain.Quest;
 using GameCore.Domain.Skill;
+using JSAM;
 using UnityEngine;
 
 namespace Terramorphers.States
@@ -31,9 +32,11 @@ namespace Terramorphers.States
                 return;
             }
 
+            
             int damage = entity.StatsSystem.Stats.GetDamageTaken(hurtStateData.Damage, hurtStateData.AttackType);
             if (damage > 0)
             {
+                if (entity.EntityMetadata.HurtSound != null) AudioManager.PlaySound(entity.EntityMetadata.HurtSound);
                 int damageSprite = 1;
                 switch (hurtStateData.AttackType)
                 {
