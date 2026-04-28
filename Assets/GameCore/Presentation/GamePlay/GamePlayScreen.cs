@@ -60,6 +60,8 @@ namespace GameCore.Presentation.GamePlay
         [SerializeField, TabGroup("Turn")]
         private TurnNotificationAnimation _turnNotificationAnimation;
 
+        private static readonly int Fill = Shader.PropertyToID("_Fill");
+
         public List<SkillView> SkillViews => _skillViews;
 
 
@@ -114,8 +116,18 @@ namespace GameCore.Presentation.GamePlay
             float fillTarget;
             if (value.maxMana == 0) fillTarget = 1;
             else fillTarget = 1.0f * value.mana / value.maxMana;
-            DOTween.Kill(manaFill.transform);
-            manaFill.DOFillAmount(fillTarget, .1f).SetTarget(manaFill.transform);
+            
+            DOTween.Kill(manaFill.material);
+
+            DOVirtual.Float(
+                manaFill.material.GetFloat(Fill),
+                fillTarget,
+                0.15f,
+                v =>
+                {
+                    manaFill.material.SetFloat(Fill, v);
+                }
+            ).SetTarget(manaFill.material);
         }
 
        
