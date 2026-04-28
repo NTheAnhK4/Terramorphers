@@ -42,6 +42,8 @@ namespace Terramorphers
                 statsNotiStacks.Push(text);
             }
             entity.OnInitialized += SubscribeEvent;
+            if (healthFill.material != null)
+                healthFill.material = Instantiate(healthFill.material);
            
         }
 
@@ -63,12 +65,14 @@ namespace Terramorphers
         {
             int maxHP = entity.StatsSystem.Stats.MaxHP;
             float hpRatio = value * 1.0f / maxHP;
-            healthFill.fillAmount = hpRatio;
+            healthFill.material.SetFloat(Health, hpRatio);
             healthText.text = value.ToString();
         }
 
         private Queue<string> _notiQueue = new();
         private bool _isShowing;
+        private static readonly int Health = Shader.PropertyToID("_Health");
+
         public void ShowStatsNoti(string text)
         {
             _notiQueue.Enqueue(text);
