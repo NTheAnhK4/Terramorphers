@@ -100,6 +100,7 @@ namespace UtilityAI
             AddState(_thinkingState);
 
 
+            
             Context.SetData(BlackBoardConstant.OWNER_KEY, this);
             ResetDataCache();
             dataCache.RemainHP.Value = statsSystem.Stats.MaxHP;

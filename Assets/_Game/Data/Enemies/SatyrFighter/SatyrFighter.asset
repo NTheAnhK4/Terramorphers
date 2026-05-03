@@ -31,7 +31,7 @@ MonoBehaviour:
   deadSound: {fileID: 11400000, guid: 823649251707cf445b49cce21d283aeb, type: 2}
   _considerationSystem: {fileID: 11400000, guid: 8888f6c805796664ba692d7ad6246ec4, type: 2}
   skillConsiderationDatas:
-  - skillID: 0
+  - skillID: 6
     considerationID: 3
     animName: Attacking
   selfConsiderationID: -1

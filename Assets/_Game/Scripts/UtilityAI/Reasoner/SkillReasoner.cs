@@ -22,6 +22,7 @@ namespace UtilityAI.Reasoner
 
         private void SetData(ConsiderationSystem system, ConsiderationContext considerationContext, TerramorphersEntity target)
         {
+            
             foreach (var skillItem in skillInfos)
             {
                 Context context = skillItem.Value.Context;
@@ -30,6 +31,7 @@ namespace UtilityAI.Reasoner
                 //mana
                 int remainMana = entity.Context.GetData<int>(BlackBoardConstant.REMAIN_MANA_KEY);
                 float manaAffordabilityRatio = remainMana < skillMetadata.SkillCosts ? 0 :(1 - 1.0f * skillMetadata.SkillCosts / remainMana);
+                if (entity.DataCache.SkillCoolDown[skillItem.Key].Value > 0) manaAffordabilityRatio = 0;
                 context.SetData(BlackBoardConstant.MANA_AFFORDABILITY_RATIO, manaAffordabilityRatio);
                 
             
@@ -56,6 +58,7 @@ namespace UtilityAI.Reasoner
                 float rangeAvailable = Mathf.Clamp01(1 - distance / range);
                 context.SetData(string.Format(BlackBoardConstant.SKILL_RANGE_AVAILABILITY_RATIO, skillMetadata.SkillName),rangeAvailable);
 
+                
             }
         }
         public void EvaluateSkill(ConsiderationSystem system, ConsiderationContext considerationContext, TerramorphersEntity target)
