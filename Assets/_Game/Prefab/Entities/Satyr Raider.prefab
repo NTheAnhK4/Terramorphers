@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EntityUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2948592831484117232, guid: b8f621fcc3476654e9ad6b9858e4ea5f, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7438109714057850167, guid: b8f621fcc3476654e9ad6b9858e4ea5f, type: 3}
       propertyPath: entity
       value: 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using GameCore.Commands;
@@ -9,6 +10,7 @@ using GameCore.Utility.Shape;
 using R3;
 using UnityEngine;
 using VitalRouter;
+using Random = UnityEngine.Random;
 
 namespace Terramorphers
 {
@@ -189,8 +191,7 @@ namespace Terramorphers
             int q = pos.y - (pos.x + 1) / 2;
             int r = pos.x;
             int s = -q - r;
-        
-            return _boardManager.HexaBoard.Get(new Cube(q,r,s));
+            return _boardManager.HexaBoard.Get(new Cube(q, r, s));
         }
     }
 }

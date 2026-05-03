@@ -29,12 +29,8 @@ namespace Terramorphers
         }
         private void PlayMusic()
         {
-            var audio = AudioManager.PlayMusic(EMusicType.DefeatMusic);
-            if (!AudioManager.MusicMuted)
-            {
-                audio.AudioSource.volume = 0;
-                audio.AudioSource.DOFade(1, .15f);
-            }
+            if(AudioManager.MusicMuted) return;
+            AudioManager.FadeMusicIn(EMusicType.DefeatMusic, .15f);
         }
 
         public override void OnExit()

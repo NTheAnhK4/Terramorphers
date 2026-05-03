@@ -1,0 +1,20 @@
+{
+  "SlotDatas": [
+    { "TeamID": 0, "Position": { "x": 2, "y": 5 } },
+    { "TeamID": 0, "Position": { "x": 4, "y": 5 } },
+
+    { "TeamID": 1, "Position": { "x": 3, "y": 0 } },
+    { "TeamID": 1, "Position": { "x": 5, "y": 0 } },
+    { "TeamID": 1, "Position": { "x": 7, "y": 1 } },
+    { "TeamID": 1, "Position": { "x": 6, "y": 2 } },
+    { "TeamID": 1, "Position": { "x": 4, "y": 1 } }
+  ],
+  "Rows": [
+    { "Tiles": [0, 0, 0, 0, 0, 0, 0, 0] },
+    { "Tiles": [0, 11, 11, 0, 0, 11, 11, 0] },
+    { "Tiles": [0, 0, 0, 0, 2, 0, 0, 0] },
+    { "Tiles": [0, 11, 0, 0, 0, 0, 11, 0] },
+    { "Tiles": [0, 0, 0, 2, 0, 0, 0, 0] },
+    { "Tiles": [0, 0, 0, 0, 0, 0, 0, 0] }
+  ]
+}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -41,7 +42,9 @@ namespace GameCore.Presentation.EntityInfo
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            _state.OnClose.Execute(default);
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+            if(results.Count() <= 2) _state.OnClose.Execute(default);
         }
     }
 }
