@@ -7,6 +7,7 @@ using DG.Tweening;
 using GameCore.Presentation.Shared;
 using GameCore.Usecase.Audio;
 using GameCore.Utility.Audio.GameAudio;
+using GameCore.Utility.Loading;
 using JSAM;
 using UnityEngine;
 
@@ -40,6 +41,11 @@ namespace Terramorphers
           {
               try
               {
+                  await UniTask.WaitUntil(() => SplashLoading.Instance == null || (SplashLoading.Instance != null && SplashLoading.Instance.IsLoadingFinish),cancellationToken:_cancellationTokenSource.Token);
+                  
+                  if (_cancellationTokenSource == null || _cancellationTokenSource.IsCancellationRequested)
+                      return;
+                  
                   _audioUseCase.SetUp();
                   await UniTask.WaitUntil(
                       () => AudioManager.Instance != null && AudioManager.Instance.Initialized, 

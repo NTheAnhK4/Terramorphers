@@ -10,10 +10,14 @@ namespace GameCore.Utility.Loading{
         [SerializeField] private CanvasGroup loadingCanvasGroup;
         [SerializeField] private Image progressFillerImage;
         [SerializeField] private float durationTime;
+        public static SplashLoading Instance;
+        public bool IsLoadingFinish;
 
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
+            IsLoadingFinish = false;
+            Instance = this;
             LoadGame().Forget();
         }
 
@@ -23,12 +27,13 @@ namespace GameCore.Utility.Loading{
             var fillTask = PlayFill();
             var sceneLoadTask = LoadingGamePlayScene();
             var results = await UniTask.WhenAll(fillTask, sceneLoadTask);
-            
-            if (results.Item2) 
+
+            if (results.Item2)
             {
                 await PlayFillToFull();
                 await FadeAndDestroy();
             }
+            else IsLoadingFinish = true;
         }
 
         private async UniTask<bool> PlayFill()
@@ -61,6 +66,8 @@ namespace GameCore.Utility.Loading{
                 .OnComplete(() =>
                 {
                     tcs.TrySetResult();
+                    IsLoadingFinish = true;
+                    Instance = null;
                     Destroy(gameObject);
                 });
             await tcs.Task;
